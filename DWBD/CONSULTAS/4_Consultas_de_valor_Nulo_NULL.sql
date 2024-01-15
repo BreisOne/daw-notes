@@ -1,7 +1,7 @@
 -- 1. Base de datos Tienda Informática (2 tablas).
 
 -- 1 Muestra los productos que NO tengan asignado un código de fabricante.
-
+	SELECT * FROM producto WHERE codigo_fabricante IS NULL;
 -- 2 Muestra los productos que tengan asignado un código de fabricante.
 
 -- 3 Muestra los códigos de fabricante que NO estén asignados a ningún fabricante.
@@ -37,7 +37,7 @@
 -- 5. Base de datos DepartamentoOficinas (5 tablas).
 
 -- 1 Muestra los empleados que no estén asignados a ningún departamento.
-
+	SELECT * FROM empleado WHERE departamento IS NULL;
 -- 2 Muestra los empleados que sin ninguna categoría.
 
 -- 3 Muestra los departamentos que tienen nombre.

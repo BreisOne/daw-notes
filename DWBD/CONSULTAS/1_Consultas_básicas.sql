@@ -94,24 +94,25 @@ use jardineria;
 # Ejercicio 6 - Base de datos NBA (4 tablas)
 
 # 1 Muestra el nombre del cliente y el nombre completo del contacto.
-
+SELECT nombre_cliente, nombre_contacto, apellido_contacto FROM cliente;
 
 # 2 Muestra los detalles de todos los productos contenidos en la tabla detalle_pedido.
-	
+SELECT * FROM detalle_pedido;
 
 # 3 Muestra el nombre, apellidos, email y puesto de cada empleado.
-
+SELECT nombre, apellido1, apellido2, email, puesto FROM empleado;
     
 # 4 Muestra el tipo de gama de producto y su descripción.
-	
+SELECT gama, descripcion_texto FROM gama_producto;	
     
 # 5 Muestra el código de cada oficina junto con la ciudad en la que está.
-	
+SELECT codigo_oficina, ciudad FROM oficina;
 
 # 6 Muestra el detalle de todos los pagos.
+SELECT * FROM pago;
 
 # 7 Muestra el detalle de todos los pedidos.
-
+SELECT * FROM pedido;
 
 # 8 Muestra el detalle de todos los productos, salvo su código.
-
+SELECT nombre, gama, dimensiones, proveedores, descripcion, cantidad_en_stock, precio_venta, precio proveedor FROM producto;
