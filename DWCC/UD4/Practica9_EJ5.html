@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 9</title>
+</head>
+<body>
+    <input class="parent" id="numberText">
+    </input>
+</body>
+<script>
+    let numberText = document.getElementById("numberText");
+
+     const eventoTeclado = (event) => {
+		event.preventDefault();//Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento 
+        console.log(event.key);
+		let value = event.key;
+        if(value>="0" && value <="9"){
+            numberText.value += value;
+        }
+
+	}
+
+    numberText.addEventListener("keydown", eventoTeclado);
+
+</script>
+
+</html>

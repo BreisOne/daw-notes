@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<form name="formulario">
+		<input type="button" value="1"/>
+		<input type="button" value="2"/>
+		<input type="button" value="3"/><br/>
+		<input type="button" value="4"/>
+		<input type="button" value="5"/>
+		<input type="button" value="6"/><br/>
+		<input type="button" value="7"/>
+		<input type="button" value="8"/>
+		<input type="button" value="9"/><br/>
+	</form>
+</body>
+
+
+<script>
+ let codigoUsuario = [];
+ let codigo = [];
+
+ for (let i = 0; i < 5; i++) {
+	codigo[i] = Math.floor(Math.random()*9)+1;
+ }
+
+ console.log(codigo);
+
+ let botones = document.querySelectorAll("input");
+
+ const cogerNumero = (evt)=>{
+
+			valorBoton = parseInt(evt.target.value);
+
+			if(codigoUsuario.length<5){
+				codigoUsuario.push(valorBoton)
+			}
+			if(codigoUsuario.length == 5){
+				chekCodigo (codigo, codigoUsuario)
+			}
+			console.log(codigoUsuario);
+			return codigoUsuario;
+
+}
+const chekCodigo = (codigo, codigoUsuario)=> {
+
+	codigo = codigo.join('');
+	codigoUsuario = codigoUsuario.join('');
+
+	if(codigo === codigoUsuario){
+		alert("Código correcto")
+	}else{
+		alert("Código incorrecto")
+	}
+}
+
+botones.forEach(boton => {
+	boton.addEventListener("click", cogerNumero);
+});
+
+ 
+</script>
+
+</html>

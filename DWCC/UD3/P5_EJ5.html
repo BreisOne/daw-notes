@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciación DOM 1</title>
+</head>
+<body>
+    <button type="button" id="crear"> Crear </button>
+    <button type="button" id="destruir"> Destruir </button>
+    <div id="nuevoTexto"></div>
+</body>
+
+<script>
+    let botonCrear = document.getElementById("crear");
+    let botonDestruir = document.getElementById("destruir");
+    let destino = document.getElementById("nuevoTexto");
+
+    const crear = ()=>{
+        let nuevaLista = document.createElement("ul");
+        
+        destino.append(nuevaLista);
+        
+        for (let i = 1; i <= 3; i++) {
+            let nuevoItem = document.createElement("li");
+            nuevoItem.innerText = i;
+            nuevaLista.append(nuevoItem);
+        }
+    }
+
+    const destruir = ()=>{
+        let lista = document.getElementById("nuevoTexto").firstChild;
+        console.log(lista);
+        lista.remove();
+    }
+
+    botonCrear.addEventListener("click", crear);
+
+    botonDestruir.addEventListener("click", destruir);
+
+
+</script>
+</html>

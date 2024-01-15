@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reservas Lunch</h1>
+    <form method="post" action="form.php">
+        <div>
+            <label for="date">Introduzca fecha:</label>
+            <input name="date" type="date">
+        </div>
+        </div>
+            <div>
+            <label for="time">Introduzca hora comida:</label>
+            <input name="time" type="time" min="13:00" max="15:00" value="13:00">
+        </div>
+        <fieldset>
+            <legend>Ubicación</legend>
+            <input type="radio" name="ubicacion" value="Interior" id="Interior">
+            <label for="Interior">Interior</label>
+            <input type="radio" name="ubicacion" value="Terraza" id="Terraza"checked>
+            <label for="Terraza">Terraza</label>
+        </fieldset>
+        <div>
+            <label for="foods">Intoduca si es alérgico a alguno de los siguientes elementos:</label>
+            <select name="foods[]" id="foods" multiple>
+                <option value=" " disabled>--</option>
+                <option value="Leche">Leche</option>
+                <option value="Huevo">Huevo</option>
+                <option value="Gluten">Gluten</option>
+            </select>
+
+            <div>
+                <input type="submit" value="Reservar">
+            </div>
+    </form>
+
+</body>
+</html>

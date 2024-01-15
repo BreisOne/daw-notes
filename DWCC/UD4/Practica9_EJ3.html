@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 9</title>
+</head>
+<body>
+    <section class="parent">
+        <button class="probar" id="botonProbar"> Probar</button>
+        <div>
+            <h2 class="texto" id="texto">
+            </h2>
+        </div>
+     
+    </section>
+</body>
+<script>
+    let botonProbar = document.getElementById("botonProbar");
+
+     const eventoRaton = (evento) => {
+		event.preventDefault(); //Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento 
+		let tipo = evento.type;
+
+        document.getElementById("texto").innerHTML += tipo + "</br>";
+       
+	}
+
+    botonProbar.addEventListener("click", eventoRaton);
+    botonProbar.addEventListener("mousedown", eventoRaton);
+    botonProbar.addEventListener("mouseup", eventoRaton);
+    botonProbar.addEventListener("contextmenu", eventoRaton);
+    botonProbar.addEventListener("dblclick", eventoRaton);
+
+
+
+
+
+
+</script>
+
+</html>

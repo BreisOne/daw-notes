@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tienda de moda</h1>
+    <form method="get" action="form.php">
+        <div>
+            <label for="clothes">Selecione tipo de prenda</label>
+            <select name="clothes[]" id="clothes" multiple>
+                <option value="Abrigos">Abrigos</option>
+                <option value="Tops">Tops</option>
+                <option value="Camisas"> Camisas</option>
+            </select>
+        </div>
+        <div>
+            <label for="color"></label>
+            <input name="color" type="color">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+</html>

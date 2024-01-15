@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subir archivos JPG</title>
+</head>
+<body>
+    <form action="procesar.php" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <h1> Envía tus archivos de imagen</h1>
+            <div>
+                <label for="files">Archivos que quieres subir</label>
+                <input id="files" type="file" name="files[]" accept=".jpg" multiple>
+            </div>
+            <button type="submit">Subir archivos</button>
+        </form>
+    </fieldset>
+</body>
+</html>

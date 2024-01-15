@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cálculo edad</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <h1>Indica la fecha de tu cumpleaños.</h1>
+
+    <!--El atributo action indica la página a la que se envían los datos del formulario. Si este atributo está vacío, 
+    es la página que contiene el formulario la que se recargará con los datos como parámetros -->
+
+    <form name="miFormulario" action="javascript:calculo()">
+        <input type="date" name="fechaNacimiento" id="fechaNacimiento" required=""/>
+        <input type="submit" name="enviar" id="boton" value="Enviar fecha"/>        
+    </form>
+
+    <div id="resultado"></div>
+
+</body>
+<script>
+    function calculo() {
+        let cadena = document.getElementById("fechaNacimiento").value;
+        console.log(cadena); //La cadena se obtiene en el formato aaaa-mm-dd
+
+        var fArray = cadena.split("-"); //Convierto la cadena en un Array utilizando el separador guión
+        console.log(fArray);
+       
+        var fechaNacimiento = new Date(fArray[0], fArray[1] - 1, fArray[2]);
+        console.log(fechaNacimiento);
+
+        var hoy = new Date();
+        var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+
+        //Ahora comprobamos si todavía no hemos llegado a su cumpleaños en el año en curso (restaríamos un año)
+        if (hoy.getMonth() < fechaNacimiento.getMonth()) { //No hemos llegado al mes
+            edad--;
+        } else if (hoy.getMonth() == fechaNacimiento.getMonth()) { //Estamos en el mes de su cumpleaños
+            if (hoy.getDate() < fechaNacimiento.getDate()) {
+                edad--;
+            }
+        }
+
+        //Crear la estructura de nodos para mostrar el resultado con el formato adecuado
+        let tituloH1=document.createElement('h1');
+        tituloH1.innerHTML = `Tu edad es ${edad} años`;
+
+        //Añadir el texto a la sección div
+        document.getElementById("resultado").append(tituloH1);
+        document.miFormulario.fechaNacimiento.value = ""; //Vacío el formulario
+
+        //Crear un nuevo nodo
+        
+        let parrafo=document.createElement("p");
+        console.log(parrafo);
+        let texto=document.createTextNode("CURSO DE DWCC - DUAL");
+        console.log(texto);
+
+        parrafo.appendChild(texto);  // Añadimos el nodo "texto" como hijo de "parrafo"
+
+        document.getElementById("resultado").appendChild(parrafo);  // Añadimos "parrafo" como hijo de body
+
+        //Añadir antes de una posicion determinada
+        //InsertBefore nos permite elegir un nodo del documento e incluir otro nodo antes que él
+        let nuevoNodoHijo = document.createElement("span");
+        nuevoNodoHijo.innerText="Valor añadido"
+        let nodoReferencia=document.getElementById("resultado");
+        let padre=nodoReferencia.parentNode;//obtener una referencia al nodo padre
+        console.log(padre);
+
+        //Podemos obtener el tipo de un nodo. El valor 1 indica un nodo de tipo element y 3 un nodo de tipo text_node
+        let tipo= resultado.nodeType
+        console.log(tipo);
+
+        padre.insertBefore(nuevoNodoHijo,nodoReferencia);
+        
+
+
+    }
+
+
+    
+</script>
+</html>

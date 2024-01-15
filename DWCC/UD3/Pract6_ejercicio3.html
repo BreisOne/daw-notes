@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<form action="" id="dormulario">
+		<input type="number" id="nota">
+		<input type="button" value="Añadir nota" id="boton">
+	</form>
+	<div id = "CuerpoNotas"></div>
+</body>
+<script>
+
+let botonAnadirNota = document.getElementById("boton")
+let cuerpoNotas = document.getElementById("CuerpoNotas")
+
+const anadirNotaUsuario = ()=>{
+	
+	let valorUsuario = document.getElementById("nota").value;
+	let nuevoDiv = document.createElement("div");
+
+	let botonEliminar = document.createElement("input");
+	let botonArriba= document.createElement("input");
+	let botonAbajo = document.createElement("input");
+
+	botonEliminar.id ="botonEliminar";
+	botonArriba.id ="botonArriba";
+	botonAbajo.id ="botonAbajo";
+
+	botonEliminar.value ="Eliminar";
+	botonArriba.value ="Arriba";
+	botonAbajo.value ="Abajo";
+
+	botones = [botonEliminar,botonArriba, botonAbajo]
+	botones.forEach(boton => {
+	boton.type = "button";
+	});
+
+	nuevoDiv.append(valorUsuario);
+	nuevoDiv.append(botonEliminar);
+	nuevoDiv.append(botonArriba);
+	nuevoDiv.append(botonAbajo);
+	cuerpoNotas.append(nuevoDiv);
+
+	botonEliminar.addEventListener("click", eliminar);
+	botonArriba.addEventListener("click", arriba);
+	botonAbajo.addEventListener("click", abajo);
+
+}
+
+const eliminar = (evt)=>{
+	let divParent = evt.target.parentElement;
+	divParent.remove();
+}
+const arriba = (evt)=>{
+	let divParent = evt.target.parentElement;
+	cuerpoNotas.insertBefore(divParent, cuerpoNotas.firstChild);
+}
+const abajo = (evt)=>{
+	let divParent = evt.target.parentElement;
+	cuerpoNotas.appendChild(divParent);
+}
+
+botonAnadirNota.addEventListener("click", anadirNotaUsuario);
+
+
+
+</script>
+</html>

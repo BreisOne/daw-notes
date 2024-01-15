@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 9</title>
+</head>
+<body>
+    <section class="parent">
+        <p class="texto" id="texto">
+            Este el el texto
+        </p>
+
+        <button class="botonEsconder" id="botonEsconder"> Enconder/Mostrar</button>
+        <button class="botonCancelar" id="botonCancelar"> Cancelar comportamiento</button>
+    </section>
+</body>
+<script>
+    let botonEsconder = document.getElementById("botonEsconder");
+    let botonCancelar = document.getElementById("botonCancelar")
+
+    const esconder_mostrar = ()=>{
+        let texto = document.getElementById("texto");
+        
+        texto.style.display = (texto.style.display === 'none') ? 'block' : 'none';           
+    }
+
+    const cancelarComportamieto = ()=>{
+        botonEsconder.disabled = true;
+    }
+
+    botonEsconder.addEventListener("click", esconder_mostrar);
+    botonCancelar.addEventListener("click", cancelarComportamieto);
+    // botonEsconder.onclick = esconder_mostrar;
+
+
+</script>
+
+</html>

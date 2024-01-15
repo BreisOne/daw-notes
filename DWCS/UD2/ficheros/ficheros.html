@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h1>Formulario con ficheros</h1>
+    <form action="formulario_ficheros.php" method="post" enctype="multipart/form-data">
+
+
+        <div><label for="ficheros">Adjunte uno o varios ficheros (Solo se aceptan imágenes: jpg, png, etc.):</label>
+            <input type="file" name="ficheros[]" id="ficheros" multiple accept="image/*" 
+            >
+        </div>  
+
+        <div><input type="submit" value="Enviar"></div>
+
+    </form>
+</body>
+
+</html>

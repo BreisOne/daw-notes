@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciación DOM 1</title>
+</head>
+<body>
+    <form action="javascript:crearParrafo()" name="formulario">
+        <label for="text">TEXTO:</label>
+        <input type="text" name="text" id="text">
+        <input type="submit" value="Crear">
+    </form>
+    <div id="newText">
+
+    </div>
+    
+</body>
+
+<script>
+    const crearParrafo = ()=>{
+        let text = document.getElementById("text").value;
+        let nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = text;
+        document.getElementById("newText").append(nuevoParrafo);
+    }
+</script>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicios fechas 1d</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .mesAnho {
+            float: left;
+            width: 80px;
+        }
+        .sinMarcar {
+            background-color: #dedede;
+            float: left;
+            width: 20px;
+            margin: 2px;
+            text-align: center;
+        }
+        .marcado {
+            background-color: #9e9e9e;
+            font-weight: bold;
+            float: left;
+            width: 20px;
+            margin: 2px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="mostrarFecha" id="fecha1">
+
+    </div>
+    <div class="fecha" id="cuadroFecha">
+        <div class="mesAnho" id="mesAnho"></div>            
+    </div>
+</body>
+<script>
+
+    //Función que comprueba si un año es bisiesto para calcular los dias que tiene
+    //el mes de febrero
+    const diasFebrero = (anho)=> {
+        if (((anho % 4 == 0) && (anho % 100 != 0)) || (anho % 400 == 0)) { //Aplico las condiciones
+            //Es bisiesto
+            return 29;
+        } else {
+            //No es bisiesto
+            return 28;
+        }
+    }
+/*PASOS PARA PODER ACCEDER A LOS ELEMENTOS HTML CON EL LENGUAJE JAVASCRIP
+en primer lugar debemos saber que en cada etiqueta html, es aconsejable poner un identificadro.
+El atributo id nos va a permitir acceder a un nodo del DOM con dicho valor de atributo.
+Recordar que en un documento HTML no debería existir más de un elemento con un mismo id. Es decir, los ids deben ser únicos (identificadores únicos de un elemento).
+Para ello disponemos de la función getElementById(), que nos permite obtener el nodo
+de la estructura DOM que se crea en el momento que se visualiza una página en el navegador,
+Una vez que tenemos ese nodo podemos modificar todas sus propiedades, incluso añadir
+nuevos nodod a la estructura.*/
+//El evento load en el objeto window se activa cuando se carga toda la página, incluidos estilos, imágenes y otros recursos. 
+//Este evento está disponible a través de la propiedad onload.
+
+    window.onload = () => {
+        let fecha = new Date(); //Guardo en la letiable fecha la fecha actual
+        let diaSemana = fecha.getDay(); //Devuelve el día de la semana. Entre 0 (domingo) y 6 (sábado)
+
+        let diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+
+        //OJO, la semana empieza en domingo
+        let dia = fecha.getDate();
+        let mes = fecha.getMonth();
+        let anno = fecha.getFullYear();
+        let meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+        
+        //Array en el que se almacenan los días que tiene cada mes de Enero a Diciembre. En el
+        //mes de Febrero, llama a la funcion diasFebrero que comprueba si es bisiesto o no y devuelve
+        //el número de días
+
+        let numeroDiasMeses = new Array(31, diasFebrero(fecha.getFullYear()), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); //Array con los días que tiene cada mes del año
+        
+        //Mostrar la fecha en formato dia/mes/anno
+        //Para ello vamos a crear un nuevo elemento h1. El método  el método document.createElement() 
+        //crea un elemento HTML especificado por su tagName, en este caso h1
+        let parrafo1=document.createElement('h1');
+        //El método innerHTML establece u obtiene el formato html. En este caso, al tratarse
+        //de un h1 su formato es un texto. 
+        parrafo1.innerHTML=`${dia}/${( mes +1 )}/${anno}` ;
+        //Ahora añadimos el paraffo en el div <div class="mostrarFecha" id="fecha1">,
+        //para lo cual utilizamos el método append
+        //append() permite añadir varios nodos y cadenas de texto,
+        document.getElementById("fecha1").append(parrafo1);
+
+         //Mostrar la fecha en formato dia de mes de año
+
+        let parrafo2=document.createElement('h2');
+        parrafo2.innerHTML=`${dia} de ${meses[mes]} de ${anno}` ;
+        document.getElementById("fecha1").append(parrafo2);
+
+        //Mostrar la fecha en formato dia letra de mes de año
+
+        let parrafo3=document.createElement('h3');
+        parrafo3.innerHTML=`${diasSemana[diaSemana]} , ${dia} de ${meses[mes]} de ${anno}` ;
+        document.getElementById("fecha1").append(parrafo3);
+
+        document.getElementById("mesAnho").innerHTML = `${meses[mes]} ${fecha.getFullYear()}`;
+        
+        //Apartado extra: No aparece en el enunciado
+        //En este último apartado muestra todos los días del mes y marcado el día actual
+        /*El método element.insertAdjacentHTML(posición, texto), inserta el la cadena texto
+        en la estructura del arbol DOM 
+
+        La posición relativa al elemento, y deberá ser una de las siguientes cadenas:
+
+        'beforebegin': Antes que el propio elemento.
+        'afterbegin': Justo dentro del elemento, antes de su primer elemento hijo.
+        'beforeend': Justo dentro del elemento, después de su último elemento hijo.
+        'afterend': Después del propio elemento.*/
+
+        //Funcionamiento, va pintado todos los días del mes en un div con el estilo de la clase sinMarcar y el que 
+        //se corresponde con la fecha (en este caso día) con el estilo marcado
+
+        
+        for (let i = 1; i <= numeroDiasMeses[mes]; i++) {
+            if (i == dia) {
+                document.getElementById("cuadroFecha").insertAdjacentHTML("beforeend","<div class='marcado'>" + i + "</div>");
+            } else {
+                document.getElementById("cuadroFecha").insertAdjacentHTML("beforeend","<div class='sinMarcar'>" + i + "</div>");
+            }
+        }
+    }
+</script>
+</html>
