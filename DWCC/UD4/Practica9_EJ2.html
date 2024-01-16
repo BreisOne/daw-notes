@@ -19,17 +19,18 @@
     let botonEsconder = document.getElementById("botonEsconder");
     let botonCancelar = document.getElementById("botonCancelar")
 
-    const esconder_mostrar = ()=>{
+    const esconderMostrar = ()=>{
         let texto = document.getElementById("texto");
         
         texto.style.display = (texto.style.display === 'none') ? 'block' : 'none';           
     }
 
     const cancelarComportamieto = ()=>{
+        botonEsconder.removeEventListener('click', esconderMostrar);
         botonEsconder.disabled = true;
     }
 
-    botonEsconder.addEventListener("click", esconder_mostrar);
+    botonEsconder.addEventListener("click", esconderMostrar);
     botonCancelar.addEventListener("click", cancelarComportamieto);
     // botonEsconder.onclick = esconder_mostrar;
 

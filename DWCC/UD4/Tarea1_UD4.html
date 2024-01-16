@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tarea 1 - UD4</title>
+</head>
+<style>
+	form {
+
+		font-family: Verdana, Arial, sans-serif;
+		margin: auto;
+		background: rgb(6, 105, 204);
+		color: white;
+		font-size: 14px;
+		padding: 30px;
+		width: 450px;
+
+
+	}
+
+	input {
+		font-size: 14px;
+		background: white;
+		border: solid 1px LightSteelBlue;
+		border-radius: 3px;
+		float: right;
+		margin-right: 100px;
+		width: 50px;
+	}
+
+	button{
+		font-size: 14px;
+		background: white;
+		border: solid 1px LightSteelBlue;
+		border-radius: 3px;
+		
+	}
+
+
+
+	ul li {
+		line-height: 25px;
+		list-style: none;
+	}
+
+	div {
+		display: flex;
+		justify-content: center;
+	}
+</style>
+
+
+<body>
+	<form name="formulario">
+		<ul>
+			<li>
+				<label for="name">Filas:</label>
+				<input type="number" id="fila" min="0" name="filas" />
+			</li>
+			<li>
+				<label for="mail">Columnas</label>
+				<input type="number" id="columna" min="0" name="columnas" />
+			</li>
+			<li>
+				<button type="button" name="crear" id="crear" crear>Crear tabla</button>
+			</li>
+		</ul>
+
+	</form>
+	<br><br>
+	<hr>
+	<br><br>
+	<div id="resultado"></div>
+</body>
+<script>
+	const creaTabla = ()=>{
+		let filas = document.getElementById("fila").value;
+		let columnas = document.getElementById("columna").value;
+		let contenedor = document.getElementById("resultado");
+		let tablaCreada = document.getElementById("tabla");
+		
+		if(tablaCreada != null){
+			tablaCreada.remove();
+		}
+
+		let cuerpoTabla = document.createElement("tbody");
+		cuerpoTabla.id = "tabla";
+		
+		for (let i = 0; i < filas; i++) {
+			let fila = document.createElement('tr');
+
+			for (let j = 0; j < columnas; j++) {
+				let celda = document.createElement('td');
+				celda.innerHTML = i;
+				celda.style.border= "2px solid blue";
+				celda.style.fontSize = "22px";
+				fila.appendChild(celda);
+			}
+
+			fila.addEventListener('dblclick', eliminarFila);
+			fila.addEventListener('click', cambiarFondo);
+			fila.addEventListener('contextmenu', cambiarTexto);
+
+			cuerpoTabla.appendChild(fila);
+			
+		}
+
+		cuerpoTabla.style.border= "2px solid red";
+		cuerpoTabla.style.zIndex = "15";
+
+		contenedor.appendChild(cuerpoTabla);
+
+	}
+
+	const eliminarFila = (event)=> {
+		event.target.parentNode.remove();
+	} 
+	const cambiarFondo = (event)=>{
+		let elemento = event.target
+		elemento.style.backgroundColor = "blue";
+	}
+	const cambiarTexto = (event)=>{
+		event.preventDefault();
+		let elemento = event.target.parentNode;
+		elemento.style.color = "red";
+	}
+
+	let botonCrear = document.getElementById("crear");
+	botonCrear.addEventListener('click', creaTabla);
+
+</script>
+
+</html>
