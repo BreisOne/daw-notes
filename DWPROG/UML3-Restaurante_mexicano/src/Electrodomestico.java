@@ -72,7 +72,7 @@ public class Electrodomestico {
         return this.color;
     }
 
-    public int precioFinal(){
+    public double precioFinal(){
         // Definir dos arrays para las claves y los valores
         char[] claves = consumos.toCharArray();
         int[] valores = {100, 80, 60, 50, 30, 10};
@@ -86,7 +86,7 @@ public class Electrodomestico {
         }
 
         precioBase += hashMap.get(consumoElectrico);
-        return (int) precioBase;
+        return precioBase;
     }
 
     public static void main(String[] args) {

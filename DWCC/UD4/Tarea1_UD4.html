@@ -62,7 +62,7 @@
 				<label for="mail">Columnas</label>
 				<input type="number" id="columna" min="0" name="columnas" />
 			</li>
-			<li>
+			<li id="contenedorbotones">
 				<button type="button" name="crear" id="crear" crear>Crear tabla</button>
 			</li>
 		</ul>
@@ -79,6 +79,10 @@
 		let columnas = document.getElementById("columna").value;
 		let contenedor = document.getElementById("resultado");
 		let tablaCreada = document.getElementById("tabla");
+		// let contenedorBotones = document.getElementById("tabla");
+		
+		// let botonBorrarTabla = document.createElement('button');
+		// contenedorBotones.appendChild(botonBorrarTabla);
 		
 		if(tablaCreada != null){
 			tablaCreada.remove();
@@ -86,7 +90,7 @@
 
 		let cuerpoTabla = document.createElement("tbody");
 		cuerpoTabla.id = "tabla";
-		
+
 		for (let i = 0; i < filas; i++) {
 			let fila = document.createElement('tr');
 

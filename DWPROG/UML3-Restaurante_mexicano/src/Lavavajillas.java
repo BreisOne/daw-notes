@@ -21,15 +21,14 @@ public class Lavavajillas extends Electrodomestico {
         this.numServicios = numServicios;
     }
     //Methods
-    public int precioFinal(){
+    public double precioFinal(){
         double precioBase = super.precioFinal();
 
         if (this.numServicios > 12){
             precioBase += 60;
         }
-        super.setPrecioBase(precioBase);
 
-        return (int) precioBase;
+        return precioBase;
     }
 
 

@@ -13,7 +13,6 @@ public class Televisor extends Electrodomestico {
         super(precioBase, peso, color, consumoElectrico);
         this.pulgadas = pulgadas;
         this.sintonizadorTDT = sintonizadorTDT;
-        assetsChecker();
     }
 
     //Getters y Setters
@@ -31,7 +30,7 @@ public class Televisor extends Electrodomestico {
      }
 
      //Methods
-    private int assetsChecker(){
+    public double precioFinal(){
         double precioBase = super.precioFinal();
 
         if(pulgadas > 40){
@@ -41,8 +40,6 @@ public class Televisor extends Electrodomestico {
             precioBase += 50;
         }
 
-        super.setPrecioBase(precioBase);
-
-        return (int) precioBase;
+        return precioBase;
 
     }}
