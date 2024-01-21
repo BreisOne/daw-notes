@@ -13,9 +13,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
     <body>
 
         <div class="container-fluid">
-            <h1>Cambio de contraseña</h1>
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-6">
+
+                <h1>Cambio de contraseña</h1>
+
                     <form method="post">
                         <!-- Email input -->
                         <div class="form-group mb-4 ">
@@ -80,39 +82,74 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                         $newPwd1 = $_POST["newPwd1"];
                         $newPwd2 = $_POST["newPwd2"];
                         $errors = [];
-                        $containsNumbers = false;
-                        $containsSymbol = false; 
 
-                        $errors = checkUser($email, $usuarios, $errors);
+                        $functions =[
+                            "checkUser",
+                            "checkPwd",
+                            "pwd1Equalpwd2",
+                            "minimunLength",
+                            "pwdUsed",
+                            "containsUpperCase",
+                            "containsNumber",
+                            "containsSymbols"
+                        ];
 
-                        $errors = checkPwd($currrentPwd, $email, $usuarios, $errors);
+                        $params = [
+                            [$email, $usuarios],
+                            [$currrentPwd, $email, $usuarios],
+                            [$newPwd1, $newPwd2],
+                            [$newPwd1],
+                            [$newPwd1, $usuarios, $email],
+                            [$newPwd1],
+                            [$numeros, $newPwd1],
+                            [$simbolos, $newPwd1]
+                        ];
 
-                        $errors = pwd1Equalpwd2($newPwd1, $newPwd2, $errors);
+                        $error_msgs =[
+                            USER_DOES_NOT_EXIST, 
+                            PWD_INCORRECT, 
+                            PWD_MISMATCH, 
+                            MIN_LENGTH_ERROR, 
+                            PWD_USED,
+                            UPPER_CASE_NEEDED,
+                            NUMBER_NEEDED,
+                            SYMBOL_NEEDED 
+                        ];
 
-                        $errors = minimunLength($newPwd1, $errors);
+                        for ($i=0; $i < count($functions); $i++) {
 
-                        $errors = pwdUsed($newPwd1, $usuarios, $email, $errors);
-                        
-                        $errors = containsUpperCase($newPwd1, $errors);
+                            if(!call_user_func_array($functions[$i], $params[$i])){
+                                    array_push($errors , $error_msgs[$i]);
+                            };
 
-                        $errors = containsNumber($numeros, $newPwd1, $containsNumbers, $errors);
+                            if (count($errors)>0) {
+                                break;
+                            }
 
-                        $errors = containsSymbols($simbolos, $newPwd1, $containsSymbol, $errors);
+                        };
 
-                    }
-                    
-                    if (empty($errors)){
-
-                        echo"<div class='alert alert-success' role='alert'>
-                                Se ha actualizado correctamente la contraseña 
-                            </div>";
-
-                    }else{
-                        echo "<div class='alert alert-danger' role='alert'>";
-                        foreach ($errors as $error) {
-                            echo "<p>" . $error . "</p>";
+                        if (count($errors) == 0) {
+                            $usuarios[$email]["pwd-2"] = $usuarios[$email]["pwd-1"];
+                            $usuarios[$email]["pwd-1"] = $usuarios[$email]["pwd"];
+                            $usuarios[$email]["pwd"] = $newPwd1;
                         }
-                        echo"</div>";
+
+                        if (empty($errors)){
+
+                            echo"<div class='alert alert-success' role='alert'>
+                                    Se ha actualizado correctamente la contraseña. ";
+                            
+                            print_r($usuarios[$email]);
+
+                            echo"</div>";
+
+                        }else{
+                            echo "<div class='alert alert-danger' role='alert'>";
+                            foreach ($errors as $error) {
+                                echo "<p>" . $error . "</p>";
+                            }
+                            echo"</div>";
+                        }
                     }
             
                     ?>

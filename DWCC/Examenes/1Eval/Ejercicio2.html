@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+</head>
+<body>
+	<form name=formulario>
+		<input type="date" name="fecha" id = "fecha"/>
+		<input type="button" name="boton" value="Estación" id = "boton"/>
+		<input type="button" name="boton" value="Abrir Ventana" id = "botonVetana"/>
+	</form>
+	<p id="resultado"></p>
+</body>
+	<script>
+		let boton = document.getElementById("boton");
+		let botonVentana = document.getElementById("botonVetana");
+
+		let resultado = document.getElementById("resultado");
+		let ventan = null;
+		const analizarFecha = ()=>{
+			let fecha = document.getElementById("fecha").value;
+			let fechaArray = fecha.split("-");
+			let dia = parseInt(fechaArray[2]);
+			let mes = parseInt(fechaArray[1]);
+			let anho = parseInt(fechaArray[0]);
+			let nuevoDiv = document.createElement('div');
+			
+			// Invierno
+			if(dia >= 21 && mes == 12 || mes <=2 ||dia <=20 && mes ==3 ){
+				nuevoDiv.innerHTML = `${fecha} Invierno`;
+				resultado.appendChild(nuevoDiv);
+			}
+
+			// Primavera
+			if(dia >= 21 && mes == 3 || mes > 3 && mes < 6 || dia <=20 && mes ==6){
+				nuevoDiv.innerHTML = `${fecha} Primavera`;
+				resultado.appendChild(nuevoDiv);
+
+			}
+			//Verano
+			if(dia >= 21 && mes == 6 ||  mes > 6 && mes< 9 || dia <=20 && mes ==9){
+				nuevoDiv.innerHTML = `${fecha} Verano`;
+				resultado.appendChild(nuevoDiv);
+
+			}
+			//Otoño
+			if(dia >= 21 && mes == 9 || mes > 9 && mes < 12 || dia <=20 && mes ==12){
+				nuevoDiv.innerHTML = `${fecha} Otoño`;
+				resultado.appendChild(nuevoDiv);
+			}
+
+		}
+
+		const abrirVentana = ()=>{
+			let fecha = document.getElementById("fecha").value;
+			let fechaArray = fecha.split("-");
+			let dia = parseInt(fechaArray[2]);
+			let mes = parseInt(fechaArray[1]);
+			let anho = parseInt(fechaArray[0]);
+			let divVentana = document.createElement(div);
+			opciones = `width = 200px, height = 200px`
+
+			// Invierno
+			if(dia >= 21 && mes == 12 || mes <=2 ||dia <=20 && mes ==3 ){
+				ventana = window.open ("","Estación del año",opciones);
+				ventana.document.write(`${fecha} es Invierno`);
+			}
+
+			// Primavera
+			if(dia >= 21 && mes == 3 || mes>3 && mes< 6 || dia <=20 && mes ==6){
+				ventana = window.open ("","Estación del año",opciones);
+				ventana.document.write(`${fecha} es primavera`);
+			}
+			//Verano
+			if(dia >= 21 && mes == 6 ||  mes>6 && mes< 9 || dia <=20 && mes ==9){
+				ventana = window.open ("","Estación del año",opciones);
+				ventana.document.write(`${fecha} es verano`);
+			}
+			//Otoño
+			if(dia >= 21 && mes == 9 || mes > 9 && mes < 12 || dia <=20 && mes ==12){
+				ventana = window.open ("","Estación del año",opciones);
+				ventana.document.write(`${fecha} es verano`)
+			}
+
+			if(!ventana.closed){
+				botonVentana.disabeled;
+			}
+		}
+
+		boton.addEventListener('click', analizarFecha);
+		botonVentana.addEventListener('click', abrirVentana);
+
+		
+	</script>
+</html>
