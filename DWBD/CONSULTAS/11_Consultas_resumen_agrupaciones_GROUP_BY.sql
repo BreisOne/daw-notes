@@ -1,11 +1,11 @@
 -- Base de datos Tienda Informática (2 tablas).
 
 -- 1 Muestra el número de productos de la tienda.
-
+	SELECT COUNT(codigo) FROM producto;
 -- 2 Muestra el precio más barato de un producto.
-
+	SELECT MIN(precio) FROM producto;
 -- 3 Muestra el precio medio de los productos de la tienda.
-
+	SELECT ROUND(AVG(precio)) FROM producto;
 
 -- ______________________________
 
@@ -13,15 +13,15 @@
 -- Base de datos Gestión de Empleados (2 tablas).
 
 -- 1 Obtén la suma del presupuesto de todos los departamentos.
-
+	SELECT SUM(presupuesto) FROM departamento;
 -- 2 Obtén la media del presupuesto de todos los departamentos.
-
+	SELECT round(AVG(presupuesto)) FROM departamento;
 -- 3 Calcula el valor mínimo del presupuesto de todos los departamentos.
-
+	SELECT MIN(presupuesto) FROM departamento;
 -- 4 Obtén el nombre del departamento y su presupuesto, sabiendo que su presupuesto es el menor.
-
+	SELECT nombre, presupuesto FROM departamento WHERE presupuesto = (SELECT MIN(presupuesto) FROM departamento);
 -- 5 Obtén el número total de empleados que hay en la empresa.
-
+	SELECT count(codigo) FROM empleado;
 -- 6 Obtén el número de empleados sin segundo apellido.
 
 -- 7 Obtén el número de empleados que hay en cada departamento.
