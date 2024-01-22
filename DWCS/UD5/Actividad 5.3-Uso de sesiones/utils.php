@@ -49,12 +49,11 @@ function iniciarSesion(): bool {
 
 function guardarTextos() {
    
-
     if(isset($_POST["texto"])){
         if(!isset($_SESSION["textos"])){
             $_SESSION["textos"] = [];
         }
-        
+
         $texto = $_POST["texto"];
         array_push($_SESSION["textos"], $texto);
     }
