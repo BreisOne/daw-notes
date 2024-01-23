@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 11 Carreras de coches</title>
+    <style>
+        #campo {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: wrap; 
+            height: 500px;
+            width: calc(100% - 20px);
+            background-color:  rgb(148, 245, 245);;
+        }
+
+       
+        #coche1 { 
+            position:absolute;
+            height: 50px;
+            width: 50px;
+            top: 10px;
+            left: 10px;
+        }
+
+        #coche2 {  
+            position:absolute;
+            height: 50px;
+            width: 50px;
+            top: 450px;
+            left: 10px;
+        }
+
+        #campoBoton{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: rgb(89, 94, 94);
+            
+            height: calc(100% - 20px);
+            width: calc(100% - 20px);
+        }
+    </style>
+</head>
+<body>
+    <div id="campo">
+        <img id="coche1" name="1" value="coche 1" src="./coche.png" >
+        <img id="coche2" name="2" value="coche 2" src ="./coche.png">
+    </div>
+    <div id="campoBoton">
+        <input type="button" id="btnIniciar" value="Iniciar">
+    </div>
+
+</body>
+<script>
+    // document.addEventListener("load",()=>{
+    
+    eleccionUsuario = parseInt(prompt("Indica el coche ganador 1-2"))
+    coche1 = document.getElementById("coche1");
+    coche2 = document.getElementById("coche2");
+        
+    coche1.style.left = "10px";
+    coche2.style.left = "10px";
+
+    let num1 = 0;
+    let num2 = 0;
+
+    let coche1Left = 0;
+    let coche2Left = 0;
+
+    const getRandomArbitrary = (min, max) => {
+            return Math.floor(Math.random() * (max - min) + min);}
+
+    const iniciarPartida = ()=>{
+        setInterval(moverCoches, 1500);   
+    }
+
+    const moverCoches = ()=>{
+           num1 += getRandomArbitrary(0,20);
+           num2 += getRandomArbitrary(0,20);
+
+           coche1.setAttribute("left", num1);
+           coche2.setAttribute("left", num2);
+
+           coche1Left = coche1.getAttribute("left");
+           coche2Left = coche2.getAttribute("left");
+
+           coche1.style.left = coche1Left +"px";
+           coche2.style.left = coche2Left +"px";
+    }
+
+
+    btnIniciar = document.getElementById("btnIniciar");
+    btnIniciar.addEventListener('click', iniciarPartida);
+
+    // })
+   
+</script>
+</html>
