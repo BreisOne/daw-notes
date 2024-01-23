@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        
+
          Motocicleta motoYamaha = new Motocicleta("Yamaha 550FR","4324324ERF",80);
          Motocicleta motoSuzuki = new Motocicleta("Suzuki 460GT","7635232GRT",95);
          Turismo cocheToyota = new Turismo("Toyota Corola","4324324ERF",40);
