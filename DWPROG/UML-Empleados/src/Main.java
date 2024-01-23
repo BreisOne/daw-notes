@@ -1,7 +1,8 @@
 import java.util.*;
+import java.util.List;
 
 public class Main {
-    public static <List> void main(String[] args) {
+    public static void main(String[] args) {
         // Empleado 7
         String[] nombres = {"Ana", "María", "Carlos", "Laura", "José", "Elena", "Juan"};
         int[] salarios = {50000, 60000, 55000, 70000, 48000, 75000, 62000};
@@ -20,7 +21,7 @@ public class Main {
         // Técnico 2
         String[] secciones = {"Sección A", "Sección B"};
 
-       List<Empleado> empleados = new ArrayList<>();
+       List<Empleado> empleados = new ArrayList<Empleado>();
 
 
     }
