@@ -36,7 +36,7 @@
         function Operar(int $tipo_operacion, float $op1, float $op2){
             if($tipo_operacion == OP_SUMA){
             
-                $suma = $op1 +$op2;
+                $suma = $op1 + $op2;
                  echo "<p>La suma es: $suma</p>"; 
                 
             } else{
