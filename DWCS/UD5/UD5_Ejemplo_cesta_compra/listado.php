@@ -36,6 +36,11 @@ if (isset($_POST['comprar'])) {
     $datos = consultarProducto($_POST['id']);
     if ($datos !== false) {
         $_SESSION['cesta'][$datos->id] = $datos->id;
+        $countFamilia = (!isset($_COOKIE['familia']))? 0: count($_COOKIE['familia']);
+        $existe = in_array($datos->familia,$_COOKIE['familia'],true);
+
+        if (!$existe)
+            setcookie("familia[$countFamilia]", $datos->familia, time() + 2500000);
     }
 }
 ?>
