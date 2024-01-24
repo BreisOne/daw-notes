@@ -20,12 +20,7 @@ if (!isset($_SESSION['nombre'])) {
     <title>Cesta de la compra</title>
 </head>
 <body style="background: grey">
-<div class="float float-right d-inline-flex mt-2">
-    <i class="fas fa-user mr-3 fa-2x"></i>
-    <input type="text" size='10px' value="<?php echo $_SESSION['nombre']; ?>" class="form-control
-    mr-2 bg-transparent text-white" disabled>
-    <a href="cerrar.php" class="btn btn-warning mr-2">Salir</a>
-</div>
+<?php require_once 'header.php';?>
 <br>
 <h4 class="container text-center mt-4 font-weight-bold">Tienda onLine</h4>
 <div class="container">
