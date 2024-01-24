@@ -27,6 +27,15 @@ if (!isset($_SESSION['nombre'])) {
     <p class="font-weight-bold">Pedido realizado Correctamente.</p>
     <a href="listado.php" class="btn btn-info mt-3">Hacer otra Compra</a>
 </div>
-
+<div>
+    <p>quizas te interese:</p>
+    <ul>
+        <?php
+        foreach ($_COOKIE['familia'] as $key => $value) {
+            echo "<li>$value</li>";
+        }
+        ?>
+    </ul>
+</div>
 </body>
 </html>
