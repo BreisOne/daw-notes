@@ -32,10 +32,15 @@ try {
 if (isset($_POST['vaciar'])) {
     unset($_SESSION['cesta']);
 }
-if (isset($_POST['comprar'])) {
+if (isset($_POST['comprar'])&&isset($_POST["unidades"])) {
     $datos = consultarProducto($_POST['id']);
     if ($datos !== false) {
-        $_SESSION['cesta'][$datos->id] = $datos->id;
+        
+        if(!isset($_SESSION['cesta'][$datos->id])){
+            $_SESSION['cesta'][$datos->id] = $_POST["unidades"];
+        }else{
+            $_SESSION['cesta'][$datos->id] += $_POST["unidades"];
+        }
 
         $countFamilia = (!isset($_COOKIE['familia'])) ? 0 : count($_COOKIE['familia']);
         

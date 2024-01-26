@@ -2,7 +2,7 @@
         <i class="fa fa-shopping-cart mr-2 fa-2x"></i>
         <?php
         if (isset($_SESSION['cesta'])) {
-            $cantidad = count($_SESSION['cesta']);
+            $cantidad = array_sum($_SESSION['cesta']);
             echo "<input type='text' disabled class='form-control mr-2 bg-transparent text-white' value='$cantidad' size='2px'>";
         } else {
             echo "<input type='text' disabled class='form-control mr-2 bg-transparent text-white' value='0' size='2px'>";
