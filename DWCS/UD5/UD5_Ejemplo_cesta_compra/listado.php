@@ -36,11 +36,21 @@ if (isset($_POST['comprar'])) {
     $datos = consultarProducto($_POST['id']);
     if ($datos !== false) {
         $_SESSION['cesta'][$datos->id] = $datos->id;
-        $countFamilia = (!isset($_COOKIE['familia']))? 0: count($_COOKIE['familia']);
-        $existe = in_array($datos->familia,$_COOKIE['familia'],true);
 
-        if (!$existe)
+        $countFamilia = (!isset($_COOKIE['familia'])) ? 0 : count($_COOKIE['familia']);
+        
+        if (!isset($_COOKIE['familia'])) {
             setcookie("familia[$countFamilia]", $datos->familia, time() + 2500000);
+        } else {
+            $existe = in_array($datos->familia, $_COOKIE['familia'], true);
+
+            if (!$existe) {
+                setcookie("familia[$countFamilia]", $datos->familia, time() + 2500000);
+            }
+        }
+        ;
+
+
     }
 }
 ?>
@@ -59,6 +69,7 @@ if (isset($_POST['comprar'])) {
                 <tr class="text-center">
                     <th scope="col">Añadir</th>
                     <th scope="col">Nombre</th>
+                    <th scope="col">Unidades</th>
                     <th scope="col">Añadido</th>
                 </tr>
             </thead>
@@ -66,12 +77,13 @@ if (isset($_POST['comprar'])) {
                 <?php
                 while ($filas = $stmt->fetch(PDO::FETCH_OBJ)) {
                     echo "<tr><th scope='row' class='text-center'>";
-                    echo "<form action='{$_SERVER['PHP_SELF']}' method='POST'>";
+                    echo "<form id ='addProductForm{$filas->id}' action='{$_SERVER['PHP_SELF']}' method='POST'>";
                     echo "<input type='hidden' name='id' value='{$filas->id}'>";
                     echo "<input type='submit' class='btn btn-primary' name='comprar' value='Añadir'>";
                     echo "</form>";
                     echo "</th>";
                     echo "<td>{$filas->nombre}, Precio: {$filas->pvp} (€)</td>";
+                    echo "<td><input form = 'addProductForm{$filas->id}' type='number' name ='unidades' value='1' min ='1' max = '3'></td>";
                     echo "<td class='text-center'>";
                     if (isset($_SESSION['cesta'][$filas->id])) {
                         echo "<i class='fas fa-check fa-2x'></i>";
