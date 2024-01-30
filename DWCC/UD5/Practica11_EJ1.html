@@ -12,7 +12,7 @@
             justify-content: space-between;
             flex-wrap: wrap; 
             height: 500px;
-            width: calc(100% - 20px);
+            width: calc(100%);
             background-color:  rgb(148, 245, 245);;
         }
 
@@ -39,8 +39,8 @@
             align-content: center;
             background-color: rgb(89, 94, 94);
             
-            height: calc(100% - 20px);
-            width: calc(100% - 20px);
+            height: calc(100%);
+            width: calc(100%);
         }
     </style>
 </head>
@@ -55,47 +55,62 @@
 
 </body>
 <script>
-    // document.addEventListener("load",()=>{
+
+    const IniciarJuego = ()=>{
     
-    eleccionUsuario = parseInt(prompt("Indica el coche ganador 1-2"))
-    coche1 = document.getElementById("coche1");
-    coche2 = document.getElementById("coche2");
+    let eleccionUsuario = parseInt(prompt("Indica el coche ganador 1-2"));
+    let coche1 = document.getElementById("coche1");
+    let coche2 = document.getElementById("coche2");
         
     coche1.style.left = "10px";
     coche2.style.left = "10px";
-
+    
     let num1 = 0;
     let num2 = 0;
 
-    let coche1Left = 0;
-    let coche2Left = 0;
+    let intervalId = null;
 
     const getRandomArbitrary = (min, max) => {
             return Math.floor(Math.random() * (max - min) + min);}
 
     const iniciarPartida = ()=>{
-        setInterval(moverCoches, 1500);   
+        intervalId = setInterval(moverCoches, 100);   
     }
+
+    const reiniciarJuego = () => {
+            location.reload();
+        }
+
+    const verificarLimite = (coche1, coche2) => {
+            const limitePantalla = window.innerWidth - coche1.clientWidth;
+
+            if (coche1.offsetLeft > limitePantalla || coche2.offsetLeft > limitePantalla) {
+                
+                let cocheGanador = coche1.offsetLeft > coche2.offsetLeft ? coche1: coche2;
+                let resultado = cocheGanador.id === `coche${eleccionUsuario}` ? "¡Tu coche ha ganado!" : "¡Tu coche ha perdido!";
+                
+                alert(resultado);
+                clearInterval(intervalId);
+                reiniciarJuego();
+            }
+        }
 
     const moverCoches = ()=>{
            num1 += getRandomArbitrary(0,20);
            num2 += getRandomArbitrary(0,20);
 
-           coche1.setAttribute("left", num1);
-           coche2.setAttribute("left", num2);
+           coche1.style.left = num1 +"px";
+           coche2.style.left = num2 +"px";
 
-           coche1Left = coche1.getAttribute("left");
-           coche2Left = coche2.getAttribute("left");
-
-           coche1.style.left = coche1Left +"px";
-           coche2.style.left = coche2Left +"px";
+           verificarLimite(coche1, coche2);
     }
-
 
     btnIniciar = document.getElementById("btnIniciar");
     btnIniciar.addEventListener('click', iniciarPartida);
+    }
+    
+    document.addEventListener("DOMContentLoaded", IniciarJuego);
 
-    // })
-   
+
 </script>
 </html>

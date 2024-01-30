@@ -56,7 +56,7 @@
     <body>
         <fieldset>
             <legend>Formulario</legend>
-            <form name="formulario" id="formulario" action="http://www.google.es" method="get">
+            <form name="formulario" id="formulario" method="get">
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre" />
                 <label for="apellidos">Apellidos:</label>
@@ -78,5 +78,71 @@
             <div id="intentos"></div>
         </fieldset>
     </body>
+    <script>
+         document.getElementById("formulario").addEventListener("submit", function (event) {
+            // Reiniciar mensajes de error
+            document.getElementById("errores").innerText = "";
+
+            // Validar Nombre y Apellidos
+            const nombre = document.getElementById("nombre").value;
+            const apellidos = document.getElementById("apellidos").value;
+
+            if (!nombre || !apellidos) {
+                mostrarError("Por favor, completa los campos de Nombre y Apellidos.", "nombre");
+                event.preventDefault();
+                return;
+            }
+
+            // Validar Edad
+            const edad = document.getElementById("edad").value;
+
+            if (!edad || isNaN(edad) || edad < 0 || edad > 105) {
+                mostrarError("La edad debe ser un número entre 0 y 105.", "edad");
+                event.preventDefault();
+                return;
+            }
+
+            // Validar NIF
+            const nif = document.getElementById("nif").value;
+            const regexNIF = /^\d{8}-[a-zA-Z]$/;
+
+            if (!regexNIF.test(nif)) {
+                mostrarError("Formato de NIF incorrecto. Debe tener 8 números, un guion y una letra.", "nif");
+                event.preventDefault();
+                return;
+            }
+
+            // Validar E-MAIL
+            const email = document.getElementById("email").value;
+            const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (!regexEmail.test(email)) {
+                mostrarError("Formato de E-MAIL incorrecto.", "email");
+                event.preventDefault();
+                return;
+            }
+
+            // Validar Teléfono
+            const telefono = document.getElementById("telefono").value;
+            const regexTelefono = /^\d{9}$/;
+
+            if (!regexTelefono.test(telefono)) {
+                mostrarError("Formato de Teléfono incorrecto. Debe tener 9 dígitos.", "telefono");
+                event.preventDefault();
+                return;
+            }
+
+            // Pedir confirmación de envío
+            const confirmacion = confirm("¿Estás seguro de enviar el formulario?");
+            if (!confirmacion) {
+                event.preventDefault();
+            }
+        });
+
+        function mostrarError(mensaje, campo) {
+            document.getElementById("errores").innerText = mensaje;
+            document.getElementById(campo).focus();
+        }
+    </script>
 </html>
 
