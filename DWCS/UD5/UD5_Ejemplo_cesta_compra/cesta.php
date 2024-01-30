@@ -42,7 +42,7 @@ if (isset($_SESSION['cesta'])) {
                 echo "<p class='card-text'>Carrito Vacio</p>";
             } else {
                 $total = 0;
-                echo "<table class='table table-striped table-dark mt-3'>
+                echo "<table class='table table-striped mt-3'>
                             <thead>
                                 <tr class='text-center'>
                                     <th scope='col'>Nombre</th>
