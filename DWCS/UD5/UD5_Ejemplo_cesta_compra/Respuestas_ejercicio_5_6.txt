@@ -1,0 +1,13 @@
+Ejercicio 5.
+
+En la captura 1 se ven los valores del array superglobal $_Cookies y en el código se ve como al comprobar si el valor del atributo familia
+dentro del objeto dato esta incluido en el array familia devuelve false, por lo que se añadiría ese valor al array familia. En la segunda captura
+se ve como el valor familia del objeto dato es MULTIF el cual no estaba incluido en el array, por lo que la lógica funciona correctamente.
+
+Tras setear la cookie el valor no se vería en el array superglobal immediatamente, ya que la cookie acaba de setearse en el lago servidor. Se incorporaria al array que se ve en el cliente
+en el momento de realizar la siguiente llamada get. Se podría obtener haciendo una redirección con location.
+
+Ejercicio 6.
+
+b)No existe $_SESSION antes de ejecutar la función session_start, ya que las variables de sesión aun no se han guardado en el array.
+c)Si, ya existe el array $_SESSION y contiene el nombre del usuario admin, que es con el que nos hemos logueado.

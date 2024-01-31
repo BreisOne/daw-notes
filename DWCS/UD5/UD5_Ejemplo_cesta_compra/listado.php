@@ -53,8 +53,6 @@ if (isset($_POST['comprar'])&&isset($_POST["unidades"])) {
                 setcookie("familia[$countFamilia]", $datos->familia, time() + 2500000);
             }
         }
-        ;
-
 
     }
 }
