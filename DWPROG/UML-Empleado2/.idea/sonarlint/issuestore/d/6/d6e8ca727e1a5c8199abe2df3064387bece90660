@@ -1,0 +1,11 @@
+
+0
+java:S1220""Move this file to a named package.
+g
+java:S1845"LRename field "PLUS" to prevent any misunderstanding/clash with field "plus".(αξ“¬ωÿÿÿÿ
+T
+java:S5993	"9Change the visibility of this constructor to "protected".(©”²ÿÿÿÿÿ
+O
+java:S5993"9Change the visibility of this constructor to "protected".(±Έ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(αξ“¬ωÿÿÿÿ
