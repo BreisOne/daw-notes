@@ -87,17 +87,17 @@
 
 				if(event.target.textContent == randomArray[cont]){
 				
-				clickedDiv.style.backgroundColor = 'yellow';
-				cont++;
+					clickedDiv.style.backgroundColor = 'yellow';
+					cont++;
 				
 				}else{
 				
-				clickedDiv.style.backgroundColor = 'red';
-				alert("Has Perdido");
+					clickedDiv.style.backgroundColor = 'red';
+					setTimeout(()=>{alert("Has Perdido")}, 200);
 				}
 
 				if(cont == randomArray.length){
-					alert("Enhorabuena has Ganado");
+					setTimeout(()=>{alert("Enhorabuena has Ganado")}, 200);
 				}
 
 			})
@@ -108,9 +108,10 @@
                 square.style.visibility = 'visible';
         })
 
-		setTimeout(()=>{randomArray.forEach(randNumber =>{
-                let square = document.getElementById('s'+ randNumber);
-                square.style.visibility = 'hidden';
+		setTimeout(()=>{
+				randomArray.forEach(randNumber =>{
+					let square = document.getElementById('s'+ randNumber);
+					square.style.visibility = 'hidden';
          })}, 5000);
 
 		
