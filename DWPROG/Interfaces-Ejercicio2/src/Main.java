@@ -14,6 +14,7 @@ public class Main {
         int suma1 = 0;
         int resta1 = 0;
         int multiplicar1 = 1;
+
         Iterator<Integer> iter = conjunto1.iterator();
 
         while (iter.hasNext()) {
