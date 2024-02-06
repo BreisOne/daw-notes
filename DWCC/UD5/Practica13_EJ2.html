@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>EJERCICIO 1 - PRACTICA 13</title>
+	<script type="text/javascript" ></script>
+	<style>
+		table{
+			border-collapse: collapse;
+			border: black 1px solid;
+		}
+		tr{
+			border: 1px;
+			border-style: solid;
+			border-color: black;
+			height: 100px;
+		}
+		td{
+			border-collapse: collapse;
+			border: black 1px solid;
+			width: 100px;
+			background-color: cyan;
+			align-items:center;
+			/*horizontal-align:middle;*/
+		}
+		div{
+			visibility:hidden;
+			font-family:Arial;
+			width: 100px;
+			font-size:30;
+			font-weight:bold;
+			text-align:center;
+			
+		}
+	</style>
+</head>
+<body>
+	<h1 align="center"> Debes adivinar 4 valores de las 16 celdas </h1>;
+	<table align="center">
+		<tr id="fila1">
+			<td id="1" ><div id="s1">1</div></td>
+			<td id="2"><div id="s2">2</div></td>
+			<td id="3"><div id="s3">3</div></td>
+			<td id="4"><div id="s4" >4</div></td>
+		</tr>
+		<tr id="fila2">
+			<td id="5"><div id="s5">5</div></td>
+			<td id="6"><div id="s6">6</div></td>
+			<td id="7"><div id="s7">7</div></td>
+			<td id="8"><div id="s8">8</div></td>
+		</tr>
+		<tr id="fila3">
+			<td id="9"><div id="s9">9</div></td>
+			<td id="10"><div id="s10">10</div></td>
+			<td id="11"><div id="s11">11</div></td>
+			<td id="12"><div id="s12">12</div></td>
+		</tr>
+		<tr id="fila4">
+			<td id="13"><div id="s13">13</div></td>
+			<td id="14"><div id="s14">14</div></td>
+			<td id="15"><div id="s15">15</div></td>
+			<td id="16"><div id="s16">16</div></td>
+		</tr>
+	</table>
+</body>
+<script>
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+        let randomArray = [];
+        for (let i = 0; i < 5; i++) {
+            number =  Math.floor(Math.random()*16)+1;
+            randomArray.push(number);
+        }
+
+		randomArray.sort((a, b) => a - b);
+		randomArray = new Set(randomArray);
+		randomArray = Array.from(randomArray);
+
+		let divs = document.querySelectorAll('td');
+		let cont = 0;
+
+		divs.forEach(div =>{
+			
+			div.addEventListener("contextmenu", (event)=>{
+				event.preventDefault();
+				let clickedDiv = event.target;
+
+				if(event.target.textContent == randomArray[cont]){
+				
+				clickedDiv.style.backgroundColor = 'yellow';
+				cont++;
+				
+				}else{
+				
+				clickedDiv.style.backgroundColor = 'red';
+				alert("Has Perdido");
+				}
+
+				if(cont == randomArray.length){
+					alert("Enhorabuena has Ganado");
+				}
+
+			})
+		})
+        
+        randomArray.forEach(randNumber =>{
+                let square = document.getElementById('s'+ randNumber);
+                square.style.visibility = 'visible';
+        })
+
+		setTimeout(()=>{randomArray.forEach(randNumber =>{
+                let square = document.getElementById('s'+ randNumber);
+                square.style.visibility = 'hidden';
+         })}, 5000);
+
+		
+        
+    })
+    
+
+
+    
+</script>
+</html>
