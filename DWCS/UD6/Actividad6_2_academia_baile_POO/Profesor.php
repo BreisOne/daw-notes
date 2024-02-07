@@ -7,7 +7,7 @@ final class Profesor extends Persona{
         $this->NIF = $NIF;            
     }
 
-    public function calcularSoldo(int $horasClases, float $precioClase = 16):int{
+    public function calcularSoldo(int $horasClases, float $precioClase = 16):float{
         return $horasClases * $precioClase;
     }
 
@@ -17,7 +17,7 @@ final class Profesor extends Persona{
     public function eliminarBaile(Baile $baile){
         
         foreach ($this->bailes as $indice => $baileExistente) {
-            if ($baileExistente === $baile) {
+            if ($baileExistente == $baile) {
                 unset($this->bailes[$indice]);
             }
         }
