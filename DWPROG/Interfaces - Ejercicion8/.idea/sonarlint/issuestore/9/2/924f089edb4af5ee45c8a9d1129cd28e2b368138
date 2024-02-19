@@ -1,0 +1,21 @@
+
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¶ò¿²ıÿÿÿÿ8å“•Ü1
+“
+java:S1319"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(ºŒ×ôıÿÿÿÿ8å“•Ü1
+
+java:S1319"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(ş‡ °8å“•Ü1
+‰
+java:S1319"lThe type of "listStrings" should be an interface such as "List" rather than the implementation "LinkedList".(ş‡ °8å“•Ü1
+
+java:S1319 "lThe type of "listStrings" should be an interface such as "List" rather than the implementation "LinkedList".(İß“êüÿÿÿÿ8å“•Ü1
+
+java:S1319&"lThe type of "listStrings" should be an interface such as "List" rather than the implementation "LinkedList".(á¨Ùäüÿÿÿÿ8å“•Ü1
+
+java:S1319)"lThe type of "listStrings" should be an interface such as "List" rather than the implementation "LinkedList".(ÇøÁüÿÿÿÿ8å“•Ü1
+…
+java:S1488"cImmediately return this expression instead of assigning it to the temporary variable "listStrings".(¶ò¿²ıÿÿÿÿ8å“•Ü1
+7
+java:S1220""Move this file to a named package.8å“•Ü1
+L	java:S106"+Replace this use of System.out by a logger.(éĞ«şÿÿÿÿ8˜å“•Ü1
+G	java:S106""+Replace this use of System.out by a logger.(Îıù8šå“•Ü1
