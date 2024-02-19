@@ -20,7 +20,7 @@ use clases\people\{Persoa, Profesor, Alumno};
 
 $academia = new Academia();
 echo "<h1>Academia de baile: ". $academia::ACADEMIA_NOME ."</h1>";
-$profe1 = new Profesor("Silvia", "López López", "666777888", "12345678D");
+$profe1 = new Profesor("Silvia", "López López", "666777888",new DateTimeImmutable("1985-01-01"), "12345678D");
 
 $salsa = new Baile("Salsa");
 $bachata = new Baile("Bachata", 12);
@@ -42,8 +42,8 @@ $profe1->engadir($afro2);
 // $profe1->engadirSoDiferenteNome($afro);
 // $profe1->engadirSoDiferenteNome($afro2);
 
-$alumno1 = new Alumno("Juan", "Antas Ulla", "650650650");
-$alumno2 = new Alumno("Rita", "Román Rueda", "652652652");
+$alumno1 = new Alumno("Juan", "Antas Ulla", "650650650", new DateTimeImmutable("1992-01-01"));
+$alumno2 = new Alumno("Rita", "Román Rueda", "652652652", new DateTimeImmutable("2013-01-01"));
 
 $alumno1->setNumClases(0);
 $alumno2->setNumClases(4);
@@ -55,6 +55,9 @@ $academia->engadirProfe($profe1);
 
 echo "<h2>{$profe1->getNome()}->verInformacion()</h2>";
 $profe1->verInformacion();
+
+$alumno1->verInformacion();
+$alumno2->verInformacion();
 
 echo "<h2>{$profe1->getNome()}->calcularSoldo(2)</h2>";
 $soldo = $profe1->calcularSoldo(2);

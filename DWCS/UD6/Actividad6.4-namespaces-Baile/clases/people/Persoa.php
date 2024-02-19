@@ -1,20 +1,24 @@
 <?php
 namespace clases\people;
+
+
 /**
  * Description of Persoa
  *
  * @author maria
  */
-class Persoa {
+abstract class Persoa {
    protected $nome;
    protected $apelidos;
    protected $mobil;
+   protected $fechaNacimiento;
    
    
-   public function __construct(string $nome, string $apelidos, string $mobil) {
+   public function __construct(string $nome, string $apelidos, string $mobil, \DateTimeImmutable $fechaNacimiento) {
        $this->nome = $nome;
        $this->apelidos = $apelidos;
        $this->mobil = $mobil;
+       $this->fechaNacimiento = $fechaNacimiento;
    }
 
    
@@ -42,11 +46,24 @@ class Persoa {
        $this->mobil = $mobil;
    }
 
-   public function verInformacion(){
-       $cadea = implode (" ", 
-               [$this->nome,  $this->apelidos, 
-                   "(".$this->mobil.")<br/>"]);
-       echo $cadea;
-   }
 
+    abstract public function verInformacion();
+
+    public function getFechaNacimiento()
+    {
+        return $this->fechaNacimiento;
+    }
+
+    public function setFechaNacimiento($fechaNacimiento)
+    {
+        $this->fechaNacimiento = $fechaNacimiento;
+
+        return $this;
+    }
+
+    public function esMayorEdad():bool{
+        $currentDate = new \DateTime("now");
+        $diff = $currentDate->diff($this->fechaNacimiento);
+        return $diff->y>=18;
+    }
 }

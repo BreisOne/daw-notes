@@ -2,6 +2,8 @@
 namespace clases\people;
 
 use clases\items\Baile;
+use DateTime;
+use DateTimeImmutable;
 
 /**
  * Description of Profesor
@@ -20,8 +22,9 @@ final class Profesor extends Persoa {
     public function __construct(string $nome,
             string $apelidos,
             string $mobil,
+            DateTimeImmutable $fechaNacimeinto,
             string $NIF) {
-        parent::__construct($nome, $apelidos, $mobil);
+        parent::__construct($nome, $apelidos, $mobil, $fechaNacimeinto);
         $this->NIF = $NIF;
     }
 
@@ -76,6 +79,15 @@ final class Profesor extends Persoa {
 
             echo $b->getNome() . " (idade min: " . $b->getIdadeMinima() . " anos)<br/>";
         }
+    }
+
+    public function verInformacion(){
+        $cadea = implode (" ", 
+        [$this->nome,  $this->apelidos, 
+            "(".$this->mobil.") "]);
+        echo $cadea;
+
+        echo $this->fechaNacimiento->format('Y-m-d')."<br/>";
     }
 
 }

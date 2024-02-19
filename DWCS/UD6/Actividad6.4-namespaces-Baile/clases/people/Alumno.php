@@ -1,5 +1,7 @@
 <?php
 namespace clases\people;
+
+
 /**
  * Description of Alumno
  *
@@ -16,9 +18,9 @@ final class Alumno extends Persoa {
     private $numClases;
 
     public function __construct(string $nome, string $apelidos,
-            string $mobil,
+            string $mobil, \DateTimeImmutable $fechaNacimiento,
             $numClases = 0) {
-        parent::__construct($nome, $apelidos, $mobil);
+        parent::__construct($nome, $apelidos, $mobil, $fechaNacimiento);
         $this->numClases = $numClases;
     }
 
@@ -51,6 +53,18 @@ final class Alumno extends Persoa {
             $importe = "Debe indicar previamente o número de clases";
         }
         return $importe;
+    }
+
+    public function verInformacion(){
+        if($this->esMayorEdad()){
+            $cadea = implode (" ", 
+            [$this->nome,  $this->apelidos, 
+                "(".$this->mobil.") "]);
+            echo $cadea;
+            echo $this->fechaNacimiento->format('Y-m-d')."<br/>";
+        }else{
+            echo "El alumno es menor de edad y no se puede motrar su información";
+        }
     }
 
 }
