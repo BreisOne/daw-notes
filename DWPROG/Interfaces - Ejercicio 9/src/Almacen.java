@@ -11,8 +11,8 @@ public class Almacen {
         return listaproductos;
     }
 
-    public float precioTotalBebidas(){
-        float precioTotal = 0;
+    public double precioTotalBebidas(){
+        double precioTotal = 0;
         for( Producto producto: listaproductos) {
             if (producto instanceof Bebida) {
                 precioTotal += producto.getPrecio();
@@ -21,16 +21,16 @@ public class Almacen {
         return precioTotal;
     }
 
-    public float precioTotalAlmacen(){
-        float precioTotal = 0;
+    public double precioTotalAlmacen(){
+        double precioTotal = 0;
         for( Producto producto: listaproductos) {
             precioTotal += producto.getPrecio();
         }
         return precioTotal;
     }
 
-    public float precioTotalMarca(String marca){
-        float precioTotal = 0;
+    public double precioTotalMarca(String marca){
+        double precioTotal = 0;
         for( Producto producto: listaproductos) {
             if (producto.getMarca().equals(marca)){
                 precioTotal += producto.getPrecio();

@@ -1,11 +1,11 @@
 public class Producto {
     protected String id;
     protected String nombre;
-    protected float precio;
+    protected double precio;
     protected String marca;
     protected String localizador;
 
-    public Producto( String id, String nombre, int precio, String marca, String localizador){
+    public Producto( String id, String nombre,  double precio, String marca, String localizador){
         this.id = id;
         this.nombre = nombre;
         this.precio =  precio;
@@ -29,7 +29,7 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 

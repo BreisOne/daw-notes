@@ -2,7 +2,7 @@ public class Alimento extends Producto{
 
     protected String categoria;
     protected  boolean contieneGluten;
-    public Alimento(String id, String nombre, int precio, String marca,
+    public Alimento(String id, String nombre, double precio, String marca,
                     String localizador, String categoria, boolean conteieneGluten) {
         super(id, nombre, precio, marca, localizador);
         this.categoria = categoria;

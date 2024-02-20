@@ -1,7 +1,7 @@
 public class Bebida extends Producto {
      protected String tipoEnvase;
 
-    public Bebida(String id, String nombre, int precio, String marca, String localizador, String tipoEnvase) {
+    public Bebida(String id, String nombre, double precio, String marca, String localizador, String tipoEnvase) {
         super(id, nombre, precio, marca, localizador);
         this.tipoEnvase = tipoEnvase;
     }
@@ -12,7 +12,7 @@ public class Bebida extends Producto {
     public void setTipoEnvase(String tipoEnvase) {
         this.tipoEnvase = tipoEnvase;
     }
-    public float precioFinal(){
+    public double precioFinal(){
         return precio;
     }
 

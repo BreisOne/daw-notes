@@ -1,3 +1,6 @@
 
 7
 java:S1220""Move this file to a named package.8Ÿ÷À–Ü1
+b	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(²ÿåêıÿÿÿÿ8ÀƒºÜ1
+W
+java:S1161":Add the "@Override" annotation above this method signature(ó‘ä¸8ÃƒºÜ1

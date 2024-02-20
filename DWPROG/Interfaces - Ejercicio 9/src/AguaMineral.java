@@ -1,6 +1,6 @@
 public class AguaMineral extends Bebida{
     private String origen;
-    public AguaMineral(String id, String nombre, int precio, String marca, String localizador, String tipoEnvase, String origen) {
+    public AguaMineral(String id, String nombre, double precio, String marca, String localizador, String tipoEnvase, String origen) {
         super(id, nombre, precio, marca, localizador, tipoEnvase);
         this.origen = origen;
     }
@@ -13,8 +13,8 @@ public class AguaMineral extends Bebida{
         this.origen = origen;
     }
 
-    public float precioFinal(){
-        float precio = this.precio;
+    public double precioFinal(){
+        double precio = this.precio;
 
         if (this.tipoEnvase.equals("cristal")){
             precio += precio*0.15;

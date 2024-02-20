@@ -2,7 +2,7 @@ public class Refresco extends Bebida{
     private int porcAzucar;
     private boolean tienePromo;
 
-    public Refresco(String id, String nombre, int precio, String marca,
+    public Refresco(String id, String nombre, double precio, String marca,
                     String localizador, String tipoEnvase, int porcAzucar, boolean tienePromo) {
         super(id, nombre, precio, marca, localizador, tipoEnvase);
         this.porcAzucar = porcAzucar;
@@ -24,8 +24,8 @@ public class Refresco extends Bebida{
     public void setTienePromo(boolean tienePromo) {
         this.tienePromo = tienePromo;
     }
-    public float precioFinal(){
-        float precio = this.precio;
+    public double precioFinal(){
+        double precio = this.precio;
         if (tienePromo){
             precio -= precio*0.15F;
         }
