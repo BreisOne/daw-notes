@@ -1,15 +1,15 @@
 public class Refresco extends Bebida{
-    private int porcAzucar;
+    private double porcAzucar;
     private boolean tienePromo;
 
     public Refresco(String id, String nombre, double precio, String marca,
-                    String localizador, String tipoEnvase, int porcAzucar, boolean tienePromo) {
+                    String localizador, String tipoEnvase, double porcAzucar, boolean tienePromo) {
         super(id, nombre, precio, marca, localizador, tipoEnvase);
         this.porcAzucar = porcAzucar;
         this.tienePromo = tienePromo;
     }
 
-    public int getPorcAzucar() {
+    public double getPorcAzucar() {
         return porcAzucar;
     }
 

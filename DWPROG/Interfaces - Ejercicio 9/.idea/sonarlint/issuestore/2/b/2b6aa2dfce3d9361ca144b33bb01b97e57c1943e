@@ -1,10 +1,11 @@
 
 {
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(é¼ú–ÿÿÿÿÿ8¾Ûà—Ü1
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(é¼ú–ÿÿÿÿÿ8‡§»Ü1
 ’
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(„ªÑúÿÿÿÿ8¾Ûà—Ü1
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(„ªÑúÿÿÿÿ8‡§»Ü1
 
-java:S1319	"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰±¾¯8¿Ûà—Ü1
+java:S1319
+"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰±¾¯8‡§»Ü1
 7
-java:S1220""Move this file to a named package.8¿Ûà—Ü1
-L	java:S106,"+Replace this use of System.out by a logger.(Ûö£¦úÿÿÿÿ8ÉÛà—Ü1
+java:S1220""Move this file to a named package.8ˆ§»Ü1
+L	java:S106."+Replace this use of System.out by a logger.(Ûö£¦úÿÿÿÿ8–§»Ü1

@@ -1,5 +1,5 @@
 public class Bebida extends Producto {
-     protected String tipoEnvase;
+    protected String tipoEnvase;
 
     public Bebida(String id, String nombre, double precio, String marca, String localizador, String tipoEnvase) {
         super(id, nombre, precio, marca, localizador);
