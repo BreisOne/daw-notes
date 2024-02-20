@@ -1,0 +1,17 @@
+
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(·ùÔŠ8…øØ¼Ü1
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(•Ä¿8…øØ¼Ü1
+d
+java:S1192"GDefine a constant instead of duplicating this literal "accion" 4 times.(Ó²—æ8†øØ¼Ü1
+†
+java:S13192"iThe type of "arrayList" should be an interface such as "List" rather than the implementation "ArrayList".(ÈƒÚò8†øØ¼Ü1
+‹
+java:S1319>"iThe type of "arrayList" should be an interface such as "List" rather than the implementation "ArrayList".(­´ÕÚùÿÿÿÿ8†øØ¼Ü1
+7
+java:S1220""Move this file to a named package.8†øØ¼Ü1
+G	java:S106,"+Replace this use of System.out by a logger.(çì¦˜8ìùØ¼Ü1
+L	java:S106-"+Replace this use of System.out by a logger.(üõº©ûÿÿÿÿ8ìùØ¼Ü1
+L	java:S106."+Replace this use of System.out by a logger.(‘‚´Óùÿÿÿÿ8íùØ¼Ü1
+L	java:S106/"+Replace this use of System.out by a logger.(î¦¯Ôùÿÿÿÿ8âõß¼Ü1
