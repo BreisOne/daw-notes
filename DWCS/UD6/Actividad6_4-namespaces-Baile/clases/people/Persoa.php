@@ -8,7 +8,7 @@ use traits\Logger;
  *
  * @author maria
  */
-abstract class Persoa
+abstract class Persoa implements \JsonSerializable
 {
     protected $nome;
     protected $apelidos;
@@ -61,7 +61,7 @@ abstract class Persoa
 
     public function jsonSerialize()
     {
-        Logger->log($this);
+        $this->log("Serializando...");
 
         $nome_apelidos = join(" ", [$this->nome, $this->apelidos], );
         return ["nome_apelidos" => $nome_apelidos, "mobil" => $this->mobil];

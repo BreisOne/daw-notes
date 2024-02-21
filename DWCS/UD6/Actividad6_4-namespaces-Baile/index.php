@@ -76,6 +76,14 @@ echo "<h2>{$profe1->getNome()}->eliminar baile...</h2>";
 $profe1->eliminar(new Baile("AFRO"));
 $profe1->mostrarBailes();
 
+echo "<pre>";
+echo json_encode($profe1, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+echo "</pre>";
+
+echo "<pre>";
+echo json_encode($alumno2, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+echo "</pre>";
+
 
 
 
