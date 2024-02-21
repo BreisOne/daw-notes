@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "titulo": "Lista de la compra",
+    "contenido": "Leche, Agua, Pan"
+     
+  },
+  {
+    "id": 2,
+    "titulo": "TO DO List",
+    "contenido": "Reservar restaurante el 24/12/2022, Comprar los regalos"
+  },
+  {
+    "id": 3,
+    "titulo": "Reunión de departamento",
+    "contenido": "Solicitar aumento de presupuesto, Felicitar al personal"
+  }
+]
