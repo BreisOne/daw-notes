@@ -1,0 +1,19 @@
+li {
+    list-style: none;
+}
+label{
+    width: 150px;
+    float:left;
+    margin-bottom:5px;     
+}
+input,select {
+    width:150px;
+    float:left;
+    margin-bottom:5px;
+}
+fieldset{
+    background:#cbf0f0;
+    width:350px;
+    border: thick solid #306;
+}
+

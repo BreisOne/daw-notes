@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear vehiculos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Crear Vehiculo</h1>
+  <fieldset>
+   
+    <form action="" name="formulario" id="crearVehiculos" action="" method="get">
+
+      <label for="modelo">Modelo:</label>
+      <input type="text" id="modelo" />
+      <label for="marca">Marca </label>
+      <input type="text" id="marca" />
+      <label for="precio">Precio </label>
+      <input type="number" id="precio" />
+      <label for="km">Km </label>
+      <input type="number" id="km" />
+      <input type="submit" value="Crear vehiculo" />
+    </form>
+   
+  
+  </fieldset>
+  <hr><hr>
+
+  <div>
+    <button id="mostrar">Mostrar</button>
+  </div>
+    <div id="divVehiculos"></div>
+</body>
+<script>
+
+class Vehiculo {
+			constructor(modelo, marca, precio, km) {
+				this.modelo = modelo;
+				this.marca = marca;
+				this.precio = precio;
+        this.km = km;
+			}
+
+      getInfo() {
+      return this.modelo + ' ' + this.marca + ' - Precio: ' + this.precio + ' - Kilómetros: ' + this.km;
+  }
+    }
+let coches = []
+let divCoches = document.getElementById("divVehiculos");
+let botonMostrar = document.getElementById("mostrar");
+
+document.getElementById("crearVehiculos").addEventListener("submit", function (event){
+      event.preventDefault();
+      let modelo = document.getElementById("modelo").value;
+      let marca = document.getElementById("marca").value;
+      let precio = document.getElementById("precio").value;
+      let km = document.getElementById("km").value;
+
+      let coche = new Vehiculo(modelo, marca, precio, km);
+      console.log(coche);
+
+      coches.push(coche);
+     
+})
+
+
+const mostrar = ()=>{
+  coches.forEach((coche)=> {
+    let divCoche = document.createElement("p");
+    
+    divCoche.innerText = coche.getInfo();
+
+    divCoches.appendChild(divCoche);
+
+    console.log(divCoches);
+  }
+  )
+}
+
+botonMostrar.addEventListener('click', mostrar());
+
+
+
+
+</script>
+
+</html>
