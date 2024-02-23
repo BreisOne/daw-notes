@@ -1,0 +1,187 @@
+1
+00:00:00,000 --> 00:00:02,000
+[Peter] This was a pretty tough problem.
+
+2
+00:00:02,000 --> 00:00:05,000
+It wasn't only a single gold star problem. It was a 2 gold star problem.
+
+3
+00:00:05,000 --> 00:00:08,000
+It involves combining a lot of things that you already knew,
+
+4
+00:00:08,000 --> 00:00:10,000
+including something new, completely new.
+
+5
+00:00:10,000 --> 00:00:14,000
+But that's part of being a programmer is combining things that you know
+
+6
+00:00:14,000 --> 00:00:16,000
+and don't know together to solve new problems.
+
+7
+00:00:16,000 --> 00:00:18,000
+This is a difficult problem.
+
+8
+00:00:18,000 --> 00:00:20,000
+You may not know how to do every step, but we can start
+
+9
+00:00:20,000 --> 00:00:23,000
+by working backwards from our output.
+
+10
+00:00:23,000 --> 00:00:25,000
+Sometimes it's easier to solve hard problems this way
+
+11
+00:00:25,000 --> 00:00:28,000
+by breaking them down and even starting from the result.
+
+12
+00:00:28,000 --> 00:00:30,000
+We know what our result should be.
+
+13
+00:00:30,000 --> 00:00:33,000
+As described before, 3.14 and so on
+
+14
+00:00:33,000 --> 00:00:35,000
+should result in printing 3.
+
+15
+00:00:35,000 --> 00:00:38,000
+And 27.63 should result in printing 28.
+
+16
+00:00:38,000 --> 00:00:42,000
+To get this, we printed everything before the decimal point.
+
+17
+00:00:42,000 --> 00:00:45,000
+We did this by printing everything out from a string--
+
+18
+00:00:45,000 --> 00:00:48,000
+let's say we found it and called it s--
+
+19
+00:00:48,000 --> 00:00:52,000
+before the location of the decimal point.
+
+20
+00:00:52,000 --> 00:00:57,000
+Let's say that location is specified by an integer, point.
+
+21
+00:00:57,000 --> 00:01:01,000
+So here s needed to be
+
+22
+00:01:01,000 --> 00:01:03,000
+3. something.
+
+23
+00:01:03,000 --> 00:01:06,000
+We don't really know what it is right now.
+
+24
+00:01:06,000 --> 00:01:10,000
+In the second example with 27 as the initial starting point,
+
+25
+00:01:10,000 --> 00:01:13,000
+s = 28 and so on.
+
+26
+00:01:13,000 --> 00:01:15,000
+And remember, these had to be strings.
+
+27
+00:01:15,000 --> 00:01:17,000
+That was what s should have been.
+
+28
+00:01:17,000 --> 00:01:19,000
+Now we need point.
+
+29
+00:01:19,000 --> 00:01:23,000
+Point represents the location of the decimal point in each string.
+
+30
+00:01:23,000 --> 00:01:26,000
+We can see that from looking at our string.
+
+31
+00:01:26,000 --> 00:01:28,000
+Given s, we know how to find point.
+
+32
+00:01:28,000 --> 00:01:31,000
+It's using the find command.
+
+33
+00:01:31,000 --> 00:01:34,000
+In order to get s, we probably had it as some form of number,
+
+34
+00:01:34,000 --> 00:01:37,000
+and we turned it into a string using str.
+
+35
+00:01:37,000 --> 00:01:40,000
+Now the question is, what did num equal?
+
+36
+00:01:40,000 --> 00:01:43,000
+To figure out what we want num to be, all we have to do is look at s,
+
+37
+00:01:43,000 --> 00:01:47,000
+since s is just the string form of num.
+
+38
+00:01:47,000 --> 00:01:51,000
+Here s is the string 3 with some change.
+
+39
+00:01:51,000 --> 00:01:55,000
+Num is going to be the same thing, but as a number instead of a string.
+
+40
+00:01:55,000 --> 00:01:58,000
+And in our second example, we have the same situation,
+
+41
+00:01:58,000 --> 00:02:03,000
+except num is going to be 28 with some decimal remainder.
+
+42
+00:02:03,000 --> 00:02:10,000
+The question is, how did we turn our initial value x into num?
+
+43
+00:02:10,000 --> 00:02:14,000
+We want this method to work for any number x,
+
+44
+00:02:14,000 --> 00:02:16,000
+not just the two we have listed here.
+
+45
+00:02:16,000 --> 00:02:20,000
+So if the tenth place is .5 or greater,
+
+46
+00:02:20,000 --> 00:02:24,000
+we want to increase the entire number x to the next nearest whole number.
+
+47
+00:02:24,000 --> 00:02:28,000
+One way to do this is by simply adding .5, and we're done.

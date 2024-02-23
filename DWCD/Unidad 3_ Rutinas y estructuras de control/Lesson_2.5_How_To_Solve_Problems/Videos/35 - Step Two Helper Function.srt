@@ -1,0 +1,39 @@
+1
+00:00:00,180 --> 00:00:04,130
+So here's my code for the "date is before" helper procedure. If year 1 is before
+
+2
+00:00:04,130 --> 00:00:08,414
+year 2 then we can return true right away. We don't care about the months and
+
+3
+00:00:08,414 --> 00:00:11,600
+the days if the years are different. If the years are equal then we need to look
+
+4
+00:00:11,600 --> 00:00:15,376
+at the months. If month 1 is before month 2, we return true. If the month's were
+
+5
+00:00:15,376 --> 00:00:19,027
+the same, then we look at the days. And note that we don't have elses here. But
+
+6
+00:00:19,027 --> 00:00:22,803
+if we don't hit the returns we're going to fall through to this last statement
+
+7
+00:00:22,803 --> 00:00:26,980
+and return False. And that could happen if either year 1 is greater than year 2,
+
+8
+00:00:26,980 --> 00:00:30,945
+or the years are equal and month 1 is greater than month 2, or the months are
+
+9
+00:00:30,945 --> 00:00:34,688
+equal and day 1 is greater than day 2. In all of those cases, the first date is
+
+10
+00:00:34,688 --> 00:00:37,273
+not in before the second date and we should return false.

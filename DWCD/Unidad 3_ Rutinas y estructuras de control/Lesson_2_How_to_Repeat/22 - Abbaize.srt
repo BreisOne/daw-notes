@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:03,800
+For this quiz, your goal is to define a procedure.
+
+2
+00:00:03,800 --> 00:00:06,000
+We'll call it abbaize.
+
+3
+00:00:06,000 --> 00:00:08,000
+This is very useful if you need to come up with names,
+
+4
+00:00:08,000 --> 00:00:12,000
+and what it does is take 2 strings as its inputs and outputs a string
+
+5
+00:00:12,000 --> 00:00:18,000
+that is the first input, followed by 2 repetitions of the second input, followed by the first input.
+
+6
+00:00:18,000 --> 00:00:25,000
+As an example, if we called abbaize, passing in the string 'a' and the string 'b'--
+
+7
+00:00:25,000 --> 00:00:26,000
+single character strings--
+
+8
+00:00:26,000 --> 00:00:32,000
+what we should get as a result is the string 'abba'.
+
+9
+00:00:32,000 --> 00:00:40,000
+If we called abbaize, passing in the string 'dog' and the string 'cat',
+
+10
+00:00:40,000 --> 00:00:45,000
+what we should get is the string 'dogcatcatdog',
+
+11
+00:00:45,000 --> 00:00:47,000
+and there aren't any spaces between the strings.
+
+12
+00:00:47,000 --> 00:00:49,000
+They're just all pasted together.

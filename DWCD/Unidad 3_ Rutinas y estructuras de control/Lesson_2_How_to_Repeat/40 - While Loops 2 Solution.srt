@@ -1,0 +1,235 @@
+1
+00:00:00,000 --> 00:00:03,000
+So the answer is: this loop will essentially run forever.
+
+2
+00:00:03,000 --> 00:00:05,000
+It won't run till the end of the universe,
+
+3
+00:00:05,000 --> 00:00:08,000
+because we'll probably have something else happen to our computer before that.
+
+4
+00:00:08,000 --> 00:00:11,000
+But there's no stopping condition for the "while" loop.
+
+5
+00:00:11,000 --> 00:00:13,000
+The "while" test will never become False.
+
+6
+00:00:13,000 --> 00:00:15,000
+We start with "i" equals 1.
+
+7
+00:00:15,000 --> 00:00:18,000
+We keep increasing by 2, so the values that I will have
+
+8
+00:00:18,000 --> 00:00:26,000
+will be 1, 3, 5, 7, 9, 11, and so forth.
+
+9
+00:00:26,000 --> 00:00:29,000
+The loop test checks if "i" is equal to 10.
+
+10
+00:00:29,000 --> 00:00:31,000
+If "i" is not equal to 10, we keep going.
+
+11
+00:00:31,000 --> 00:00:35,000
+So if "i" is not equal to 10, we're going to keep going through the loop.
+
+12
+00:00:35,000 --> 00:00:37,000
+"i" will never become 10--we skip 10.
+
+13
+00:00:37,000 --> 00:00:40,000
+The loop test is never True--that means the "while" loop just keeps going
+
+14
+00:00:40,000 --> 00:00:43,000
+forever and ever, never finishing.
+
+15
+00:00:43,000 --> 00:00:45,000
+I'll show you what happens when we run that.
+
+16
+00:00:45,000 --> 00:00:48,000
+And I'm going to show this running in the Python shell
+
+17
+00:00:48,000 --> 00:00:54,000
+instead of running through the Web browser ID that you've been using so far in the class.
+
+18
+00:00:54,000 --> 00:00:56,000
+And the reason for that is we can see more output.
+
+19
+00:00:56,000 --> 00:01:00,000
+We can run longer things that--the way you run the programs for class,
+
+20
+00:01:00,000 --> 00:01:03,000
+there's a limit to how long they can run and how big the output can be.
+
+21
+00:01:03,000 --> 00:01:05,000
+With the shell, there's no limit like that,
+
+22
+00:01:05,000 --> 00:01:07,000
+so I can show you a longer execution.
+
+23
+00:01:07,000 --> 00:01:09,000
+There are instructions on the Web site,
+
+24
+00:01:09,000 --> 00:01:12,000
+if you want to run programs yourself in the Python shell.
+
+25
+00:01:12,000 --> 00:01:14,000
+There are lots of different ways to do that, and instructions for how to do that
+
+26
+00:01:14,000 --> 00:01:16,000
+on different platforms.
+
+27
+00:01:16,000 --> 00:01:18,000
+It is not necessary to continue with the class,
+
+28
+00:01:18,000 --> 00:01:21,000
+but it will make it easier to see what's going on here.
+
+29
+00:01:21,000 --> 00:01:23,000
+So here's the code.
+
+30
+00:01:23,000 --> 00:01:26,000
+I'm going to enter the code that we had,
+
+31
+00:01:26,000 --> 00:01:31,000
+so we have "i" is assigned 1,
+
+32
+00:01:31,000 --> 00:01:34,000
+and then the loop, "while i is not equal to 10".
+
+33
+00:01:34,000 --> 00:01:36,000
+We're going to increase "i" by 2,
+
+34
+00:01:36,000 --> 00:01:38,000
+and then we're going to print "i".
+
+35
+00:01:38,000 --> 00:01:40,000
+So now when I type return one more time,
+
+36
+00:01:40,000 --> 00:01:42,000
+this "while" loop will start running,
+
+37
+00:01:42,000 --> 00:01:44,000
+and we'll see it print out the numbers
+
+38
+00:01:44,000 --> 00:01:47,000
+and it will keep going as long as we let it keep going.
+
+39
+00:01:47,000 --> 00:01:49,000
+So here we go.
+
+40
+00:01:49,000 --> 00:01:52,000
+We see 3, 5, 7, notes keeping going, really fast.
+
+41
+00:01:52,000 --> 00:01:55,000
+So at the top, you can see the first 5 numbers:
+
+42
+00:01:55,000 --> 00:01:58,000
+it started at 3, 5, 7, 9, 11.
+
+43
+00:01:58,000 --> 00:02:00,000
+Since it skipped 10, the loop didn't stop.
+
+44
+00:02:00,000 --> 00:02:02,000
+This condition was never False.
+
+45
+00:02:02,000 --> 00:02:07,000
+And it keeps going--and it will keep going for as long as we let it print
+
+46
+00:02:07,000 --> 00:02:10,000
+or until our computer runs out of memory or power.
+
+47
+00:02:10,000 --> 00:02:12,000
+So a loop that never stops like this
+
+48
+00:02:12,000 --> 00:02:14,000
+is what we call an infinite loop.
+
+49
+00:02:14,000 --> 00:02:17,000
+That means it keeps going forever, and if you run
+
+50
+00:02:17,000 --> 00:02:20,000
+programs on computers, you've probably encountered them a lot--
+
+51
+00:02:20,000 --> 00:02:22,000
+not just in the program that you just wrote,
+
+52
+00:02:22,000 --> 00:02:24,000
+that we just used for this quiz,
+
+53
+00:02:24,000 --> 00:02:27,000
+but oftentimes, when your software hangs
+
+54
+00:02:27,000 --> 00:02:29,000
+and gets stuck doing something--that's what's going on,
+
+55
+00:02:29,000 --> 00:02:31,000
+that there's some mistake that a programmer made.
+
+56
+00:02:31,000 --> 00:02:34,000
+We call that a bug--there's a bug in the program,
+
+57
+00:02:34,000 --> 00:02:37,000
+and it's stuck in an infinite loop; it's never going to make any progress.
+
+58
+00:02:37,000 --> 00:02:41,000
+It's got stuck in something where the test condition will never be True
+
+59
+00:02:41,000 --> 99:59:59,000
+and it's going to keep going forever.

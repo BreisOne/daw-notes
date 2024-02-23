@@ -1,0 +1,31 @@
+1
+00:00:00,120 --> 00:00:02,270
+The answer is, all of these are computer programs except
+
+2
+00:00:02,270 --> 00:00:04,150
+for the slice of toast. In general, if you can
+
+3
+00:00:04,150 --> 00:00:06,990
+eat something it's not a computer program. The programs that
+
+4
+00:00:06,990 --> 00:00:09,220
+you write in this class will be Python code. Those
+
+5
+00:00:09,220 --> 00:00:11,250
+will be input to another program, which is a Python
+
+6
+00:00:11,250 --> 00:00:14,710
+interpreter that follows instructions in your code, and it does
+
+7
+00:00:14,710 --> 00:00:17,460
+that by following the instructions in its code. And you'll
+
+8
+00:00:17,460 --> 00:00:19,140
+be able to run all that using your web browser.

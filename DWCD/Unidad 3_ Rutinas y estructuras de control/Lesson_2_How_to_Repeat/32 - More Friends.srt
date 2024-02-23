@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:03,369
+So for the next quiz, I'm going to make this a little more interesting
+
+2
+00:00:03,369 --> 00:00:06,600
+and assume I'm not quite so picky about who my friends are.
+
+3
+00:00:06,600 --> 00:00:10,000
+I'm going to be friends with people whose name starts with either "D"
+
+4
+00:00:10,000 --> 00:00:12,000
+or the letter "N".
+
+5
+00:00:12,000 --> 00:00:16,000
+So now the question is: we're still going to define the procedure, is<u>friend</u>
+
+6
+00:00:16,000 --> 00:00:18,000
+but I've changed my definition of a friend,
+
+7
+00:00:18,000 --> 00:00:21,000
+so now we assume that I'm friends with everyone whose name starts with
+
+8
+00:00:21,000 --> 00:00:24,000
+either the letter "D' or the letter "N", but no one else.
+
+9
+00:00:24,000 --> 00:00:27,000
+So this result would still be correct--that would be correct.
+
+10
+00:00:27,000 --> 00:00:32,000
+If we asked: is<u>friend a name that starts with the letter "N,"</u>
+
+11
+00:00:32,000 --> 00:00:35,377
+let's say "Ned,"
+
+12
+00:00:35,377 --> 00:00:38,000
+then we should also get the result, True
+
+13
+00:00:38,000 --> 00:00:42,000
+So see if you can figure out how to define "is<u>friend" for this new definition.</u>

@@ -1,0 +1,43 @@
+1
+00:00:00,000 --> 00:00:03,000
+[Male] The next group of questions test how well you understand
+
+2
+00:00:03,000 --> 00:00:05,000
+strings in Python.
+
+3
+00:00:05,000 --> 00:00:09,000
+The question is given any string s, so the variable s
+
+4
+00:00:09,000 --> 00:00:12,000
+holds the value of any string,
+
+5
+00:00:12,000 --> 00:00:17,000
+which of the following always have the same exact value as s?
+
+6
+00:00:17,000 --> 00:00:21,000
+And as a reminder, you should be careful
+
+7
+00:00:21,000 --> 00:00:24,000
+to remember that s could be the empty string.
+
+8
+00:00:24,000 --> 00:00:26,000
+Here are the choices.
+
+9
+00:00:26,000 --> 00:00:28,000
+Check the box corresponding to each expression
+
+10
+00:00:28,000 --> 00:00:31,000
+that always has the same value as s
+
+11
+00:00:31,000 --> 99:59:59,000
+no matter what string s refers to.

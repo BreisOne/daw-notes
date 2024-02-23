@@ -1,0 +1,39 @@
+1
+00:00:00,200 --> 00:00:03,728
+So now, it's time to see if you can define a daysBetweenDates procedure that
+
+2
+00:00:03,728 --> 00:00:07,256
+will produce the approximately correct results using the current nextDay
+
+3
+00:00:07,256 --> 00:00:11,108
+procedure. If we add a correct nextDay procedure, your days between dates should
+
+4
+00:00:11,108 --> 00:00:14,936
+produce exactly correct results. And I'm going to suggest one thing is a hint.
+
+5
+00:00:14,936 --> 00:00:18,764
+Doing days between dates by itself is still going to be more complicated than we
+
+6
+00:00:18,764 --> 00:00:22,256
+want one procedure to be. So, I'm going to encourage you to start by defining a
+
+7
+00:00:22,256 --> 00:00:25,819
+helper procedure. And if you're following the problem solving strategy we've set
+
+8
+00:00:25,819 --> 00:00:29,236
+out so far, you should test the helper procedure independently before you try to
+
+9
+00:00:29,236 --> 00:00:32,826
+build the complete daysBetweenDates procedure. But I'm going to leave it up to
+
+10
+00:00:32,826 --> 00:00:36,529
+you to figure out what would be a useful helper procedure and how to do this.

@@ -1,0 +1,51 @@
+1
+00:00:00,004 --> 00:00:03,718
+So let's try an example. Suppose we wanted to find the days between dates. 2013
+
+2
+00:00:03,718 --> 00:00:08,686
+Janurary 24, and 2013 June 29th. If we were going to do this as a human we might
+
+3
+00:00:08,686 --> 00:00:13,366
+look at a calendar. I happen to have a calendar handy and thanks to my auntie in
+
+4
+00:00:13,366 --> 00:00:17,086
+Belfast for sending me the calendar and we could count the days using the
+
+5
+00:00:17,086 --> 00:00:22,463
+calendar so let's look at the calendar. We have our starting day is January 24
+
+6
+00:00:22,463 --> 00:00:27,581
+and we might count the days between January 24. How many do we have left in
+
+7
+00:00:27,581 --> 00:00:32,701
+January. So there would be 1,2, 3, 4, 5, 6, 7 days left in January. So there'd
+
+8
+00:00:32,701 --> 00:00:37,890
+be seven days in January. Then we have, have all of February, all of February is
+
+9
+00:00:37,890 --> 00:00:46,209
+28 days. Then we have all of March, 31 days. All of April, 30 days. All of May,
+
+10
+00:00:46,209 --> 00:00:52,367
+31 days. And then we have June. We don't want to count all of June because we
+
+11
+00:00:52,367 --> 00:00:58,132
+are stopping on June 29th, so we are going to add 29 days. From June, and if we
+
+12
+00:00:58,132 --> 00:01:03,206
+sum all those up we should get our answer. And as a human we know how to compute
+
+13
+00:01:03,206 --> 00:01:07,072
+sums by entering sums into Google, and we get 156.

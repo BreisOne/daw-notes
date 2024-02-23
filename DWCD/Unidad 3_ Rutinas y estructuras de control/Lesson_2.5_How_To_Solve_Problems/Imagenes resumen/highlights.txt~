@@ -1,0 +1,129 @@
+
+01 1 aprendizaje para toda la vida
+
+extraer conclusiones generales sobre problemas particulares
+
+02 Enunciar el problema
+
+POR DONDE EMPEZAR
+
+03 - Por dónde empezar?
+04 - solucion - si no entiendes el problema, no puedes escribir el algoritmo
+
+05 - un problema en computación está definido por su entrada y su salida: el
+ procedimiento solución mapea las entradas a las salidas.
+
+CUALES SON LAS ENTRADAS
+
+06 - regla 1: cuáles son las entradas?
+	regla 0: que no cunda el pánico
+
+07 - Entradas válidas: PROGRAMACIÓN DEFENSIVAS: libro Code Complete
+
+08 - Representación de los datos de entrada: limitada por lo que sabemos hasta el 
+tema 2
+
+
+CUALES SON LAS SALIDAS
+
+09 
+
+10 - devolver un número es más útil que imprimirlo: luego puedes hacer otros cálculos
+con él
+También por cohesión: la rutina sólo debe hacer una cosa.
+
+11
+
+CASOS TEST - ENTENDER LA RELACION ENTRE LA ENTRADA Y LA SALIDA
+
+12
+13
+14
+14 - Trabajar con ejemplos, que luego serán nuestros CASOS TEST.
+15
+
+RESOLVER EL PROBLEMA COMO HUMANO ANTES DE CODIFICARLO- APPES
+
+16 
+17 resuelvo a mano el primer caso test
+18
+
+CUANDO EMPEZAR A CODIFICAR:
+
+19 PSEUDOCODIGO
+20
+
+BRAINDEAD CODE: SOLUCION MAS SIMPLE
+
+21 Si se presentan casos especiales => buscar otra solución más simple,
+una solución mecánica, sin atajos "de programador", pues a las máquinas se les dan bien las soluciones mecánicas :)
+22
+23 potencia de una maquina
+24
+25 NO OPTIMIZAR prematuramente: TDD - refactorizar cuando toque
+
+26 DIVIDE y VENCERAS: modulos necesarios
+
+27 comenzar por el que este en el pseudocodigo
+28 ejercicio: programar rutina
+29
+
+30 MANTENER el CODIGO BAJO CONTROL: solucion aproximada aceptable
+- lo entiendo
+- se lo que hace
+
+31 
+32 No programar los detalles de la rutina aproximada, sino avanzar en la construcción
+del sistema para averiguar si la estrategia es correcta.
+
+Siguientes rutinas:
+33 dateIsBefore está dentro de daysBetweenDates
+34
+35 codigo dateIsBefore
+36 codigo daysBetweenDates -  Casos test
+37 aserción entradas inválidas
+38 
+
+39 Estamos cerca de la solución sin manejar toda la complejidad.
+
+40
+41 Incrememtos al código mediante el ciclo TDD: nueva funcionalidad => test => codigo + refactorizar => pruebas de regresión: el nuevo código pasa todos los casos test?
+
+43 comenzamos por daysInMonth para que devuelva 30 0 31 días.
+
+escribo un método Stub: http://es.wikipedia.org/wiki/Stub
+
+código que sustituye una funcionalidad: simula el comportamiento de código existente
+
+44
+45 modificar el código para incluir meses de 31 días y años bisiestos
+
+46 AUTOMATIZAR CASOS TEST, más o menos.
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

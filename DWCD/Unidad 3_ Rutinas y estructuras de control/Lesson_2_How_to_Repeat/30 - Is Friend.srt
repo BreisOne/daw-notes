@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:02,000
+Your goal for this quiz is to define a procedure,
+
+2
+00:00:02,000 --> 00:00:07,000
+is<u>friend, that takes a string as its input, and outputs a Boolean value</u>
+
+3
+00:00:07,000 --> 00:00:10,000
+indicating if the input string is the name of a friend.
+
+4
+00:00:10,000 --> 00:00:13,000
+This would be very hard to do, in general,
+
+5
+00:00:13,000 --> 00:00:17,000
+but we're going to assume that I have a very strict policy on friends.
+
+6
+00:00:17,000 --> 00:00:20,000
+I'm friends with everyone whose name begins with the letter "D"--and no one else.
+
+7
+00:00:20,000 --> 00:00:25,000
+So if the input name begins with the letter "D", your procedure should output True;
+
+8
+00:00:25,000 --> 00:00:27,000
+otherwise, it should output False.
+
+9
+00:00:27,000 --> 00:00:32,000
+So, for example, if we did: print is<u>friend('Diane'),</u>
+
+10
+00:00:32,000 --> 00:00:34,000
+the output should be True and if we did:
+
+11
+00:00:34,000 --> 00:00:36,000
+print is<u>friend('Fred'),</u>
+
+12
+00:00:36,000 --> 00:00:39,000
+you should see the output False.

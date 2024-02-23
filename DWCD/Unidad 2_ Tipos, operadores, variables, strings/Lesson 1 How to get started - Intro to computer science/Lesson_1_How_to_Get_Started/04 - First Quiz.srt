@@ -1,0 +1,59 @@
+1
+00:00:00,708 --> 00:00:03,666
+So we are going to have many quizzes throughout each unit.
+
+2
+00:00:03,666 --> 00:00:07,610
+The point of the quiz is to check that you understand what we have covered.
+
+3
+00:00:07,610 --> 00:00:12,357
+Some of the quizzes will be fairly straightforward just to see if you followed what we said.
+
+4
+00:00:12,357 --> 00:00:17,609
+Other quizzes will be more challenging and require you to put together several ideas that we have covered.
+
+5
+00:00:17,609 --> 00:00:25,041
+These quizzes don't count towards your grades. You will be able to try them as many times as you want until you hopefully get the answer right.
+
+6
+00:00:25,041 --> 00:00:30,577
+It certainly will be valuable to try to get the answer right the first time. But they shouldn't be stressful.
+
+7
+00:00:30,577 --> 00:00:33,987
+They are meant to keep you engaged in the lecture and to make sure you are understanding things.
+
+8
+00:00:33,987 --> 00:00:40,627
+After each quiz there will be an explanation and answer that often will go in more depth than just answering the quiz correctly.
+
+9
+00:00:40,627 --> 00:00:46,953
+So for the first quiz and to get started practicing quizzes our question is what is the goal of Unit 1?
+
+10
+00:00:46,953 --> 00:00:50,618
+So there are 4 choices: You can check all the choices that you think are good answers.
+
+11
+00:00:50,618 --> 00:00:54,283
+The first choice is that the goal is to get started programming.
+
+12
+00:00:54,283 --> 00:00:57,950
+The second choice is to learn some important computer science concepts.
+
+13
+00:00:57,950 --> 00:01:03,482
+The third choice is to write some code that extracts a link from a webpage.
+
+14
+00:01:03,482 --> 00:01:09,379
+The fourth choice is to write code to rank web pages.
+
+15
+00:01:09,379 --> 00:01:14,391
+So that is first quiz. Check as many answers as you think are correct.

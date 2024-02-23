@@ -1,0 +1,343 @@
+1
+00:00:00,000 --> 00:00:04,000
+For the next quiz, you are going to define a procedure that can help
+
+2
+00:00:04,000 --> 00:00:07,000
+solve the problem of figuring out how many different ways there are
+
+3
+00:00:07,000 --> 00:00:09,000
+to order objects.
+
+4
+00:00:09,000 --> 00:00:11,000
+Here is the problem we want to solve.
+
+5
+00:00:11,000 --> 00:00:13,000
+Suppose we have four blocks.
+
+6
+00:00:13,000 --> 00:00:15,000
+We have a red block.
+
+7
+00:00:15,000 --> 00:00:17,000
+We have a blue block.
+
+8
+00:00:17,000 --> 00:00:21,000
+We have a purple block and we have a green block.
+
+9
+00:00:21,000 --> 00:00:26,000
+We have a baby who wants to play with the blocks, and we want to know how
+
+10
+00:00:26,000 --> 00:00:29,000
+long can the baby play with the blocks without getting bored.
+
+11
+00:00:29,000 --> 00:00:33,000
+What the baby wants to do is try all the different ways of arranging the blocks.
+
+12
+00:00:33,000 --> 00:00:35,000
+The baby will stack the blocks in a tower.
+
+13
+00:00:35,000 --> 00:00:39,000
+The baby might pick the red block first—put that on the ground.
+
+14
+00:00:39,000 --> 00:00:41,000
+Then put the blue block on top.
+
+15
+00:00:41,000 --> 00:00:45,000
+Then put the the purple block on top of that, and then
+
+16
+00:00:45,000 --> 00:00:47,000
+put the green block on top.
+
+17
+00:00:47,000 --> 00:00:49,000
+When she's made one tower, she is going to knock it down and
+
+18
+00:00:49,000 --> 00:00:50,000
+make another one.
+
+19
+00:00:50,000 --> 00:00:53,000
+She's going to keep doing this as long as she can make different
+
+20
+00:00:53,000 --> 00:00:54,000
+color combinations.
+
+21
+00:00:54,000 --> 00:00:56,000
+If she has to make the same tower twice—well, that's pretty boring.
+
+22
+00:00:56,000 --> 00:01:00,000
+Maybe the next one she'll pick the purple block first, then she'll pick
+
+23
+00:01:00,000 --> 00:01:05,000
+the red block, then she'll pick the blue block, and then she'll pick
+
+24
+00:01:05,000 --> 00:01:08,000
+the green block.
+
+25
+00:01:08,000 --> 00:01:10,000
+These two are different.
+
+26
+00:01:10,000 --> 00:01:12,000
+The question we want to answer is, how many different towers
+
+27
+00:01:12,000 --> 00:01:14,000
+can she build?
+
+28
+00:01:14,000 --> 00:01:16,000
+Given that she has four blocks, we want to know how many different towers
+
+29
+00:01:16,000 --> 00:01:19,000
+could you build with four blocks, but maybe she gets some more blocks.
+
+30
+00:01:19,000 --> 00:01:22,000
+What we really want to know is—given that she has "n" blocks—whatever
+
+31
+00:01:22,000 --> 00:01:26,000
+number "n" is—how many different towers could you build where
+
+32
+00:01:26,000 --> 00:01:28,000
+the color combinations are all different?
+
+33
+00:01:28,000 --> 00:01:32,000
+The way to solve that is to think about combinatorics.
+
+34
+00:01:32,000 --> 00:01:36,000
+The way to pick the first block—well, it could be any one of these four.
+
+35
+00:01:36,000 --> 00:01:39,000
+We have four choices.
+
+36
+00:01:39,000 --> 00:01:43,000
+Let's say—for our example—she chooses the red block first.
+
+37
+00:01:43,000 --> 00:01:46,000
+Now it's time to choose the second block.
+
+38
+00:01:46,000 --> 00:01:48,000
+Well, she can't use the red block again.
+
+39
+00:01:48,000 --> 00:01:52,000
+She has already used it, so she can either use the purple, the blue,
+
+40
+00:01:52,000 --> 00:01:54,000
+or the green block.
+
+41
+00:01:54,000 --> 00:01:56,000
+She has three choices now.
+
+42
+00:01:56,000 --> 00:01:59,000
+She can use the purple block, the blue block, or the green block.
+
+43
+00:01:59,000 --> 00:02:03,000
+Let's say she chooses the green block, so she is going to have the
+
+44
+00:02:03,000 --> 00:02:05,000
+red block and then the green block.
+
+45
+00:02:05,000 --> 00:02:07,000
+She had three choices.
+
+46
+00:02:07,000 --> 00:02:10,000
+She could have chosen any of the other two, but now that she has chosen
+
+47
+00:02:10,000 --> 00:02:14,000
+the red and the green, she only has two choices left for the third block.
+
+48
+00:02:14,000 --> 00:02:18,000
+She can either use the purple one or she could use the blue one—those
+
+49
+00:02:18,000 --> 00:02:20,000
+are the only two that are left.
+
+50
+00:02:20,000 --> 00:02:24,000
+Let's say she uses the purple one.
+
+51
+00:02:24,000 --> 00:02:30,000
+Now for the final block—well, she's used the red one, she's used
+
+52
+00:02:30,000 --> 00:02:33,000
+the green one, and she's used the purple one.
+
+53
+00:02:33,000 --> 00:02:37,000
+The only one that's left is the blue one, so she has no choice but to use
+
+54
+00:02:37,000 --> 00:02:39,000
+the blue block.
+
+55
+00:02:39,000 --> 00:02:42,000
+That means for the fourth block, there was only one choice.
+
+56
+00:02:42,000 --> 00:02:46,000
+So, for each of these choices, she could choose any of the four
+
+57
+00:02:46,000 --> 00:02:49,000
+for the first one, any of the three remaining ones for the second
+
+58
+00:02:49,000 --> 00:02:52,000
+one—regardless of what she picked for the first one.
+
+59
+00:02:52,000 --> 00:02:56,000
+If she picked red, she could pick either purple, blue, or green, but if she'd
+
+60
+00:02:56,000 --> 00:03:00,000
+picked—say—blue for the first one, then what she'd have left is purple,
+
+61
+00:03:00,000 --> 00:03:01,000
+red, and green.
+
+62
+00:03:01,000 --> 00:03:04,000
+She always has three choices for the second one.
+
+63
+00:03:04,000 --> 00:03:07,000
+After that, there's only two choices left—there's only two blocks left and she
+
+64
+00:03:07,000 --> 00:03:09,000
+can choose either one.
+
+65
+00:03:09,000 --> 00:03:11,000
+The pattern here is every time she chooses a block there's one less
+
+66
+00:03:11,000 --> 00:03:14,000
+because she's used the block in the previous choice.
+
+67
+00:03:14,000 --> 00:03:17,000
+For the total number of choices, what we want to do is multiply
+
+68
+00:03:17,000 --> 00:03:18,000
+all these numbers.
+
+69
+00:03:18,000 --> 00:03:22,000
+To figure out the total number of choices, what we need to do is multiply
+
+70
+00:03:22,000 --> 00:03:26,000
+the number of choices for the first block, and then we multiply that by the number
+
+71
+00:03:26,000 --> 00:03:30,000
+of choices for the second and we keep going for however many
+
+72
+00:03:30,000 --> 00:03:34,000
+choices there are—in this case there are only four—until we get down to one.
+
+73
+00:03:34,000 --> 00:03:39,000
+Each time we make a choice, we have one fewer items left to use for
+
+74
+00:03:39,000 --> 00:03:40,000
+the next choice.
+
+75
+00:03:40,000 --> 00:03:43,000
+So the function that we are computing here is mathematically called
+
+76
+00:03:43,000 --> 00:03:47,000
+factorial, and it's sometimes written with an exclamation point.
+
+77
+00:03:47,000 --> 00:03:53,000
+A way to define factorial is—for any value n, we can compute the
+
+78
+00:03:53,000 --> 00:03:57,000
+factorial, which is the number of ways of arranging "n" items.
+
+79
+00:03:57,000 --> 00:04:02,000
+We can compute that by multiplying "n"—which is the number of choices
+
+80
+00:04:02,000 --> 00:04:06,000
+for the first item—times "n" minus one—that's the number of choices
+
+81
+00:04:06,000 --> 00:04:10,000
+we have left for the second item—times "n" minus two—that's the number of
+
+82
+00:04:10,000 --> 00:04:16,000
+choices for the third item and so fourth, all the way until we get down to one.
+
+83
+00:04:16,000 --> 00:04:20,000
+So, your goal for this quiz is to define a procedure—the "n" factorial—that
+
+84
+00:04:20,000 --> 00:04:23,000
+takes one number as its input—that's the number "n" here—and
+
+85
+00:04:23,000 --> 00:04:26,000
+outputs the factorial of that number, which we can compute by
+
+86
+00:04:26,000 --> 99:59:59,000
+multiplying "n" times "n" minus one all the way down to one.

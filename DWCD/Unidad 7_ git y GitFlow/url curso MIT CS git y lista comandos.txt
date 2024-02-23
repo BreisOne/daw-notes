@@ -1,0 +1,8 @@
+
+Lecture 6: Version Control (git) (2020):
+
+https://www.youtube.com/watch?v=2sjqTHE0zok&list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J
+
+40+ useful Git commands for everyone
+
+https://twitter.com/swapnakpanda/status/1581989758833917953?t=X3VM2jK8KiwOJCNCxNsOuA&s=03

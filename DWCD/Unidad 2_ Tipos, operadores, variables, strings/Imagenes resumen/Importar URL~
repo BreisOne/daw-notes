@@ -1,0 +1,11 @@
+8.3. Extracting data from HTML documents
+To extract data from HTML documents, subclass the SGMLParser class and define methods for each tag or entity you want to capture.
+
+The first step to extracting data from an HTML document is getting some HTML. If you have some HTML lying around on your hard drive, you can use file functions to read it, but the real fun begins when you get HTML from live web pages.
+
+Example 8.5. Introducing urllib
+>>> import urllib                                       1
+>>> sock = urllib.urlopen("http://diveintopython.org/") 2
+>>> htmlSource = sock.read()                            3
+>>> sock.close()                                        4
+>>> print htmlSource                                    5

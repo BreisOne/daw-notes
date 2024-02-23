@@ -1,0 +1,95 @@
+1
+00:00:00,000 --> 00:00:03,000
+The answer is we need to return two things.
+
+2
+00:00:03,000 --> 00:00:07,000
+We want the outputs to be the value of "url" and the value of "end<u>quote"</u>
+
+3
+00:00:07,000 --> 00:00:12,000
+so we know both the "string" that was found—that's the target of
+
+4
+00:00:12,000 --> 00:00:15,000
+the link—as well as the value of "end<u>quote."</u>
+
+5
+00:00:15,000 --> 00:00:18,000
+We can do that by just returning those two values.
+
+6
+00:00:18,000 --> 00:00:20,000
+We're going to have returning "url," followed by a comma,
+
+7
+00:00:20,000 --> 00:00:23,000
+followed by "end<u>quote."</u>
+
+8
+00:00:23,000 --> 00:00:27,000
+That means that the two outputs from our procedure are the two
+
+9
+00:00:27,000 --> 00:00:31,000
+values of "url" and the value of "end<u>quote."</u>
+
+10
+00:00:31,000 --> 00:00:37,000
+[Drawing smiley face.]
+
+11
+00:00:37,000 --> 00:00:40,000
+Congratulations! You've defined your first procedure.
+
+12
+00:00:40,000 --> 00:00:42,000
+This deserves a big smiley face.
+
+13
+00:00:42,000 --> 00:00:45,000
+Procedures are really important ideas in computer science.
+
+14
+00:00:45,000 --> 00:00:47,000
+We're going to find lots more procedures—both today
+
+15
+00:00:47,000 --> 00:00:48,000
+and through the rest of the course.
+
+16
+00:00:48,000 --> 00:00:50,000
+Almost everything we do "in terms of building programs" is
+
+17
+00:00:50,000 --> 00:00:52,000
+about building procedures.
+
+18
+00:00:52,000 --> 00:00:55,000
+Those are the main things that we use to break down problems
+
+19
+00:00:55,000 --> 00:00:58,000
+into things that we can solve.
+
+20
+00:00:58,000 --> 00:01:01,000
+We're going to have some more quizzes about procedures soon,
+
+21
+00:01:01,000 --> 00:01:04,000
+but first I want to give you an idea of how rich inputs and outputs can be
+
+22
+00:01:04,000 --> 00:01:07,000
+when we do computations.
+
+23
+00:01:07,000 --> 00:01:09,000
+We'll do that by looking at what happens when you
+
+24
+00:01:09,000 --> 00:01:12,000
+build a self-driving car.

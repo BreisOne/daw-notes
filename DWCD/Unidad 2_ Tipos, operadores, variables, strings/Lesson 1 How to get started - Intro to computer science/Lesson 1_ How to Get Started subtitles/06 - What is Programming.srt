@@ -1,0 +1,89 @@
+0:00:00.000,0:00:04.580
+So let's get started with programming, and programming is really the core computer science.
+
+0:00:05.102,0:00:08.036
+Most machines are designed to do just one thing.
+
+0:00:08.698,0:00:14.265
+This is supposed to be a toaster, more of a representational drawing than an accurate one.
+
+0:00:14.860,0:00:18.736
+And a toaster, we can do more than one thing with a toaster.
+
+0:00:22.612,0:00:26.488
+We can put different things in it. We can toast bread, we can toast muffins, maybe it has some things we can use to change its behavior a little bit.
+
+0:00:26.745,0:00:30.376
+We can turn a setting to make it toast for longer or shorter.
+
+0:00:30.376,0:00:36.666
+But it's pretty limited in what it can do. Everything it can do is a variation on this basic functionality that it was designed for:
+
+0:00:36.666,0:00:42.812
+this basic process of putting toast in, heating it up and getting the toast to pop out.
+
+0:00:42.812,0:00:48.371
+If we want to change its behavior to do something really different, we'd have to physically alter the machine.
+
+0:00:48.371,0:00:51.536
+We could maybe take the parts out, and put them together in a new way.
+
+0:00:51.536,0:00:56.713
+If we're really creative we could make a bicycle from the toaster. That would be a pretty big project, though.
+
+0:00:57.368,0:01:00.848
+So without a program a computer is even less useful than a toaster.
+
+0:01:01.094,0:01:02.600
+You can't do anything without a program.
+
+0:01:02.916,0:01:04.918
+The program is what tells the computer what to do.
+
+0:01:05.610,0:01:12.278
+And the power of the computer, is that, unlike a toaster, which is only designed to do a few things, a computer can do anything.
+
+0:01:12.679,0:01:17.494
+A computer is a universal machine. We can program it to do essentially any computation.
+
+0:01:18.076,0:01:23.428
+So anything that we can imagine, anything that we can figure out how to write a program for, we can make the computer do.
+
+0:01:24.032,0:01:27.053
+And what the program needs to be is a very precise sequence of steps.
+
+0:01:27.360,0:01:32.648
+The computer by itself doesn't know how to do anything. It has a few simple instructions that it can execute.
+
+0:01:33.148,0:01:38.683
+And to make a program do something useful we need to put those instructions together in a way that it does what we want.
+
+0:01:38.973,0:01:47.574
+So we can turn the computer into a web browser, into a server, into a game-playing machine, into a toaster, without anywhere to put the bread.
+
+0:01:47.956,0:01:52.011
+But it can do anything we can imagine: at least any computation we want to do.
+
+0:01:52.853,0:01:56.603
+The power of the computer is that it can execute the steps super super fast.
+
+0:01:56.960,0:01:59.706
+So we can execute billions of instructions in one second.
+
+0:02:00.389,0:02:04.458
+The program gives us a way to tell the computer what steps to take.
+
+0:02:04.992,0:02:07.456
+So there are many different languages for programming computers.
+
+0:02:07.771,0:02:14.042
+The language we are going to learn in this course is the language called Python, like the snake. It is also named after Monty Python.
+
+0:02:14.451,0:02:19.803
+The important thing about Python is that it gives us a nice high-level language that we can use to write programs.
+
+0:02:20.231,0:02:28.001
+And that means instead of our program running directly on the computer, the programs we write will be an input to the Python program which runs on the computer.
+
+0:02:28.791,0:02:40.545
+What Python is is called an interpreter. That means it runs our programs, it interprets them, executes the programs that we wrote in Python language by running a program in a language into the computer can understand directly.

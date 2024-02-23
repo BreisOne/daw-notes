@@ -1,0 +1,143 @@
+1
+00:00:00,102 --> 00:00:03,784
+The first thing we want to do, is what's called "procedural abstraction."
+
+2
+00:00:03,784 --> 00:00:05,585
+This is a really powerful idea--
+
+3
+00:00:05,585 --> 00:00:09,692
+this is--one of the ways we avoid having to do things over and over again by hand,
+
+4
+00:00:09,692 --> 00:00:11,338
+is that we can write the code--
+
+5
+00:00:11,338 --> 00:00:13,658
+write it once, and use it many times--
+
+6
+00:00:13,658 --> 00:00:16,817
+changing the inputs to get different behaviors.
+
+7
+00:00:16,817 --> 00:00:18,990
+If you look at each segment of code here,
+
+8
+00:00:18,990 --> 00:00:22,874
+these lines were copied exactly the same way.
+
+9
+00:00:22,874 --> 00:00:25,037
+We did the same thing, over and over again--
+
+10
+00:00:25,037 --> 00:00:27,173
+the same five lines of code--
+
+11
+00:00:27,173 --> 00:00:29,525
+to find the start of a link in "page,"
+
+12
+00:00:29,525 --> 00:00:31,356
+to find the start in "end<u>quote,"</u>
+
+13
+00:00:31,356 --> 00:00:32,776
+and then to extract the URL,
+
+14
+00:00:32,776 --> 00:00:34,975
+and then to print the URL.
+
+15
+00:00:34,975 --> 00:00:37,019
+The only thing that was different was the value of "page."
+
+16
+00:00:37,019 --> 00:00:38,923
+We kept updating the value of "page"--
+
+17
+00:00:38,923 --> 00:00:42,604
+we did that as we went through the code--
+
+18
+00:00:42,604 --> 00:00:45,116
+we updated the value of "page" with this assignment
+
+19
+00:00:45,116 --> 00:00:47,793
+and, before this one, we updated the value of "page"
+
+20
+00:00:47,793 --> 00:00:51,736
+with this assignment.
+
+21
+00:00:51,783 --> 00:00:54,693
+So, the idea behind procedural abstraction, is that
+
+22
+00:00:54,693 --> 00:00:56,885
+anything that we're doing over and over again
+
+23
+00:00:56,885 --> 00:00:58,709
+we want to abstract--
+
+24
+00:00:58,709 --> 00:01:00,176
+we want to make it a procedure--
+
+25
+00:01:00,176 --> 00:01:02,259
+and we want to make the things that change, inputs.
+
+26
+00:01:02,259 --> 00:01:06,442
+That means, instead of having to type in this code over and over again,
+
+27
+00:01:06,442 --> 00:01:08,427
+we want to make "page" an input--
+
+28
+00:01:08,442 --> 00:01:11,540
+"page" is the input; that's something that changes--
+
+29
+00:01:11,540 --> 00:01:14,008
+and we want to make the URL--
+
+30
+00:01:14,008 --> 00:01:17,218
+that's the result we want--
+
+31
+00:01:17,218 --> 00:01:18,871
+an output.
+
+32
+00:01:18,871 --> 00:01:20,493
+That's our goal, to turn this into a procedure,
+
+33
+00:01:20,493 --> 00:01:22,391
+where "page" is the input--
+
+34
+00:01:22,391 --> 00:01:24,842
+we can do the same code, over and over again,
+
+35
+00:01:24,842 --> 00:01:26,086
+and every time we do it,
+
+36
+00:01:26,086 --> 00:01:29,708
+we want to get this URL value as the output.
