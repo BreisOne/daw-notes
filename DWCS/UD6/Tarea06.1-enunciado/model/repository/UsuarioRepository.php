@@ -28,6 +28,8 @@ class UsuarioRepository extends BaseRepository implements IUsuarioRepository{
        // $pdostmt->debugDumpParams();
 
         $object = $pdostmt->fetchObject($this->class_name);
+        
         return $object!= null ? $object : null;
     } 
+    
 }
