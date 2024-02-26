@@ -27,7 +27,7 @@ class UsuarioServicio
         return $usuarios;
     }
 
-    public function login(string $user, string $pwd, $rolId): ?Usuario
+    public function login(string $user, string $pwd, int $rolId): ?Usuario
     {
         //TODO
 
@@ -37,7 +37,7 @@ class UsuarioServicio
 
             $userRoles = $this->rolRepository->findRolesByUserId($userByEmail->getId());
 
-            if(isUserInRole($userByEmail, $rolId)){
+            if(self::isUserInRole($userByEmail, $rolId)){
                 
                 $userByEmail->setRoles($userRoles);
                 return $userByEmail;
@@ -46,7 +46,6 @@ class UsuarioServicio
 
                 return null;
             }
-
         }
 
     }
@@ -66,8 +65,7 @@ class UsuarioServicio
 
     }
 
-    private function isUserInRole(Usuario $usuario, int $roleId): bool
-    {
+    private function isUserInRole(Usuario $usuario, int $roleId): bool{
         $rolesArray = $usuario->getRoles();
         foreach ($rolesArray as $rol) {
             if ($rol->getId() === $roleId) {
@@ -77,7 +75,6 @@ class UsuarioServicio
 
         return false;
     }
-
 
 }
 

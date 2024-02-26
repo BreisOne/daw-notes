@@ -43,12 +43,22 @@ class UsuarioController
 
         //TODO
 
-        //         4. En la clase UsuarioController, completa la implementación del método login() para que:
-// a) si vienen por el método HTTP POST los datos email, contraseña y rol, compruebe a través del servicio si las credenciales son válidas.
+        // 4. En la clase UsuarioController, completa la implementación del método login() para que:
+        // a) si vienen por el método HTTP POST los datos email, contraseña y rol, compruebe a través del servicio si las credenciales son válidas.
+        // Si no lo son, en  loginViewData invoca el método setStatus a la constante Util::OPERATION_NOK
+        // En caso de que el login del servicio sea correcto, se guardarán en la sesión el id del usuario, el id del rol seleccionado y el email del usuario. A continuación, se llamará al método redirectAccordingToRole para que redirija al listado de usuarios si se usa el rol admin o al listado de notas si se usa el rol user.
+        
+        if(isset($_POST["email"])&& isset($_POST["pwd"]) && isset($_POST["rol"])){
+            $userEmail = $_POST["email"];
+            $userPwd = $_POST["pwd"];
+            $userRol = $_POST["rol"];
 
-        //     Si no lo son, en  loginViewData invoca el método setStatus a la constante Util::OPERATION_NOK
-//     En caso de que el login del servicio sea correcto, se guardarán en la sesión el id del usuario, el id del rol seleccionado y el email del usuario. A continuación, se llamará al método redirectAccordingToRole para que redirija al listado de usuarios si se usa el rol admin o al listado de notas si se usa el rol user.
+            $userLogged = $this->usuarioServicio->login($userEmail, $userPwd, $userRol);
 
+            if($userLogged!=null){
+                
+            }
+        }
     }
     public function logout()
     {
