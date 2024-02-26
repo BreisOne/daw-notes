@@ -1,4 +1,3 @@
-import java.security.PublicKey;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +18,9 @@ public class Vehiculo {
     public void setColor(String color) throws ExcepcionPropia {
         if(checkColor(color)){
             this.color = color;
-        };
+        }else{
+            throw new ExcepcionPropia(1);
+        }
     }
 
     public String getModelo() {
@@ -38,6 +39,8 @@ public class Vehiculo {
 
         if(checkMatricula(matricula)){
             this.matricula = matricula;
+        }else {
+            throw new ExcepcionPropia(2);
         }
     }
 
@@ -49,25 +52,16 @@ public class Vehiculo {
         this.anhoFabricacion = anhoFabricacion;
     }
 
-    private boolean checkColor(String color) throws  ExcepcionPropia{
+    private boolean checkColor(String color){
         String coloresPermiditos = "rojo azul blanco gris negro";
 
-        if(coloresPermiditos.contains(color)){
-            return true;
-        } else {
-             throw new ExcepcionPropia(1);
-        }
+        return  coloresPermiditos.contains(color);
     }
-    private boolean checkMatricula(String matricula) throws ExcepcionPropia {
+    private boolean checkMatricula(String matricula){
         String regex = "^.{4}[a-zA-Z]{3}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(matricula);
 
-        if(matcher.matches()){
-            return true;
-        }else {
-            throw new ExcepcionPropia(2);
+        return matcher.matches();
         }
-    }
-
 }

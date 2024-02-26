@@ -33,8 +33,8 @@ public class Main {
         });
 
         try {
-            camion.setMatricula("1234567EDL");
-            System.out.print(caminoneta.getMatricula());
+            camion.setMatricula("4567EDL");
+            System.out.println(camion.getMatricula());
 
         }catch (ExcepcionPropia e) {
             System.out.println(e.getMensaje());
@@ -42,7 +42,7 @@ public class Main {
 
         try {
             camion.setColor("rojo");
-            System.out.print(caminoneta.getColor());
+            System.out.println(camion.getColor());
 
         } catch (ExcepcionPropia e) {
             System.out.println(e.getMensaje());
