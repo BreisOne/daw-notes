@@ -1,8 +1,8 @@
 <?php
 
 /* Default options */
-const DEFAULT_CONTROLLER = "nota";
-const DEFAULT_ACTION = "list";
+const DEFAULT_CONTROLLER = "usuario";
+const DEFAULT_ACTION = "login";
 
 /*classes folder */
 const CONTROLLERS_FOLDER = "controller";

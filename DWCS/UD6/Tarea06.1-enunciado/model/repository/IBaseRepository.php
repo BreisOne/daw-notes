@@ -19,5 +19,5 @@ interface IBaseRepository {
 
     public function delete($id): bool;
     
-    public function findAll(): array ;
+    public function findAll(): array;
 }
