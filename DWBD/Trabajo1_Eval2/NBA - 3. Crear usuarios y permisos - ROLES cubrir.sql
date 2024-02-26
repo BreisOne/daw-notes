@@ -30,8 +30,8 @@ CREATE ROLE division_Atlantica;
 DROP ROLE IF EXISTS division_Sudeste;
 CREATE ROLE division_Sudeste;
 
-DROP ROLE IF EXISTS divison_Central;
-CREATE ROLE divison_Central;
+DROP ROLE IF EXISTS division_Central;
+CREATE ROLE division_Central;
 
 DROP ROLE IF EXISTS division_Pacifico;
 CREATE ROLE division_Pacifico;
