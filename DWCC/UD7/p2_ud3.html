@@ -56,9 +56,81 @@
                 <input type="button" value="Borrar" id="borrar"/>
             </fieldset>
         </form>
-       
-        <script type="text/javascript" src="p2_JSON.js">
-        </script>
 </body>
+<script>
+    class Alumno{
+        constructor(nombre, DNI, direccion){
+            this.nombre = nombre;
+            this.DNI = DNI;
+            this.direccion = direccion;        
+        }
+        getInfo(){
+            return ' Nombre: ' + this.nombre + ' DNI: ' + this.DNI + ' direccion: ' + this.direccion;
+        }
+        
+    }
+    const modificar = (Alumno, nombre, DNI, direccion)=>{
+        Alumno.nombre = nombre;
+        Alumno.DNI = DNI;
+        Alumno.direccion = direccion;
+    }
+
+    const mostrar = ()=>{
+        let divAlumnos = document.getElementById("alumnos");
+        let table = document.createElement("table");
+        
+        let tableHead = document.createElement("thead");
+        
+        let columnTitles = ["Nombre", "DNI", "Direccion"];
+        let trh = document.createElement("tr");
+
+        columnTitles.forEach(title =>{
+            let th = document.createElement("th");
+            th.innerHTML = title;
+            trh.appendChild(th);
+            console.log(th);
+        })
+
+        tableHead.appendChild(trh);
+        table.appendChild(tableHead);
+
+        let tableBody = document.createElement("tbody");
+
+        for (let i = 0; i < localStorage.length; i++) {
+            let trb = document.createElement("tr");
+
+            let alumno = localStorage.getItem(i);
+            for (const [key, value] of Object.entries(alumno)) {
+                let td = document.createElement("td");
+                td.innerText = value;
+                trb.appendChild(td);
+            }
+            tableBody.appendChild(trb);  
+        }
+
+        table.appendChild(tableBody);
+        divAlumnos.appendChild(table);
+    }
+
+    let cont = 0;
+    document.getElementById("formalumnos").addEventListener("submit", function (event){
+        event.preventDefault();
+        let nombre = document.getElementById("addNombre").value;
+        let DNI = document.getElementById("addDni").value;
+        let direccion = document.getElementById("addDireccion").value;
+
+        let alumno = new Alumno(nombre, DNI, direccion);
+        localStorage.setItem(cont, JSON.stringify(alumno));
+        cont+=1;
+
+        console.log(alumno);
+    })
+
+    document.getElementById("mostrar").addEventListener("click", mostrar)
+
+
+
+
+</script>
 
 </html>
