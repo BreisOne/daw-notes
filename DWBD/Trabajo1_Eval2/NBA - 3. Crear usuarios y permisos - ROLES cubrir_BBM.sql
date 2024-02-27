@@ -3,77 +3,44 @@
 #--------------------------------------------------------------------------------------------
 #	USE <base de datos>
 #--------------------------------------------------------------------------------------------
-use NBA;
-    
+Use NBA;
+
 #--------------------------------------------------------------------------------------------
-#	2. 	BORRAMOS Y CREAMOS LOS USUARIOS: hay 2 Conferencias (East, West) y 3 divisiones en cada una (Atlantic, SouthEast, Central) y (Pacific, SouthWest, NorthWest)
-#	Los usuarios serán creados todos con la misma clave 'abc'
+#	2. 	BORRAMOS Y CREAMOS LOS ROLES
 #--------------------------------------------------------------------------------------------
-#	DROP USER IF EXISTS <usuario>		CREATE USER <usuario>	IDENTIFIED BY <clave>
+#	Rol asociado a NBA y a cada Conferencia (Este, Oeste) y a cada División (Atlántico, Sudeste, Central, Pacífico, Sudoeste y Noroeste)
 #--------------------------------------------------------------------------------------------
-#	Fulgencio y Fulgencia
-#	Guillermino y Guillermina
-#	Pancracio y Pancracia
-#	Filomeno y Filomena
-#	Anaximandro y Anaximandra
-#	Romino y Romina
-#	Agapito y Agapita
-#	Apolonio y Apolonia
-#	Luzdivino y Luzdivina
+#	CREATE ROLE <rol>
 #--------------------------------------------------------------------------------------------
-DROP USER IF EXISTS Fulgencio;
-CREATE USER Fulgencio IDENTIFIED BY 'abc';
+-- Crear el rol asociado a la NBA
+DROP ROLE IF EXISTS NBA;
+CREATE ROLE NBA;
 
-DROP USER IF EXISTS Fulgencia;
-CREATE USER Fulgencia IDENTIFIED BY 'abc';
+-- Crear roles para cada conferencia
+DROP ROLE IF EXISTS conferencia_Este;
+CREATE ROLE conferencia_Este;
 
-DROP USER IF EXISTS Guillermino;
-CREATE USER Guillermino IDENTIFIED BY 'abc';
+DROP ROLE IF EXISTS conferencia_Oeste;
+CREATE ROLE conferencia_Oeste;
 
-DROP USER IF EXISTS Guillermina;
-CREATE USER Guillermina IDENTIFIED BY 'abc';
+-- Crear roles para cada división
+DROP ROLE IF EXISTS division_Atlantica;
+CREATE ROLE division_Atlantica;
 
-DROP USER IF EXISTS Pancracio;
-CREATE USER Pancracio IDENTIFIED BY 'abc';
+DROP ROLE IF EXISTS division_Sudeste;
+CREATE ROLE division_Sudeste;
 
-DROP USER IF EXISTS Pancracia;
-CREATE USER Pancracia IDENTIFIED BY 'abc';
+DROP ROLE IF EXISTS division_Central;
+CREATE ROLE division_Central;
 
-DROP USER IF EXISTS Filomeno;
-CREATE USER Filomeno IDENTIFIED BY 'abc';
+DROP ROLE IF EXISTS division_Pacifico;
+CREATE ROLE division_Pacifico;
 
-DROP USER IF EXISTS Filomena;
-CREATE USER Filomena IDENTIFIED BY 'abc';
+DROP ROLE IF EXISTS division_Sudoeste;
+CREATE ROLE division_Sudoeste;
 
-DROP USER IF EXISTS Anaximandro;
-CREATE USER Anaximandro IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Anaximandra;
-CREATE USER Anaximandra IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Romino;
-CREATE USER Romino IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Romina;
-CREATE USER Romina IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Agapito;
-CREATE USER Agapito IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Agapita;
-CREATE USER Agapita IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Apolonio;
-CREATE USER Apolonio IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Apolonia;
-CREATE USER Apolonia IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Luzdivino;
-CREATE USER Luzdivino IDENTIFIED BY 'abc';
-
-DROP USER IF EXISTS Luzdivina;
-CREATE USER Luzdivina IDENTIFIED BY 'abc';
+DROP ROLE IF EXISTS division_Noroeste;
+CREATE ROLE division_Noroeste; 
 
 #--------------------------------------------------------------------------------------------
 #	3. BORRAMOS Y CREAMOS LAS VISTAS
@@ -90,7 +57,7 @@ CREATE USER Luzdivina IDENTIFIED BY 'abc';
 #		Vista de Equipos, Jugadores, Estadísticas y Partidos sobre la División Sudoeste
 #		Vista de Equipos, Jugadores, Estadísticas y Partidos sobre la División Noroeste
 #--------------------------------------------------------------------------------------------
-    
+
 -- Borrar y crear Vista_Equipos
 DROP VIEW IF EXISTS Vista_Equipos;
 CREATE VIEW Vista_Equipos AS SELECT * FROM Equipos;
@@ -199,12 +166,12 @@ DROP VIEW IF EXISTS Vista_Division_Pacifico_Estadisticas;
 CREATE VIEW Vista_Division_Pacifico_Estadisticas AS SELECT * FROM estadisticas WHERE jugador IN (select codigo from vista_division_pacifico_jugadores);
 
 -- Borrar y crear Vista_Division_Sudoeste
-DROP VIEW IF EXISTS Vista_Division_Sudoeste_estadisticas;
-CREATE VIEW Vista_Division_Sudoeste_estadisticas AS SELECT * FROM estadisticas WHERE jugador IN (select codigo from vista_division_Sudoeste_jugadores);
+DROP VIEW IF EXISTS Vista_Division_Sudoeste_Estadisticas;
+CREATE VIEW Vista_Division_Sudoeste_Estadisticas AS SELECT * FROM estadisticas WHERE jugador IN (select codigo from vista_division_Sudoeste_jugadores);
 
 -- Borrar y crear Vista_Division_Noroeste
-DROP VIEW IF EXISTS Vista_Division_Noroeste_estadisticas;
-CREATE VIEW Vista_Division_Noroeste_estadisticas AS SELECT * FROM estadisticas WHERE jugador IN (select codigo from vista_division_Noroeste_jugadores);
+DROP VIEW IF EXISTS Vista_Division_Noroeste_Estadisticas;
+CREATE VIEW Vista_Division_Noroeste_Estadisticas AS SELECT * FROM estadisticas WHERE jugador IN (select codigo from vista_division_Noroeste_jugadores);
 
 
 -- PARTIDOS
@@ -241,70 +208,165 @@ DROP VIEW IF EXISTS Vista_Division_Noroeste_partidos;
 CREATE VIEW Vista_Division_Noroeste_partidos AS SELECT * FROM partidos WHERE EquipoLocal IN (SELECT nombre FROM Vista_division_noroeste_equipos) AND EquipoVisitante IN (select nombre from Vista_division_noroeste_equipos);
 
 #--------------------------------------------------------------------------------------------
-#	4. ASIGNAMOS PRIVILEGIOS (O PERMISOS) A LOS USUARIOS
+#	4. ASIGNAMOS PRIVILEGIOS (O PERMISOS) A LOS ROLES
 #--------------------------------------------------------------------------------------------
-#	GRANT <permiso>	ON <vista>	TO <usuario>, ...
+#	GRANT <privilegio>	ON <vista>	TO 	<rol>
 #--------------------------------------------------------------------------------------------
-#		USUARIOS						ACCESO
-#
-#	Fulgencio y Fulgencia					Todos los datos de Equipos, Jugadores, Estadisticas y Partidos
-#	Guillermino y Guillermina				Todos los datos de Equipos, Jugadores, Estadisticas y Partidos de la Conferencia ESTE
-#	Pancracio y Pancracia					Todos los datos de Equipos, Jugadores, Estadisticas y Partidos de la Conferencia OESTE
-#	Filomeno y Filomena						Todos los datos de Equipos, Jugadores, Estadisticas y Partidos de la División Atlántica
-#	Anaximandro y Anaximandra				Todos los datos de Equipos, Jugadores, Estadisticas y Partidos de la División Sudeste
-#	Romino y Romina							Todos los datos de Equipos, Jugadores, Estadisticas y Partidos de la División Central
-#	Agapito y Agapita						Todos los datos de Equipos, Jugadores, Estadisticas y Partidos de la División Pacífico
-#	Apolonio y Apolonia						Todos los datos de Equipos, Jugadores, Estadisticas y Partidos de la División Sudoeste
-#	Luzdivino y Luzdivina					Todos los datos de Equipos, Jugadores, Estadisticas y Partidos de la División Noroeste
+GRANT ALL ON Vista_Equipos TO NBA;
+GRANT ALL ON Vista_Jugadores TO NBA;
+GRANT ALL ON Vista_Estadisticas TO NBA;
+GRANT ALL ON Vista_Partidos TO NBA;
+
+GRANT ALL ON Vista_Conferencia_ESTE_equipos TO conferencia_Este;
+GRANT ALL ON Vista_Conferencia_ESTE_jugadores TO conferencia_Este;
+GRANT ALL ON Vista_Conferencia_ESTE_estadisticas TO conferencia_Este;
+GRANT ALL ON Vista_Conferencia_ESTE_partidos TO conferencia_Este;
+
+GRANT ALL ON Vista_Conferencia_OESTE_equipos TO conferencia_Oeste;
+GRANT ALL ON Vista_Conferencia_OESTE_jugadores TO conferencia_Oeste;
+GRANT ALL ON Vista_Conferencia_OESTE_estadisticas TO conferencia_Oeste;
+GRANT ALL ON Vista_Conferencia_OESTE_partidos TO conferencia_Oeste;
+
+GRANT ALL ON Vista_division_ATLANTICA_equipos TO division_Atlantica;
+GRANT ALL ON Vista_division_ATLANTICA_jugadores TO division_Atlantica;
+GRANT ALL ON Vista_division_ATLANTICA_estadisticas TO division_Atlantica;
+GRANT ALL ON Vista_division_ATLANTICA_partidos TO division_Atlantica;
+
+GRANT ALL ON Vista_division_SUDESTE_equipos TO division_Sudeste;
+GRANT ALL ON Vista_division_SUDESTE_jugadores TO division_Sudeste;
+GRANT ALL ON Vista_division_SUDESTE_estadisticas TO division_Sudeste;
+GRANT ALL ON Vista_division_SUDESTE_partidos TO division_Sudeste;
+
+GRANT ALL ON Vista_division_CENTRAL_equipos TO division_Central;
+GRANT ALL ON Vista_division_CENTRAL_jugadores TO division_Central;
+GRANT ALL ON Vista_division_CENTRAL_estadisticas TO division_Central;
+GRANT ALL ON Vista_division_CENTRAL_partidos TO division_Central;
+
+GRANT ALL ON Vista_division_PACIFICO_equipos TO division_Pacifico;
+GRANT ALL ON Vista_division_PACIFICO_jugadores TO division_Pacifico;
+GRANT ALL ON Vista_division_PACIFICO_estadisticas TO division_Pacifico;
+GRANT ALL ON Vista_division_PACIFICO_partidos TO division_Pacifico;
+
+GRANT ALL ON Vista_division_SUDOESTE_equipos TO division_Sudoeste;
+GRANT ALL ON Vista_division_SUDOESTE_jugadores TO division_Sudoeste;
+GRANT ALL ON Vista_division_SUDOESTE_estadisticas TO division_Sudoeste;
+GRANT ALL ON Vista_division_SUDOESTE_partidos TO division_Sudoeste;
+
+GRANT ALL ON Vista_division_NOROESTE_equipos TO division_Noroeste;
+GRANT ALL ON Vista_division_NOROESTE_jugadores TO division_Noroeste;
+GRANT ALL ON Vista_division_NOROESTE_estadisticas TO division_Noroeste;
+GRANT ALL ON Vista_division_NOROESTE_partidos TO division_Noroeste;
+   
 #--------------------------------------------------------------------------------------------
-GRANT ALL ON Vista_equipos TO Fulgencio, Fulgencia;
-GRANT ALL ON Vista_jugadores TO Fulgencio, Fulgencia;
-GRANT ALL ON Vista_estadisticas TO Fulgencio, Fulgencia;
-GRANT ALL ON Vista_partidos TO Fulgencio, Fulgencia;
-
-GRANT ALL ON Vista_Conferencia_ESTE_equipos TO Guillermino, Guillermina;
-GRANT ALL ON Vista_Conferencia_ESTE_jugadores TO Guillermino, Guillermina;
-GRANT ALL ON Vista_Conferencia_ESTE_estadsiticas TO Guillermino, Guillermina;
-GRANT ALL ON Vista_Conferencia_ESTE_partidos TO Guillermino, Guillermina;
-
-GRANT ALL ON Vista_Conferencia_OESTE_equipos TO Pancracio, Pancracia;
-GRANT ALL ON Vista_Conferencia_OESTE_jugadores TO Pancracio, Pancracia;
-GRANT ALL ON Vista_Conferencia_OESTE_estadsiticas TO Pancracio, Pancracia;
-GRANT ALL ON Vista_Conferencia_OESTE_partidos TO Pancracio, Pancracia;
-
-GRANT ALL ON Vista_division_ATLANTICA_equipos TO Filomeno, Filomena;
-GRANT ALL ON Vista_division_ATLANTICA_jugadores TO Filomeno, Filomena;
-GRANT ALL ON Vista_division_ATLANTICA_estadsiticas TO Filomeno, Filomena;	
-GRANT ALL ON Vista_division_ATLANTICA_partidos TO Filomeno, Filomena;	
-
-GRANT ALL ON Vista_division_SUDESTE_equipos TO Anaximandro, Anaximandra;	
-GRANT ALL ON Vista_division_SUDESTE_jugadores TO Anaximandro, Anaximandra;	
-GRANT ALL ON Vista_division_SUDESTE_estadsiticas TO Anaximandro, Anaximandra;	
-GRANT ALL ON Vista_division_SUDESTE_partidos TO Anaximandro, Anaximandra;	
-
-GRANT ALL ON Vista_division_CENTRAL_equipos TO Romino, Romina;
-GRANT ALL ON Vista_division_CENTRAL_jugadores TO Romino, Romina;
-GRANT ALL ON Vista_division_CENTRAL_estadsiticas TO Romino, Romina;
-GRANT ALL ON Vista_division_CENTRAL_partidos TO Romino, Romina;
-
-GRANT ALL ON Vista_division_PACIFICO_equipos TO Agapito, Agapita;
-GRANT ALL ON Vista_division_PACIFICO_jugadores TO Agapito, Agapita;
-GRANT ALL ON Vista_division_PACIFICO_estadsiticas TO Agapito, Agapita;
-GRANT ALL ON Vista_division_PACIFICO_partidos TO Agapito, Agapita;
-
-GRANT ALL ON Vista_division_SUDOESTE_equipos TO Apolonio, Apolonia;	
-GRANT ALL ON Vista_division_SUDOESTE_jugadores TO Apolonio, Apolonia;
-GRANT ALL ON Vista_division_SUDOESTE_estadsiticas TO Apolonio, Apolonia;
-GRANT ALL ON Vista_division_SUDOESTE_partidos TO Apolonio, Apolonia;
-
-GRANT ALL ON Vista_division_NOROESTE_equipos TO Luzdivino, Luzdivina;
-GRANT ALL ON Vista_division_NOROESTE_jugadores TO Luzdivino, Luzdivina;
-GRANT ALL ON Vista_division_NOROESTE_estadsiticas TO Luzdivino, Luzdivina;
-GRANT ALL ON Vista_division_NOROESTE_partidos TO Luzdivino, Luzdivina;
+#	5. 	BORRAMOS Y CREAMOS LOS USUARIOS, ASINGNÁNDOLES POR DEFECTO SU ROL ASOCIADO
+#	Los usuarios serán creados todos con la misma clave 'abc'
 #--------------------------------------------------------------------------------------------
-#	5. REFRESCAMOS LOS PRIVILEGIOS
+#	CREATE USER <usuario>	IDENTIFIED BY <clave>	DEFAULT ROLE <rol>
+#--------------------------------------------------------------------------------------------
+#	Fulgencio y Fulgencia
+#	Guillermino y Guillermina
+#	Pancracio y Pancracia
+#	Filomeno y Filomena
+#	Anaximandro y Anaximandra
+#	Romino y Romina
+#	Agapito y Agapita
+#	Apolonio y Apolonia
+#	Luzdivino y Luzdivina
+#--------------------------------------------------------------------------------------------
+ 
+DROP USER IF EXISTS Fulgencio;
+CREATE USER Fulgencio IDENTIFIED BY 'abc';
+GRANT NBA TO Fulgencio;
+SET DEFAULT ROLE NBA FOR Fulgencio;
+
+DROP USER IF EXISTS Fulgencia;
+CREATE USER Fulgencia IDENTIFIED BY 'abc';
+GRANT NBA TO Fulgencia;
+SET DEFAULT ROLE NBA FOR Fulgencia;
+
+DROP USER IF EXISTS Guillermino;
+CREATE USER Guillermino IDENTIFIED BY 'abc';
+GRANT conferencia_Este TO Guillermino;
+SET DEFAULT ROLE conferencia_Este FOR Guillermino;
+
+DROP USER IF EXISTS Guillermina;
+CREATE USER Guillermina IDENTIFIED BY 'abc';
+GRANT conferencia_Este TO Guillermina;
+SET DEFAULT ROLE conferencia_Este FOR Guillermina;
+
+DROP USER IF EXISTS Pancracio;
+CREATE USER Pancracio IDENTIFIED BY 'abc';
+GRANT conferencia_Oeste TO Pancracio;
+SET DEFAULT ROLE conferencia_Oeste FOR Pancracio;
+
+DROP USER IF EXISTS Pancracia;
+CREATE USER Pancracia IDENTIFIED BY 'abc';
+GRANT conferencia_Oeste TO Pancracia;
+SET DEFAULT ROLE conferencia_Oeste FOR Pancracia;
+
+DROP USER IF EXISTS Filomeno;
+CREATE USER Filomeno IDENTIFIED BY 'abc';
+GRANT division_Atlantica TO Filomeno;
+SET DEFAULT ROLE division_Atlantica FOR Filomeno;
+
+DROP USER IF EXISTS Filomena;
+CREATE USER Filomena IDENTIFIED BY 'abc';
+GRANT division_Atlantica TO Filomena;
+SET DEFAULT ROLE division_Atlantica FOR Filomena;
+
+DROP USER IF EXISTS Anaximandro;
+CREATE USER Anaximandro IDENTIFIED BY 'abc';
+GRANT division_Sudeste TO Anaximandro;
+SET DEFAULT ROLE division_Sudeste FOR Anaximandro;
+
+DROP USER IF EXISTS Anaximandra;
+CREATE USER Anaximandra IDENTIFIED BY 'abc';
+GRANT division_Sudeste TO Anaximandra;
+SET DEFAULT ROLE division_Sudeste FOR Anaximandra ;
+
+DROP USER IF EXISTS Romino;
+CREATE USER Romino IDENTIFIED BY 'abc';
+GRANT division_Central TO Romino;
+SET DEFAULT ROLE division_Central FOR Romino;
+
+DROP USER IF EXISTS Romina;
+CREATE USER Romina IDENTIFIED BY 'abc';
+GRANT division_Central TO Romina;
+SET DEFAULT ROLE division_Central FOR Romina;
+
+DROP USER IF EXISTS Agapito;
+CREATE USER Agapito IDENTIFIED BY 'abc';
+GRANT division_Pacifico TO Agapito;
+SET DEFAULT ROLE division_Pacifico FOR Agapito ;
+
+DROP USER IF EXISTS Agapita;
+CREATE USER Agapita IDENTIFIED BY 'abc';
+GRANT division_Pacifico TO Agapita;
+SET DEFAULT ROLE division_Pacifico FOR Agapita;
+
+DROP USER IF EXISTS Apolonio;
+CREATE USER Apolonio IDENTIFIED BY 'abc';
+GRANT division_Sudoeste TO Apolonio;
+SET DEFAULT ROLE division_Sudoeste FOR Apolonio;
+
+DROP USER IF EXISTS Apolonia;
+CREATE USER Apolonia IDENTIFIED BY 'abc';
+GRANT division_Sudoeste TO Apolonia;
+SET DEFAULT ROLE division_Sudoeste FOR Apolonia;
+
+DROP USER IF EXISTS Luzdivino;
+CREATE USER Luzdivino IDENTIFIED BY 'abc';
+GRANT division_Noroeste TO Luzdivino;
+SET DEFAULT ROLE division_Noroeste FOR Luzdivino;
+
+DROP USER IF EXISTS Luzdivina;
+CREATE USER Luzdivina IDENTIFIED BY 'abc';
+GRANT division_Noroeste TO Luzdivina;
+SET DEFAULT ROLE division_Noroeste FOR Luzdivina;
+ 
+#--------------------------------------------------------------------------------------------
+#	6. REFRESCA LOS PRIVILEGIOS
 #--------------------------------------------------------------------------------------------
 #	FLUSH PRIVILEGES;
 #--------------------------------------------------------------------------------------------
 FLUSH PRIVILEGES;
-

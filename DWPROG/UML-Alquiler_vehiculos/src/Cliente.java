@@ -13,7 +13,7 @@ public class Cliente {
     public Cliente( String DNI, String nombre, String apellidos){
         this.DNI = DNI;
         this.nombre = nombre;
-        this.apellidos = appellidos;
+        this.apellidos = apellidos;
     }
 
 
