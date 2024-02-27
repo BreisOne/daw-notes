@@ -48,16 +48,22 @@ class UsuarioController
         // Si no lo son, en  loginViewData invoca el método setStatus a la constante Util::OPERATION_NOK
         // En caso de que el login del servicio sea correcto, se guardarán en la sesión el id del usuario, el id del rol seleccionado y el email del usuario. A continuación, se llamará al método redirectAccordingToRole para que redirija al listado de usuarios si se usa el rol admin o al listado de notas si se usa el rol user.
         
-        if(isset($_POST["email"])&& isset($_POST["pwd"]) && isset($_POST["rol"])){
+        if(isset($_POST["email"]) && isset($_POST["pwd"]) && isset($_POST["rol"])){
             $userEmail = $_POST["email"];
             $userPwd = $_POST["pwd"];
             $userRol = $_POST["rol"];
 
             $userLogged = $this->usuarioServicio->login($userEmail, $userPwd, $userRol);
 
-            if($userLogged!=null){
-                
+            if($userLogged==null){
+                $loginViewData->setStatus(Util::OPERATION_NOK);
+
+            }else{
+
+                self::redirectAccordingToRole();
             }
+        }else{
+            return $loginViewData;
         }
     }
     public function logout()
