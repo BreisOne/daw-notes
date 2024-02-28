@@ -43,7 +43,7 @@
 
 -- 5. Base de datos DepartamentoOficinas (5 tablas).
 -- Une las tablas dpto_oficinas y oficina con LEFT OUTER JOIN, mostrando datos sólo de la ciudad de Pontevedra.
-
+	SELECT * FROM dpto_oficinas LEFT OUTER JOIN oficina ON dpto_oficinas.oficina = oficina.oficina WHERE oficina.ciudad IN ('Pontevedra');
 -- Une las tablas dpto_oficinas y oficina con RIGHT OUTER JOIN, mostrando datos sólo de la ciudad de Pontevedra.
 
 ---------------------------------------------------------------
