@@ -1,0 +1,30 @@
+
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(κ΄•Ύϊÿÿÿÿ8άθµί1
+m	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΞΊΎ›8άθµί1
+r	java:S117i"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿϋ…ϋÿÿÿÿ8άθµί1
+r	java:S117j"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°σόΤϋÿÿÿÿ8άθµί1
+m	java:S117~"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ύµ8άθµί1
+7
+java:S1220""Move this file to a named package.8άθµί1
+o	java:S116"NRename this field "DNI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(θόφύÿÿÿÿ8ήθµί1
+k	java:S116"ORename this field "PLUS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ό―8ήθµί1
+>
+java:S1170"!Make this final field static too.(‰ό―8ήθµί1
+j
+java:S18458"MRename method "plus" to prevent any misunderstanding/clash with field "PLUS".(±ε’8ίθµί1
+t
+java:S1450"RRemove the "DNI" field and declare it as a local variable in the relevant methods.(θόφύÿÿÿÿ8ίθµί1
+[
+java:S5993"9Change the visibility of this constructor to "protected".(κ΄•Ύϊÿÿÿÿ8ίθµί1
+L	java:S106I"+Replace this use of System.out by a logger.(¶«ήψÿÿÿÿ8γθµί1
+L	java:S106J"+Replace this use of System.out by a logger.(ΙΒα΄ώÿÿÿÿ8γθµί1
+L	java:S106b"+Replace this use of System.out by a logger.(¶«ήψÿÿÿÿ8δθµί1
+G	java:S106c"+Replace this use of System.out by a logger.(­ν8δθµί1
+Y
+java:S6353m"<Use concise character class syntax '\\d' instead of '[0-9]'.(ξ°΄Ή8εθµί1
+L	java:S106x"+Replace this use of System.out by a logger.(¶«ήψÿÿÿÿ8εθµί1
+L	java:S106y"+Replace this use of System.out by a logger.(Με¶αÿÿÿÿÿ8εθµί1
+M	java:S106"+Replace this use of System.out by a logger.(¶«ήψÿÿÿÿ8ζθµί1
+M	java:S106"+Replace this use of System.out by a logger.(άόρΦϋÿÿÿÿ8ζθµί1
+I
+java:S1068"'Remove this unused "DNI" private field.(θόφύÿÿÿÿ8ζθµί1
