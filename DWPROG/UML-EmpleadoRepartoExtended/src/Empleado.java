@@ -127,7 +127,7 @@ public abstract class Empleado {
         boolean salaryIsNotCorrect = true;
         while(salaryIsNotCorrect){
             try{
-                String regex = "^\\d{5}$";
+                String regex = "^[0-9]{5}(\\.[0-9]+)?$";
                 String salarioString = Double.toString(Salario);
 
                 Pattern pattern = Pattern.compile(regex);

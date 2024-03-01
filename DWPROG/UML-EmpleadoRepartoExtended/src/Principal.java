@@ -40,13 +40,13 @@ public class Principal {
 
         while(true){
 
-
                 System.out.println("Teclea 1 para añadir un nuevo empleado");
                 System.out.println("Teclea 2 para añadir un nuevo empleado");
                 int userOption = scanner.nextInt();
+                scanner.nextLine();
 
                 if (userOption == 1){
-                    System.out.println("El empleado es un repartidos o un comercial:");
+                    System.out.println("El empleado es un repartidor o un comercial:");
                     String employeeType = scanner.nextLine();
 
                     System.out.println("Introduce el nombre del empleado:");
@@ -63,31 +63,44 @@ public class Principal {
                     double employeeSalary = scanner.nextDouble();
                     scanner.nextLine();
 
-                    if(employeeType.contains("comercial")){
+                    boolean incorrectOption = true;
 
-                        System.out.println("Cual el su comision");
-                        double employeeComission = scanner.nextDouble();
-                        scanner.nextLine();
+                    while(incorrectOption){
 
-                        Comercial employeeComercial = new Comercial(employeeComission, employeeName, employeeDNI, employeeAge , employeeSalary);
-                        empleados.add(employeeComercial);
+                        if(employeeType.contains("comercial")){
+                            incorrectOption = false;
+
+                            System.out.println("Cual el su comision");
+                            double employeeComission = scanner.nextDouble();
+                            scanner.nextLine();
+
+                            Comercial employeeComercial = new Comercial(employeeComission, employeeName, employeeDNI, employeeAge , employeeSalary);
+                            empleados.add(employeeComercial);
 
 
-                    } else if (employeeType.contains("repartidos")) {
+                        } else if (employeeType.contains("repartidor")) {
+                            incorrectOption = false;
 
-                        System.out.println("Cual el su zona");
-                        String employeeZone = scanner.nextLine();
+                            System.out.println("Cual el su zona");
+                            String employeeZone = scanner.nextLine();
 
-                        Repartidor employeeDelivery = new Repartidor(employeeZone, employeeName, employeeDNI, employeeAge , employeeSalary);
-                        empleados.add(employeeDelivery);
+                            Repartidor employeeDelivery = new Repartidor(employeeZone, employeeName, employeeDNI, employeeAge , employeeSalary);
+                            empleados.add(employeeDelivery);
 
-                    }else{
-                        System.out.println("Elige un tipo de empleado valido");
+                        }else{
+                            System.out.println("Elige un tipo de empleado valido:");
+                            employeeType = scanner.nextLine();
+                        }
                     }
 
-                } else if (userOption == 2) {
-                    empleados.forEach(empleado -> System.out.println(empleado.toString()));
 
+                } else if(userOption == 2) {
+
+                    if(empleados.size() > 0){
+                        empleados.forEach(empleado -> System.out.println(empleado.toString()));
+                    }else {
+                        System.out.println("Aun no hay empleados en el programa");
+                    }
                 }else{
                     System.out.println("Elige una opción correcta");
 

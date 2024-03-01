@@ -18,7 +18,7 @@ public class CustomException extends Exception{
                  mError = "La edad tiene un formato incorrecto";
                 break;
             case 4:
-                 mError = "El salario no es correct0";
+                 mError = "El salario no es correcto";
                 break;
         }
     }
