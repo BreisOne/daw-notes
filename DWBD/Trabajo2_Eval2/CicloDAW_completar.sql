@@ -85,20 +85,32 @@ CREATE ROLE ALUMNADO;
 #		PROFESORADO		Posibilidad de privilegios de acceso (role_admin) y creación de  usuarios (create user)
 #		ALUMNADO		Sólo visibilidad (select)
 #*******************************************************************************************
+GRANT CREATE USER ON *.* TO PROFESORADO;
 GRANT ALL ON Modulo TO PROFESORADO;
+#GRANT ALL PRIVILEGES ON *.* TO PROFESORADO WITH GRANT OPTION;
+
 GRANT SELECT ON Modulo TO ALUMNADO;
     
 #*******************************************************************************************
 #	7.	ASIGNAMOS A CADA GRUPO SUS USUARIOS CREADOS
 #*******************************************************************************************
-GRANT PROFESORADO TO Prof_01, Prof_02, Prof_03, Prof_04, Prof_05, Prof_06, Prof_07, Prof_08, Prof_09, Prof_10;
+GRANT PROFESORADO TO Prof_01, Prof_02, Prof_03, Prof_04, Prof_05, Prof_06, Prof_07, Prof_08, Prof_09, Prof_10 WITH ADMIN OPTION;
 GRANT ALUMNADO TO Alumn_01, Alumn_02, Alumn_03, Alumn_04, Alumn_05, Alumn_06, Alumn_07, Alumn_08, Alumn_09, Alumn_10;
 
 #*******************************************************************************************
 #	8.	ASIGNAMOS PRIVILEGIOS POR DEFECTO
 #*******************************************************************************************  
-SET DEFAULT ROLE PROFESORADO FOR Prof_01, Prof_02, Prof_03, Prof_04, Prof_05, Prof_06, Prof_07, Prof_08, Prof_09, Prof_10;
-SET DEFAULT ROLE ALUMNADO FOR Alumn_01, Alumn_02, Alumn_03, Alumn_04, Alumn_05, Alumn_06, Alumn_07, Alumn_08, Alumn_09, Alumn_10;
+SET DEFAULT ROLE PROFESORADO FOR Prof_01;     SET DEFAULT ROLE ALUMNADO FOR Alumn_01;
+SET DEFAULT ROLE PROFESORADO FOR Prof_02;	  SET DEFAULT ROLE ALUMNADO FOR Alumn_02;
+SET DEFAULT ROLE PROFESORADO FOR Prof_03;     SET DEFAULT ROLE ALUMNADO FOR Alumn_03;
+SET DEFAULT ROLE PROFESORADO FOR Prof_04;     SET DEFAULT ROLE ALUMNADO FOR Alumn_04;
+SET DEFAULT ROLE PROFESORADO FOR Prof_05;	  SET DEFAULT ROLE ALUMNADO FOR Alumn_05;
+SET DEFAULT ROLE PROFESORADO FOR Prof_06;	  SET DEFAULT ROLE ALUMNADO FOR Alumn_06;	
+SET DEFAULT ROLE PROFESORADO FOR Prof_07;	  SET DEFAULT ROLE ALUMNADO FOR Alumn_07;	
+SET DEFAULT ROLE PROFESORADO FOR Prof_08;	  SET DEFAULT ROLE ALUMNADO FOR Alumn_08;	
+SET DEFAULT ROLE PROFESORADO FOR Prof_09;	  SET DEFAULT ROLE ALUMNADO FOR Alumn_09;	
+SET DEFAULT ROLE PROFESORADO FOR Prof_10;	  SET DEFAULT ROLE ALUMNADO FOR Alumn_10;	
+
 #*******************************************************************************************
 #	9.	REFRESCAMOS LOS CAMBIOS YA REALIZADOS (AUNQUE NO ES NECESARIO)
 #*******************************************************************************************
