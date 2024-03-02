@@ -36,16 +36,19 @@ class UsuarioServicio
         if(password_verify($pwd, $userByEmail->getPwdhash())){
 
             $userRoles = $this->rolRepository->findRolesByUserId($userByEmail->getId());
-
-            if(self::isUserInRole($userByEmail, $rolId)){
+            $userByEmail->setRoles($userRoles);
+            
+            if($this->isUserInRole($userByEmail, $rolId)){
                 
-                $userByEmail->setRoles($userRoles);
                 return $userByEmail;
 
             }else{
 
                 return null;
             }
+        }else{
+
+            return null;
         }
 
     }
