@@ -59,6 +59,10 @@ class UsuarioController
                 $loginViewData->setStatus(Util::OPERATION_NOK);
 
             }else{
+                
+                $_SESSION['userId'] = $userLogged->getId();
+                $_SESSION['roleId'] =  $userRol;
+                $_SESSION['email'] = $userEmail;
 
                 self::redirectAccordingToRole();
             }
