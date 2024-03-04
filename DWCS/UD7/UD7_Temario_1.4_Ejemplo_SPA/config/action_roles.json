@@ -2,7 +2,8 @@
     "UsuarioController": {
         "list": [1],
         "login":[],
-         "logout":[1,2],
+        "loginJSON":[],
+        "logout":[1,2],
         "register": [],
         "getRoles":[]
     },

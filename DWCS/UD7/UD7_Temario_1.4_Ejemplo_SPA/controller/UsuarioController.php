@@ -67,6 +67,49 @@ class UsuarioController
         }
     }
 
+    public function loginJSON()
+    {
+        //Para simplificar la implementación del ejemplo de SPA vamos a obviar la redirección en caso de que ya haya iniciado sesión
+
+        $this->page_title = 'Inicio de sesión';
+        $this->view = self::VIEW_FOLDER . DIRECTORY_SEPARATOR . 'login';
+
+        $data = json_decode(file_get_contents("php://input"), true);
+
+        if (isset($data["email"]) && isset($data["pwd"]) && isset($data["rol"])) {
+            $email = $data["email"];
+            $pwd = $data["pwd"];
+            $rolId = $data["rol"];
+
+            $userResult = $this->usuarioServicio->login($email, $pwd, $rolId);
+
+            if ($userResult == null) {
+                //401 Unauthorized
+                http_response_code(401);
+                $response["error"] = true;
+                return json_encode($response);
+            } else {
+
+                SessionManager::iniciarSesion();
+                $_SESSION["userId"] = $userResult->getId();
+                $_SESSION["email"] = $userResult->getEmail();
+                $_SESSION["roleId"] = $rolId;
+                $_SESSION["ultimoAcceso"] = time();
+
+
+                $response["userId"] = $userResult->getId();
+                $response["email"] = $userResult->getEmail();
+                return json_encode($response);
+            }
+        } else {
+            //400 Bad Request
+            http_response_code(400);
+            $response["error"] = true;
+            return json_encode($response);
+        }
+    }
+
+
 
 
     public function register()

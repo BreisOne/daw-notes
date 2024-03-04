@@ -1,4 +1,64 @@
 
+function loginJSON() {
+
+    
+    //evitamos que se envíe el formulario de forma predefinida (la acción por defecto sería enviar los datos al servidor)
+    event.preventDefault();
+
+    let email = document.getElementById('email').value;
+    let pwd = document.querySelector("#pwd").value;
+    let rol = document.querySelector("#rol").value;
+
+
+    let login_url = "?controller=Usuario&action=loginJSON";
+
+    //preparamos los datos que se enviarían al servidor como si se enviasen  por POST  desde el formulario
+    //const data = new FormData();
+    //data.append('email', email);
+    //data.append('pwd', pwd);
+    //data.append('rol', rol);
+
+    const data = {
+        "email": email,
+        "pwd": pwd,
+        "rol": rol
+    }
+
+    const request = new Request(base_url + login_url, {
+        method: "POST",
+        body: JSON.stringify(data)
+    });
+
+    fetch(request)
+            .then((response) => {
+                if (response.status === 200) {
+                    return response.json();
+                    //bad request
+                } else if ((response.status === 400) || (response.status===401)) {
+                    console.log('error 400');
+                    return false;
+                } else {
+                    console.log("Something went wrong on API server!");
+                    return false;
+                }
+
+            })
+            .then((response) => {
+                console.log(response);
+                if (response.userId && response.email) {
+                    toggleLoginMain(response.email);
+               
+                } else {
+                    console.error('La autenticación ha fallado');
+                    showErrorLogin('La autenticación ha fallado', true, "errorLogin");
+                }
+            }
+            )
+            .catch((error) => {
+                console.error('Ha ocurrido un error en login' + error);
+            });
+}
+
 
 function login(event) {
     //evitamos que se envíe el formulario de forma predefinida (la acción por defecto sería enviar los datos al servidor)
