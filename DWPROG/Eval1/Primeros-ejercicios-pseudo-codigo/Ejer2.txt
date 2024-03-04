@@ -1,0 +1,19 @@
+//Leer desde el teclado una serie de número hasta
+obtenre uno inferior a 100 y par
+
+Algortimo CadenaNumeros 
+	Definir N Como Entero;
+	
+	Escribir "Ingrese un número: ";
+	Leer N;
+	
+
+	SI N<100 y N
+	suma = 0;
+	Para cont<-1 Hasta N con Paso 1 Hacer;
+		suma = suma + cont;
+	FinPara
+
+
+FinAlgoritmo
+	

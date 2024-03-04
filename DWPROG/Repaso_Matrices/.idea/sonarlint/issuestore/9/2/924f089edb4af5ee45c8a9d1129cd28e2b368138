@@ -1,0 +1,10 @@
+
+0
+java:S1220""Move this file to a named package.
+@	java:S106"+Replace this use of System.out by a logger.(€âú
+@	java:S106"+Replace this use of System.out by a logger.(¥ÛÂ§
+E	java:S106"+Replace this use of System.out by a logger.(ˆÄ¼½ùÿÿÿÿ
+g
+java:S1871"LThis branch's code block is the same as the block for the branch on line 26.(Ù•¢ûÿÿÿÿ
+a
+java:S1871E"LThis branch's code block is the same as the block for the branch on line 67.(»Š«y

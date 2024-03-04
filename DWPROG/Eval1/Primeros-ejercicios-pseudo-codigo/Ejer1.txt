@@ -1,0 +1,19 @@
+//Escribir un Pseudocódigo que calcule la suma
+// de los N primeros números enteros positivos
+
+Algortimo SumaDeEnteros 
+	Definir N Como Entero;
+	Definir suma Como Entero;
+	Definir cont Como Entero;
+	
+	Escribir "Ingrese un número: ";
+	Leer N;
+	
+	suma = 0;
+	Para cont<-1 Hasta N con Paso 1 Hacer;
+		suma = suma + cont;
+	FinPara
+
+
+FinAlgoritmo
+	
