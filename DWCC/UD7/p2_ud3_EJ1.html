@@ -99,7 +99,8 @@
         for (let i = 0; i < localStorage.length; i++) {
             let trb = document.createElement("tr");
 
-            let alumno = localStorage.getItem(i);
+            let alumno = JSON.parse(localStorage.getItem(i));
+
             for (const [key, value] of Object.entries(alumno)) {
                 let td = document.createElement("td");
                 td.innerText = value;
@@ -112,6 +113,11 @@
         divAlumnos.appendChild(table);
     }
 
+    const eliminar = ()=>{
+        let eliminarAlumnoDNI = document.getElementById("removeAlumno").value;
+        localStorage.removeItem(eliminarAlumnoDNI);
+    }
+
     let cont = 0;
     document.getElementById("formalumnos").addEventListener("submit", function (event){
         event.preventDefault();
@@ -120,14 +126,14 @@
         let direccion = document.getElementById("addDireccion").value;
 
         let alumno = new Alumno(nombre, DNI, direccion);
-        localStorage.setItem(cont, JSON.stringify(alumno));
+        localStorage.setItem(DNI, JSON.stringify(alumno));
         cont+=1;
 
         console.log(alumno);
     })
 
     document.getElementById("mostrar").addEventListener("click", mostrar)
-
+    document.getElementById("borrar").addEventListener("click", eliminar)
 
 
 

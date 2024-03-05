@@ -1,0 +1,90 @@
+<html lang="es">
+
+<head>
+    <title>JSON</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+</head>
+
+<body>
+    <h1> Añade tu pelicula </h1>
+    <form id="formpeliculas">
+
+
+
+        <fieldset>
+            <legend>Añade las peliculas</legend>
+            <p>
+                <input type="text" id="addTitulo" />
+                <label for="titulo">Titulo</label>
+            </p>
+            <p>
+                <input type="text" id="addDirector" />
+                <label for="director">Director</label>
+            </p>
+            <p>
+                <input type="text" id="addDuracion" />
+                <label for="duracion">Duracion</label>
+            </p>
+            <p>
+                <button type="submit" id="botonGuardar"> Guardar </button>
+            </p>
+        </fieldset>
+
+    </form>
+
+
+
+
+    <div id="peliculas">
+        <h2> Peliculas: </h2>
+        <ul id="peliculaslist"> </ul>
+
+    </div>
+
+
+    <form id="formborrarpeliculas">
+        <fieldset>
+            <legend>Borrar peliculas</legend>
+            <input type="text" id="removepelicula" />
+            <button type="submit" id = "botonBorrar"> Borrar </button>
+        </fieldset>
+    </form>
+   
+</body>
+<script>
+    class Pelicula{
+        constructor(titulo, director, duracion){
+            this.titulo = titulo;
+            this.director = director;
+            this.duracion = duracion;
+        }
+    }
+
+    const guardarPelicula = ()=>{
+        let titulo = document.getElementById("addTitulo").value;
+        let director = document.getElementById("addDirector").value;
+        let duracion = document.getElementById("addDuracion").value;
+
+        let pelicula = new Pelicula(titulo, director, duracion);
+        
+        localStorage.setItem(titulo, JSON.stringify(pelicula));
+    }
+    const borrarPelicula = ()=>{
+        let clavePeliculaBorrar = document.getElementById("removepelicula").value;
+        let elementoBorrar = localStorage.getItem(clavePeliculaBorrar);
+        
+        if(elementoBorrar !== null){ 
+            localStorage.removeItem(clavePeliculaBorrar);
+        }else{
+            alert("La pelicula no existe en la base de datos");
+        }
+    }
+    document.getElementById("botonGuardar").addEventListener("click", guardarPelicula);
+    document.getElementById("botonBorrar").addEventListener("click", borrarPelicula);
+</script>
+
+</html>
