@@ -1,0 +1,46 @@
+
+‹
+java:S1319š"hThe type of "miembros" should be an interface such as "List" rather than the implementation "ArrayList".(Ãà…Æüÿÿÿÿ8ä˜ÿà1
+†
+java:S1319§"hThe type of "miembros" should be an interface such as "List" rather than the implementation "ArrayList".(ÉÑ”8ä˜ÿà1
+…
+java:S1319µ"hThe type of "miembros" should be an interface such as "List" rather than the implementation "ArrayList".(óÇb8ä˜ÿà1
+h
+java:S1301H"KReplace this "switch" statement by "if" statements to increase readability.(ıÇĞ«8ä˜ÿà1
+m
+java:S3655x"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ˆ»…à8³¨ ÿà1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Çµí‘8ë˜ÿà1
+]	java:S125"<This block of commented-out lines of code should be removed.(¿·Äüÿÿÿÿ8î˜ÿà1
+X	java:S125"<This block of commented-out lines of code should be removed.(ı³—ˆ8î˜ÿà1
+L	java:S106"+Replace this use of System.out by a logger.(¹Ş„ ùÿÿÿÿ8ï˜ÿà1
+L	java:S106"+Replace this use of System.out by a logger.(³¡Î’ùÿÿÿÿ8ï˜ÿà1
+L	java:S106"+Replace this use of System.out by a logger.(ÛÕààûÿÿÿÿ8ï˜ÿà1
+L	java:S106"+Replace this use of System.out by a logger.(æ÷ª©şÿÿÿÿ8ï˜ÿà1
+L	java:S106""+Replace this use of System.out by a logger.(¶£Ş»üÿÿÿÿ8ğ˜ÿà1
+L	java:S106%"+Replace this use of System.out by a logger.(é Ç¯üÿÿÿÿ8ğ˜ÿà1
+G	java:S106("+Replace this use of System.out by a logger.(½°º8ñ˜ÿà1
+G	java:S106,"+Replace this use of System.out by a logger.(ÏíÚ×8ñ˜ÿà1
+F	java:S1061"+Replace this use of System.out by a logger.(† µ8ò˜ÿà1
+L	java:S1066"+Replace this use of System.out by a logger.(¢¶Æ¯úÿÿÿÿ8ò˜ÿà1
+F	java:S106<"+Replace this use of System.out by a logger.(é§ˆx8ó˜ÿà1
+F	java:S106?"+Replace this use of System.out by a logger.(é§ˆx8ó˜ÿà1
+L	java:S106C"+Replace this use of System.out by a logger.(Ôªú„üÿÿÿÿ8ô˜ÿà1
+>	java:S131H""Add a default case to this switch.(ıÇĞ«8ô˜ÿà1
+G	java:S106Z"+Replace this use of System.out by a logger.(¨ñß™8õ˜ÿà1
+L	java:S106]"+Replace this use of System.out by a logger.(ıÍúÿÿÿÿ8õ˜ÿà1
+G	java:S106a"+Replace this use of System.out by a logger.(¸Ó€8ö˜ÿà1
+L	java:S106m"+Replace this use of System.out by a logger.(„ó€œÿÿÿÿÿ8ø˜ÿà1
+G	java:S106u"+Replace this use of System.out by a logger.(’šÎº8ø˜ÿà1
+L	java:S106"+Replace this use of System.out by a logger.(¦¶Úúÿÿÿÿ8ú˜ÿà1
+M	java:S106€"+Replace this use of System.out by a logger.(°Óöıÿÿÿÿ8ú˜ÿà1
+H	java:S106"+Replace this use of System.out by a logger.(ï¯±õ8ú˜ÿà1
+H	java:S106"+Replace this use of System.out by a logger.(±…ì8ƒ‚˜ÿà1
+M	java:S106•"+Replace this use of System.out by a logger.(şóÀíùÿÿÿÿ8ƒ‚˜ÿà1
+H	java:S106¤"+Replace this use of System.out by a logger.(ÚôŠ8†‚˜ÿà1
+?
+java:S1116¥"Remove this empty statement.(ôŸìúÿÿÿÿ8†‚˜ÿà1
+H	java:S106²"+Replace this use of System.out by a logger.(š¤ ´8ˆ‚˜ÿà1
+G	java:S106¿"+Replace this use of System.out by a logger.(ó²Óa8Š‚˜ÿà1
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8Ä¨ ÿà1

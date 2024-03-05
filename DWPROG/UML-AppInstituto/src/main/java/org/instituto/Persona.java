@@ -1,19 +1,18 @@
 package org.instituto;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class Persona {
     private String DNI;
     private String nombre;
     private int edad;
-    private Date fechaNacimiento;
+    private LocalDate fechaNacimiento;
 
-    private Date fechaIncorporacion;
+    private LocalDate fechaIncorporacion;
 
     public  Persona(){
-        this("","",0,new Date(),new Date());
+        this("","",0,LocalDate.of(0,0,0),LocalDate.of(0,0,0));
     }
-    public  Persona(String DNI, String nombre, int edad, Date fechaNacimiento, Date fechaIncorporacion){
+    public  Persona(String DNI, String nombre, int edad, LocalDate fechaNacimiento, LocalDate fechaIncorporacion){
         this.DNI = DNI;
         this.nombre = nombre;
         this.edad = edad;
@@ -24,7 +23,6 @@ public abstract class Persona {
     public String getDNI() {
         return DNI;
     }
-
     public void setDNI(String DNI) {
         this.DNI = DNI;
     }
@@ -45,19 +43,19 @@ public abstract class Persona {
         this.edad = edad;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public Date getFechaIncorporacion() {
+    public LocalDate getFechaIncorporacion() {
         return fechaIncorporacion;
     }
 
-    public void setFechaIncorporacion(Date fechaIncorporacion) {
+    public void setFechaIncorporacion(LocalDate fechaIncorporacion) {
         this.fechaIncorporacion = fechaIncorporacion;
     }
 

@@ -1,7 +1,6 @@
 package org.instituto;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Profesor extends Persona{
     private String tipoJornada;
@@ -14,7 +13,7 @@ public class Profesor extends Persona{
         this.sueldo = 0;
         this.especialidad = new Especialidad();
     }
-    public Profesor (String DNI, String nombre, int edad, Date fechaNacimiento, Date fechaIncorporacion,
+    public Profesor (String DNI, String nombre, int edad, LocalDate fechaNacimiento, LocalDate fechaIncorporacion,
                      String tipoJornada, double sueldo, Especialidad especialidad){
 
         super(DNI, nombre, edad, fechaNacimiento, fechaIncorporacion);

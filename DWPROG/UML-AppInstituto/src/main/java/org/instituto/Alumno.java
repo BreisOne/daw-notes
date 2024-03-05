@@ -1,8 +1,6 @@
 package org.instituto;
 
 import java.time.LocalDate;
-import java.util.Date;
-
 public class Alumno extends Persona{
     private String ciclo;
     private double mediaNotas;
@@ -14,7 +12,7 @@ public class Alumno extends Persona{
         this.mediaNotas = 0;
         this.importeMatricula = 0;
     }
-    public Alumno (String DNI, String nombre, int edad, Date fechaNacimiento, Date fechaIncorporacion,
+    public Alumno (String DNI, String nombre, int edad, LocalDate fechaNacimiento, LocalDate fechaIncorporacion,
                     String ciclo, double mediaNotas, double importeMatricula){
 
         super(DNI, nombre, edad, fechaNacimiento, fechaIncorporacion);

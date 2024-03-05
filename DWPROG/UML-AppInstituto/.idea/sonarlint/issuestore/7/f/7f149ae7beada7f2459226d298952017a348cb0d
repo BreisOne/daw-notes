@@ -1,0 +1,67 @@
+
+‘
+java:S1192"nDefine a constant instead of duplicating this literal "Vuelve a introducir la jornada del profesor: " 3 times.(ä”×§øÿÿÿÿ8à¹Ôşà1
+r	java:S117	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡Åûÿÿÿÿ8à¹Ôşà1
+r	java:S117
+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°óüÔûÿÿÿÿ8à¹Ôşà1
+m	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îº¾›8à¹Ôşà1
+r	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÿıäøÿÿÿÿ8à¹Ôşà1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ì›İ¡8ã¹Ôşà1
+e
+java:S1854"CRemove this useless assignment to local variable "DNIIsNotCorrect".(êª™üÿÿÿÿ8å¹Ôşà1
+Y
+java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(î°´¹8æ¹Ôşà1
+L	java:S106"+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8æ¹Ôşà1
+L	java:S106"+Replace this use of System.out by a logger.(Ìå¶áÿÿÿÿÿ8æ¹Ôşà1
+h
+java:S1854("FRemove this useless assignment to local variable "nombreIsNotCorrect".(Ôß®œúÿÿÿÿ8æ¹Ôşà1
+L	java:S106."+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8ç¹Ôşà1
+L	java:S106/"+Replace this use of System.out by a logger.(ÉÂá´şÿÿÿÿ8ç¹Ôşà1
+f
+java:S1854A"DRemove this useless assignment to local variable "EdadIsNotCorrect".(ÆÙĞ²ûÿÿÿÿ8ç¹Ôşà1
+L	java:S106G"+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8è¹Ôşà1
+G	java:S106H"+Replace this use of System.out by a logger.(­í8è¹Ôşà1
+c
+java:S1854Z"FRemove this useless assignment to local variable "salaryIsNotCorrect".(ƒââ8è¹Ôşà1
+Y
+java:S6353S"<Use concise character class syntax '\\d' instead of '[0-9]'.(¤ßÑ‰8è¹Ôşà1
+Y
+java:S6353S"<Use concise character class syntax '\\d' instead of '[0-9]'.(¤ßÑ‰8è¹Ôşà1
+L	java:S106`"+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8é¹Ôşà1
+L	java:S106a"+Replace this use of System.out by a logger.(ÜüñÖûÿÿÿÿ8é¹Ôşà1
+b
+java:S1854s"ERemove this useless assignment to local variable "fechaIsNotCorrect".(ò•‰ù8é¹Ôşà1
+Y
+java:S6353m"<Use concise character class syntax '\\d' instead of '[0-9]'.(»¬Şê8é¹Ôşà1
+Y
+java:S6353m"<Use concise character class syntax '\\d' instead of '[0-9]'.(»¬Şê8é¹Ôşà1
+Y
+java:S6353m"<Use concise character class syntax '\\d' instead of '[0-9]'.(»¬Şê8é¹Ôşà1
+L	java:S106y"+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8ê¹Ôşà1
+G	java:S106z"+Replace this use of System.out by a logger.(²ˆË8ê¹Ôşà1
+c
+java:S1854ˆ"ERemove this useless assignment to local variable "fechaIsNotCorrect".(ò•‰ù8ê¹Ôşà1
+M	java:S106"+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8ê¹Ôşà1
+M	java:S106"+Replace this use of System.out by a logger.(ä”×§øÿÿÿÿ8ê¹Ôşà1
+c
+java:S1854"ERemove this useless assignment to local variable "fechaIsNotCorrect".(ò•‰ù8ê¹Ôşà1
+M	java:S106£"+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8ë¹Ôşà1
+M	java:S106¤"+Replace this use of System.out by a logger.(ä”×§øÿÿÿÿ8ë¹Ôşà1
+g
+java:S1854¶"IRemove this useless assignment to local variable "notaMediaIsNotCorrect".(áë‰Õ8ë¹Ôşà1
+_
+java:S6353¯"<Use concise character class syntax '\\d' instead of '[0-9]'.(¡ÕÃÿÿÿÿÿ8ë¹Ôşà1
+_
+java:S6353¯"<Use concise character class syntax '\\d' instead of '[0-9]'.(¡ÕÃÿÿÿÿÿ8ë¹Ôşà1
+M	java:S106¼"+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8ì¹Ôşà1
+M	java:S106½"+Replace this use of System.out by a logger.(ä”×§øÿÿÿÿ8ì¹Ôşà1
+m
+java:S1854Ğ"PRemove this useless assignment to local variable "importeMatriculaIsNotCorrect".(¹„Â
+8×Éÿà1
+_
+java:S6353É"<Use concise character class syntax '\\d' instead of '[0-9]'.(¡ÕÃÿÿÿÿÿ8ƒ–Œÿà1
+_
+java:S6353É"<Use concise character class syntax '\\d' instead of '[0-9]'.(¡ÕÃÿÿÿÿÿ8ƒ–Œÿà1
+M	java:S106Ö"+Replace this use of System.out by a logger.(¶«Şøÿÿÿÿ8„–Œÿà1
+M	java:S106×"+Replace this use of System.out by a logger.(§ù™Íùÿÿÿÿ8„–Œÿà1

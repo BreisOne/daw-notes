@@ -13,3 +13,7 @@ Y
 )src/main/java/org/instituto/Profesor.java,a\0\a0fdacad55ceaae3b0f715e1c8248e21cf29444d
 ]
 -src/main/java/org/instituto/Especialidad.java,f\0\f01125cd007954a9c068fae5c1e9c6b832aafad9
+]
+-src/main/java/org/instituto/Validaciones.java,7\f\7f149ae7beada7f2459226d298952017a348cb0d
+`
+0src/main/java/org/instituto/CustomException.java,0\d\0d15159e6881c5577d13f12bd133ee80deb011f0

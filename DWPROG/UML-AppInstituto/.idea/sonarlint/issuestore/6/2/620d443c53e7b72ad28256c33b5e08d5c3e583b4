@@ -1,8 +1,8 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¯âÑüÿÿÿÿ8˜Ë¦Öà1
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š°Åİ8™Ë¦Öà1
-o	java:S116"NRename this field "DNI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èüöšıÿÿÿÿ8œË¦Öà1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶¹ìÄ8é‡±ıà1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š°Åİ8ê‡±ıà1
+o	java:S116"NRename this field "DNI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èüöšıÿÿÿÿ8í‡±ıà1
 [
-java:S5993"9Change the visibility of this constructor to "protected".(æòæÌùÿÿÿÿ8Ë¦Öà1
-[
-java:S5993"9Change the visibility of this constructor to "protected".(›¯âÑüÿÿÿÿ8Ë¦Öà1
+java:S5993"9Change the visibility of this constructor to "protected".(æòæÌùÿÿÿÿ8î‡±ıà1
+V
+java:S5993"9Change the visibility of this constructor to "protected".(¶¹ìÄ8î‡±ıà1
