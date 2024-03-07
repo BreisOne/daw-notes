@@ -15,6 +15,12 @@ The repository is organized into the following folders:
 4. **DWBD/Databases**: Contains files and scripts related to the database module.
 
 5. **DWCD/Development**: Contains files and scripts related to the development contours module.
+       
+    **Katas from DWCD module:**
+    - [yatzy-refactoring-kata.](https://github.com/BreisOne/yatzy-refactoring-kata)
+    - [bowling-refactoring-kata](https://github.com/BreisOne/bowling-refactoring-kata)
+    - [dni-refactoring-kata](https://github.com/BreisOne/dni-refactoring-kata)
+    - [mollapp-intercepting-filter](https://github.com/BreisOne/mollapp-intercepting-filter)
 
 ## License
 
