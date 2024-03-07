@@ -1,0 +1,16 @@
+{
+    "UsuarioController": {
+        "list": [1],
+        "login":[],
+         "logout":[1,2],
+        "register": [],
+        "getRoles":[]
+    },
+    "NotaController":{
+        "list": [1, 2],
+        "edit": [1, 2],
+        "delete": [1, 2],
+        "confirmDelete": [1, 2],
+        "save": [1, 2]
+    }
+}
