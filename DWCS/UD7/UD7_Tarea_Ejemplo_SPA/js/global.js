@@ -1,7 +1,7 @@
 
 const base_url = "http://localhost:3000/UD7_Tarea_Ejemplo_SPA/controller/FrontController.php";
 
-let userId = null;
+let userId = null
 
 window.onload = onceLoaded;
 
