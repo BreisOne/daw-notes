@@ -37,28 +37,63 @@
 </div>
 
 <script>
+
     class Item{
         constructor(nombre, precio){
             this.nombre = nombre;
             this.precio = precio;
         }
     }
+    
+    let word = "";
+
     const anhadirArticulo = ()=>{
         let nombre = document.getElementById("entradaNombre");
         let precio = document.getElementById("entradaPrecio");
         
-        let item = new Item(nombre.value, precio.value);
-        console.log(item);
-        localStorage.setItem(nombre.value, JSON.stringify(item));
-        nombre.value = "";
-        precio.value = "";
+        if(nombre.value != "" && word != ""){
+            let item = new Item(word, precio.value);
+            console.log(item);
+            localStorage.setItem(word, JSON.stringify(item));
+            nombre.value = "";
+            precio.value = "";
+            word = "";
+        
+        }else{
+            alert("Debes introducir un nombre para el producto");
+        }
+        
     }
 
     const borrarArticulo = () =>{
         let nombre = document.getElementById("entradaNombre");
-        let articuloEliminar = JSON.parse(localStorage.getItem(nombre));
+        let articuloEliminar = JSON.parse(localStorage.getItem(word));
         listarArticulosBorrados(articuloEliminar);
         localStorage.removeItem(nombre.value);
+        nombre = "";
+        word = "";
+    }
+
+    const borrarElementoLista = (event)=>{
+        let listC = document.get
+        let liEliminar = event.parentNode;
+        
+    }
+
+    const listarArticulosComprados = (articulo)=>{
+        let listArticElim = document.getElementById("listaC");
+        let liElement = document.createElement("li");
+        let botonBorrarProducto = document.createAttribute("input");
+        botonBorrarProducto.nodeType = "button";
+        botonBorrarProducto.value = "borrar";
+        botonBorrarProducto.addEventListener("click", borrarElementoLista);
+
+        let nombreElement = document.createTextNode(articulo.nombre);
+
+        liElement.appendChild(nombreElement);
+        liElement.appendChild(botonBorrarProducto);
+        listArticElim.appendChild(liElement);
+
     }
 
     const listarArticulosBorrados = (articulo)=>{
@@ -74,6 +109,22 @@
 
     }
 
+    const cambiarLetrasAsteriscos = (event)=>{
+        let letter = event.key;
+        console.log(letter);
+        
+        if((letter.match(/[a-zA-Z]{1}/) && letter != "Backspace") || letter.match(/[0-9]{1}/) ){
+            event.preventDefault();
+            word += letter;
+            document.getElementById("entradaNombre").value += "*"; 
+        }else if(letter == "Backspace"){
+            event.preventDefault();
+            word = word.slice(0, -1);
+            document.getElementById("entradaNombre").value = document.getElementById("entradaNombre").value.slice(0, -1);
+        } 
+    }
+
+    document.getElementById("entradaNombre").addEventListener("keydown", cambiarLetrasAsteriscos);
     document.getElementById("botonAnadir").addEventListener("click", anhadirArticulo);
     document.getElementById("botonBorrar").addEventListener("click",borrarArticulo);
 
