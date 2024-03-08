@@ -129,16 +129,52 @@ create table Poblacion (
 #*******************************************************************************************
 #		TABLA Provincia
 #*******************************************************************************************
-	ALTER TABLE Provincia	AUTO_INCREMENT = 10;
+ALTER TABLE Provincia	AUTO_INCREMENT = 10;
+
+START TRANSACTION;
+
 	INSERT INTO Provincia( nombre )	VALUES( 'A Coruña' );
 	INSERT INTO Provincia( nombre )	VALUES( 'Lugo' );
+    
+SAVEPOINT primer_punto_gardado;
+
 	INSERT INTO Provincia( nombre )	VALUES( 'Ourense' );
-	INSERT INTO Provincia( nombre )	VALUES( 'Pontevedra' );    
+	INSERT INTO Provincia( nombre )	VALUES( 'Pontevedra' ); 
+    
+SAVEPOINT segundo_punto_gardado;
+	SELECT * FROM Provincia;
+
+ROLLBACK TO SAVEPOINT primer_punto_gardado;
+	SELECT * FROM provincia;
+
+	INSERT INTO Provincia( nombre )	VALUES( 'Ourense' );
+	INSERT INTO Provincia( nombre )	VALUES( 'Pontevedra' );
+    
+ROLLBACK;
+	
+    SELECT * FROM provincia;
+	ALTER TABLE Provincia AUTO_INCREMENT = 10;
+
+	INSERT INTO Provincia( nombre )	VALUES( 'A Coruña' );
+	INSERT INTO Provincia( nombre )	VALUES( 'Lugo' );
+    
+SAVEPOINT primer_punto_gardado;
+
+	INSERT INTO Provincia( nombre )	VALUES( 'Ourense' );
+	INSERT INTO Provincia( nombre )	VALUES( 'Pontevedra' ); 
+    
+SAVEPOINT segundo_punto_gardado;
+	
+COMMIT;
+    	SELECT * FROM provincia;
 
 #*******************************************************************************************
 #		TABLA Comarca
 #*******************************************************************************************
 	ALTER TABLE Comarca		AUTO_INCREMENT = 100;
+
+START TRANSACTION;
+
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Arzúa', 10 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Barbanza', 10 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'A Barcala', 10 );
@@ -149,7 +185,9 @@ create table Poblacion (
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Ferrol', 10 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Fisterra', 10 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Muros', 10 );
-        
+
+SAVEPOINT primer_punto_gardado;
+
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Noia', 10 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Ordes', 10 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Ortegal', 10 );
@@ -159,6 +197,52 @@ create table Poblacion (
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Terra de Melide', 10 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Terra de Soneira', 10 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Xallas', 10 );
+
+SAVEPOINT segundo_punto_gardado;
+	SELECT * FROM Comarca;
+
+ROLLBACK TO SAVEPOINT primer_punto_gardado;
+	SELECT * FROM Comarca;
+    
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Noia', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Ordes', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Ortegal', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Santiago', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'O Sar', 10 );
+    
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Terra de Melide', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Terra de Soneira', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Xallas', 10 );
+
+ROLLBACK;
+	
+	SELECT * FROM Comarca;
+	ALTER TABLE Comarca		AUTO_INCREMENT = 100;
+
+	INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Arzúa', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Barbanza', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'A Barcala', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Bergantiños', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Betanzos', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'A Coruña', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Eume', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Ferrol', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Fisterra', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Muros', 10 );
+
+SAVEPOINT primer_punto_gardado;
+
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Noia', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Ordes', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Ortegal', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Santiago', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'O Sar', 10 );
+    
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Terra de Melide', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Terra de Soneira', 10 );
+    INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Xallas', 10 );
+
+SAVEPOINT segundo_punto_gardado;
 
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Os Ancares', 11 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Chantada', 11 );
@@ -197,6 +281,9 @@ create table Poblacion (
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'O Salnés', 13 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Tabeirós-Terra de Montes', 13 );
     INSERT INTO	Comarca( nombre, idProvincia )	VALUES ( 'Vigo', 13 );
+
+COMMIT;
+    	SELECT * FROM Comarca;
 
 #*******************************************************************************************
 #		TABLA Concello

@@ -1,5 +1,5 @@
 #*******************************************************************************************
-#	1.	CREACIÓN Y USO DE LA BASE DE DATOS 'CicloDAW'
+#	1.	CREACIÓN Y USO DE LA BASE DE DATOS 'CicloDAW'C:\Users\a23braisbm\Desktop\DUAL\DWCS\UD5\UD5_Actividad_5.4_TAREA_UD5_Ejemplo_cesta_compra\scripts\1_proyecto.sql
 #*******************************************************************************************
 DROP DATABASE IF EXISTS CicloDAW;
 CREATE DATABASE CicloDAW;
