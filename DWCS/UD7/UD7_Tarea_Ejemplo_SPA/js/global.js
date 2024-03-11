@@ -1,5 +1,5 @@
 
-const base_url = "http://localhost:3000/controller/FrontController.php";
+const base_url = "http://localhost:3000/UD7/UD7_Tarea_Ejemplo_SPA/controller/FrontController.php";
 
 let userId = null
 
