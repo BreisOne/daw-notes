@@ -47,6 +47,7 @@
     
     let word = "";
 
+    //Añadir artículo al localStorage y a la lista de artículos comprados
     const anhadirArticulo = ()=>{
         let nombre = document.getElementById("entradaNombre");
         let precio = document.getElementById("entradaPrecio");
@@ -55,6 +56,7 @@
             let item = new Item(word, precio.value);
             console.log(item);
             localStorage.setItem(word, JSON.stringify(item));
+            listarArticulosComprados(item);
             nombre.value = "";
             precio.value = "";
             word = "";
@@ -64,56 +66,120 @@
         }
         
     }
+    //Borrar artículo desde el input de texto. Se elimina del local storage y de la lista de la compra, por último se añade a la lista de artículos borrados
 
     const borrarArticulo = () =>{
         let nombre = document.getElementById("entradaNombre");
         let articuloEliminar = JSON.parse(localStorage.getItem(word));
+
+        let listC = document.getElementById("listaC");
+        let elementListC = document.getElementById(articuloEliminar.nombre);
+
+        listC.removeChild(elementListC);
         listarArticulosBorrados(articuloEliminar);
         localStorage.removeItem(nombre.value);
         nombre = "";
         word = "";
     }
 
-    const borrarElementoLista = (event)=>{
-        let listC = document.get
-        let liEliminar = event.parentNode;
+    //Crear boton de para eliminar producto de la lista de compra
+    const crearBotonEliminar = ()=>{
+        let botonBorrarProducto = document.createElement("input");
         
+        botonBorrarProducto.type = "button";
+        botonBorrarProducto.value = "borrar";
+        botonBorrarProducto.addEventListener("click", borrarElementoListaC);
+        return botonBorrarProducto;
+    };
+
+    //Crear boton para mover producto hacia arriba en la lista de compra
+    const crearMoverArriba = ()=>{
+        let botonMoverArriba = document.createElement("input");
+        botonMoverArriba.type = "button";
+        botonMoverArriba.value = "arriba";
+        botonMoverArriba.addEventListener("click", moverElementoArriba);
+        return botonMoverArriba;
+    }
+    //Crear boton para mover producto hacia abajo en la lista de compra
+
+    const crearMoverAbajo = ()=>{
+        let botonMoverAbajo = document.createElement("input");
+        botonMoverAbajo.type = "button";
+        botonMoverAbajo.value = "abajo";
+        botonMoverAbajo.addEventListener("click", moverElementoAbajo);
+        return botonMoverAbajo;
     }
 
+    //Función que elimina el producto de la lista de la compra al clicar el botón.
+    const borrarElementoListaC = (event)=>{
+        let listC = document.getElementById("listaC");
+        let liEliminar = event.target.parentNode;
+        let articulo = liEliminar.textContent;
+        listC.removeChild(liEliminar);
+        
+        let articuloEliminar = JSON.parse(localStorage.getItem(articulo));
+        localStorage.removeItem(articulo);
+
+        listarArticulosBorrados(articuloEliminar);        
+    }
+
+    //Función para mover el elemento a la posición superior
+    const moverElementoArriba = (event) => {
+        
+        let listC = document.getElementById("listaC");
+        let elemento = event.target.parentNode;
+        let elementoSuperior = elemento.previousSibling;
+        console.log(elementoSuperior);
+        listC.insertBefore(elemento, elementoSuperior);
+    }
+
+    //Funcion para mover el elemento a la posición inferior
+    const moverElementoAbajo = (event)=>{
+
+        let elemento = event.target.parentNode;
+        let elementoPosterior = elemento.nextSibling;
+        elementoPosterior.after(elemento);
+    }
+
+
+    //Función para listar los productos en la lista de la compra a medida que se añaden desde el input de texto
     const listarArticulosComprados = (articulo)=>{
         let listArticElim = document.getElementById("listaC");
         let liElement = document.createElement("li");
-        let botonBorrarProducto = document.createAttribute("input");
-        botonBorrarProducto.nodeType = "button";
-        botonBorrarProducto.value = "borrar";
-        botonBorrarProducto.addEventListener("click", borrarElementoLista);
+        liElement.id = articulo.nombre;
+        
+        let botonEliminar = crearBotonEliminar();
+        let botonMoverArriba = crearMoverArriba();
+        let botonMoverAbajo = crearMoverAbajo();
 
         let nombreElement = document.createTextNode(articulo.nombre);
 
         liElement.appendChild(nombreElement);
-        liElement.appendChild(botonBorrarProducto);
+        liElement.appendChild(botonEliminar);
+        liElement.appendChild(botonMoverArriba);
+        liElement.appendChild(botonMoverAbajo);
         listArticElim.appendChild(liElement);
 
     }
 
+    //Función para listas los artículos en la lista de borrados a medida que se eliminen de la lista de la compra
     const listarArticulosBorrados = (articulo)=>{
         let listArticElim = document.getElementById("listaE");
         let liElement = document.createElement("li");
 
-        let nombreElement = document.createTextNode(articulo.nombre);
-        let precioElement = document.createTextNode(articulo.precio);
+        let elementData = document.createTextNode(`${articulo.nombre} ${articulo.precio}`);
 
-        liElement.appendChild(nombreElement);
-        liElement.appendChild(precioElement);
+        liElement.appendChild(elementData);
         listArticElim.appendChild(liElement);
 
     }
 
+    //Función que guarda el input en una variable temporal y cambia los caracteres por * en tiempo real.
     const cambiarLetrasAsteriscos = (event)=>{
         let letter = event.key;
         console.log(letter);
         
-        if((letter.match(/[a-zA-Z]{1}/) && letter != "Backspace") || letter.match(/[0-9]{1}/) ){
+        if((letter != "Backspace")){
             event.preventDefault();
             word += letter;
             document.getElementById("entradaNombre").value += "*"; 
@@ -124,6 +190,7 @@
         } 
     }
 
+    //Listeners para los botones de inicio de la aplicacion.
     document.getElementById("entradaNombre").addEventListener("keydown", cambiarLetrasAsteriscos);
     document.getElementById("botonAnadir").addEventListener("click", anhadirArticulo);
     document.getElementById("botonBorrar").addEventListener("click",borrarArticulo);
