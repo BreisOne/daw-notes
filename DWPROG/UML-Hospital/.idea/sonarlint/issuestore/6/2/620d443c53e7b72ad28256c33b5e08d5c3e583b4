@@ -1,0 +1,10 @@
+
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾µÉæ8–Á€÷â1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š°Åİ8—Á€÷â1
+o	java:S116"NRename this field "DNI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èüöšıÿÿÿÿ8›Á€÷â1
+[
+java:S5993"9Change the visibility of this constructor to "protected".(æòæÌùÿÿÿÿ8Õ¢÷â1
+V
+java:S5993"9Change the visibility of this constructor to "protected".(¾µÉæ8Õ¢÷â1
+h
+java:S1128"FRemove this unused import 'java.util.concurrent.atomic.AtomicInteger'.(¿êäœøÿÿÿÿ8­ïæ÷â1

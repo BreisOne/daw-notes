@@ -6,6 +6,24 @@ r	java:S117
 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°óüÔûÿÿÿÿ8à¹Ôşà1
 m	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îº¾›8à¹Ôşà1
 r	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÿıäøÿÿÿÿ8à¹Ôşà1
+U
+java:S2589ƒ"7Remove this expression which always evaluates to "true"(•Íõ„8”ÿÌõâ1
+Y
+java:S2589!"7Remove this expression which always evaluates to "true"(Æ†¤Şÿÿÿÿÿ8”ÿÌõâ1
+T
+java:S2589k"7Remove this expression which always evaluates to "true"(•Íõ„8•ÿÌõâ1
+T
+java:S2589Q"7Remove this expression which always evaluates to "true"(ª¹¨ö8•ÿÌõâ1
+T
+java:S25898"7Remove this expression which always evaluates to "true"(›Ãœ¾8–ÿÌõâ1
+U
+java:S2589­"7Remove this expression which always evaluates to "true"(£Øª8–ÿÌõâ1
+U
+java:S2589˜"7Remove this expression which always evaluates to "true"(•Íõ„8–ÿÌõâ1
+T
+java:S2589Ç"7Remove this expression which always evaluates to "true"(¹Ñ¡78—ÿÌõâ1
+T
+java:S2589"7Remove this expression which always evaluates to "true"(ä‘–ƒ8—ÿÌõâ1
 W
 java:S1118":Add a private constructor to hide the implicit public one.(ì›İ¡8ã¹Ôşà1
 e
