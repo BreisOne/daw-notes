@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Carrito de la compra</title>
+	<style type="text/css">
+		.frutas {
+			width: 50px;
+			height: 50px;
+		}
+		.precio{
+			font-size: large;
+			font-weight: 100px !important;
+			color:darkgreen;
+		}
+		#carrito {
+			margin:20px;
+			float: right;
+		}
+		#productos {
+			float: left;
+		}
+	</style>
+	<script></script>
+</head>
+<body>
+	<div id="productos">
+		<br>
+		<div id="uvas">
+			<img src="images/uvas.jpg" class="frutas">
+			<h1 class="artH1"></h1>
+			<div class="precio"> 1.15</div>
+			<fieldset>
+				<label for="precio">Cantidad </label>	
+				<input type="number" class="cantidad">
+				<input type="button" class="botonComprar" value="Comprar">
+			</fieldset>
+			
+			
+		</div>
+		<br>
+		<div id="naranjas">
+			<img src="images/naranjas.jpg" class="frutas">
+			<h1 class="artH1"></h1>
+			<div class="precio">2.4</div>
+			<fieldset>
+				<label for="precio">Cantidad </label>
+			<input type="number" class="cantidad">
+			<input type="button" class="botonComprar" value="Comprar">
+		</fieldset>
+
+		</div>
+		<br>
+		<div id="fresa">
+			<img src="images/fresa.jpg" class="frutas">
+			<h1 class="artH1"></h1>
+			<div class="precio">3.1</div>
+			<fieldset>
+				<label for="precio">Cantidad </label>
+			<input type="number" class="cantidad">
+			<input type="button" class="botonComprar" value="Comprar">
+		</fieldset>
+		</div>
+		<br>
+		<div id="sandia">
+			<img src="images/sandia.jpg" class="frutas">
+			<h1 class="artH1"></h1>
+			<div class="precio"> 2.5 </div>
+		<fieldset>
+				<label for="precio">Cantidad </label>
+			<input type="number" class="cantidad">
+			<input type="button" class="botonComprar" value="Comprar">
+		</fieldset>
+		</div>
+	</div>
+	<div id="#carrito">
+		<table id="tablaCarrito">
+			<tr>
+				<th>Producto</th>
+				<th>Precio kilo</th>
+				<th>Cantidad</th>
+				<th>Precio</th>
+				<th></th>
+			</tr>
+			<tbody id = "tableBody">
+
+			</tbody>
+		</table>
+		<div id="total"> </div>
+		<input type="button" id="vaciar" value="Vaciar">
+	</div>
+</body>
+<script>
+
+//clase artículo  cracion de los mismo y creación del array frutas
+class Articulo{
+	constructor(nombre, precio){
+		this.nombre,
+		this.precio
+	}
+}
+
+let uvas = new Articulo ("uvas", 1.15);
+let naranjas = new Articulo("naranjas", 2.4);
+let fresas = new Articulo("fresas", 3.1);
+let sandia = new Articulo ( "sandia", 2.5);
+
+let frutas = [uvas, naranjas, fresas, sandia];
+
+//Clase linea del ticket de compra con el método mostrar
+class LineaTicket{
+	constructor(articulo, cantidad, precio, total){
+		this.articulo = articulo,
+		this.cantidad = cantidad,
+		this.precio = precio,
+		this.total = total
+	}
+	mostratDatos(){
+		return `<tr class='comprados'><td id = "${this.articulo}"> ${this.articulo} </td><td> ${this.precio} €/Kg</td><td>$
+			${this.cantidad} kg</td><td class='precioTabla'> ${this.total}</tr> `; 
+	}
+}
+
+
+const accionCompra = (event)=>{
+
+	//Se crean los atributos para crear el objeto desde el padre del boton comprar
+	 let elementoComprar = event.target.parentNode;
+	 let nombre = elementoComprar.parentNode.id;
+	 let cantidad = elementoComprar.querySelector(".cantidad").value;
+	 let precio = elementoComprar.parentNode.querySelector(".precio").textContent;
+	 let total = parseFloat(cantidad) * parseFloat(precio);
+
+	 //Se crea el nuevo objeto con esos atributos y se llama al método mostrar datos para recuperar el html
+	 let lineaTicketelemento = new LineaTicket(nombre, cantidad, precio, total.toFixed(2));
+	 let lineaTicketelementoTabla = lineaTicketelemento.mostratDatos();
+	
+	 //Se almacena el objeto en el local storage
+	 localStorage.setItem(nombre, JSON.stringify(lineaTicketelemento));
+	
+	 //Se obtiene la tabla de compra, se crea un nuevo objeto tr se pone a la escucha con la función borrar linea
+	 // y se añade como elemento hijo a la tabla de compra
+	 let listaCompra = document.getElementById("tableBody");
+	 let tr = document.createElement('tr');
+	
+	 tr.innerHTML = lineaTicketelementoTabla;
+	 tr.addEventListener("click", borraLinea)
+	 listaCompra.appendChild(tr); 
+
+}
+
+//Funcion que elimina todos los elementos de la tabal de compra y vacia el local storage al clcia el boton vaciar
+const vaciarCarrito = ()=>{
+	let tabla = document.getElementById("tableBody");
+	tabla.remove();
+	localStorage.clear();
+}
+
+//Funcion que borra una linea cuando se clica
+const borraLinea = (event)=>{
+	let lineaClicada = event.target.parentNode;
+	let nombreElemento = 
+	
+	lineaClicada.remove();
+}
+
+//Funcion que inicia el java script tras cargar el dom seleccionando todos los botones comprar y poniendolos a la escucha
+const iniciar = ()=>{
+	let botonesComprar = document.querySelectorAll(".botonComprar");
+	botonesComprar.forEach( botonComprar =>{
+		botonComprar.addEventListener("click", accionCompra)
+})}
+
+//Listeners para el DOM y el boton vaciar.
+document.addEventListener("DOMContentLoaded", iniciar);
+document.getElementById("vaciar").addEventListener("click", vaciarCarrito)
+
+</script>
+
+</html>
