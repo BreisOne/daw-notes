@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+    <style>
+        #campo {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: wrap; 
+            height: 500px;
+            width: calc(100% - 20px);
+            background-color:  rgb(148, 245, 245);;
+        }
+
+       
+        #coche1 { 
+            position:absolute;
+            height: 50px;
+            width: 50px;
+            top: 10px;
+            left: 10px;
+        }
+
+        #coche2 {  
+            position:absolute;
+            height: 50px;
+            width: 50px;
+            top: 450px;
+            left: 10px;
+        }
+
+        #campoBoton{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: rgb(89, 94, 94);
+            
+            height: calc(100% - 20px);
+            width: calc(100% - 20px);
+        }
+    </style>
+    <script src="practica11.js"></script>
+</head>
+
+<body>
+    <div id="campo">
+        <img id="coche1" name="1" value="coche 1" >
+        <img id="coche2" name="2" value="coche 2" >
+    </div>
+    <div id="campoBoton">
+        <input type="button" id="btnIniciar" value="Iniciar">
+    </div>
+  
+
+</body>
+
+</html>

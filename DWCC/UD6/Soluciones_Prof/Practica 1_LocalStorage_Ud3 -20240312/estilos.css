@@ -1,0 +1,49 @@
+form {
+            
+    font-family: Verdana, Arial, sans-serif;
+    margin:auto;
+    background: SlateGray;
+    color: white;
+    font-size: 14px;
+    padding: 30px;
+    width: 450px;
+    
+    
+}
+
+input{
+    font-size:14px;
+    background: white;
+    border:solid 1px LightSteelBlue;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    float: right;
+    margin-right: 100px;
+    width: 150px;
+}
+ol li {
+    line-height: 25px;
+    list-style: none;
+}
+button {
+    text-align: center;  
+}
+button:enabled {
+    color: #2b2;
+}
+.boton{
+    text-align: center; 
+    
+}
+  
+button:disabled {
+    color: #aaa;
+  }
+
+fieldset{
+   align-self: auto;
+}
+p{
+    text-align: center;
+}

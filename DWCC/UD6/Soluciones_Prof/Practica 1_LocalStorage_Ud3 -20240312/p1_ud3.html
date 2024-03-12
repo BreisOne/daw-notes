@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GESTION VEHICULOS</title>
+    <script src="p1_ud3.js"></script>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <form action="" id="crearVehiculos">
+      <h2>Crear vehículo</h2>
+      <ol>
+        <li><label for="">Modelo <input type="text" id="modelo" /></label></li>
+        <li><label for="">Marca <input type="text" id="marca" /></label></li>
+        <li><label for="">Precio <input type="number" id="precio" /></label></li>
+        <li><label for="">Km <input type="number" id="km" /></label></li>
+      </ol>
+      
+      <ol>
+        <li><input type="submit" value="Crear vehiculo" /></li>
+      </ol>
+   
+    </form>
+
+    <fieldset>
+      <button id="mostrar">Mostrar</button>
+    </fieldset>
+   
+
+    <div id="divVehiculos"></div>
+
+    <form action="" id="buscar">
+      <h2>Buscar vehículo</h2>
+      <ol>
+        <li><label for="">Modelo
+          <input type="text" id="buscarModelo" />
+        </label></li>
+      </ol>
+        <ol><li> <input type="submit" value="Buscar" /></li></ol>
+       
+      
+      
+    </form>
+
+    <div id="divVehiculosBuscados"></div>
+  </body>
+</html>

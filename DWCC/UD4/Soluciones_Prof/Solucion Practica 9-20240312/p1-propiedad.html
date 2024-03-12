@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio1 propiedad</title>
+</head>
+<body>
+	<p id="texto">Este es el texto</p>
+	<form name="formulario">
+		<input type="button" name="boton" value="Esconder"/>
+	</form>
+</body>
+<script type="text/javascript">
+	function esconde () {
+		document.getElementById("texto").style.display = "none";
+	}
+
+	window.onload = function () {
+		document.formulario.boton.onclick = esconde;
+	}
+</script>
+</html>
