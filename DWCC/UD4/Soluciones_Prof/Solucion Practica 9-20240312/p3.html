@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+</head>
+<body>
+	<form action="" name="formulario">
+		<input type="button" name="boton" id="boton" value="Probar"/>
+	</form>
+	<div id="eventos"></div>
+</body>
+<script type="text/javascript">
+	function eventoRaton(evento) {
+		//event.preventDefault(); //Cancelamos la acción por defecto
+		let tipo = evento.type;
+
+		document.getElementById("eventos").innerHTML += tipo + "<br/>";
+	}
+
+	window.onload = function() {
+		/* Añadimos los eventos al botón */
+		document.formulario.boton.addEventListener('mousedown', eventoRaton);
+		document.formulario.boton.addEventListener('mouseup', eventoRaton);
+		document.formulario.boton.addEventListener('click', eventoRaton);
+		document.formulario.boton.addEventListener('contextmenu', eventoRaton);
+		document.formulario.boton.addEventListener('dblclick', eventoRaton);
+	}
+</script>
+</html>

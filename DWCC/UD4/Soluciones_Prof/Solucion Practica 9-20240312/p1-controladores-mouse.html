@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 1 - controladores con evento mouseover y mouseout</title>
+  </head>
+
+  <style>
+    div {
+      border-color: rgb(0, 72, 255);
+      box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset,
+        0 0 8px rgba(43, 0, 255, 0.6);
+      width: 200px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+		font-family: Arial;
+		font-size: 22;
+    }
+  </style>
+  <body>
+    
+    <form name="formulario">
+      <input type="button" name="boton" id="boton" value="Esconder" />
+    </form>
+	<br><hr><br>
+	<div>
+		<p id="texto">Este es el texto</p>
+	  </div>
+  
+  </body>
+  <script type="text/javascript">
+    function esconde() {
+      //Oculta el texto con la propiedad display de css
+      console.log("Subo");
+      texto.style.visibility = "hidden";
+      boton.value = "Mostrar";
+    }
+
+    function mostrar() {
+      console.log("Bajo");
+      //Muestra otra vez el texto oculto
+      texto.style.visibility = "visible";
+      boton.value = "Esconder";
+    }
+    const cargar = function () {
+      //Obtiene los objetos de la página, el parráfo y el botón
+      const boton = document.querySelector("input");
+      const texto = document.getElementById("texto");
+      console.log(texto);
+      console.log(boton);
+      boton.addEventListener("mouseover", esconde);
+      boton.addEventListener("mouseout", mostrar);
+    };
+
+    //Asegurarse de que no ejecuta hasta que está cargada toda la estructura DOM,
+    //similar a window.onload
+    document.addEventListener("DOMContentLoaded", cargar);
+  </script>
+</html>

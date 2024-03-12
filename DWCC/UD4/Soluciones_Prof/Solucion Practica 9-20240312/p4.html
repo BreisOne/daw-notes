@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tarea 3.2</title>
+</head>
+<body>
+	<form name="formulario">
+		<input type="text" name="entrada"/>
+	</form>
+</body>
+<script type="text/javascript">
+
+
+	function esNumero(tecla) {
+		if (tecla == '0' || tecla == '1' || tecla == '2' || tecla == '3' || tecla == '4' || tecla == '5' || tecla == '6' || tecla == '7' || tecla == '8' || tecla == '9') {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function escribirSoloDigitos(evento) {	
+		//cancela el evento si es cancelable
+		evento.preventDefault();
+		let codigoTecla = evento.key;
+	
+		if (esNumero(codigoTecla)) {
+			this.value += codigoTecla; //Si  es un número, lo escribe en el campo
+		}
+	}
+
+	window.onload = function () {
+		document.formulario.entrada.addEventListener("keypress",escribirSoloDigitos);
+	}
+
+</script>
+</html>

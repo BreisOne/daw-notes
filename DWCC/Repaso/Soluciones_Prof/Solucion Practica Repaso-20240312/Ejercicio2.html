@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de la compra</title>
+    <style>
+        input {
+            margin: 10px;
+        }
+        
+        li {
+            font-size: 23px;
+            list-style: none;
+        }
+    </style>
+<script src="Ejercicio2.js"></script>
+</head>
+
+<h1>Lista de la compra</h1>
+<form name="elFormulario" action="">
+    <input type="text" name="entrada" id="entrada" placeholder="Introduce un nuevo artículo" />
+    <input type="number" name="precio" id="precio" placeholder="Introduce precio" />
+    <input type="button" name="botonAnadir" id="botonAnadir" value="Añadir" />
+    <input type="button" name="botonBorrar" id="botonBorrar" value="Borrar" />
+</form>
+<div class="listaComprados">
+    <h1>Lista Comprados</h1>
+    <ul id="listaC">
+    </ul>
+</div>
+
+<div class="listaEliminados">
+    <h1>Lista Eliminados</h1>
+    <ul id="listaE">
+    </ul>
+</div>
+
+
+</html>

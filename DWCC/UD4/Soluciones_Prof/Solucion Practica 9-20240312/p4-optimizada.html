@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 4</title>
+  </head>
+  <body>
+    <form name="formulario">
+      <input type="text" name="entrada" id="entrada" />
+    </form>
+  </body>
+  <script type="text/javascript">
+	// Para utilizar los eventos de teclado en JavaScript, debes seguir los siguientes pasos:
+
+	// Detectar el evento de teclado
+	// Capturar la tecla pulsada
+	// Ejecutar la acción correspondiente
+
+	// Para detectar el evento de teclado, debes usar el método addEventListener() y especificar el evento de teclado que deseas capturar, 
+	// como “keydown”, “keyup” o “keypress”.
+	// Detectar el evento de teclado
+	
+	// Keydown se lanza cuando se pulsa una tecla
+	// Keyup cuando se suelta la tecla
+	// Keypress cuando la tecla pulsada produce el valor
+
+	// Esto quiere decir que por ejemplo si pulsamos la tecla CTRL, el evento Keypress no se va a ejecutar al no producir valor.
+	// Entre otras cosas es por eso que Keypress se considera ya obsoleto.
+	// Cuando quieras capturar eventos deberías usar Keydown o Keyup.
+
+    //Función que comprueba si escribe un número
+    esNumero = (tecla) => {
+      if (
+        tecla == "0" ||
+        tecla == "1" ||
+        tecla == "2" ||
+        tecla == "3" ||
+        tecla == "4" ||
+        tecla == "5" ||
+        tecla == "6" ||
+        tecla == "7" ||
+        tecla == "8" ||
+        tecla == "9"
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    escribirSoloDigitos = (evento) => {
+      //var codigoTecla = evento.keyCode; (Propiedad deprecated)
+      let codigoTecla = evento.key;
+      console.log(typeof codigoTecla);
+      console.log(codigoTecla);
+
+      if (!esNumero(codigoTecla)) {
+        //cancela el evento si es cancelable
+        evento.preventDefault(); //Si no es un número no lo escribo
+      }
+    };
+
+    //Función que se ejecuta en el momento en el que la estructura DOM está cargada
+    //En ella ponemos el cuadro de texto a la escucha de los eventos de teclado
+    //e inicializamos los valores
+    document.addEventListener("DOMContentLoaded", () => {
+      //Inicializar los objetos del DOM
+      let cuadroTexto = document.getElementById("entrada");
+      //Poner el cuado de texto a la escucha del evento keydown
+      cuadroTexto.addEventListener("keydown", escribirSoloDigitos);
+    });
+  </script>
+</html>

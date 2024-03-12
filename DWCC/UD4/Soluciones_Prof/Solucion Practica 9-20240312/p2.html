@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+</head>
+
+<style>
+    div {
+      border-color: rgb(0, 72, 255);
+      box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset,
+        0 0 8px rgba(43, 0, 255, 0.6);
+      width: 200px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+		font-family: Arial;
+		font-size: 22;
+    }
+  </style>
+<body>
+	
+	<form name="formulario">
+		<input type="button" name="esconder" value="Esconder/Mostrar"/>
+		<input type="button" name="cancelar" value="Cancelar comportamiento"/>
+	</form>
+
+	<br><hr><br>
+	<div>
+		<p id="texto">Este es el texto</p>
+	</div>
+</body>
+<script type="text/javascript">
+	const esconde=()=> {
+		if (document.getElementById("texto").style.display == "none") {
+			document.getElementById("texto").style.display = "";
+		} else {
+			document.getElementById("texto").style.display = "none";
+		}
+	}
+
+	const cancelar=()=> {
+		document.formulario.esconder.removeEventListener("click", esconde);
+		
+	}
+
+	window.onload = function () {
+		document.formulario.esconder.addEventListener("click", esconde);
+		document.formulario.cancelar.addEventListener("click", cancelar);
+		
+	}
+</script>
+</html>
