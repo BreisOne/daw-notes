@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Examen_Ejercicio 1: Valoracion: 3 puntos</title>
+</head>
+
+<body>
+  <script>
+
+    // EJERCICIO 1.1: PUNTUACION 0,75 PUNTOS
+
+    //Crea la clase abstracta Mamifero con nombre, edad, y método comer
+
+    class MamiferoA {
+      
+      constructor(nombre, edad){
+        if(this.constructor === MamiferoA){
+          throw new Error ( "Clase abstracta no instanciable");
+        }
+        this.nombre = nombre;
+        this.edad = edad;
+      }
+
+      comer(){
+        throw new Error("método abstracto que debe ser implementado en la herencia");
+      }
+    }
+
+    // Crea la clase Persona que hereda de Mamífero
+
+    class Persona extends MamiferoA{
+      constructor(nombre, edad){
+        super(nombre, edad);
+      }
+
+      comer(){
+        console.log(`La persona ${this.nombre} come carne`);
+      }
+    }
+
+    // Crea un objeto Mamífero. Razona el resultado en el momento que se crea un objeto de tipo Mamifero
+
+            //console.log(new MamiferoA);
+
+    //Al llamar al constructor de la clase abstracta, este lanza un error, ya que de esta clase no pueden existir instancias por definición. 
+    //Las clases abstractas no son instanciables y por tanto no pueden crearse objetos de las misma.
+
+    // Crea un objeto Persona. Muestra los datos por la consola
+
+    let persona = new Persona("Pedro", 3);
+    console.log(`${persona.nombre} tiene ${persona.edad} años`);
+    persona.comer();
+
+
+    // EJERCICIO 1.2: PUNTUACION 1 PUNTO:
+
+    // Crea el objeto manzanaRoja con los siguientes atributo: nombre, tamaño, tipo (dulce/amarga),
+    // utilizando un constructor de objetos
+
+    let manzanaRoja = {
+        nombre: "Manzana Roja",
+        tamaño: "grande",
+        tipo: "dulce",
+        imprimeManzanaRoja(){
+          return `Mostrar los datos de: ${this.nombre} de tamaño ${this.tamaño} y  de tipo ${this.tipo}`;
+        }
+
+    }
+
+    // Añadir atributos al objeto manzanaRoja en este caso se añade un nuevo atributo que es el color
+
+    manzanaRoja.color = "Rojo";
+
+    //Recorrer las propiedades del objeto manzanaRoja
+    
+    console.log("MOSTRAR LAS PROPIEDADES DEL OBJETO MANZANA ROJA");
+    for( let prop in manzanaRoja){
+      console.log(prop);
+    }
+
+    //Muestra el objeto manzanaRoja para ello debes crear el método imprime manzana. Además debes mostrar en
+    //otra linea el color de la manzana
+
+      document.write(`<h1>${manzanaRoja.imprimeManzanaRoja()}</h1><br>`);
+      document.write(`El color de la manzana es ${manzanaRoja.color}<br>`);
+
+    // EJERCICIO 1.3: PUNTUACION 1,25 PUNTOS:
+    
+    //Crear la clase vehiculo con los atributos marca, modelo, numOcupantes, precio. Admás tiene una propiedad de tipo Array
+    //que es ocupantes donde se almacena el nombre de dada ocupate. Para ello debes utilizar el método agregarOcupantes
+   
+     
+    class Vehiculo{
+      constructor(marca, modelo, numOcupantes, precio){
+        this.marca = marca,
+        this.modelo = modelo,
+        this.numOcupantes = numOcupantes,
+        this.precio = precio,
+        this.ocupantes = []
+      }
+
+      // Método agregar ocupantes, que recorre el array para asignar el nombre
+      agregarOcupante(nombresOcupantes){
+        
+        let nombresOcupantesArray = nombresOcupantes.split('-');
+        
+        console.log(nombresOcupantesArray);
+
+        for (let i = 0; i < this.numOcupantes; i++) {
+          this.ocupantes[i] = nombresOcupantesArray[i];
+        }
+        
+      }
+     //Metodo imprime ocupantes, muestra los datos de los ocupantes
+      imprimeOcupantes(){
+        let ocupantesImpresos = "";
+        for (let i = 0; i < this.numOcupantes; i++) {
+          if(i===0){
+            ocupantesImpresos += this.ocupantes[i];
+          }else{
+            ocupantesImpresos += `-${this.ocupantes[i]}`;
+          }
+        }
+        return ocupantesImpresos;
+      }
+      //Metodo imprime el vehiculo
+      imprimeVehiculo(){
+        return `El coche ${this.marca} - ${this.modelo} con un precio ${this.precio} tiene como ocupantes a ${this.imprimeOcupantes()}`
+      }
+    }
+
+    let cocheSeat = new Vehiculo("Seat", "Trans", 4, 1200);
+    cocheSeat.agregarOcupante("Ana-Sara-Pedro-Juan");
+    document.write(`<h2>${cocheSeat.imprimeVehiculo()}</h2>`);
+
+  </script>
+</body>
+
+</html>
