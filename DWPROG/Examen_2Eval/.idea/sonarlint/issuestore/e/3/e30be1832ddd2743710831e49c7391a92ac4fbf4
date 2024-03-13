@@ -1,0 +1,50 @@
+
+q
+java:S1192’"NDefine a constant instead of duplicating this literal "El comercial " 4 times.(µˆœ•ıÿÿÿÿ8ùæ§Èã1
+R
+java:S1066«"/Merge this if statement with the enclosing one.(æÇ¯öıÿÿÿÿ8ùæ§Èã1
+l
+java:S3518Ö"NMake sure "contProductosComestibles" can't be zero before doing this division.(–œ±›8¼ç§Èã1
+L	java:S1060"+Replace this use of System.out by a logger.(Ã‘øÔıÿÿÿÿ8¿ç§Èã1
+G	java:S1068"+Replace this use of System.out by a logger.(Œ€ÿ8Àç§Èã1
+G	java:S1069"+Replace this use of System.out by a logger.(¶Æ®š8Àç§Èã1
+G	java:S106:"+Replace this use of System.out by a logger.(Œ€ÿ8Àç§Èã1
+G	java:S106<"+Replace this use of System.out by a logger.(½¸ÿ¸8Àç§Èã1
+L	java:S106="+Replace this use of System.out by a logger.(©Ü–¡ûÿÿÿÿ8Àç§Èã1
+L	java:S106>"+Replace this use of System.out by a logger.(óÕÚ›úÿÿÿÿ8Àç§Èã1
+F	java:S106?"+Replace this use of System.out by a logger.(Œ÷É98Àç§Èã1
+L	java:S106@"+Replace this use of System.out by a logger.(Ş´¤‡øÿÿÿÿ8Àç§Èã1
+F	java:S106A"+Replace this use of System.out by a logger.(õ¬Ø8Àç§Èã1
+G	java:S106B"+Replace this use of System.out by a logger.(ã¥Æş8Àç§Èã1
+L	java:S106C"+Replace this use of System.out by a logger.(£‹í†üÿÿÿÿ8Àç§Èã1
+I
+java:S1659K"'Declare "categoria" on a separate line.(³«Ïœıÿÿÿÿ8Áç§Èã1
+G	java:S106L"+Replace this use of System.out by a logger.(·„¾¹8Áç§Èã1
+G	java:S106N"+Replace this use of System.out by a logger.(“ùÊ8Áç§Èã1
+F	java:S106R"+Replace this use of System.out by a logger.(­¼ˆ8Áç§Èã1
+L	java:S106X"+Replace this use of System.out by a logger.(£Ôóıÿÿÿÿ8Áç§Èã1
+G	java:S106\"+Replace this use of System.out by a logger.(Ó‹òè8Âç§Èã1
+G	java:S106b"+Replace this use of System.out by a logger.(´­Û·8Âç§Èã1
+G	java:S106i"+Replace this use of System.out by a logger.(–‡Ú”8Âç§Èã1
+G	java:S106m"+Replace this use of System.out by a logger.(´­Û·8Âç§Èã1
+G	java:S106o"+Replace this use of System.out by a logger.(¬³«ò8Âç§Èã1
+L	java:S106w"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8Âç§Èã1
+i
+java:S1659€"FDeclare "apellidos" and all following declarations on a separate line.(¹éåáùÿÿÿÿ8Ãç§Èã1
+M	java:S106ƒ"+Replace this use of System.out by a logger.(ŞŠÅ“ûÿÿÿÿ8Ãç§Èã1
+H	java:S106…"+Replace this use of System.out by a logger.(“ùÊ8Ãç§Èã1
+H	java:S106ˆ"+Replace this use of System.out by a logger.(†í±ù8Ãç§Èã1
+M	java:S106‹"+Replace this use of System.out by a logger.(õƒı‡ùÿÿÿÿ8Ãç§Èã1
+H	java:S106"+Replace this use of System.out by a logger.(û‚’“8Ãç§Èã1
+M	java:S106’"+Replace this use of System.out by a logger.(µˆœ•ıÿÿÿÿ8Ãç§Èã1
+M	java:S106–"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8Ãç§Èã1
+v
+java:S6201ª"XReplace this instanceof check and cast with 'instanceof ProductoDeBazar productodebazar'(ŸäÚŒ8Äç§Èã1
+M	java:S106­"+Replace this use of System.out by a logger.(’™ŸÈşÿÿÿÿ8Åç§Èã1
+H	java:S106Ã"+Replace this use of System.out by a logger.(äšŠ­8Åç§Èã1
+M	java:S106Å"+Replace this use of System.out by a logger.(œ÷È²ùÿÿÿÿ8Æç§Èã1
+M	java:S106Ç"+Replace this use of System.out by a logger.(İ¢ˆØıÿÿÿÿ8Æç§Èã1
+H	java:S106×"+Replace this use of System.out by a logger.(º¼íµ8Æç§Èã1
+|
+java:S6201İ"^Replace this instanceof check and cast with 'instanceof ProductoComestible productocomestible'(µÔ8Æç§Èã1
+H	java:S106é"+Replace this use of System.out by a logger.(¾äÍ¢8Æç§Èã1
