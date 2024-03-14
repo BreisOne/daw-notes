@@ -1,0 +1,84 @@
+# ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+#	SUBCONSULTAS					-- APUNTES A5
+# ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+use jardineria;
+# ---------------------------------------------------------------------------
+#	SUBCONSULTAS DE COMPARACIÓN
+# ---------------------------------------------------------------------------
+#	1. Datos de los clientes que pertenecezcan a la ciudad con más trabajadores de contacto.
+		
+#	2. Detalles de los pedidos cuyo precio sea inferior a la media de todos los pedidos.
+
+#	3. Datos de los Empleados de la extensión con mayor número de empleados
+    
+#	4. Tipo de gama de producto y su descripción.
+#	NO
+#	5. Datos de las oficinas del país con más oficinas.
+
+#	6. Detalles de las transacciones realizadas (pagos) que están un 20% por encima de la media.
+
+#	7. Detalles de los pedidos cuyo comentario se ha repetido más veces.
+
+#	8. Detalles de los productos con mayor cantidad en el almacén.
+
+# ---------------------------------------------------------------------------
+#	SUBCONSULTAS DE PERTENENCIA A CONJUNTO
+# ---------------------------------------------------------------------------
+#	1. Datos de los clientes que pertenecezcan a la ciudad con menos trabajadores de contacto.
+
+#	2. Detalles de los pedidos cuyo precio sea inferior a la media de todos los pedidos.
+
+#	3. Datos de los Empleados de la extensión con menor número de empleados
+
+#	4. Tipo de gama de producto y su descripción.
+#	NO
+#	5. Datos de las oficinas de los países con menos oficinas.
+
+#	6. Detalles de las transacciones realizadas (pagos) que están un 20% por encima de la media.
+
+#	7. Detalles de los pedidos cuyo comentario se ha repetido más veces.
+
+#	8. Detalles de todos los productos con mayor cantidad en el almacén.
+	
+
+# ---------------------------------------------------------------------------
+#	SUBCONSULTAS DE EXISTENCIA
+# ---------------------------------------------------------------------------
+#	1. Nombre y teléfono de cada cliente.
+		
+#	2. Detalles de todos los pedidos.
+	
+#	3. Nombre, apellidos, email y puesto de cada empleado.
+	
+#	4. Tipo de gama de producto y su descripción.
+		
+#	5. Código de cada oficina y ciudad en la que está.
+	
+#	6. Detalles de todos los pagos.
+	
+#	7. Detalles de todos los pedidos.
+		
+#	8. Detalles de todos los productos, salvo su código.
+	
+# ---------------------------------------------------------------------------
+#	SUBCONSULTAS CUANTIFICADAS
+# ---------------------------------------------------------------------------
+#	1. Nombre y teléfono de cada cliente.
+		
+#	2. Detalles de todos los pedidos.
+	
+#	3. Nombre, apellidos, email y puesto de cada empleado.
+	
+#	4. Tipo de gama de producto y su descripción.
+		
+#	5. Código de cada oficina y ciudad en la que está.
+	
+#	6. Detalles de todos los pagos.
+	
+#	7. Detalles de todos los pedidos.
+		
+#	8. Detalles de todos los productos, salvo su código.
+	
+
