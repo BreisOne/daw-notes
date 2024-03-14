@@ -1,0 +1,7 @@
+
+Š
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(×§šÕ8 Ì½Åã1
+‹
+java:S1319"nThe type of "registroProductos" should be an interface such as "Map" rather than the implementation "HashMap".(Ëå³”8¡Ì½Åã1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ñ–Ùşÿÿÿÿ8¼ï÷Çã1
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ùßâşÿÿÿÿ8˜êÀÃã1
