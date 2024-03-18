@@ -1,0 +1,58 @@
+Query 1:
+SELECT CustomerID, CustomerName, Country City 
+FROM customers 
+WHERE country = 'Spain' OR city ='Lisboa' 
+ORDER BY country, city;
+
+Query 2:
+ INSERT INTO categories (CategoryName, Description) VALUES ('Seafood2','Seaweed, fish and clams');
+
+Query 3:
+select * from categories; # El último registro;
+
+Query 4:
+ DELETE FROM categories WHERE CategoryID = 9;
+
+Query 5:
+Select * FROM products ORDER BY price DESC LIMIT 5;
+
+Query 6:
+
+SELECT MAX(orderDate) FROM orders;
+
+Query 7:
+
+SELECT count(*) FROM customers;
+
+Query 8: 
+
+SELECT COUNT(DISTINCT CustomerID) FROM orders;
+
+Query 9:
+ select * FROM employees WHERE Notes LIKE '%psychology%';
+
+Query 10: La foto esta mal selecionó por categoryID no SupplierID;
+
+SELECT ProductName, CategoryID FROM Products WHERE SupplierID IN (5,6) ORDER BY  CategoryID , ProductName;
+
+Query 11:
+
+SELECT COUNT(DISTINCT CustomerID) 'N clientes con pedidos' FROM orders;
+
+Query 12: Creo que está incompleta.
+
+
+Query 13:
+
+SELECT * 
+FROM customers as c
+LEFT JOIN orders as o
+ON c.CustomerID = o.CustomerID 
+WHERE o.CustomerID IS NULL;
+
+
+
+
+
+
+
