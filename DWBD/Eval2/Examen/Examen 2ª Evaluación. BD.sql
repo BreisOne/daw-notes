@@ -270,51 +270,139 @@ SELECT * FROM tripulante inner join barcotripulante ON tripulante.idTripulante =
 ---------------------------------------------------------------------------------------------------------------------------
 Select NombreBarco, count(ruta) as numRutas from barco inner join  barcoruta on barco.idBarco = barcoruta.Barco group by barco.NombreBarco;
 
+-- Solución correcta --
+SELECT B.NombreBarco, COUNT(*) AS NumeroDeRutas FROM Barco B JOIN BarcoRuta BR ON B.idBarco = BR.Barco GROUP BY B.NombreBarco ORDER BY COUNT(*) DESC LIMIT 1;
+
 ---------------------------------------------------------------------------------------------------------------------------
 --  3. Muestra el apodo de los Tripulantes cuyo nombre contenga, al menos una, 'a' y sus apellidos no contengan ni 'l' ni 'm'.
 ---------------------------------------------------------------------------------------------------------------------------
-Select * from tripulante where apodo like '%a%' AND apellidosTripulante regexp '^[^l|m]';
+Select Apodo from tripulante where NombreTripulante like '%a%' AND apellidosTripulante regexp '^[^l|m]';
+
+-- Solución correcta --
+SELECT Apodo
+FROM Tripulante
+WHERE NombreTripulante LIKE '%a%' 
+    AND (ApellidosTripulante NOT LIKE '%l%' AND ApellidosTripulante NOT LIKE '%m%');
         
 ---------------------------------------------------------------------------------------------------------------------------
 --  4. Muestra el nombre del barco, el de su propietario y el del puerto de origen y destino de sus rutas, ordenado 
 --     ascendentemente por el nombre del barco.
 ---------------------------------------------------------------------------------------------------------------------------
 
-select b.NombreBarco, concat(p.NombrePropietario, ' ', p.ApellidosPropietario) as 'Nombre Completo', r.NombreRuta as "Puerto Origen-destino" from barco as b inner join propietario as p ON b.propietario = p.idpropietario inner join barcoruta as br on br.barco = b.idBarco inner join ruta as r on r.idRuta = br.ruta order by b.NombreBarco ASC;
+select b.NombreBarco, 
+	concat(p.NombrePropietario, ' ', p.ApellidosPropietario) as 'Nombre Completo', 
+    r.NombreRuta as "Puerto Origen-destino" 
+    from barco as b 
+    inner join propietario as p ON b.propietario = p.idpropietario 
+    inner join barcoruta as br on br.barco = b.idBarco 
+    inner join ruta as r on r.idRuta = br.ruta 
+    order by b.NombreBarco ASC;
+    
+    -- Solución correcta --
+SELECT 
+    B.NombreBarco,
+    P.NombrePropietario,
+    PO.NombrePuerto AS PuertoOrigen,
+    PD.NombrePuerto AS PuertoDestino
+FROM Barco B
+JOIN Propietario P ON B.Propietario = P.idPropietario
+JOIN BarcoRuta BR ON B.idBarco = BR.Barco
+JOIN Ruta R on r.idRuta = br.ruta 
+JOIN Puerto PO ON R.PuertoOrigen = PO.idPuerto
+JOIN Puerto PD ON R.PuertoDestino = PD.idPuerto
+ORDER BY B.NombreBarco ASC;
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 --  5. Muestra los datos del barco (toda la información) y el nombre del propietario, cuyo barco tenga un peso entre 100 y 150 y su manga sea menor
 --     que 9, o su barco meramente tenga una eslora mayor de 25 y menor de 30.
 ---------------------------------------------------------------------------------------------------------------------------
 
-Select * from barco b inner join propietario p on b.propietario = p.idPropietario where (b.peso between 100 and 150) AND (b.manga < 9 OR b.eslora between 25 and 30);
+Select * 
+from barco b 
+inner join propietario p on b.propietario = p.idPropietario 
+where (b.peso between 100 and 150) AND (b.manga < 9 OR b.eslora between 25 and 30);
+
+-- Solución correcta --
+SELECT 
+    B.*,
+    P.NombrePropietario
+FROM Barco B
+JOIN Propietario P ON B.Propietario = P.idPropietario
+WHERE (B.Peso BETWEEN 100 AND 150 AND B.Manga < 9) OR (B.Eslora BETWEEN 25 AND 30);
 
 ---------------------------------------------------------------------------------------------------------------------------
 --  6. Muestra el nombre de los barcos que hagan una ruta que pase por Portonovo o Marín.
 --------------------------------------------------------------------------------------------------------------------------- 
-select b.nombrebarco from barco b inner join barcoruta br on b.idBarco = br.barco inner join ruta r on br.ruta = r.idRuta where r.NombreRuta  like '%Portonovo%' OR r.nombreruta like '%Marín%';
+select b.nombrebarco 
+from barco b 
+inner join barcoruta br on b.idBarco = br.barco 
+inner join ruta r on br.ruta = r.idRuta 
+where r.NombreRuta  like '%Portonovo%' OR r.nombreruta like '%Marín%';
 
+-- Solucion correcta --
+SELECT DISTINCT B.NombreBarco
+FROM Barco B
+JOIN BarcoRuta BR ON B.idBarco = BR.Barco
+JOIN Ruta R ON BR.Ruta = R.idRuta
+WHERE R.NombreRuta LIKE '%Portonovo%' OR R.NombreRuta LIKE '%Marín%';
 ---------------------------------------------------------------------------------------------------------------------------
 --  7. Muestra el nombre del barco que ha recorrido la menor distancia junto con esa distancia recorrida.
 ---------------------------------------------------------------------------------------------------------------------------
-
+-- Solución correcta --
+SELECT 
+    B.NombreBarco,
+    MIN(R.Distancia) AS DistanciaRecorrida
+FROM Barco B
+JOIN BarcoRuta BR ON B.idBarco = BR.Barco
+JOIN Ruta R ON BR.Ruta = R.idRuta
+GROUP BY B.NombreBarco
+ORDER BY DistanciaRecorrida LIMIT 1;
 
 --------------------------------------------------------------------------------------------------------------------------
 --  8. Muestra el nombre del barco, el nombre completo de sus tripulantes, el rol desempeñado y la fecha de contratación de
 --     cada tripulante en cada barco. Ordena descendentemente en función del nombre del barco.
 ---------------------------------------------------------------------------------------------------------------------------
+-- Solucion correcta -- 
+SELECT 
+    B.NombreBarco,
+    CONCAT(T.NombreTripulante, ' ', T.ApellidosTripulante) AS NombreCompletoTripulante,
+    BT.RolTripulante,
+    BT.FechaContratacion
+FROM Barco B
+JOIN BarcoTripulante BT ON B.idBarco = BT.Barco
+JOIN Tripulante T ON BT.Tripulante = T.idTripulante
+JOIN Propietario P ON B.Propietario = P.idPropietario
+ORDER BY B.NombreBarco DESC;
 
 
 ---------------------------------------------------------------------------------------------------------------------------
 --  9. Muestra el nombre de la ruta de mayor longitud, su longitud y los barcos que la hacen
 ---------------------------------------------------------------------------------------------------------------------------
-
+-- Solución correcta --
+SELECT 
+    R.NombreRuta,
+    R.Distancia AS Longitud,
+    B.NombreBarco
+FROM Ruta R
+JOIN BarcoRuta BR ON R.idRuta = BR.Ruta
+JOIN Barco B ON BR.Barco = B.idBarco
+WHERE R.Distancia = (SELECT MAX(Distancia) FROM Ruta);
 
 ---------------------------------------------------------------------------------------------------------------------------
 -- 10. Muestra el nombre completo de los Tripulantes que tengan rol de Técnico de navegación, así como el nombre del barco 
 --     en que desempeñe ese rol, la fecha de contratación y el salario asociado.
 ---------------------------------------------------------------------------------------------------------------------------
-
+-- Solucion correcta --
+SELECT 
+    CONCAT(T.NombreTripulante, ' ', T.ApellidosTripulante) AS NombreCompletoTripulante,
+    B.NombreBarco,
+    BT.FechaContratacion,
+    BT.Salario
+FROM Tripulante T
+JOIN BarcoTripulante BT ON T.idTripulante = BT.Tripulante
+JOIN Barco B ON BT.Barco = B.idBarco
+WHERE BT.RolTripulante = 'Técnico de navegación';
 
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
@@ -343,11 +431,47 @@ INSERT INTO tripulante values ("18","Siena","Llagaria Zas","","");
 INSERT INTO tripulante values ("19","Alipio","Cedeño Melgar","", "Experto en mando");
 INSERT INTO tripulante values ("20","Talía	Nala", "Mazagatos Píez", "Maza", "");                                 
 
+-- Solución alternativa --
+INSERT INTO Tripulante (idTripulante, NombreTripulante, ApellidosTripulante, Apodo, OtrosDatosTripulante)
+VALUES 
+    (13, 'Fulgencio', 'Villacid Montenegro', NULL, 'Experto en cocina'),
+    (14, 'Celeste', 'Campo Verde', 'Celes', 'Experta en navegación'),
+    (15, 'Agripino', 'Amable Pérez', 'Agri', NULL),
+    (16, 'Lilith', 'Garza Urriaga', NULL, NULL),
+    (17, 'Anacleto', 'Bonachera Sorda', 'Investigador', 'Experto en solucionar problemas'),
+    (18, 'Siena', 'Llagaria Zas', NULL, NULL),
+    (19, 'Alipio', 'Cedeño Melgar', NULL, 'Experto en mando'),
+    (20, 'Talía Nala', 'Mazagatos Píez', 'Maza', NULL);
+
+
 ---------------------------------------------------------------------------------------------------------------------------
 --  2. Reparte los Tripulantes agregados en el paso anterior entre dos barcos, asigna como fecha de contratación la del día
 --     de hoy, un rol de Marinero y un salario de 1500
 ---------------------------------------------------------------------------------------------------------------------------
+-- Solucion --
+-- Barco 1
+INSERT INTO BarcoTripulante (idBarcoTripulante, Barco, Tripulante, FechaContratacion, RolTripulante, Salario)
+SELECT 
+    26 + ROW_NUMBER() OVER (ORDER BY idTripulante) AS idBarcoTripulante, -- Genera ids secuenciales comenzando desde 26
+    1, -- ID del primer barco
+    idTripulante, 
+    CURDATE(), -- Fecha de contratación de hoy
+    'Marinero', -- Rol de marinero
+    1500 -- Salario
+FROM Tripulante
+WHERE idTripulante BETWEEN 13 AND 16; -- Tripulantes asignados al primer barco
 
+-- Barco 2
+INSERT INTO BarcoTripulante (idBarcoTripulante, Barco, Tripulante, FechaContratacion, RolTripulante, Salario)
+SELECT 
+    30 + ROW_NUMBER() OVER (ORDER BY idTripulante) AS idBarcoTripulante, -- Genera ids secuenciales comenzando desde 30
+    2, -- ID del segundo barco
+    idTripulante, 
+    CURDATE(), -- Fecha de contratación de hoy
+    'Marinero', -- Rol de marinero
+    1500 -- Salario
+FROM Tripulante
+WHERE idTripulante BETWEEN 17 AND 20; -- Tripulantes asignados al segundo barco
 
 ---------------------------------------------------------------------------------------------------------------------------
 --  3. Aumenta el salario de los Marineros un 15% cuyo barco sea Velero o Yate
@@ -356,40 +480,74 @@ UPDATE barcotripulante
 	set salario = salario * 1.15
     where tripulante IN (select tripulante from barcotripulante bt inner join barco b on bt.barco = b.idBarco where b.tipo in ("Velero", "Yate"));
 
+-- Solucion correcta --
+UPDATE BarcoTripulante BT
+JOIN Barco B ON BT.Barco = B.idBarco
+SET BT.Salario = BT.Salario * 1.15
+WHERE BT.RolTripulante = 'Marinero' 
+    AND (B.Tipo = 'Velero' OR B.Tipo = 'Yate');
 ---------------------------------------------------------------------------------------------------------------------------
 --  4. Cambia en el atributo OtrosDatosTripulante de los Tripulantes el texto 'Experto' o 'Experta' por 'Manitas'
 ---------------------------------------------------------------------------------------------------------------------------
 UPDATE tripulante
 	set OtrosDatosTripulante = "Manitas"
     where OtrosDatosTripulante like "%Expert%";
+    
+-- Solucion correcta --
+UPDATE Tripulante
+SET OtrosDatosTripulante = REPLACE(REPLACE(OtrosDatosTripulante, 'Experto', 'Manitas'), 'Experta', 'Manitas')
+WHERE OtrosDatosTripulante LIKE '%Experto%' OR OtrosDatosTripulante LIKE '%Experta%';
 
 ---------------------------------------------------------------------------------------------------------------------------
 --  5. Borra de la asignación de Tripulantes a Barcos aquéllos cuyo rol sea 'Ingeniero' que trabajen en un Velero o en un Yate
 ---------------------------------------------------------------------------------------------------------------------------
-
-
+-- Solucion correcta --
+DELETE BT
+FROM BarcoTripulante BT
+JOIN Barco B ON BT.Barco = B.idBarco
+WHERE BT.RolTripulante = 'Ingeniero' AND (B.Tipo = 'Velero' OR B.Tipo = 'Yate');
 ---------------------------------------------------------------------------------------------------------------------------
 --  6. En los apodos de los tripulantes cambia las 'e' por'o'
 ---------------------------------------------------------------------------------------------------------------------------
 UPDATE tripulante
 	set apodo = "%o%"
     where apodo like "%e%";
+    
+-- Solucion correcta --
+UPDATE Tripulante
+	SET Apodo = REPLACE(Apodo, 'e', 'o')
+	WHERE Apodo LIKE '%e%';
 
 ---------------------------------------------------------------------------------------------------------------------------
 --  7. Borra los apellidos de los propietarios de barcos cuya nacionalidad no sea la española
 ---------------------------------------------------------------------------------------------------------------------------
 Delete ApellidosPropietario from propietario where Nacionalidad = "Española";
+
+-- Solucion correcta --
+UPDATE Propietario
+	SET ApellidosPropietario = NULL
+	WHERE Nacionalidad != 'Española';
+
 ---------------------------------------------------------------------------------------------------------------------------
 --  8. Acorta un 17% la distancia de la ruta que acabe en Sanxenxo
 ---------------------------------------------------------------------------------------------------------------------------
 UPDATE ruta
 	set DuracionEstimada = DuracionEstimada * 0.83
 	where NombreRuta like "%Sanxenxo%";
-
+    
+-- Solucion correcta --
+UPDATE Ruta
+	SET DistanciaEstimada = DistanciaEstimada * 0.83
+	WHERE PuertoDestino = (SELECT idPuerto FROM Puerto WHERE NombrePuerto = 'Sanxenxo');
 ---------------------------------------------------------------------------------------------------------------------------
 --  9. Borra los tripulantes que no estén asignados a ningún barco
 ---------------------------------------------------------------------------------------------------------------------------
 Delete from tripulantes where idTripulante NOT IN (select idTripulante from tripulante t left join barcotripulante bt on t.idTripulante = bt.tripulante where tr.barco IS NOT NULL);
+
+-- Solucion Correcta --
+DELETE FROM Tripulante
+WHERE idTripulante NOT IN (SELECT DISTINCT Tripulante FROM BarcoTripulante);
+
 ---------------------------------------------------------------------------------------------------------------------------
 -- 10. En la tabla Puerto, duplica la capacidad máxima de los barcos ubicados en Cangas, Moaña y Sanxenxo. Triplica la capacidad
 --     máxima de los barcos de las otros puertos.
@@ -401,4 +559,13 @@ UPDATE puerto
 UPDATE puerto
  set capacidadMaximaBarcos = capacidadMaximaBarcos * 3
  where ubicacion not in ("Cangas", "Moaña", "Sanxenxo");
+ 
+ -- Solucion correcta -- 
+ UPDATE Puerto
+SET CapacidadMaximaBarcos = 
+    CASE 
+        WHEN NombrePuerto IN ('Cangas', 'Moaña', 'Sanxenxo') THEN CapacidadMaximaBarcos * 2
+        ELSE CapacidadMaximaBarcos * 3
+    END;
+
 
