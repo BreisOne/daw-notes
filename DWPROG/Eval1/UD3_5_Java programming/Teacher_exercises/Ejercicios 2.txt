@@ -1,0 +1,22 @@
+Crear las siguientes funciones en el Main.
+Recuerda que al estar dentro del main, las funciones deben de ser estáticas.
+
+1. Crea una función que sea checkWordLength(String word) que devuelva la longitud de cada palabra que se le envíe como parámetro.
+
+2. Crea una función NumOfVowels(String word) que devuelva el número de vocales que contiene esa palabra. Para poder realizar este ejercicio, deberás descomponer el String en un array de char[] con la función: toCharArray();
+
+3. Crea una función llamada checkNumberOfPrimes(int[] numbers) la cual se le envíe como parámetro un array de números y nos devuelva cuantos números primos hay. Crea otra función que sea isPrime(int i) que devuelva un boolean. Úsala en la primera función.
+
+4: Crea una función llamada isIdentityMatrix(int[][] matrix) que devuelva un booleano conforme si una matriz es identidad o no. Recuerda que una matriz identidad es aquella que su diagonal de izquierda a derecha son todo 1 y el resto son todo 0.
+
+	Ejemplos:
+	
+	1	0	0
+	0	1	0
+	0	0	1
+
+
+	1	0	0	0
+	0	1	0	0
+	0	0	1	0
+	0	0	0	1

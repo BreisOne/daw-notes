@@ -1,0 +1,17 @@
+[FrasesVectoriales]
+Todo las funciones descritas a continuación deben de estar en una clase llamada Main y serán funciones estáticas.
+
+Vamos a trabajar con un vector de chars:
+
+1. Este método recibe el array de chars como parámetro y devuelve la frase descifrada como un String.
+ getSentece(char[] array): String
+
+2. Otra función llamada "checkWord" que permite verificar si una palabra existe dentro de la frase.
+ checkWord(char[], String secuencia): boolean
+ Debes utilizar la anterior función obtenerFrase() para trabajar con Strings directamente.
+
+3. checkWords es exactamente igual que la anterior, pero sirve para verificar que existen varias palabras en la frase.
+checkWords(char[] array, String[]): boolean
+
+4. Este método comprueba que existe la frase completa. Evidentemente tiene que estar en orden las palabras, no vale unicamente con verificar que contiene dichas palabras.
+checkSentence(char[] array, String sentence): boolean

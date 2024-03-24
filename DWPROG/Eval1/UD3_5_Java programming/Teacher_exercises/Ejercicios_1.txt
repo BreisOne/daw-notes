@@ -1,0 +1,15 @@
+1.	Crear un programa que lea por teclado una tabla de 10 números enteros y la desplace una posición hacia
+	la derecha: el primero pasa a ser el segundo, el segundo pasa a ser el tercero y así sucesivamente. 
+	El último pasa a ser el primero.
+
+
+2. 	Crear 20 números random. Depspués contar de esos 20 números cuantos pares e impares hay.
+	El programa creará 2 arrays, uno de pares y otro de impares con el tamaño correcto en
+	base al número de pares e impares que haya en esos 20 números random.
+	Por último, imprimir por pantalla estos 2 arrays.
+
+3.	Pide 5 números por pantalla y crea un algoritmo que ordene estos números de menor a mayor.
+
+
+4.	Crear una tabla bidimensional de tamaño 5x5 y rellenarla de la siguiente forma: la posición T[n,m]
+	debe contener n+m. Después se debe mostrar su contenido.

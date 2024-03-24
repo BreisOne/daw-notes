@@ -1,0 +1,24 @@
+Crear las siguientes funciones en el Main.
+Recuerda que al estar dentro de la clase main, las funciones deben de ser estáticas.
+
+El departamento de RRHH de nuestra empresa nos ha pedido que le desarrollemos unas utilidades para simplificarles su trabajo.
+
+1. Crea una función que sea getSalaryMean(double[] salaries) que devuelva el salario medio de la empresa.
+
+2. Crea una función que sea getSalaryMedian(double[] salaries) que devuelva la mediana de la empresa.
+Recuerda que la mediana es el valor del centro de un conjunto de datos. Esto quiere decir que si la longitud del array es Impar (por ejemplo 7) el valor que se pide es el de la posición 4, ya que tiene 3 valores antes (1,2,3) y 3 valores después (5,6,7). Pero si la longitud del array es par (por ejemplo 8),  para conseguir la mediana tenemos que sumar el valor (mitad + mitad+1) /2 o lo que es decir (valor de la posición 4 + valor de la posición 5 y todo esto partido entre 2)
+
+3. Crea una función getPayroll(double salary, int children, double percentage, boolean disability) que devuelva el importe a pagar a un empleado en base a todos los atributos. El porcentaje será la aportación a la seguridad social, con lo cual se descontará del salario total. Además, por cada hijo, se le descontará un 1% del porcentaje enviado como parámetro, pero a partir del tercer hijo (este inclusive), será de un 3%. Por último, si el empleado tiene alguna discapacidad, se le abonará 500€ a mayores.
+
+4: RRHH nos pide que les creemos una función para realizarles la Matriz transpuesta de los salarios de algunos empleados. No sabemos porqué, pero sus razones tendrán! --> transposeMatrix(double[][] matrix).
+
+	Ejemplos:
+	
+	1	3	9				1	2	5
+A	2	2	6			A 	3	9	8
+	5	6	1
+
+
+	1	2	5				1	3
+AT	3	2	6			AT	2	9
+	9	6	1				5	8
