@@ -1,0 +1,29 @@
+
+K
+java:S3740"/Provide the parametrized type for this generic.(ºáô*8äŞŒÓê1
+Q
+java:S3740!"/Provide the parametrized type for this generic.(˜Ÿåúÿÿÿÿ8åŞŒÓê1
+L
+java:S3740#"/Provide the parametrized type for this generic.(Ììùé8åŞŒÓê1
+Q
+java:S3740,"/Provide the parametrized type for this generic.(¸Åå”ÿÿÿÿÿ8åŞŒÓê1
+K
+java:S3740@"/Provide the parametrized type for this generic.(ºáô*8åŞŒÓê1
+Q
+java:S3740B"/Provide the parametrized type for this generic.(ï¡‹úøÿÿÿÿ8åŞŒÓê1
+n	java:S101
+"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ë™Éùÿÿÿÿÿ8åŞŒÓê1
+f
+java:S2259B"DA "NullPointerException" could be thrown; "reader" is nullable here.(ï¡‹úøÿÿÿÿ8ëŞŒÓê1
+f
+java:S2259"DA "NullPointerException" could be thrown; "reader" is nullable here.(ù„ÊŸıÿÿÿÿ8êŞŒÓê1
+U
+java:S1854"8Remove this useless assignment to local variable "file".(Üóò´8îŞŒÓê1
+F
+java:S1481")Remove this unused "file" local variable.(Üóò´8ïŞŒÓê1
+L	java:S106"+Replace this use of System.out by a logger.(ù„ÊŸıÿÿÿÿ8ïŞŒÓê1
+G	java:S106<"+Replace this use of System.out by a logger.(öÁ÷¥8ñŞŒÓê1
+^
+java:S1128"<Remove this unused import 'jdk.jshell.spi.ExecutionControl'.(Ñ§ÚÉûÿÿÿÿ8òŞŒÓê1
+B
+java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8òŞŒÓê1

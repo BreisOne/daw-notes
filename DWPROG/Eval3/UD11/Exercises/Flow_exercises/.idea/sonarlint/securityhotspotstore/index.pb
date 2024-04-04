@@ -3,10 +3,6 @@ R
 "src/main/java/org/flujos/Main.java,3\5\35cd6041d55961c54fdae9f5975a9b7eafef8ad3
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-X
-(src/main/java/org/flujos/Exercise_1.java,4\2\42d4c4b2cdf8ca3e23fba7373090c64a384e27ca
-X
-(src/main/java/org/flujos/Exercise_2.java,e\d\edcdf5f756d7d8ccba1d5e095d54df2f042056e0
 e
 5src/main/java/org/flujos/introduction/Exercise_1.java,6\2\620466ab689705730ef9281bcaade2044fc0694a
 e
@@ -17,3 +13,13 @@ d
 0src/main/java/org/flujos/boletin/Exercise_1.java,d\4\d47044cd5e672d85fe77f86904b6ffeedf69deff
 \
 ,src/main/java/org/flujos/boletin/archivo.txt,9\1\91ba9fcbb9393a30cf5dba9ee7e1adb65f7a3c42
+`
+0src/main/java/org/flujos/boletin/Exercise_2.java,8\9\89408359bbec6fa59121a09abc87545b44506fb0
+]
+-src/main/java/org/flujos/boletin/archivo2.txt,6\2\62d9a9b5495fd3704c30aa4d857b641aac7929db
+`
+0src/main/java/org/flujos/boletin/Exercese_3.java,2\a\2a75aa0198bf95b089dda94cfa6d5d51d115575a
+`
+0src/main/java/org/flujos/boletin/Exercise_3.java,8\6\86fb6712b500924beadae99a86448d6a2b982fc9
+`
+0src/main/java/org/flujos/boletin/Exercise_4.java,3\9\390bbaa2f53f856e459838f42f226b60f7da6014
