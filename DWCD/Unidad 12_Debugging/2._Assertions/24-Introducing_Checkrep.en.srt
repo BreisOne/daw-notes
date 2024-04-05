@@ -1,0 +1,175 @@
+1
+00:00:00,000 --> 00:00:04,000
+We now have seen how we can check the input parameters through the time class.
+
+2
+00:00:04,000 --> 00:00:10,000
+But what happens if there is more setters than getters which can all compromise the state?
+
+3
+00:00:10,000 --> 00:00:14,000
+Let's assume we have a method advance which takes a number of seconds
+
+4
+00:00:14,000 --> 00:00:16,000
+by which to advance the time.
+
+5
+00:00:16,000 --> 00:00:22,000
+For instance, a value of 3600 would advance the time forward by 1 hour
+
+6
+00:00:22,000 --> 00:00:26,000
+whereas a -60 would set back time by 1 minute.
+
+7
+00:00:26,000 --> 00:00:30,000
+Here's our advance method. I skipped the details of the computation right now.
+
+8
+00:00:30,000 --> 00:00:33,000
+But instead, we focus on the postcondition.
+
+9
+00:00:33,000 --> 00:00:38,000
+We assume we do have a method seconds since midnight which returns the number of seconds
+
+10
+00:00:38,000 --> 00:00:42,000
+that have a lapse in this very day, then we can set up a postcondition
+
+11
+00:00:42,000 --> 00:00:47,000
+which simply said that after we advanced time, then the new second since midnight
+
+12
+00:00:47,000 --> 00:00:50,000
+should be the old value plus the offset of seconds.
+
+13
+00:00:50,000 --> 00:00:53,000
+All of this modulo the number of seconds in a day such that
+
+14
+00:00:53,000 --> 00:00:59,000
+we'd probably take care other advances that go beyond or before midnight.
+
+15
+00:00:59,000 --> 00:01:03,000
+The method seconds since midnight is rather straight forward to implement.
+
+16
+00:01:03,000 --> 00:01:07,000
+So the hours times 3600 plus the minutes times 60 plus the seconds.
+
+17
+00:01:07,000 --> 00:01:12,000
+So again, we use the helper function to help us define our postcondition,
+
+18
+00:01:12,000 --> 00:01:18,000
+but for all of this to work, we need to make sure that even after the complex computation,
+
+19
+00:01:18,000 --> 00:01:21,000
+the state of the time object is still the same.
+
+20
+00:01:21,000 --> 00:01:26,000
+That is minutes, hours, and seconds are still within the right ranges
+
+21
+00:01:26,000 --> 00:01:31,000
+no matter what happens in this complex computation and this is not checked at this point.
+
+22
+00:01:31,000 --> 00:01:36,000
+What we need here is a property that always holds.
+
+23
+00:01:36,000 --> 00:01:40,000
+In Computer Science problems, we call such a thing an invariant.
+
+24
+00:01:40,000 --> 00:01:46,000
+An invariant is a condition that always holds for some data object. What does always means?
+
+25
+00:01:46,000 --> 00:01:50,000
+Always means from the perspective of the user of that object.
+
+26
+00:01:50,000 --> 00:01:54,000
+That is at the beginning and at the end of each public method.
+
+27
+00:01:54,000 --> 00:01:59,000
+While the method is executing, invariants can and frequently must be violated.
+
+28
+00:01:59,000 --> 00:02:03,000
+But when the method is done, invariants should hold again.
+
+29
+00:02:03,000 --> 00:02:09,000
+For a time object, the invariant condition is already encoded here in the argument checker
+
+30
+00:02:09,000 --> 00:02:16,000
+in the precondition of the initializer, but now we want to check this condition over and over again.
+
+31
+00:02:16,000 --> 00:02:18,000
+At the end and at the beginning of each public method.
+
+32
+00:02:18,000 --> 00:02:21,000
+What we do is we write an invariant checker.
+
+33
+00:02:21,000 --> 00:02:23,000
+This invariant checker called checkRep here
+
+34
+00:02:23,000 --> 00:02:29,000
+checks whether the internal representation is same or correct.
+
+35
+00:02:29,000 --> 00:02:31,000
+In our case, we simply set up three assertions to check whether
+
+36
+00:02:31,000 --> 00:02:35,000
+hours, minutes, and seconds are within the right ranges.
+
+37
+00:02:35,000 --> 00:02:39,000
+Once we do have such a checker, we can now use this in all functions
+
+38
+00:02:39,000 --> 00:02:42,000
+at the beginning or at the end as appropriate.
+
+39
+00:02:42,000 --> 00:02:45,000
+For instance, after initialization, we invoke checkRep
+
+40
+00:02:45,000 --> 00:02:50,000
+then make sure whether the internal state is within the right ranges.
+
+41
+00:02:50,000 --> 00:02:53,000
+This is also true for setters like advance.
+
+42
+00:02:53,000 --> 00:02:58,000
+Before we change something, we check whether the invariant is satisfied
+
+43
+00:02:58,000 --> 00:03:03,000
+and we do the same after the computation such that if the computation in someway messes up
+
+44
+00:03:03,000 --> 99:59:59,000
+hours, minutes, or seconds, then checkRep will immediately find this.

@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:02,000
+How are we going to address this?
+
+2
+00:00:02,000 --> 00:00:08,000
+We're going to introduce a parameter--the epsilon, which tells us the maximum deviation
+
+3
+00:00:08,000 --> 00:00:13,000
+from the current result as an absolute number and we're going to give it a default value--
+
+4
+00:00:13,000 --> 00:00:16,000
+say up to seven digits after the comma is still fine.
+
+5
+00:00:16,000 --> 00:00:21,000
+Now up to take this example and set up a suitable post condition in here,
+
+6
+00:00:21,000 --> 99:59:59,000
+such that the difference between y² and x is never greater than eps.

@@ -1,0 +1,191 @@
+1
+00:00:00,000 --> 00:00:03,000
+Writing assertions is not always easy.
+
+2
+00:00:03,000 --> 00:00:08,000
+You need to be prepared for a number of iterations until the pre and postconditions are accurate.
+
+3
+00:00:08,000 --> 00:00:12,000
+A typical chain of tools looks like this.
+
+4
+00:00:12,000 --> 00:00:17,000
+Here, we do have test inputs either random generator or systematic generator
+
+5
+00:00:17,000 --> 00:00:20,000
+or coming from users or coming from production.
+
+6
+00:00:20,000 --> 00:00:23,000
+These test inputs have been checked by preconditions,
+
+7
+00:00:23,000 --> 00:00:27,000
+and the results of the computation will be checked by postconditions.
+
+8
+00:00:27,000 --> 00:00:30,000
+Now, as it comes to preconditions and postconditions,
+
+9
+00:00:30,000 --> 00:00:33,000
+you can be either too permissive or you can be too strict.
+
+10
+00:00:33,000 --> 00:00:38,000
+If you are too permissive with your preconditions, this means that inputs,
+
+11
+00:00:38,000 --> 00:00:43,000
+which shouldn't go into the function, go into the function and then result in arbitrary behavior.
+
+12
+00:00:43,000 --> 00:00:46,000
+If you are too strict with the preconditions,
+
+13
+00:00:46,000 --> 00:00:50,000
+this means that valid inputs will result in failing preconditions.
+
+14
+00:00:50,000 --> 00:00:53,000
+The same also applies for postconditions.
+
+15
+00:00:53,000 --> 00:00:59,000
+If you are too permissive with your postconditions, this means that you will not catch a number of bugs.
+
+16
+00:00:59,000 --> 00:01:04,000
+If you are too strict, however, then you will catch bugs where there are no bugs.
+
+17
+00:01:04,000 --> 00:01:08,000
+The key is to come up with the right balance between these two.
+
+18
+00:01:08,000 --> 00:01:10,000
+We don't want to be too permissive. We don't want to be too strict.
+
+19
+00:01:10,000 --> 00:01:13,000
+In theory, you like to have preconditions and postconditions
+
+20
+00:01:13,000 --> 00:01:16,000
+that capture exactly what the program is doing.
+
+21
+00:01:16,000 --> 00:01:21,000
+However, in practice, you will find that while writing preconditions is typically easy,
+
+22
+00:01:21,000 --> 00:01:24,000
+writing postconditions or regular functions can be very hard.
+
+23
+00:01:24,000 --> 00:01:29,000
+And therefore, it's very common for postconditions only to check a part of the actual state
+
+24
+00:01:29,000 --> 00:01:34,000
+that are your postconditions that are simple but a bit too permissive that is the missed errors.
+
+25
+00:01:34,000 --> 00:01:40,000
+Whereas for preconditions, it's frequently feasible to come up with the right level of precision.
+
+26
+00:01:40,000 --> 00:01:43,000
+Why is that postconditions are so complex?
+
+27
+00:01:43,000 --> 00:01:49,000
+To give you a simple example of why writing correct postconditions is not easy at all,
+
+28
+00:01:49,000 --> 00:01:54,000
+Let me give you a very simple example. Let assume we do have a sorting function.
+
+29
+00:01:54,000 --> 00:02:00,000
+The precondition for a sorting function is simple. Basically, we simply assume that x is a list.
+
+30
+00:02:00,000 --> 00:02:03,000
+Well, we could put up an appropriate assertion here,
+
+31
+00:02:03,000 --> 00:02:06,000
+but the precondition is to accept essentially anything.
+
+32
+00:02:06,000 --> 00:02:09,000
+For the postcondition, we have to make sure two things.
+
+33
+00:02:09,000 --> 00:02:14,000
+First, we assume that the list y that we will return actually is sorted,
+
+34
+00:02:14,000 --> 00:02:20,000
+but we also need to make sure that the list we returned is a permutation of our input list.
+
+35
+00:02:20,000 --> 00:02:26,000
+So let's go and check with the list sorted. We iterate over the elements of y.
+
+36
+00:02:26,000 --> 00:02:32,000
+And if one element is greater than its successor, we return false. Otherwise, we return true.
+
+37
+00:02:32,000 --> 00:02:37,000
+So what you see here is that in order to check the postcondition,
+
+38
+00:02:37,000 --> 00:02:39,000
+we needed to come up with another function,
+
+39
+00:02:39,000 --> 00:02:42,000
+which actually now should begin to be checked against what?
+
+40
+00:02:42,000 --> 00:02:47,000
+The property that is sort to check here is essentially ordered to describe in here.
+
+41
+00:02:47,000 --> 00:02:52,000
+Meaning that any assertion you could have here would be just the same as anything you have in here
+
+42
+00:02:52,000 --> 00:02:54,000
+so you simply have to believe that this is true.
+
+43
+00:02:54,000 --> 00:03:01,000
+Well, I didn't believe that I actually ran a number of tests, so I'm pretty confident that this works.
+
+44
+00:03:01,000 --> 00:03:04,000
+Now, this is just a sorted. You also have to come up with its permutation.
+
+45
+00:03:04,000 --> 00:03:06,000
+This is also something you have to define.
+
+46
+00:03:06,000 --> 00:03:13,000
+Helper functions like a sorted or its permutation will probably be helpful later in the future
+
+47
+00:03:13,000 --> 00:03:16,000
+because you may be able to reuse them for other purpose.
+
+48
+00:03:16,000 --> 99:59:59,000
+They may even become part of a library.

@@ -1,0 +1,151 @@
+1
+00:00:00,000 --> 00:00:05,000
+Assume you have this big, big program with no random checks at all
+
+2
+00:00:05,000 --> 00:00:07,000
+and you suppose to do the debugging.
+
+3
+00:00:07,000 --> 00:00:10,000
+Where in that program should you start?
+
+4
+00:00:10,000 --> 00:00:14,000
+I would suggest the first thing to do is to define data invariant.
+
+5
+00:00:14,000 --> 00:00:20,000
+This will immediately cover large parts of the program state and catch lots and lots of defect.
+
+6
+00:00:20,000 --> 00:00:24,000
+The next thing is to provide preconditions which check the data invariants, of course,
+
+7
+00:00:24,000 --> 00:00:29,000
+but which also check specific preconditions for the functions at hand.
+
+8
+00:00:29,000 --> 00:00:33,000
+Finally, provide post condition in any method you find suspect.
+
+9
+00:00:33,000 --> 00:00:37,000
+Start with the partial conditions and then you expand them further and further
+
+10
+00:00:37,000 --> 00:00:40,000
+to capture more and more of the correct behavior.
+
+11
+00:00:40,000 --> 00:00:43,000
+Why do we start with data invariants in preconditions?
+
+12
+00:00:43,000 --> 00:00:47,000
+Well, because they usually way easier to write, catch lots of bugs,
+
+13
+00:00:47,000 --> 00:00:51,000
+and because we only care about whether a method works or not
+
+14
+00:00:51,000 --> 00:00:56,000
+if it actually gets the correct argument and gets a correct state to begin with.
+
+15
+00:00:56,000 --> 00:01:01,000
+On top of that, if you are using C or C++, run a system invariant check up.
+
+16
+00:01:01,000 --> 00:01:03,000
+You should run the system invariant check up for the simple reason
+
+17
+00:01:03,000 --> 00:01:06,000
+that it will check for all sorts of memory corruption,
+
+18
+00:01:06,000 --> 00:01:10,000
+and if your program does have any issues with memory corruption,
+
+19
+00:01:10,000 --> 00:01:14,000
+then all of these other assertions are totally mood because they will come up with random results.
+
+20
+00:01:14,000 --> 00:01:19,000
+Running a two like Valgrind can detect lots and lots of memory issues
+
+21
+00:01:19,000 --> 00:01:23,000
+and all it takes is to run your program once with Valgrind enabled.
+
+22
+00:01:23,000 --> 00:01:28,000
+A colleague of mine recently transfer from academia to an oil and gas company
+
+23
+00:01:28,000 --> 00:01:30,000
+and he was in charge of testing.
+
+24
+00:01:30,000 --> 00:01:34,000
+He introduced the first assertion ever in their code
+
+25
+00:01:34,000 --> 00:01:38,000
+and immediately, this one single assertion, uncovered dozens of bugs.
+
+26
+00:01:38,000 --> 00:01:40,000
+The engineers were amazed.
+
+27
+00:01:40,000 --> 00:01:44,000
+They have never seen anything  like this before and this is an experience.
+
+28
+00:01:44,000 --> 00:01:47,000
+Well, I'm not exactly sure whether you should have that experience too,
+
+29
+00:01:47,000 --> 00:01:51,000
+but if you come along with code that has no assertion at all,
+
+30
+00:01:51,000 --> 00:01:53,000
+start adding some and you will be surprised.
+
+31
+00:01:53,000 --> 00:01:57,000
+Why should we start with data invariants? This is a quiz.
+
+32
+00:01:57,000 --> 00:02:03,000
+First option, they cover much of the state. Second option, they are frequently checked.
+
+33
+00:02:03,000 --> 00:02:06,000
+They form implicit pre- and post conditions
+
+34
+00:02:06,000 --> 00:02:12,000
+because data invariants should hold at the beginning and at the end of each public method.
+
+35
+00:02:12,000 --> 00:02:15,000
+Final option, they provide helpful documentation
+
+36
+00:02:15,000 --> 00:02:20,000
+because they document exactly how the data structure is organized
+
+37
+00:02:20,000 --> 00:02:22,000
+in which assumptions program should not violate.
+
+38
+00:02:22,000 --> 99:59:59,000
+Check all that apply. Over to you.

@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:03,000
+Again, the dynamic trace gives us the answer.
+
+2
+00:00:03,000 --> 00:00:10,000
+We have the variable quote, which is read over here and last set up here.
+
+3
+00:00:10,000 --> 00:00:14,000
+So this becomes part of the dynamic slice.
+
+4
+00:00:14,000 --> 00:00:17,000
+Likewise, we have quote which is read up here, for instance,
+
+5
+00:00:17,000 --> 00:00:19,000
+and set up here.
+
+6
+00:00:19,000 --> 00:00:22,000
+This also becomes part of the dynamic slice.
+
+7
+00:00:22,000 --> 00:00:27,000
+However, these two lines, tag being set to true and tag being set to false,
+
+8
+00:00:27,000 --> 00:00:33,000
+are never executed and therefore the values they set into tag--
+
+9
+00:00:33,000 --> 99:59:59,000
+therefore, these two statements do not become part of the dynamic slice.

@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:04,000
+Welcome to the first unit on how debuggers work.
+
+2
+00:00:04,000 --> 00:00:08,000
+In this unit, I'm going to introduce you to the scientific method of debugging,
+
+3
+00:00:08,000 --> 00:00:12,000
+which is a process by which through a systematic experiment,
+
+4
+00:00:12,000 --> 00:00:16,000
+you'll slowly get guided towards the cause of the problem.
+
+5
+00:00:16,000 --> 00:00:21,000
+We're also going to see why talking to a teddy bear can be an effective method
+
+6
+00:00:21,000 --> 99:59:59,000
+of finding out what's going wrong, and in the end, we're going to build an interactive debugger--enjoy.

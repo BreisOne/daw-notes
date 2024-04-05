@@ -1,0 +1,147 @@
+1
+00:00:00,000 --> 00:00:07,000
+So, we now have seen that whenever a user reports a problem in the problem database
+
+2
+00:00:07,000 --> 00:00:10,000
+or a developer for that matter or anyone,
+
+3
+00:00:10,000 --> 00:00:16,000
+eventually a developer or a team of developers will take a look at the problem
+
+4
+00:00:16,000 --> 00:00:18,000
+and make an appropriate fix to the program.
+
+5
+00:00:18,000 --> 00:00:23,000
+Such fixes are also stored in a database--
+
+6
+00:00:23,000 --> 00:00:27,000
+namely, a version database where all changes are stored.
+
+7
+00:00:27,000 --> 00:00:30,000
+Such a version database is also called a change database,
+
+8
+00:00:30,000 --> 00:00:37,000
+a repository, or the configuration management system, a version control system.
+
+9
+00:00:37,000 --> 00:00:39,000
+Pick your choice.
+
+10
+00:00:39,000 --> 00:00:41,000
+There are plenty of version control systems around these days
+
+11
+00:00:41,000 --> 00:00:46,000
+which help storing these changes and the resulting versions.
+
+12
+00:00:46,000 --> 00:00:51,000
+Since using a version database is the first thing to use in any kind
+
+13
+00:00:51,000 --> 00:00:53,000
+of civilized software development,
+
+14
+00:00:53,000 --> 00:00:58,000
+I will simply assume that you use such a thing on a daily basis anyway.
+
+15
+00:00:58,000 --> 00:01:02,000
+An interesting thing happens, however, when you link the information
+
+16
+00:01:02,000 --> 00:01:07,000
+from the problem database to the information from the version database.
+
+17
+00:01:07,000 --> 00:01:13,000
+Let's assume that the problem database has a problem report #347
+
+18
+00:01:13,000 --> 00:01:16,000
+where it says remove<u>html<u>markup fails.</u></u>
+
+19
+00:01:16,000 --> 00:01:20,000
+Let's assume the version database has recorded a change
+
+20
+00:01:20,000 --> 00:01:26,000
+to function name remove<u>html<u>markup in precisely this location</u></u>
+
+21
+00:01:26,000 --> 00:01:32,000
+with a comment that this now closes problem report #347,
+
+22
+00:01:32,000 --> 00:01:40,000
+which is a change which may well have been made after the problem was initially submitted.
+
+23
+00:01:40,000 --> 00:01:45,000
+We can now got and relate the change to the actual problem report,
+
+24
+00:01:45,000 --> 00:01:53,000
+because the change message has the actual number of the problem report in here,
+
+25
+00:01:53,000 --> 00:01:57,000
+and we can use that to retrieve the precise problem report.
+
+26
+00:01:57,000 --> 00:02:02,000
+Since we also know where the change has been applied,
+
+27
+00:02:02,000 --> 00:02:04,000
+namely in this part of the file,
+
+28
+00:02:04,000 --> 00:02:11,000
+we now have a link from the problem database to a specific place in the code.
+
+29
+00:02:11,000 --> 00:02:16,000
+This allows us for every piece of code to identify
+
+30
+00:02:16,000 --> 00:02:19,000
+the problems that were associated with it.
+
+31
+00:02:19,000 --> 00:02:25,000
+What we do is we take the piece of code, look at all the changes that were made,
+
+32
+00:02:25,000 --> 00:02:29,000
+and look at the problems that these changes refer to.
+
+33
+00:02:29,000 --> 00:02:34,000
+We can then, for instance, find that remove<u>html<u>markup</u></u>
+
+34
+00:02:34,000 --> 00:02:39,000
+over the history of this very course has had three fixes
+
+35
+00:02:39,000 --> 00:02:42,000
+until it finally worked.
+
+36
+00:02:42,000 --> 00:02:46,000
+Three fixes until a function actually works is pretty bad.
+
+37
+00:02:46,000 --> 99:59:59,000
+We should really worry about the quality of our coding.

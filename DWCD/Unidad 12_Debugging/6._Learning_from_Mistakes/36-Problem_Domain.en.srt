@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:04,000
+Last hypothesis--is it the problem domain?
+
+2
+00:00:04,000 --> 00:00:09,000
+That is, the domain of the problem that your module is trying to address?
+
+3
+00:00:09,000 --> 99:59:59,000
+Pick your choice.

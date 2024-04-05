@@ -1,0 +1,43 @@
+1
+00:00:00,000 --> 00:00:04,000
+When there are backward slices, there are also forward slices.
+
+2
+00:00:04,000 --> 00:00:09,000
+A forward slice contains all statements that depend on a specific statement.
+
+3
+00:00:09,000 --> 00:00:13,000
+As an example, let's come up with a forward slice
+
+4
+00:00:13,000 --> 00:00:16,000
+of the initialization of the out variable.
+
+5
+00:00:16,000 --> 00:00:20,000
+Very obviously, the final return statement is part of the forward slice
+
+6
+00:00:20,000 --> 00:00:25,000
+because it reads from a variable which is set over here, namely, out;
+
+7
+00:00:25,000 --> 00:00:28,000
+therefore, it is data-dependent on this earlier statement.
+
+8
+00:00:28,000 --> 00:00:30,000
+And, therefore, it's part of the forward slice.
+
+9
+00:00:30,000 --> 00:00:32,000
+Now for the quiz:
+
+10
+00:00:32,000 --> 00:00:36,000
+Which other statements are contained in the forward slice of S?
+
+11
+00:00:36,000 --> 99:59:59,000
+Check all that apply.

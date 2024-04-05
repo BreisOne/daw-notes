@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:03,000
+Many operating systems allow you to submit bug reports
+
+2
+00:00:03,000 --> 00:00:07,000
+more or less automatically as soon as a program crashes.
+
+3
+00:00:07,000 --> 00:00:11,000
+This is the dialog that appears on a mac os system.
+
+4
+00:00:11,000 --> 00:00:14,000
+Essentially Apple asks you just one single question,
+
+5
+00:00:14,000 --> 00:00:19,000
+and that is again the steps necessary to reproduce the problem.
+
+6
+00:00:19,000 --> 00:00:24,000
+Everything else can be deduced from that one.
+
+7
+00:00:24,000 --> 00:00:26,000
+On top of that the bug report also includes
+
+8
+00:00:26,000 --> 00:00:29,000
+problem details and system configuration,
+
+9
+00:00:29,000 --> 00:00:32,000
+which is, for instance, the version number of the program that crashed,
+
+10
+00:00:32,000 --> 00:00:36,000
+the current process, date and time,
+
+11
+00:00:36,000 --> 00:00:40,000
+the functions that were active at the moment of the crash,
+
+12
+00:00:40,000 --> 00:00:44,000
+as well as any hardware attached to the machine.
+
+13
+00:00:44,000 --> 00:00:47,000
+Here are the steps needed to reproduce the problem,
+
+14
+00:00:47,000 --> 99:59:59,000
+and we send the whole thing to Apple.

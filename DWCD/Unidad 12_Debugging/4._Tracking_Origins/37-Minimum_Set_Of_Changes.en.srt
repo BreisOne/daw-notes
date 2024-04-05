@@ -1,0 +1,163 @@
+1
+00:00:00,000 --> 00:00:04,000
+Here again is our remove html markup program.
+
+2
+00:00:04,000 --> 00:00:09,000
+If we invoke html markup with s being a single quote
+
+3
+00:00:09,000 --> 00:00:12,000
+followed by a less-than sign, it passes.
+
+4
+00:00:12,000 --> 00:00:17,000
+However, if it's a double quote followed by a less-than sign,  it fails.
+
+5
+00:00:17,000 --> 00:00:21,000
+So, this difference in the original input determines
+
+6
+00:00:21,000 --> 00:00:23,000
+whether the run passes or fails.
+
+7
+00:00:23,000 --> 00:00:27,000
+Let's go and execute the program a bit further but stop execution
+
+8
+00:00:27,000 --> 00:00:31,000
+when the loop head is reached for the second time.
+
+9
+00:00:31,000 --> 00:00:34,000
+Now again we can examine the state.
+
+10
+00:00:34,000 --> 00:00:36,000
+The variable s stays unchanged at this point.
+
+11
+00:00:36,000 --> 00:00:40,000
+The character c is still the first character being processed.
+
+12
+00:00:40,000 --> 00:00:42,000
+Which is different?
+
+13
+00:00:42,000 --> 00:00:44,000
+In the passing run, it's a single quote.
+
+14
+00:00:44,000 --> 00:00:46,000
+In the failing run, it's a double quote.
+
+15
+00:00:46,000 --> 00:00:50,000
+The variable tag is false in both cases.
+
+16
+00:00:50,000 --> 00:00:52,000
+The variable quote is different.
+
+17
+00:00:52,000 --> 00:00:55,000
+In the passing run, it is false.
+
+18
+00:00:55,000 --> 00:00:59,000
+In the failing run, it is true.
+
+19
+00:00:59,000 --> 00:01:02,000
+In the passing run, the out variable contains a single quote.
+
+20
+00:01:02,000 --> 00:01:08,000
+Whereas, in the failing run, the out variable is empty.
+
+21
+00:01:08,000 --> 00:01:16,000
+What you see at this point is that four variables, namely s, c, quote, and out,
+
+22
+00:01:16,000 --> 00:01:19,000
+all have different values.
+
+23
+00:01:19,000 --> 00:01:22,000
+You can now imagine that if we were in the passing run,
+
+24
+00:01:22,000 --> 00:01:25,000
+and we would set these four variables
+
+25
+00:01:25,000 --> 00:01:29,000
+to the values found in the failing run,
+
+26
+00:01:29,000 --> 00:01:34,000
+then we would effectively make the passing run a failing run,
+
+27
+00:01:34,000 --> 00:01:36,000
+meaning that these four variables,
+
+28
+00:01:36,000 --> 00:01:41,000
+which defer, make up a cause for the failure.
+
+29
+00:01:41,000 --> 00:01:48,000
+However, it suffices to set only a subset of these variables
+
+30
+00:01:48,000 --> 00:01:50,000
+to the values found in the failing run.
+
+31
+00:01:50,000 --> 00:01:55,000
+Only a subset of these variables need to be changed
+
+32
+00:01:55,000 --> 00:02:00,000
+in order to cause the assertion to fail,
+
+33
+00:02:00,000 --> 00:02:04,000
+and therefore, the entire run to fail.
+
+34
+00:02:04,000 --> 00:02:07,000
+So, here is a quiz.
+
+35
+00:02:07,000 --> 00:02:11,000
+Which of these four variables can be set to values from the failing run
+
+36
+00:02:11,000 --> 00:02:13,000
+to make the passing run fail?
+
+37
+00:02:13,000 --> 00:02:18,000
+Is it s--is it c--is it quote--is it out,
+
+38
+00:02:18,000 --> 00:02:23,000
+or is it a combination of multiple variables?
+
+39
+00:02:23,000 --> 00:02:28,000
+Hint: If you said all four, this is the correct answer.
+
+40
+00:02:28,000 --> 00:02:33,000
+What I want is a minimum set of variables.
+
+41
+00:02:33,000 --> 99:59:59,000
+Over to you.

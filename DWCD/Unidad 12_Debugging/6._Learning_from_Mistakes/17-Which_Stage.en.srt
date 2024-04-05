@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:03,000
+We have a user who reports that his drawing program
+
+2
+00:00:03,000 --> 00:00:07,000
+cannot open a document saved by a previous version.
+
+3
+00:00:07,000 --> 00:00:11,000
+He attaches the document in question to his bug report.
+
+4
+00:00:11,000 --> 00:00:13,000
+Here is developer Dora.
+
+5
+00:00:13,000 --> 00:00:17,000
+She can confirm that the failure actually occurs
+
+6
+00:00:17,000 --> 00:00:19,000
+and that the bug report is a real bug report.
+
+7
+00:00:19,000 --> 00:00:21,000
+Here is developer Erol.
+
+8
+00:00:21,000 --> 00:00:25,000
+He fixes the bug and can now properly process the document.
+
+9
+00:00:25,000 --> 00:00:30,000
+What is the stage of the bug report at this point?
+
+10
+00:00:30,000 --> 00:00:32,000
+Is it assigned?
+
+11
+00:00:32,000 --> 00:00:34,000
+Is it resolved?
+
+12
+00:00:34,000 --> 00:00:36,000
+Is it verified?
+
+13
+00:00:36,000 --> 00:00:39,000
+Or is it closed?
+
+14
+00:00:39,000 --> 99:59:59,000
+Check the correct answer.

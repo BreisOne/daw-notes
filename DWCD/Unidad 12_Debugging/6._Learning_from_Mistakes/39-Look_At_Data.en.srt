@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:06,000
+At the end of the day, what the area of mining for such information has found out, though,
+
+2
+00:00:06,000 --> 00:00:12,000
+is that although there may be general rules there are also lots and lots
+
+3
+00:00:12,000 --> 00:00:17,000
+of project specific features that correlate with bug density.
+
+4
+00:00:17,000 --> 00:00:24,000
+Therefore, it is advisable to first take a look at your own defect data
+
+5
+00:00:24,000 --> 00:00:27,000
+and then figure out what the hot spots are
+
+6
+00:00:27,000 --> 00:00:32,000
+and think about possible ways to learn from past mistakes and improve things
+
+7
+00:00:32,000 --> 99:59:59,000
+for the future.

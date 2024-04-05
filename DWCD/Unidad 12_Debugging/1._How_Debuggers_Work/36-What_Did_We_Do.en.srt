@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:03,000
+What is it we have seen? We have started with an initial hypothesis.
+
+2
+00:00:03,000 --> 00:00:07,000
+From this hypothesis we have made predictions. We have made experiments.
+
+3
+00:00:07,000 --> 00:00:10,000
+We checked with the experiments, validated the prediction.
+
+4
+00:00:10,000 --> 00:00:16,000
+If they did, we refined our hypothesis. If they didn't, we came up with alternate hypothesis.
+
+5
+00:00:16,000 --> 00:00:19,000
+We have repeated the process until we came up with a diagnosis.
+
+6
+00:00:19,000 --> 00:00:24,000
+That is, a theory that is consistent with our earlier observations, and that also
+
+7
+00:00:24,000 --> 00:00:29,000
+predicts future observations. In our case, the correct behavior.
+
+8
+00:00:29,000 --> 00:00:33,000
+Based on this diagnosis, how the failure came to be, we have fixed a code
+
+9
+00:00:33,000 --> 00:00:37,000
+accordingly, and we have seen in our additional experiments that the theory holds.
+
+10
+00:00:37,000 --> 00:00:40,000
+That is, the diagnosis was valid from the beginning on,
+
+11
+00:00:40,000 --> 00:00:44,000
+and therefore, was a correct explanation of how the failure came to be.
+
+12
+00:00:44,000 --> 00:00:47,000
+Note that there are many ways to come up with an initial hypothesis.
+
+13
+00:00:47,000 --> 00:00:52,000
+There are also many ways to refine a hypothesis and reject a hypothesis.
+
+14
+00:00:52,000 --> 00:00:54,000
+Note that there may be multiple hypotheses to start with,
+
+15
+00:00:54,000 --> 00:00:59,000
+and also of course during the scientific method, you may come up with different hypotheses.
+
+16
+00:00:59,000 --> 00:01:03,000
+If you have two competing hypotheses for the same failure,
+
+17
+00:01:03,000 --> 00:01:09,000
+what you do is set up an experiment that decides which of the hypotheses
+
+18
+00:01:09,000 --> 00:01:13,000
+is supported, and which of the hypotheses is rejected.
+
+19
+00:01:13,000 --> 00:01:16,000
+At the end, there should be only one hypothesis, there should be only one
+
+20
+00:01:16,000 --> 99:59:59,000
+theory, and there should be only one diagnosis on how the failure came to be.

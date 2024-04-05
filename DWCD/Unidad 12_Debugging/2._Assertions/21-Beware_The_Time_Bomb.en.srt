@@ -1,0 +1,139 @@
+1
+00:00:00,000 --> 00:00:06,000
+What you see here is an instance of a problem that's commonly known as a time bomb.
+
+2
+00:00:06,000 --> 00:00:12,000
+A time bomb is infection in the code that's just waiting to explode into your face as a failure.
+
+3
+00:00:12,000 --> 00:00:16,000
+Here's something that's definitely wrong and it's in there and it's sleeping.
+
+4
+00:00:16,000 --> 00:00:19,000
+It can be there for million of cycles.
+
+5
+00:00:19,000 --> 00:00:23,000
+Only when it's being access or process that's when the time bomb explodes
+
+6
+00:00:23,000 --> 00:00:27,000
+and this is hard to debug because you have to figure out
+
+7
+00:00:27,000 --> 00:00:32,000
+where the time bomb originally was planted and set that's where assertions save the day.
+
+8
+00:00:32,000 --> 00:00:37,000
+An assertion prohibits time bomb by checking whether the data is same
+
+9
+00:00:37,000 --> 00:00:40,000
+at the very moment it is being stored.
+
+10
+00:00:40,000 --> 00:00:44,000
+When we are creating a timedobject, we could for instance use assertions
+
+11
+00:00:44,000 --> 00:00:49,000
+to make sure that the arguments actually are all within specified ranges.
+
+12
+00:00:49,000 --> 00:00:53,000
+For instance, we could say the hour must be between 0 and 23.
+
+13
+00:00:53,000 --> 00:00:58,000
+At the same time, we give a hint to the user that time uses 24-hour format.
+
+14
+00:00:58,000 --> 00:01:03,000
+We also want to make sure that the minutes and the seconds are within the proper ranges
+
+15
+00:01:03,000 --> 00:01:06,000
+between 0 and 59, respectively.
+
+16
+00:01:06,000 --> 00:01:09,000
+This special syntax you see over here is a speciality of Python
+
+17
+00:01:09,000 --> 00:01:13,000
+which allows to coerce multiple comparisons into one.
+
+18
+00:01:13,000 --> 00:01:17,000
+Actually now that I think of it, 59 is not correct here.
+
+19
+00:01:17,000 --> 00:01:21,000
+There's years in which there's leap seconds and if there's a leap second,
+
+20
+00:01:21,000 --> 00:01:24,000
+then there can actually be 61 seconds in a minute.
+
+21
+00:01:24,000 --> 00:01:27,000
+So, in order to be perfectly correct, this needs to be 60 up here.
+
+22
+00:01:27,000 --> 00:01:33,000
+This is still a very simplistic time class, adjusts its use, say local time for instance.
+
+23
+00:01:33,000 --> 00:01:39,000
+We don't care about time zones or calendars or daylight savings time or anything at this point.
+
+24
+00:01:39,000 --> 00:01:43,000
+The real time class is way more complicated than this one.
+
+25
+00:01:43,000 --> 00:01:47,000
+Now, let's see whether these assertions help us in avoiding time bombs.
+
+26
+00:01:47,000 --> 00:01:50,000
+We still have the string passed in here.
+
+27
+00:01:50,000 --> 00:01:54,000
+Let's see whether our assertion catches this. Again, press and run.
+
+28
+00:01:54,000 --> 00:01:59,000
+And see as we put in 2 minutes after midnight as a string, the assertion fails
+
+29
+00:01:59,000 --> 00:02:04,000
+because the string is not between the values of 0 and 23.
+
+30
+00:02:04,000 --> 00:02:09,000
+What happens if it pass negative values in here say hours is valid, minutes is negative,
+
+31
+00:02:09,000 --> 00:02:13,000
+seconds is valid, press on run, and again we get a failing assertion--
+
+32
+00:02:13,000 --> 00:02:18,000
+now, we get the failing assertion that the minutes is not within the right range,
+
+33
+00:02:18,000 --> 00:02:20,000
+which is exactly what we wanted to catch.
+
+34
+00:02:20,000 --> 00:02:25,000
+With these assertions up here, any attempt to set any time object
+
+35
+00:02:25,000 --> 99:59:59,000
+to an illegal state will immediately be detected.

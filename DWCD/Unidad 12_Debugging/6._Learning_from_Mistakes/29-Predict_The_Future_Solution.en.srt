@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:05,000
+It turns out that, yes, if there have been many bugs in one place,
+
+2
+00:00:05,000 --> 00:00:10,000
+it is likely that there will be more bugs in the very same place.
+
+3
+00:00:10,000 --> 00:00:14,000
+This is the more interesting, because all the bugs we see have been fixed,
+
+4
+00:00:14,000 --> 00:00:18,000
+so you'd assume that over time there would be fewer bugs.
+
+5
+00:00:18,000 --> 00:00:20,000
+But that's not the case.
+
+6
+00:00:20,000 --> 00:00:23,000
+With bugs it's like fishing.
+
+7
+00:00:23,000 --> 00:00:28,000
+You find plenty of bugs in one place one day.
+
+8
+00:00:28,000 --> 00:00:33,000
+The next day fish will assemble at the same place again,
+
+9
+00:00:33,000 --> 00:00:36,000
+possibly because fish like the same places again and again,
+
+10
+00:00:36,000 --> 00:00:43,000
+except that for fish we have a good theory on how the reproduce.
+
+11
+00:00:43,000 --> 00:00:45,000
+For bugs, we do not.
+
+12
+00:00:45,000 --> 00:00:48,000
+There is a bit of a hypothesis though.
+
+13
+00:00:48,000 --> 00:00:53,000
+The assumption is that the same factors that have contributed to bugs in the past
+
+14
+00:00:53,000 --> 00:00:57,000
+will keep on contributing in the future.
+
+15
+00:00:57,000 --> 00:01:03,000
+Generally speaking, past fixes and a bit less so past changes
+
+16
+00:01:03,000 --> 99:59:59,000
+are good predictors for future fixes.

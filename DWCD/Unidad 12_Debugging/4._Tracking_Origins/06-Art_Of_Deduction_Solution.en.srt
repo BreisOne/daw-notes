@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:02,000
+Here comes the answer to the quiz.
+
+2
+00:00:02,000 --> 00:00:04,000
+Since this here was executed
+
+3
+00:00:04,000 --> 00:00:08,000
+and this condition up here is that tag cannot have been set,
+
+4
+00:00:08,000 --> 99:59:59,000
+we can deduce that tag must have been false.

@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:02,000
+Now for the quiz.
+
+2
+00:00:02,000 --> 00:00:09,000
+One of these 5 facts allows to infer most, if not all of the others,
+
+3
+00:00:09,000 --> 00:00:13,000
+and, therefore, it is the most crucial of these 5.
+
+4
+00:00:13,000 --> 00:00:15,000
+Which one is it?
+
+5
+00:00:15,000 --> 00:00:18,000
+Is it the problem history?
+
+6
+00:00:18,000 --> 00:00:21,000
+Diagnostic information?
+
+7
+00:00:21,000 --> 00:00:24,000
+The experienced behavior?
+
+8
+00:00:24,000 --> 00:00:27,000
+The expected behavior?
+
+9
+00:00:27,000 --> 99:59:59,000
+Or a one-line summary?

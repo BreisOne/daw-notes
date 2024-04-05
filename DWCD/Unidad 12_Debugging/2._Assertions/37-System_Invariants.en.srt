@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:04,000
+Sometimes during debugging, there are situations where you want to ensure
+
+2
+00:00:04,000 --> 00:00:07,000
+that some property hold throughout the entire execution.
+
+3
+00:00:07,000 --> 00:00:09,000
+Let me give you an example for that.
+
+4
+00:00:09,000 --> 00:00:15,000
+Suppose you have a very big Python program with dozens or even hundreds of modules.
+
+5
+00:00:15,000 --> 00:00:20,000
+We suppose that due to some designed decision, there is one global variable called flag
+
+6
+00:00:20,000 --> 00:00:24,000
+which is accessible from all these modules and all of these modules
+
+7
+00:00:24,000 --> 00:00:30,000
+could possibly change the value of flag; the read flag, the write in to flag.
+
+8
+00:00:30,000 --> 00:00:34,000
+But now, you have a run in which flag should not be set and yet it is set.
+
+9
+00:00:34,000 --> 00:00:38,000
+And you have all these places in the program where the variable could be set,
+
+10
+00:00:38,000 --> 00:00:41,000
+but you don't know where this is.
+
+11
+00:00:41,000 --> 00:00:45,000
+What you want to have in this situation is a check that is executed
+
+12
+00:00:45,000 --> 00:00:48,000
+at every moment throughout the execution of the program
+
+13
+00:00:48,000 --> 00:00:52,000
+and which monitors the moment in which flag is set to true.
+
+14
+00:00:52,000 --> 00:00:58,000
+From a previous unit, you may remember the tracing functionality in Python.
+
+15
+00:00:58,000 --> 00:01:02,000
+By using the sys.settrace function, you can specify a function.
+
+16
+00:01:02,000 --> 00:01:08,000
+Here, trace it, that it will be executed after every single line is executed in your program.
+
+17
+00:01:08,000 --> 00:01:13,000
+And we can set up this trace it function such that after every line,
+
+18
+00:01:13,000 --> 00:01:20,000
+it checks the status of the global variable flag and aborts execution as soon as flag becomes true.
+
+19
+00:01:20,000 --> 00:01:26,000
+As any such tracing function, it returns itself such that it will be executed with the next line.
+
+20
+00:01:26,000 --> 00:01:30,000
+As soon as you have such as checker in place, the flag will be checked
+
+21
+00:01:30,000 --> 00:01:35,000
+after every single line of execution and you will be able to monitor exactly where the flag is set.
+
+22
+00:01:35,000 --> 00:01:39,000
+And this of course is true for arbitrary data structures.
+
+23
+00:01:39,000 --> 00:01:44,000
+If you do have some data structures say store, again, which can be accessed
+
+24
+00:01:44,000 --> 00:01:50,000
+from lots and lots of places, then a call say to a store.checkRep will ensure that store
+
+25
+00:01:50,000 --> 00:01:53,000
+is consistent for every single line that's executed.
+
+26
+00:01:53,000 --> 00:01:57,000
+Just be sure to turn this out while store is executing its own methods
+
+27
+00:01:57,000 --> 00:02:00,000
+because while these internal methods are running,
+
+28
+00:02:00,000 --> 99:59:59,000
+store would naturally violate its own internal data invariants.

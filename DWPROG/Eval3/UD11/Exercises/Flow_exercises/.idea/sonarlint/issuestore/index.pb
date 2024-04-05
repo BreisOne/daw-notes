@@ -18,8 +18,6 @@ d
 ]
 -src/main/java/org/flujos/boletin/archivo2.txt,6\2\62d9a9b5495fd3704c30aa4d857b641aac7929db
 `
-0src/main/java/org/flujos/boletin/Exercese_3.java,2\a\2a75aa0198bf95b089dda94cfa6d5d51d115575a
-`
 0src/main/java/org/flujos/boletin/Exercise_3.java,8\6\86fb6712b500924beadae99a86448d6a2b982fc9
 `
 0src/main/java/org/flujos/boletin/Exercise_4.java,3\9\390bbaa2f53f856e459838f42f226b60f7da6014

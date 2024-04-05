@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:02,000
+That was fairly easy.
+
+2
+00:00:02,000 --> 00:00:06,000
+What we need to check is simply statements that read the out variable up here,
+
+3
+00:00:06,000 --> 00:00:11,000
+which is down here: out=out+c and the final assertion.
+
+4
+00:00:11,000 --> 00:00:15,000
+We can now check whether anything else depends on
+
+5
+00:00:15,000 --> 00:00:17,000
+the execution of these statements.
+
+6
+00:00:17,000 --> 00:00:21,000
+The only one that's in the loop is here: out=out+c,
+
+7
+00:00:21,000 --> 00:00:25,000
+but none of the other statements up here ret something from out.
+
+8
+00:00:25,000 --> 00:00:30,000
+So if you want to know how this setting affects things downstream,
+
+9
+00:00:30,000 --> 00:00:34,000
+the forward slice will tell you, "Well, it can only affect these 3 lines down here."
+
+10
+00:00:34,000 --> 99:59:59,000
+Anything else in between will not be affected by the value of out.

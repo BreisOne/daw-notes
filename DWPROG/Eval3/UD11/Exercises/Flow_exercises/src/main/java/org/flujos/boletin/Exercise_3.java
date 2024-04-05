@@ -1,11 +1,9 @@
 package org.flujos.boletin;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Exercise_3 {
     String[] names = {"Detergente", "Camiseta", "Microondas"};

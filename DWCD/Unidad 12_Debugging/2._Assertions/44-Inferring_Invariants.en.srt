@@ -1,0 +1,175 @@
+1
+00:00:00,000 --> 00:00:06,000
+Coming up with proper precondition, postcondition, and invariant can be a hard task.
+
+2
+00:00:06,000 --> 00:00:08,000
+Other tools that help us to do that--
+
+3
+00:00:08,000 --> 00:00:14,000
+this is the idea of inferring invariants, having a tool that automatically provides
+
+4
+00:00:14,000 --> 00:00:18,000
+data invariants, preconditions, and postconditions.
+
+5
+00:00:18,000 --> 00:00:21,000
+I'm going to show you how such tools work,
+
+6
+00:00:21,000 --> 00:00:23,000
+and we're going to explore how to build one.
+
+7
+00:00:23,000 --> 00:00:27,000
+The Daikon tool by Michael Ernst and colleagues is a tool
+
+8
+00:00:27,000 --> 00:00:30,000
+that dynamically detects invariants from program run.
+
+9
+00:00:30,000 --> 00:00:33,000
+The idea is that you do have a set of executions.
+
+10
+00:00:33,000 --> 00:00:35,000
+Here is one execution.
+
+11
+00:00:35,000 --> 00:00:38,000
+Here is another one, and here is five executions.
+
+12
+00:00:38,000 --> 00:00:42,000
+What Diakon does is it analyses these runs and checks
+
+13
+00:00:42,000 --> 00:00:47,000
+whether there are any properties or variables that hold for all oberved runs.
+
+14
+00:00:47,000 --> 00:00:51,000
+For instance, it could determine that the variable x is odd
+
+15
+00:00:51,000 --> 00:00:54,000
+whenever the function f is being called.
+
+16
+00:00:54,000 --> 00:00:56,000
+How does Daikon do that?
+
+17
+00:00:56,000 --> 00:00:58,000
+The first thing it does is it gets traces.
+
+18
+00:00:58,000 --> 00:01:02,000
+A trace is a listing of all functions that were called
+
+19
+00:01:02,000 --> 00:01:05,000
+and all values of all variables.
+
+20
+00:01:05,000 --> 00:01:09,000
+Very much like the sys.settrace() function in Python,
+
+21
+00:01:09,000 --> 00:01:12,000
+which we have used to trace the programs.
+
+22
+00:01:12,000 --> 00:01:16,000
+What Daikon has built in is a so-called pattern library.
+
+23
+00:01:16,000 --> 00:01:18,000
+A pattern library of possible invariants.
+
+24
+00:01:18,000 --> 00:01:21,000
+Here is such a pattern--$1 == 0.
+
+25
+00:01:21,000 --> 00:01:25,000
+Here is such a pattern--we have a place holder which equals 0.
+
+26
+00:01:25,000 --> 00:01:28,000
+Daikon now takes the trace, looks at all the variables,
+
+27
+00:01:28,000 --> 00:01:31,000
+and checks which variable satisfies this pattern.
+
+28
+00:01:31,000 --> 00:01:36,000
+That is it replaces the placeholder with every single variable found in the trace.
+
+29
+00:01:36,000 --> 00:01:44,000
+It checks whether x == 0, whether y == 0, whether z == 0, and so on.
+
+30
+00:01:44,000 --> 00:01:47,000
+Only those patterns that match are being retained.
+
+31
+00:01:47,000 --> 00:01:49,000
+Those that don't match art eliminated.
+
+32
+00:01:49,000 --> 00:01:54,000
+X and y are not 0. Then they're eliminated. This one is retained.
+
+33
+00:01:54,000 --> 00:01:57,000
+Daikon checks these patterns for every single invocation of function
+
+34
+00:01:57,000 --> 00:02:01,000
+and only retains those that hold for all invocations of the function,
+
+35
+00:02:01,000 --> 00:02:05,000
+which means that over time the set of instantiated patterns becomes
+
+36
+00:02:05,000 --> 00:02:08,000
+smaller and smaller. It's like a sieve.
+
+37
+00:02:08,000 --> 00:02:13,000
+At the end, if this instantiation is found to hold for all invocations of a function
+
+38
+00:02:13,000 --> 00:02:17,000
+then it's actually retained and finally reported as an invariant.
+
+39
+00:02:17,000 --> 00:02:19,000
+Daikon has hundreds of these patterns.
+
+40
+00:02:19,000 --> 00:02:24,000
+It tries them all out one by one on all variables at all invocations.
+
+41
+00:02:24,000 --> 00:02:26,000
+Yes, this takes a bit of time.
+
+42
+00:02:26,000 --> 00:02:30,000
+If, by applying the pattern library, Diakon has found out
+
+43
+00:02:30,000 --> 00:02:33,000
+that x is always odd when f is being called,
+
+44
+00:02:33,000 --> 99:59:59,000
+it reports this as an invariant.

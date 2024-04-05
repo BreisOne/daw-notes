@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:03,000
+Next hypothesis--tests.
+
+2
+00:00:03,000 --> 00:00:08,000
+You can measure how well-tested individual parts of your product are.
+
+3
+00:00:08,000 --> 00:00:13,000
+If a piece of code has a high testing coverage,
+
+4
+00:00:13,000 --> 00:00:16,000
+this means that it would be well-tested.
+
+5
+00:00:16,000 --> 00:00:21,000
+The question is is code that is well-tested less buggy?
+
+6
+00:00:21,000 --> 99:59:59,000
+Pick your choice.

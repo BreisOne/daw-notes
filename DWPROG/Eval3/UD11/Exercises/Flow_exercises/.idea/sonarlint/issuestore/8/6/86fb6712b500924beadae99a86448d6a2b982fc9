@@ -1,23 +1,18 @@
 
 K
-java:S3740."/Provide the parametrized type for this generic.(¤œ­s8Ÿ‡ÿÔê1
-i	java:S101
-"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(€×½š8 ‡ÿÔê1
-f
-java:S2259"DA "NullPointerException" could be thrown; "reader" is nullable here.(§š©”üÿÿÿÿ8¦‡ÿÔê1
+java:S3740,"/Provide the parametrized type for this generic.(¤œ­s8Ÿ‡ÿÔê1
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(€×½š8 ‡ÿÔê1
 a
-java:S2259C"DA "NullPointerException" could be thrown; "reader" is nullable here.(¤ªøì8¦‡ÿÔê1
+java:S2259A"DA "NullPointerException" could be thrown; "reader" is nullable here.(¤ªøì8¦‡ÿÔê1
+f
+java:S2259"DA "NullPointerException" could be thrown; "reader" is nullable here.(§š©”üÿÿÿÿ8¦‡ÿÔê1
 U
-java:S1854"8Remove this useless assignment to local variable "file".(Üóò´8ª‡ÿÔê1
+java:S1854"8Remove this useless assignment to local variable "file".(Üóò´8ª‡ÿÔê1
 F
-java:S1481")Remove this unused "file" local variable.(Üóò´8ª‡ÿÔê1
+java:S1481")Remove this unused "file" local variable.(Üóò´8ª‡ÿÔê1
 N
-java:S1602",Remove useless curly braces around statement(§š©”üÿÿÿÿ8ª‡ÿÔê1
-G	java:S106"+Replace this use of System.out by a logger.(ô©8ª‡ÿÔê1
+java:S1602",Remove useless curly braces around statement(§š©”üÿÿÿÿ8ª‡ÿÔê1
+G	java:S106"+Replace this use of System.out by a logger.(ô©8ª‡ÿÔê1
 t
-java:S6204("RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¼ùíéüÿÿÿÿ8«‡ÿÔê1
-G	java:S106="+Replace this use of System.out by a logger.(öÁ÷¥8­‡ÿÔê1
-e
-java:S1128"CRemove this unused import 'javax.swing.plaf.synth.SynthTextAreaUI'.(üë®Ïüÿÿÿÿ8®‡ÿÔê1
-Q
-java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”8®‡ÿÔê1
+java:S6204&"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¼ùíéüÿÿÿÿ8«‡ÿÔê1
+G	java:S106;"+Replace this use of System.out by a logger.(öÁ÷¥8­‡ÿÔê1

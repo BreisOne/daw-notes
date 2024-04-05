@@ -1,0 +1,103 @@
+1
+00:00:00,000 --> 00:00:03,000
+But being the maintainer of a popular software
+
+2
+00:00:03,000 --> 00:00:07,000
+also means you have to provide lots of support,
+
+3
+00:00:07,000 --> 00:00:10,000
+which meant that I got plenty of bug reports.
+
+4
+00:00:10,000 --> 00:00:12,000
+These ranged from the absurd,
+
+5
+00:00:12,000 --> 00:00:17,000
+as in DDD crashed, thought you'd like to know
+
+6
+00:00:17,000 --> 00:00:20,000
+to the rather questionable,
+
+7
+00:00:20,000 --> 00:00:22,000
+DDD crashed on our Cray.
+
+8
+00:00:22,000 --> 00:00:24,000
+I have enclosed a core dump.
+
+9
+00:00:24,000 --> 00:00:27,000
+Please be aware we're working on super-secret data here, so don't share.
+
+10
+00:00:27,000 --> 00:00:30,000
+Attachment: Core dump 50 MB.
+
+11
+00:00:30,000 --> 00:00:34,000
+Some of them were very questionable.
+
+12
+00:00:34,000 --> 00:00:36,000
+DDD hangs on my new pets@home project.
+
+13
+00:00:36,000 --> 00:00:39,000
+All files are enclosed.
+
+14
+00:00:39,000 --> 00:00:41,000
+Attached: home directory.
+
+15
+00:00:41,000 --> 00:00:45,000
+The home directory here actually included passwords
+
+16
+00:00:45,000 --> 00:00:47,000
+and bank account information.
+
+17
+00:00:47,000 --> 00:00:50,000
+So much for free software.
+
+18
+00:00:50,000 --> 00:00:52,000
+On some days I could easily get
+
+19
+00:00:52,000 --> 00:00:55,000
+dozens and dozens of such bug reports.
+
+20
+00:00:55,000 --> 00:00:58,000
+Some with helpful information, many without.
+
+21
+00:00:58,000 --> 00:01:01,000
+Of course, I would have been able to ask for
+
+22
+00:01:01,000 --> 00:01:03,000
+more information on each of these,
+
+23
+00:01:03,000 --> 00:01:08,000
+but then, you know, I wasn't exactly paid for the job.
+
+24
+00:01:08,000 --> 00:01:12,000
+Finally, I would set up DDD such that whenever it crashed,
+
+25
+00:01:12,000 --> 00:01:14,000
+it would ask for vital information
+
+26
+00:01:14,000 --> 99:59:59,000
+that I needed to reproduce the failure.

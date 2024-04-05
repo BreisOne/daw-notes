@@ -1,0 +1,123 @@
+1
+00:00:00,000 --> 00:00:03,000
+In most problem databases, however,
+
+2
+00:00:03,000 --> 00:00:07,000
+it is real people who enter and classify problem reports.
+
+3
+00:00:07,000 --> 00:00:10,000
+Let's take a look at a real problem database
+
+4
+00:00:10,000 --> 00:00:13,000
+to get an idea what these look like.
+
+5
+00:00:13,000 --> 00:00:15,000
+Fortunately, for many open source projects
+
+6
+00:00:15,000 --> 00:00:20,000
+there are problem databases, which are readily available.
+
+7
+00:00:20,000 --> 00:00:24,000
+For instance, let's take a look at Bugzilla,
+
+8
+00:00:24,000 --> 00:00:27,000
+the bug database for all Mozilla products,
+
+9
+00:00:27,000 --> 00:00:30,000
+in particular the Firefox browser.
+
+10
+00:00:30,000 --> 00:00:36,000
+This problem database contains more than 700,000 problems.
+
+11
+00:00:36,000 --> 00:00:39,000
+Of course, most of them have been fixed at this point.
+
+12
+00:00:39,000 --> 00:00:43,000
+Let's assume I have a problem with a blinking cursor.
+
+13
+00:00:43,000 --> 00:00:48,000
+I enter the search terms for the bug, click on quick search,
+
+14
+00:00:48,000 --> 00:00:51,000
+and here I see all the issues that occur currently,
+
+15
+00:00:51,000 --> 00:00:55,000
+or at least that have been reported by users,
+
+16
+00:00:55,000 --> 00:00:58,000
+with respect to the text cursor and blinking.
+
+17
+00:00:58,000 --> 00:01:02,000
+For instance, here we have blinking cursor does not move
+
+18
+00:01:02,000 --> 00:01:05,000
+when space is entered.
+
+19
+00:01:05,000 --> 00:01:07,000
+We can get details on this bug.
+
+20
+00:01:07,000 --> 00:01:11,000
+This is the original bug report filed ten years ago.
+
+21
+00:01:11,000 --> 00:01:13,000
+Let's go for a more recent one.
+
+22
+00:01:13,000 --> 00:01:18,000
+Here's add key bindings to CSS value adjustment.
+
+23
+00:01:18,000 --> 00:01:21,000
+You see the bug report--you see the product it applies to,
+
+24
+00:01:21,000 --> 00:01:23,000
+in this case Firefox.
+
+25
+00:01:23,000 --> 00:01:25,000
+You see when it was reported.
+
+26
+00:01:25,000 --> 00:01:28,000
+Here's the original bug report, and now you see
+
+27
+00:01:28,000 --> 00:01:31,000
+the developers talking about the problem.
+
+28
+00:01:31,000 --> 00:01:36,000
+You can also follow back the history as developers suggest patches
+
+29
+00:01:36,000 --> 00:01:38,000
+for the bug.
+
+30
+00:01:38,000 --> 00:01:40,000
+In the end, they discuss possible alternatives
+
+31
+00:01:40,000 --> 99:59:59,000
+on how to address that bug.

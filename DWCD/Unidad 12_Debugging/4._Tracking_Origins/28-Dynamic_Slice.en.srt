@@ -1,0 +1,223 @@
+1
+00:00:00,000 --> 00:00:04,000
+The interesting thing about slices is that they can be determined automatically.
+
+2
+00:00:04,000 --> 00:00:07,000
+That is, a slicing tool can automatically determine
+
+3
+00:00:07,000 --> 00:00:10,000
+backward slices of individual statements
+
+4
+00:00:10,000 --> 00:00:12,000
+and forward slices of individual statements.
+
+5
+00:00:12,000 --> 00:00:16,000
+Such static slicing tools, therefore, can help you focus
+
+6
+00:00:16,000 --> 00:00:18,000
+on specific parts of the program,
+
+7
+00:00:18,000 --> 00:00:21,000
+telling you the possible influences either off a statement
+
+8
+00:00:21,000 --> 00:00:24,000
+or the possible influences towards a statement.
+
+9
+00:00:24,000 --> 00:00:27,000
+Such slices become even more interesting, though,
+
+10
+00:00:27,000 --> 00:00:29,000
+when we apply them not only to programs
+
+11
+00:00:29,000 --> 00:00:31,000
+but to actual executions.
+
+12
+00:00:31,000 --> 00:00:34,000
+These are then called dynamic slices.
+
+13
+00:00:34,000 --> 00:00:38,000
+These apply to executions instead of programs.
+
+14
+00:00:38,000 --> 00:00:41,000
+That is, rather than reasoning in a program
+
+15
+00:00:41,000 --> 00:00:44,000
+where a value came from,
+
+16
+00:00:44,000 --> 00:00:47,000
+you look at the actual execution, typically the failing execution,
+
+17
+00:00:47,000 --> 00:00:50,000
+and therefore not only know what could have happened
+
+18
+00:00:50,000 --> 00:00:53,000
+but actually see what has happened.
+
+19
+00:00:53,000 --> 00:00:57,000
+The base of a dynamic slice is not the program but a trace instead.
+
+20
+00:00:57,000 --> 00:01:03,000
+A trace lists the statements in the program in the order in which they were executed.
+
+21
+00:01:03,000 --> 00:01:07,000
+So, if line 3, for instance, was executed 4 times in a row,
+
+22
+00:01:07,000 --> 00:01:11,000
+then the trace will contain line 3 four times
+
+23
+00:01:11,000 --> 00:01:13,000
+followed by line 4, followed by line 5,
+
+24
+00:01:13,000 --> 00:01:16,000
+and possibly going back to line 3 in case there's a loop.
+
+25
+00:01:16,000 --> 00:01:20,000
+Within the trace, we can now look again at dependencies.
+
+26
+00:01:20,000 --> 00:01:24,000
+That is, looking at which variables have been read
+
+27
+00:01:24,000 --> 00:01:27,000
+and which variables have been written.
+
+28
+00:01:27,000 --> 00:01:31,000
+And if we find, say, that at the bottom of the trace
+
+29
+00:01:31,000 --> 00:01:33,000
+some variable is wrong,
+
+30
+00:01:33,000 --> 00:01:38,000
+we can now trace back the dependencies in the execution
+
+31
+00:01:38,000 --> 00:01:42,000
+and again use this as a base for debugging
+
+32
+00:01:42,000 --> 00:01:45,000
+when following back the cause-effect chain through the program.
+
+33
+00:01:45,000 --> 00:01:48,000
+The first thing we need for this is a trace.
+
+34
+00:01:48,000 --> 00:01:51,000
+Let me show you how to get traces for Python programs.
+
+35
+00:01:51,000 --> 00:01:56,000
+So here, again, we have our original remove HTML markup function,
+
+36
+00:01:56,000 --> 00:02:00,000
+and what I've written down here is, again, a tracing function
+
+37
+00:02:00,000 --> 00:02:03,000
+which accesses the file name of the code
+
+38
+00:02:03,000 --> 00:02:06,000
+as well as the current line number that's executed,
+
+39
+00:02:06,000 --> 00:02:08,000
+and we print this out on standard output.
+
+40
+00:02:08,000 --> 00:02:12,000
+We record this as our tracing function.
+
+41
+00:02:12,000 --> 00:02:16,000
+Let's use the "buggy" version of the remove HTML markup function here
+
+42
+00:02:16,000 --> 00:02:18,000
+in order to have some more fun,
+
+43
+00:02:18,000 --> 00:02:21,000
+and we feed it with this very simple input, just 2 characters,
+
+44
+00:02:21,000 --> 00:02:25,000
+double quote and less-than sign, which should expose the error.
+
+45
+00:02:25,000 --> 00:02:27,000
+If we go and execute this,
+
+46
+00:02:27,000 --> 00:02:31,000
+then we should be able to see the sequence of lines as they're executed.
+
+47
+00:02:31,000 --> 00:02:33,000
+And we click on Run.
+
+48
+00:02:33,000 --> 00:02:36,000
+What we see here is that first line 4 was executed,
+
+49
+00:02:36,000 --> 00:02:40,000
+then line 6, then line 9, then line 11,
+
+50
+00:02:40,000 --> 00:02:46,000
+line 13, line 14, and this is how we progress through the program execution.
+
+51
+00:02:46,000 --> 00:02:48,000
+Now for a bit of programming exercise.
+
+52
+00:02:48,000 --> 00:02:50,000
+Complete the program which you've just seen
+
+53
+00:02:50,000 --> 00:02:52,000
+such that it prints out the actual code lines
+
+54
+00:02:52,000 --> 00:02:55,000
+instead of just the file name and number.
+
+55
+00:02:55,000 --> 00:02:58,000
+That is, replace the output of file name and number
+
+56
+00:02:58,000 --> 99:59:59,000
+by the actual code line that is in that file at this position.

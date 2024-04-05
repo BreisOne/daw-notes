@@ -1,0 +1,75 @@
+1
+00:00:00,000 --> 00:00:05,000
+Needless to say, this behavior of C and C++ programs opens the door
+
+2
+00:00:05,000 --> 00:00:08,000
+for many many ways of abusing the system.
+
+3
+00:00:08,000 --> 00:00:15,000
+You may have heard buffer overflows, which exploit precisely this flow in C and C++
+
+4
+00:00:15,000 --> 00:00:20,000
+where people not only read but write beyond the elements of an array
+
+5
+00:00:20,000 --> 00:00:25,000
+in order to supplant malicious code and select locations of the memory.
+
+6
+00:00:25,000 --> 00:00:29,000
+This opens the door for all sorts of interesting hacks, of course.
+
+7
+00:00:29,000 --> 00:00:31,000
+How can one detect such errors?
+
+8
+00:00:31,000 --> 00:00:34,000
+What we need is a system invariant that continuously
+
+9
+00:00:34,000 --> 00:00:38,000
+checks the boundaries of an array against reads and writes.
+
+10
+00:00:38,000 --> 00:00:45,000
+What a tool can do for instance is constantly monitor the uninitialized areas
+
+11
+00:00:45,000 --> 00:00:49,000
+for reads and writes with every single instructions that is.
+
+12
+00:00:49,000 --> 00:00:55,000
+And whenever the program tries to access some system memory that is not allocated,
+
+13
+00:00:55,000 --> 00:01:01,000
+what will happen is that the invariant checker raises an exception or otherwise aborts the program
+
+14
+00:01:01,000 --> 00:01:05,000
+and therefore allows us to detect this kind of error.
+
+15
+00:01:05,000 --> 00:01:10,000
+Tools for C and C++ when you do that include tools like electric fence,
+
+16
+00:01:10,000 --> 00:01:17,000
+which is precisely that places these blocks in front and before every allocated block
+
+17
+00:01:17,000 --> 00:01:22,000
+and therefore detects when reads and writes happened outside of these allocated areas.
+
+18
+00:01:22,000 --> 00:01:28,000
+And the second important tool here is Valgrind, which actually is an interpreter for x86 binaries
+
+19
+00:01:28,000 --> 99:59:59,000
+in which also allows us to monitor accesses to non-initialized code for C and C++ programs.

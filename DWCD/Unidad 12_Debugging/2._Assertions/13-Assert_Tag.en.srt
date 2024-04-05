@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:03,000
+Assertions in the code are there to stay.
+
+2
+00:00:03,000 --> 00:00:09,000
+We use them for catching errors, which we can also use doing testing, but they also serve
+
+3
+00:00:09,000 --> 00:00:14,000
+as documentation tool for programmers because they show what the assumptions
+
+4
+00:00:14,000 --> 00:00:19,000
+of individual methods are and they show what the individual method is supposed to produce.
+
+5
+00:00:19,000 --> 00:00:23,000
+And let's apply assertions to another program, an old favorite of ours--
+
+6
+00:00:23,000 --> 00:00:26,000
+our buggy HTML stripper from the first unit.
+
+7
+00:00:26,000 --> 00:00:29,000
+So here again we have the function to remove HTML marker,
+
+8
+00:00:29,000 --> 00:00:31,000
+which we already know from the first unit.
+
+9
+00:00:31,000 --> 00:00:36,000
+Here as well, a simple assertion would have sufficed to catch the error, mainly an assertion
+
+10
+00:00:36,000 --> 00:00:40,000
+that checks for the non-existence of HTML tags in the output.
+
+11
+00:00:40,000 --> 00:00:46,000
+Such an assertion could be something like this--we simply check whether there is any less than sign
+
+12
+00:00:46,000 --> 00:00:49,000
+that is the beginning of an HTML tag in the output.
+
+13
+00:00:49,000 --> 00:00:53,000
+We see, there's none and if there would be one, then the assertion would immediately fail.
+
+14
+00:00:53,000 --> 00:00:55,000
+So here comes the quiz.
+
+15
+00:00:55,000 --> 00:01:00,000
+With this assertion, which input would cause the assertion to raise an exception--
+
+16
+00:01:00,000 --> 00:01:08,000
+is it foo in bold, is it foo in quotes and bold, is it foo in bold and quotes,
+
+17
+00:01:08,000 --> 00:01:11,000
+or is it foo in bold and single quotes.
+
+18
+00:01:11,000 --> 99:59:59,000
+Which of these causes the assertion to fail? Over to you.

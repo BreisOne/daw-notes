@@ -1,0 +1,67 @@
+1
+00:00:00,000 --> 00:00:05,000
+What we're going to discuss today is how errors propagate in a program,
+
+2
+00:00:05,000 --> 00:00:08,000
+that is, from one variable to another,
+
+3
+00:00:08,000 --> 00:00:13,000
+because these very dependencies then help us in reasoning backwards.
+
+4
+00:00:13,000 --> 00:00:16,000
+And this is our second topic:
+
+5
+00:00:16,000 --> 00:00:21,000
+how we can trace back these dependencies from an observable failure
+
+6
+00:00:21,000 --> 00:00:23,000
+to an earlier infection
+
+7
+00:00:23,000 --> 00:00:26,000
+and then to a defect in the code.
+
+8
+00:00:26,000 --> 00:00:29,000
+And for this we're going to use the Sherlock Holmes method
+
+9
+00:00:29,000 --> 00:00:34,000
+which, of course, is: "Elementary, my dear Watson."
+
+10
+00:00:34,000 --> 00:00:38,000
+But first, a quiz. Do you like Sherlock Holmes?
+
+11
+00:00:38,000 --> 00:00:40,000
+Here are your options.
+
+12
+00:00:40,000 --> 00:00:43,000
+Is it more like: "I'm his greatest fan!"
+
+13
+00:00:43,000 --> 00:00:45,000
+Or: "Isn't he, like, outdated?"
+
+14
+00:00:45,000 --> 00:00:47,000
+Or: "Actually, I find him annoying."
+
+15
+00:00:47,000 --> 00:00:49,000
+Or: "Sherlock who?"
+
+16
+00:00:49,000 --> 00:00:54,000
+Hint: The answer to this quiz will neither determine your grading
+
+17
+00:00:54,000 --> 99:59:59,000
+nor will it determine the next step. Enjoy.

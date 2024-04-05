@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:06,000
+Still, what automated tools can find and what humans can find, is only correct
+
+2
+00:00:06,000 --> 00:00:11,000
+with regard to the specification.
+
+3
+00:00:11,000 --> 00:00:15,000
+And at this point, we do not have a complete specification on what a remove
+
+4
+00:00:15,000 --> 00:00:17,000
+html markup should really do.
+
+5
+00:00:17,000 --> 00:00:21,000
+One of my PhD students sent me this input.
+
+6
+00:00:21,000 --> 00:00:24,000
+Here is the html markup, and here is the actual text.
+
+7
+00:00:24,000 --> 00:00:27,000
+If we feed this into the program, what is the output?
+
+8
+00:00:27,000 --> 00:00:33,000
+What is the result of the remove html markup function when we give it this string?
+
+9
+00:00:33,000 --> 99:59:59,000
+Over to you.

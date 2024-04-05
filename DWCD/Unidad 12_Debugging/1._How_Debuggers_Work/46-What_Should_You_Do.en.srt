@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:04,800
+Should you fix a bug as soon as you spot the problem?
+
+2
+00:00:04,800 --> 00:00:08,000
+Always be sure to keep all details in your head
+
+3
+00:00:08,000 --> 00:00:11,000
+because writing them down takes too much time?
+
+4
+00:00:11,000 --> 00:00:14,800
+Explaining the problem--maybe to a teddy bear,
+
+5
+00:00:14,800 --> 00:00:17,800
+to a colleague, or a friend--can be helpful.
+
+6
+00:00:17,800 --> 00:00:23,000
+And finally, up to 50% to 70% of software development effort
+
+7
+00:00:23,000 --> 99:59:59,000
+is spent on validation and debugging.

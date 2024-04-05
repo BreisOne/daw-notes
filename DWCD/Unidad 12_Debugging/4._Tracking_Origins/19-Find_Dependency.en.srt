@@ -1,0 +1,123 @@
+1
+00:00:00,000 --> 00:00:02,000
+Let us take a look again
+
+2
+00:00:02,000 --> 00:00:04,000
+at our remove html markup function.
+
+3
+00:00:04,000 --> 00:00:08,000
+Here I'm going back to the earlier version,
+
+4
+00:00:08,000 --> 00:00:10,000
+which is sort of fixed.
+
+5
+00:00:10,000 --> 00:00:14,000
+Now let's take a look at this condition up here.
+
+6
+00:00:14,000 --> 00:00:16,000
+We want to know where the core value
+
+7
+00:00:16,000 --> 00:00:18,000
+could possibly have come from
+
+8
+00:00:18,000 --> 00:00:21,000
+To do so, we follow the data dependencies.
+
+9
+00:00:21,000 --> 00:00:23,000
+What are the statements that this statement
+
+10
+00:00:23,000 --> 00:00:25,000
+is data dependent upon?
+
+11
+00:00:25,000 --> 00:00:27,000
+To do so, we will look at the places
+
+12
+00:00:27,000 --> 00:00:29,000
+where quote would be written.
+
+13
+00:00:29,000 --> 00:00:32,000
+And which also would be executed
+
+14
+00:00:32,000 --> 00:00:35,000
+before this statement will be executed.
+
+15
+00:00:35,000 --> 00:00:38,000
+For instance, this statement would be data
+
+16
+00:00:38,000 --> 00:00:40,000
+dependent on that earlier statement.
+
+17
+00:00:40,000 --> 00:00:43,000
+Because here quote is being written,
+
+18
+00:00:43,000 --> 00:00:45,000
+and here quote is being read.
+
+19
+00:00:45,000 --> 00:00:48,000
+Therefore, the statement A up here sets the state
+
+20
+00:00:48,000 --> 00:00:51,000
+that B later on keeps on processing.
+
+21
+00:00:51,000 --> 00:00:54,000
+If you want to understand how B behaves,
+
+22
+00:00:54,000 --> 00:00:56,000
+we follow the data dependencies to A
+
+23
+00:00:56,000 --> 00:00:59,000
+and find that this is one of the statements
+
+24
+00:00:59,000 --> 00:01:01,000
+that sets the state that B depends upon.
+
+25
+00:01:01,000 --> 00:01:03,000
+Now for a quiz.
+
+26
+00:01:03,000 --> 00:01:07,000
+Which are the other statements that B data depends upon?
+
+27
+00:01:07,000 --> 00:01:09,000
+Is this for C in S,
+
+28
+00:01:09,000 --> 00:01:13,000
+is this elf of C equals the greater sign and not quote,
+
+29
+00:01:13,000 --> 00:01:15,000
+is this quote equals not quote,
+
+30
+00:01:15,000 --> 00:01:18,000
+or is this out equals out plus C?
+
+31
+00:01:18,000 --> 99:59:59,000
+Check all that apply.
