@@ -1,9 +1,14 @@
 package org.flujos.boletin;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Exercise_3 {
     String[] names = {"Detergente", "Camiseta", "Microondas"};
@@ -11,9 +16,8 @@ public class Exercise_3 {
     static String fileName = ".\\src\\main\\java\\org\\flujos\\boletin\\archivo2.txt";
 
     public static void execute(String[] names, int[] prices){
-        File file = new File(fileName);
 
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))){
+        try(BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName))){
             for (int i = 0; i < names.length; i++) {
                 writer.write(names[i]+": "+ prices[i]);
                 writer.newLine();
@@ -23,29 +27,26 @@ public class Exercise_3 {
         }
     }
     private static void printFile(){
-        File file = new File(fileName);
-        List<String> reader = readFile();
-        reader.forEach(line->{
-                    System.out.println(line.split(":")[0]);
-                }
-        );
+        Optional<List<String>> reader = readFile();
+        reader.orElse(Collections.emptyList())
+                  .stream()
+                  .map(line->line.split(":")[0])
+                  .forEach(System.out::println);
     }
-    private static List<String> readFile(){
-        File file = new File(fileName);
-        List <String> readedFile = null;
-
-        try(BufferedReader reader = new BufferedReader(new FileReader(file))){
-            readedFile =  reader.lines().collect(Collectors.toList());
+    private static Optional<List<String>> readFile(){
+        try(BufferedReader reader = Files.newBufferedReader(Paths.get(fileName))){
+            List<String> fileContent = reader.lines().toList();
+            return Optional.of(fileContent);
         }catch (IOException e){
             e.printStackTrace();
+            return Optional.empty();
         }
-        return readedFile;
     }
-    private static void writeFile(List file){
+    private static void writeFile(List<String> file){
 
-        try (BufferedWriter writer = new BufferedWriter( new FileWriter(fileName))){
-            for (int i = 0; i < file.size() ; i++) {
-                writer.write((String) file.get(i));
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName))){
+            for (String line : file){
+                writer.write(line);
                 writer.newLine();
             }
         } catch (IOException e) {
@@ -60,11 +61,12 @@ public class Exercise_3 {
         printFile();
         String userOption = scaner.nextLine();
 
-        List<String> reader = readFile();
+        Optional<List<String>> reader = readFile();
 
-        List<String> finalFile = reader
-                                    .stream()
-                                    .filter(line -> !line.split(":")[0].equalsIgnoreCase(userOption)).toList();
+        List<String> finalFile = reader.orElse(Collections.emptyList())
+                                       .stream()
+                                       .filter(line -> !line.split(":")[0].equalsIgnoreCase(userOption))
+                                       .toList();
 
         writeFile(finalFile);
     }
