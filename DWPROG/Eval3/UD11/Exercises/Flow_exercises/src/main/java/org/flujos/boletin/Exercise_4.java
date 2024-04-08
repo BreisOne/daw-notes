@@ -30,12 +30,12 @@ public class Exercise_4 {
                 addRegister(name, adress, tlf);
                 break;
             case 2:
-                listRegisters();
+                //listRegisters();
                 break;
             case 3:
                 System.out.println("Cual es el nombre del usuario que quieres buscar?");
-                String name = scanner.nextLine();
-                findRegister();
+                String nameWanted = scanner.nextLine();
+                //findRegister();
                 break;
             default:
                 System.out.println("No has elegido una opción correcta");
@@ -43,9 +43,6 @@ public class Exercise_4 {
     }
 
     private static void addRegister(String name, String adress, int tlf){
-        List<String> reagisters = readRegisters();
-
-
-
+        //List<String> reagisters = readRegisters();
     }
 }
