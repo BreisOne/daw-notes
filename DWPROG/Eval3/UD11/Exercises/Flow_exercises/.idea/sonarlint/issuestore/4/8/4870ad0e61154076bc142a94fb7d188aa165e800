@@ -1,0 +1,13 @@
+
+n	java:S101
+"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(÷Â­äøÿÿÿÿ8º°£øë1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûë„‰8º°£øë1
+\
+java:S1118
+":Add a private constructor to hide the implicit public one.(÷Â­äøÿÿÿÿ8¾°£øë1
+M
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8À°£øë1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8À°£øë1
+K
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8À°£øë1

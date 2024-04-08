@@ -21,3 +21,17 @@ d
 0src/main/java/org/flujos/boletin/Exercise_3.java,8\6\86fb6712b500924beadae99a86448d6a2b982fc9
 `
 0src/main/java/org/flujos/boletin/Exercise_4.java,3\9\390bbaa2f53f856e459838f42f226b60f7da6014
+]
+-src/main/java/org/flujos/boletin/archivo3.txt,b\8\b8716946d38a49fe8aa16eb40551dbd5a8efc749
+`
+0src/main/java/org/flujos/boletin/Exercise_5.java,a\6\a6706f8711e2734f78df2a6e75022f18863672d7
+k
+;src/main/java/org/flujos/boletin/Exercise_6/Exercise_5.java,2\c\2cfa490b2c608e89189461139aa018f975e707f0
+k
+;src/main/java/org/flujos/boletin/Exercise_5/Exercise_5.java,3\8\38e9cb09d54717c2cf6dd7b6ced1b4e67e933567
+m
+=src/main/java/org/flujos/boletin/Exercise_5/Exercise_2_5.java,4\8\4870ad0e61154076bc142a94fb7d188aa165e800
+j
+:src/main/java/org/flujos/boletin/Exercise_5/archivo2_5.txt,e\4\e4c3808b475c51a21778fde2b66bcbc5023b4fd5
+h
+8src/main/java/org/flujos/boletin/Exercise_5/Product.java,9\0\908c1a07e5935a0c6bde2a63ba02fd7c6e81182e

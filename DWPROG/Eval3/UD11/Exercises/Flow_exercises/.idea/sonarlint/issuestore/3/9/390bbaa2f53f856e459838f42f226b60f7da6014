@@ -1,21 +1,19 @@
 
-i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(«‡È¢8½¹Õê1
+i	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(«‡È¢8ÜÛìöë1
+N
+java:S27893"2Replace this null literal by an "Optional" object.(Ò…À8İÛìöë1
+n
+java:S20959"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ƒîÿ®úÿÿÿÿ8èÛìöë1
 W
-java:S1118":Add a private constructor to hide the implicit public one.(«‡È¢8½¹Õê1
-Z
-java:S1854%"8Remove this useless assignment to local variable "name".(Ü°ŒŸÿÿÿÿÿ8‘½¹Õê1
-G	java:S106"+Replace this use of System.out by a logger.(¬ÂÆ”8“½¹Õê1
-L	java:S106"+Replace this use of System.out by a logger.(ÂÛÑ®úÿÿÿÿ8“½¹Õê1
-L	java:S106"+Replace this use of System.out by a logger.(Üä³ÿÿÿÿÿ8“½¹Õê1
-F	java:S106"+Replace this use of System.out by a logger.(ğ•±8“½¹Õê1
-G	java:S106"+Replace this use of System.out by a logger.(–µ…8“½¹Õê1
-L	java:S106$"+Replace this use of System.out by a logger.(ëüû’ûÿÿÿÿ8”½¹Õê1
-K
-java:S1481%")Remove this unused "name" local variable.(Ü°ŒŸÿÿÿÿÿ8”½¹Õê1
-L	java:S106)"+Replace this use of System.out by a logger.(™½‹ùÿÿÿÿ8”½¹Õê1
-`
-java:S1854.">Remove this useless assignment to local variable "reagisters".(ëşï ùÿÿÿÿ8”½¹Õê1
-[
-java:S1172-">Remove these unused method parameters "name", "adress", "tlf".(Ìˆ¿°8”½¹Õê1
-Q
-java:S1481."/Remove this unused "reagisters" local variable.(ëşï ùÿÿÿÿ8Ùí¹Õê1
+java:S1118	":Add a private constructor to hide the implicit public one.(«‡È¢8éÛìöë1
+G	java:S106"+Replace this use of System.out by a logger.(¬ÂÆ”8ëÛìöë1
+L	java:S106"+Replace this use of System.out by a logger.(ÂÛÑ®úÿÿÿÿ8ìÛìöë1
+L	java:S106"+Replace this use of System.out by a logger.(Üä³ÿÿÿÿÿ8ìÛìöë1
+F	java:S106"+Replace this use of System.out by a logger.(ğ•±8ìÛìöë1
+G	java:S106 "+Replace this use of System.out by a logger.(–µ…8ìÛìöë1
+L	java:S106)"+Replace this use of System.out by a logger.(ëüû’ûÿÿÿÿ8íÛìöë1
+L	java:S106."+Replace this use of System.out by a logger.(™½‹ùÿÿÿÿ8íÛìöë1
+I
+java:S1905B"'Remove this unnecessary cast to "List".(Šù¾“ıÿÿÿÿ8ıÛìöë1
+G	java:S106V"+Replace this use of System.out by a logger.(€ç©ª8şÛìöë1
+L	java:S106\"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÿÛìöë1

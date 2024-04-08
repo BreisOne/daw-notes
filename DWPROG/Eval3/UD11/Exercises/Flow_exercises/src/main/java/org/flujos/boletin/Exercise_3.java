@@ -7,8 +7,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Exercise_3 {
     String[] names = {"Detergente", "Camiseta", "Microondas"};
@@ -35,8 +33,10 @@ public class Exercise_3 {
     }
     private static Optional<List<String>> readFile(){
         try(BufferedReader reader = Files.newBufferedReader(Paths.get(fileName))){
+
             List<String> fileContent = reader.lines().toList();
             return Optional.of(fileContent);
+
         }catch (IOException e){
             e.printStackTrace();
             return Optional.empty();
