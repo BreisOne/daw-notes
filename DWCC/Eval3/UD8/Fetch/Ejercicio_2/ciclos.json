@@ -1,0 +1,27 @@
+{
+    "page": 1,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [{
+            "id": "1",
+            "nombre": "DIW",
+            "duracion": "120"
+        },
+        {
+            "id": "2",
+            "nombre": "DWCS",
+            "duracion": "180"
+        },
+        {
+            "id": "3",
+            "nombre": "DWCC",
+            "duracion": 100
+        },
+        {
+            "id": "4",
+            "nombre": "DI",
+            "duracion": "180"
+        }
+    ]
+}
