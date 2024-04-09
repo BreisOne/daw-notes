@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+   
+  </head>
+  <body>
+    
+    <div id="shapes">
+      <div class="shapes">
+        <img src="square.svg" alt="" id="square" class="shape" />
+      </div>
+
+      <div id="squareDiv">
+        <form action="" id="squareForm">
+          <h2>Cuadrado</h2>
+          <label
+            >Lado
+            <input id="squareSize" type="number" max="250" />
+          </label>
+          <label
+            >Color
+            <input type="color" id="squareColor" />
+          </label>
+          <input type="submit" value="Pintar" id="squareSubmit" />
+        </form>
+        <canvas id="squareCanvas"></canvas>
+      </div>
+
+      <div class="shapes">
+        <img src="triangle.svg" alt="" id="triangle" class="shape" />
+      </div>
+
+      <div id="triangleDiv">
+        <form action="" id="triangleForm">
+          <h2>Triángulo</h2>
+          <label
+            >Lado
+            <input id="triangleSize" type="number" max="217" />
+          </label>
+          <label
+            >Color
+            <input type="color" id="triangleColor" />
+          </label>
+          <input type="submit" value="Pintar" id="triangleSubmit" />
+        </form>
+        <canvas id="triangleCanvas"></canvas>
+      </div>
+
+      <div class="shapes">
+        <img src="circle.svg" alt="" id="circle" class="shape" />
+      </div>
+
+      <div id="circleDiv">
+        <form action="" id="circleForm">
+          <h2>Círculo</h2>
+          <label
+            >Radio
+            <input id="circleRadius" type="number" max="125" />
+          </label>
+          <label
+            >Color
+            <input type="color" id="circleColor" />
+          </label>
+          <input type="submit" value="Pintar" id="circleSubmit" />
+        </form>
+        <canvas id="circleCanvas"></canvas>
+      </div>
+    </div>
+  </body>
+</html>
