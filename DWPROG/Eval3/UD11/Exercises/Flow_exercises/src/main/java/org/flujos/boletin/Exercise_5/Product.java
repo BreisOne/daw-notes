@@ -1,9 +1,11 @@
 package org.flujos.boletin.Exercise_5;
 
 import java.io.Serializable;
-import java.security.PublicKey;
 
 public class Product implements Serializable {
+
+   // @Serial
+    //private static final long serialVersionUID = 1L;
     String name;
     int price;
     public Product(){

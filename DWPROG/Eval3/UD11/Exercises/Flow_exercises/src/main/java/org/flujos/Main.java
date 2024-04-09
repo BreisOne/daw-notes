@@ -4,6 +4,8 @@ import org.flujos.boletin.Exercise_2;
 import org.flujos.boletin.Exercise_3;
 import org.flujos.boletin.Exercise_4;
 import org.flujos.boletin.Exercise_5.Exercise_2_5;
+import org.flujos.boletin.Exercise_5.Exercise_3_5;
+import org.flujos.boletin.Exercise_5.Exercise_4_5;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +14,9 @@ public class Main {
         //Exercise_3.deleteUserOption();
         //Exercise_4.execute();
 
-        Exercise_2_5.execute();
+        //Exercise_2_5.execute();
+        //Exercise_3_5.execute();
+        //Exercise_3_5.deleteUserOption();
+        //Exercise_4_5.execute();
     }
 }
