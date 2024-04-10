@@ -8,15 +8,15 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class TableController extends AbstractController
 {
-    #[Route('/table', name: 'app_table')]
-    public function index(): Response
-    {
-        return $this->render('table/index.html.twig', [
-            'controller_name' => 'TableController',
-        ]);
-    }
+    // #[Route('/table', name: 'app_table')]
+    // public function index(): Response
+    // {
+    //     return $this->render('table/index.html.twig', [
+    //         'controller_name' => 'TableController',
+    //     ]);
+    // }
 
-    #[Route('/table/{fils<([1-9]+\d*)>?4}/{cols<([1-9]\d*)>?4}', name: 'app_table')]
+    #[Route('/table/{fils<([1-9]\d+)>?4}/{cols<([1-9]\d+)>?4}', name: 'app_table_params')]
     public function createTable(int $fils, int $cols): Response
     {
         $table = [];
