@@ -1,0 +1,17 @@
+
+W
+java:S11418"5Extract this nested try block into a separate method.(İâªÏøÿÿÿÿ8—Øñì1
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(öùÁ8˜Øñì1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûë„‰8˜Øñì1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(öùÁ8ŸØñì1
+G	java:S106"+Replace this use of System.out by a logger.(¬ÂÆ”8¢Øñì1
+L	java:S106"+Replace this use of System.out by a logger.(ÂÛÑ®úÿÿÿÿ8¢Øñì1
+L	java:S106"+Replace this use of System.out by a logger.(Üä³ÿÿÿÿÿ8£Øñì1
+F	java:S106"+Replace this use of System.out by a logger.(ğ•±8£Øñì1
+G	java:S106"+Replace this use of System.out by a logger.(–µ…8£Øñì1
+L	java:S106&"+Replace this use of System.out by a logger.(ëüû’ûÿÿÿÿ8£Øñì1
+L	java:S106+"+Replace this use of System.out by a logger.(™½‹ùÿÿÿÿ8£Øñì1
+c	java:S8995"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ8¤Øñì1
+G	java:S106W"+Replace this use of System.out by a logger.(€ç©ª8§Øñì1
+L	java:S106^"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8¨Øñì1

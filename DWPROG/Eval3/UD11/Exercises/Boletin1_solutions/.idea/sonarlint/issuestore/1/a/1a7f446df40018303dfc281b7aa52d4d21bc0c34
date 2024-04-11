@@ -1,0 +1,6 @@
+
+…
+java:S1488""cImmediately return this expression instead of assigning it to the temporary variable "fileContent".(²ãüêşÿÿÿÿ8àéÆòì1
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(öÁ¨’ÿÿÿÿÿ8áéÆòì1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(öÁ¨’ÿÿÿÿÿ8èéÆòì1

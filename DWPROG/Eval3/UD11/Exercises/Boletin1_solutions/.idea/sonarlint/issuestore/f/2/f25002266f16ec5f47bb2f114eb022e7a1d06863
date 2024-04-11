@@ -1,0 +1,27 @@
+
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÿôÃş8 ´—õì1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÕ«8¡´—õì1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ÿôÃş8¦´—õì1
+G	java:S106"+Replace this use of System.out by a logger.(ÊÈØï8¨´—õì1
+G	java:S106"+Replace this use of System.out by a logger.(‡Ö½è8¨´—õì1
+F	java:S106#"+Replace this use of System.out by a logger.(ø»Ì.8¨´—õì1
+L	java:S106%"+Replace this use of System.out by a logger.(Ú¸¼éÿÿÿÿÿ8©´—õì1
+G	java:S106&"+Replace this use of System.out by a logger.(Ã±Ç…8©´—õì1
+F	java:S106+"+Replace this use of System.out by a logger.(ø»Ì.8©´—õì1
+G	java:S106-"+Replace this use of System.out by a logger.(¢Ø‡µ8©´—õì1
+G	java:S106."+Replace this use of System.out by a logger.(Ã±Ç…8©´—õì1
+G	java:S1063"+Replace this use of System.out by a logger.(¹¼Äœ8©´—õì1
+L	java:S106;"+Replace this use of System.out by a logger.(Ş»ÂÛşÿÿÿÿ8ª´—õì1
+L	java:S106="+Replace this use of System.out by a logger.(œŠ’…ùÿÿÿÿ8ª´—õì1
+L	java:S106?"+Replace this use of System.out by a logger.(ĞÅŒ¹øÿÿÿÿ8ª´—õì1
+L	java:S106N"+Replace this use of System.out by a logger.(ãÍä·ıÿÿÿÿ8«´—õì1
+G	java:S106T"+Replace this use of System.out by a logger.(ŸµŸè8«´—õì1
+G	java:S106Z"+Replace this use of System.out by a logger.(ÚÑ·¶8¬´—õì1
+G	java:S106`"+Replace this use of System.out by a logger.(ÎëíÃ8¬´—õì1
+]
+java:S1854i";Remove this useless assignment to local variable "scanner".(ù ƒ‘üÿÿÿÿ8¬´—õì1
+N
+java:S1481i",Remove this unused "scanner" local variable.(ù ƒ‘üÿÿÿÿ8­´—õì1
+G	java:S106y"+Replace this use of System.out by a logger.(ÎëíÃ8­´—õì1
+K	java:S108")Either remove or fill this block of code.(¹²›şÿÿÿÿ8¯´—õì1
