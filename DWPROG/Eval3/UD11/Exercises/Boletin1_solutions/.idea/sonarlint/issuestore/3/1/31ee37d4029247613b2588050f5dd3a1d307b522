@@ -13,5 +13,7 @@ G	java:S106"+Replace this use of System.out by a logger.(–µ…8£Øñì1
 L	java:S106&"+Replace this use of System.out by a logger.(ëüû’ûÿÿÿÿ8£Øñì1
 L	java:S106+"+Replace this use of System.out by a logger.(™½‹ùÿÿÿÿ8£Øñì1
 c	java:S8995"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ8¤Øñì1
+I
+java:S1905F"'Remove this unnecessary cast to "List".(ä’ù„ùÿÿÿÿ8ê°Õ—í1
 G	java:S106W"+Replace this use of System.out by a logger.(€ç©ª8§Øñì1
 L	java:S106^"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8¨Øñì1
