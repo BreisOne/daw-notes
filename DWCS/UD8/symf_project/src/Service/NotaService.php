@@ -20,8 +20,7 @@ class NotaService{
 
     public function findAll():array
     {
-       $notas = $this->notaRepository->findAll();
-        return $notas;
+        return $this->notaRepository->findAll();
     }
 
 }
