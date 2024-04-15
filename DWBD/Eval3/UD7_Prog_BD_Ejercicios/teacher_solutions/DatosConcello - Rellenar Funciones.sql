@@ -56,7 +56,7 @@ CREATE FUNCTION obtenerComarcasXProvincia( provinciaBuscar VARCHAR(40)) RETURNS 
 			FROM datosconcello WHERE Provincia = provinciaBuscar;
         
         IF(comarcasXprovincia IS NULL) THEN
-			SET comarcasXprovincia = CONCAT('No se encontraron concellos para la provincia de ', comarcaBuscar);
+			SET comarcasXprovincia = CONCAT('No se encontraron concellos para la provincia de ', provinciaBuscar);
 		END IF;
         RETURN comarcasXprovincia;
     END //
@@ -69,7 +69,23 @@ SELECT obtenerComarcasXProvincia( 'Vigo' ) AS 'Comarcas que hay en la Provincia'
 #   4. Crea una función que devuelva los Concellos con mayor y menor superficie.
 #-----------------------------------------------------------------------
 
+DELIMITER //
+	DROP PROCEDURE IF EXISTS obtenerConcellosMayorMenorSuperficie //
+    CREATE PROCEDURE obtenerConcellosMayorMenorSuperficie()
+		BEGIN
+        SELECT CONCAT('Concellos con mayor superficie(', MAX(superficie),'):',
+				GROUP_CONCAT(Nombre SEPARATOR ', ')) AS 'Concellos con mayor y menos superficie'
+                FROM datosConcello
+                WHERE Superficie = (SELECT MAX(Superficie) FROM datosconcello)
+		UNION
+		SELECT CONCAT('Concellos con menor superficie(', MIN(superficie),'):',
+				GROUP_CONCAT(Nombre SEPARATOR ', ')) AS 'Concellos con mayor y menos superficie'
+                FROM datosConcello
+                WHERE Superficie = (SELECT MIN(Superficie) FROM datosconcello);
+        END; //
+DELIMITER ;
 
+CALL obtenerConcellosMayorMenorSuperficie();
 #-----------------------------------------------------------------------
 #   5. Crea una función que devuelva las Comarcas con mayor y menor superficie.
 #-----------------------------------------------------------------------
