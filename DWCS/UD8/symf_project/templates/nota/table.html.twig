@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NotaController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+    
+    <p>Tabla con las propiedades de las notas</p>
+    <table class = "table">
+    <thead>
+        <tr>
+          <th>Id</th>
+            <th>Titulo</th>
+          <th>Descripcion</th>
+
+        <tr>
+    </thead>
+    <tbody>
+     {% for nota in notas %}
+        <tr> 
+            <td>{{ nota.id }}</td>
+            <td>{{ nota.titulo }}</td>
+            <td>{{ nota.description }}</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <ul>
+        <li>Your controller at <code>C:/Users/a23braisbm/Desktop/DUAL/DWCS/UD8/symf_project/src/Controller/NotaController.php</code></li>
+        <li>Your template at <code>C:/Users/a23braisbm/Desktop/DUAL/DWCS/UD8/symf_project/templates/nota/index.html.twig</code></li>
+    </ul>
+</div>
+{% endblock %}
