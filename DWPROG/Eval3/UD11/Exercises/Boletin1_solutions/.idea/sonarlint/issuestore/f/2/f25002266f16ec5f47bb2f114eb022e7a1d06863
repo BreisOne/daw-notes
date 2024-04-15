@@ -1,27 +1,29 @@
 
-i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÿôÃş8 ´—õì1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÕ«8¡´—õì1
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÿôÃş8Ö’–î1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÕ«8×’–î1
 W
-java:S1118":Add a private constructor to hide the implicit public one.(ÿôÃş8¦´—õì1
-G	java:S106"+Replace this use of System.out by a logger.(ÊÈØï8¨´—õì1
-G	java:S106"+Replace this use of System.out by a logger.(‡Ö½è8¨´—õì1
-F	java:S106#"+Replace this use of System.out by a logger.(ø»Ì.8¨´—õì1
-L	java:S106%"+Replace this use of System.out by a logger.(Ú¸¼éÿÿÿÿÿ8©´—õì1
-G	java:S106&"+Replace this use of System.out by a logger.(Ã±Ç…8©´—õì1
-F	java:S106+"+Replace this use of System.out by a logger.(ø»Ì.8©´—õì1
-G	java:S106-"+Replace this use of System.out by a logger.(¢Ø‡µ8©´—õì1
-G	java:S106."+Replace this use of System.out by a logger.(Ã±Ç…8©´—õì1
-G	java:S1063"+Replace this use of System.out by a logger.(¹¼Äœ8©´—õì1
-L	java:S106;"+Replace this use of System.out by a logger.(Ş»ÂÛşÿÿÿÿ8ª´—õì1
-L	java:S106="+Replace this use of System.out by a logger.(œŠ’…ùÿÿÿÿ8ª´—õì1
-L	java:S106?"+Replace this use of System.out by a logger.(ĞÅŒ¹øÿÿÿÿ8ª´—õì1
-L	java:S106N"+Replace this use of System.out by a logger.(ãÍä·ıÿÿÿÿ8«´—õì1
-G	java:S106T"+Replace this use of System.out by a logger.(ŸµŸè8«´—õì1
-G	java:S106Z"+Replace this use of System.out by a logger.(ÚÑ·¶8¬´—õì1
-G	java:S106`"+Replace this use of System.out by a logger.(ÎëíÃ8¬´—õì1
+java:S1118":Add a private constructor to hide the implicit public one.(ÿôÃş8â’–î1
+c	java:S899"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ8å’–î1
+G	java:S106"+Replace this use of System.out by a logger.(ÊÈØï8æ’–î1
+G	java:S106 "+Replace this use of System.out by a logger.(‡Ö½è8æ’–î1
+F	java:S106("+Replace this use of System.out by a logger.(ø»Ì.8æ’–î1
+L	java:S106*"+Replace this use of System.out by a logger.(Ú¸¼éÿÿÿÿÿ8æ’–î1
+G	java:S106+"+Replace this use of System.out by a logger.(Ã±Ç…8æ’–î1
+F	java:S1060"+Replace this use of System.out by a logger.(ø»Ì.8æ’–î1
+G	java:S1062"+Replace this use of System.out by a logger.(¢Ø‡µ8ç’–î1
+G	java:S1063"+Replace this use of System.out by a logger.(Ã±Ç…8ç’–î1
+G	java:S1068"+Replace this use of System.out by a logger.(¹¼Äœ8ç’–î1
+L	java:S106@"+Replace this use of System.out by a logger.(Ş»ÂÛşÿÿÿÿ8ç’–î1
+L	java:S106B"+Replace this use of System.out by a logger.(œŠ’…ùÿÿÿÿ8è’–î1
+L	java:S106D"+Replace this use of System.out by a logger.(ĞÅŒ¹øÿÿÿÿ8è’–î1
+L	java:S106S"+Replace this use of System.out by a logger.(ãÍä·ıÿÿÿÿ8é’–î1
+G	java:S106Y"+Replace this use of System.out by a logger.(ŸµŸè8é’–î1
+G	java:S106_"+Replace this use of System.out by a logger.(ÚÑ·¶8é’–î1
+G	java:S106e"+Replace this use of System.out by a logger.(ÎëíÃ8ê’–î1
 ]
-java:S1854i";Remove this useless assignment to local variable "scanner".(ù ƒ‘üÿÿÿÿ8¬´—õì1
+java:S1854n";Remove this useless assignment to local variable "scanner".(ù ƒ‘üÿÿÿÿ8ê’–î1
 N
-java:S1481i",Remove this unused "scanner" local variable.(ù ƒ‘üÿÿÿÿ8­´—õì1
-G	java:S106y"+Replace this use of System.out by a logger.(ÎëíÃ8­´—õì1
-K	java:S108")Either remove or fill this block of code.(¹²›şÿÿÿÿ8¯´—õì1
+java:S1481n",Remove this unused "scanner" local variable.(ù ƒ‘üÿÿÿÿ8ë’–î1
+G	java:S106~"+Replace this use of System.out by a logger.(ÎëíÃ8ë’–î1
+D
+java:S1905•"'Remove this unnecessary cast to "List".(ô„ˆ 8í’–î1

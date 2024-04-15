@@ -1,16 +1,12 @@
 package org.flujos.boletin.Exercise_7;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Exercise_7 {
+
+    static String fileName = ".\\src\\main\\java\\org\\flujos\\boletin\\Exercise_7\\archivo7.txt";
+
     public static void execute(){
         String[] options = {
                 "1. Añadir un alumno",
@@ -22,6 +18,15 @@ public class Exercise_7 {
                 "3. Modificar/Eliminar la edad"};
 
         Scanner scanner = new Scanner(System.in);
+        File file  = new File(fileName);
+
+        if(!file.exists()){
+            try {
+                file.createNewFile();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
 
         System.out.println("Que es lo que quieres hacer?");
         Arrays.stream(options).forEach(System.out::println);
@@ -96,7 +101,7 @@ public class Exercise_7 {
                 System.out.println("La opción elegida no es valida");
 
         }
-        writefile(registerAlumns);
+        writeFile(registerAlumns);
 
     }
     public static void deleteAlumn(String alumnName, int userOption){
@@ -115,21 +120,43 @@ public class Exercise_7 {
                 break;
             case 3:
                 registerAlumns.stream().filter(alumno -> alumno.firstName.equalsIgnoreCase(alumnName))
-                        .forEach(alumno -> alumno.setAge(null));
+                        .forEach(alumno -> alumno.setAge(0));
                 break;
             default:
                 System.out.println("La opción elegida no es valida");
 
         }
-        writefile(registerAlumns);
+        writeFile(registerAlumns);
     }
     public static List<Alumno> readFile(){
-        String fileName = ".\\src\\main\\java\\org\\flujos\\boletin\\Exercise_7\\archivo7.txt";
+        Optional<List <Alumno>> registers;
+        List<Alumno> alumnos = new ArrayList<>();
 
         try(ObjectInputStream inputStream = new ObjectInputStream( new FileInputStream(fileName))){
+            while(true){
+                Alumno alumno = (Alumno) inputStream.readObject();
+                alumnos.add(alumno);
+            }
 
+        }catch (EOFException e){
+
+            registers = Optional.of(alumnos);
+
+        }catch(IOException | ClassNotFoundException e){
+            e.printStackTrace();
+            registers = Optional.empty();
+        }
+        return (List<Alumno>) registers.orElse(Collections.emptyList());
+    }
+
+    public static void writeFile(List<Alumno> alumnos){
+        try(ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(fileName))){
+            for(Alumno alumno : alumnos){
+                outputStream.writeObject(alumno);
+            }
         }catch (IOException e){
             e.printStackTrace();
         }
+
     }
 }

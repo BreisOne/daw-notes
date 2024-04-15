@@ -49,3 +49,5 @@ k
 ;src/main/java/org/flujos/boletin/Exercise_7/Exercise_7.java,f\2\f25002266f16ec5f47bb2f114eb022e7a1d06863
 g
 7src/main/java/org/flujos/boletin/Exercise_7/Alumno.java,6\4\64d03968702b4cfec5cd25b839122c4f6428cd73
+h
+8src/main/java/org/flujos/boletin/Exercise_7/archivo7.txt,4\c\4c491b7a04e3b562dc1418e4050c8fc79bbc0b7f
