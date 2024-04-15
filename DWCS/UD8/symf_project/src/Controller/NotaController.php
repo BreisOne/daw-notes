@@ -31,6 +31,8 @@ class NotaController extends AbstractController
     {
         $notas = $notaService->findAll();
 
+        $this->addFlash("warning", "Tienes que tener cuidado");
+        
         return $this->render('nota/table.html.twig', [
             'controller_name' => 'NotaController',
             'notas' => $notas
