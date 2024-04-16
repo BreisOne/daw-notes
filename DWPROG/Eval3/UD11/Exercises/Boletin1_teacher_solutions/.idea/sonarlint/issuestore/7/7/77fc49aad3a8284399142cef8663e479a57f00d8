@@ -1,0 +1,66 @@
+
+c
+java:S1192?"MDefine a constant instead of duplicating this literal "Registro.txt" 5 times.(¼ö«·
+a
+java:S1192S"KDefine a constant instead of duplicating this literal "----------" 4 times.(ã€‡’
+k
+java:S1192F"UDefine a constant instead of duplicating this literal "Error con el fichero" 5 times.(ÔúËñ
+Ğ
+java:S1598"ºThis file "Ejercicio4.java" should be located in "ActividadesStreams\Boletin" directory, not in "C:\Users\a23braisbm\Desktop\DUAL\DWPROG\Eval3\UD11\Exercises\Boletin1_teacher_solutions".(÷¦Ò^
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(÷¦Ò^
+i
+java:S2095"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(ó¼£´úÿÿÿÿ
+j
+java:S2095"NUse try-with-resources or close this "DataOutputStream" in a "finally" clause.(…Éïüÿÿÿÿ
+d
+java:S2095?"NUse try-with-resources or close this "DataOutputStream" in a "finally" clause.(¼ö«·
+i
+java:S2095§"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(—¯×¼üÿÿÿÿ
+c
+java:S2095P"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(Ğ¶Şà
+c
+java:S2095h"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(Ğ¶Şà
+e
+java:S2095¨"NUse try-with-resources or close this "DataOutputStream" in a "finally" clause.(ˆƒ†å
+7	java:S131""Add a default case to this switch.(°€àâ
+E	java:S106,"+Replace this use of System.out by a logger.(ÿµÓìşÿÿÿÿ
+E	java:S106-"+Replace this use of System.out by a logger.(­Ó±Úüÿÿÿÿ
+@	java:S106."+Replace this use of System.out by a logger.(®±ƒ˜
+@	java:S106/"+Replace this use of System.out by a logger.(·ªã²
+@	java:S1060"+Replace this use of System.out by a logger.(Øşêâ
+E	java:S1061"+Replace this use of System.out by a logger.(ÿ‡Íùÿÿÿÿ
+h	java:S1005"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş’ØÜşÿÿÿÿ
+E	java:S1066"+Replace this use of System.out by a logger.(éœ®Àıÿÿÿÿ
+@	java:S1068"+Replace this use of System.out by a logger.(¡ø¯é
+E	java:S106:"+Replace this use of System.out by a logger.(å²ÿÿÿÿÿÿ
+@	java:S106F"+Replace this use of System.out by a logger.(ÔúËñ
+@	java:S106H"+Replace this use of System.out by a logger.(Œ£â°
+@	java:S106J"+Replace this use of System.out by a logger.(à‘•Ú
+Z
+java:S2147^"DCombine this catch with the one at line 92, which has the same body.(Ãôş•
+@	java:S106S"+Replace this use of System.out by a logger.(ã€‡’
+@	java:S106T"+Replace this use of System.out by a logger.(ê‚â„
+@	java:S106U"+Replace this use of System.out by a logger.(ã€‡’
+E	java:S106V"+Replace this use of System.out by a logger.(ÇâÚ·ıÿÿÿÿ
+E	java:S106W"+Replace this use of System.out by a logger.(€Œ›Ôıÿÿÿÿ
+?	java:S106X"+Replace this use of System.out by a logger.(©‰O
+@	java:S106]"+Replace this use of System.out by a logger.(ÔúËñ
+@	java:S106_"+Replace this use of System.out by a logger.(ÔúËñ
+@	java:S106d"+Replace this use of System.out by a logger.(µŞ¹‚
+@	java:S106o"+Replace this use of System.out by a logger.(ã€‡’
+@	java:S106p"+Replace this use of System.out by a logger.(ê‚â„
+@	java:S106q"+Replace this use of System.out by a logger.(ã€‡’
+@	java:S106r"+Replace this use of System.out by a logger.(†ÏÍ
+E	java:S106s"+Replace this use of System.out by a logger.(€Œ›Ôıÿÿÿÿ
+?	java:S106t"+Replace this use of System.out by a logger.(©‰O
+A	java:S106"+Replace this use of System.out by a logger.(›Ûıó
+A	java:S106ƒ"+Replace this use of System.out by a logger.(ÔúËñ
+D
+java:S1659ˆ"-Declare "temporalLectura" on a separate line.(’øˆ
+K
+java:S1659‰"/Declare "temporalEscritura" on a separate line.(§î”“øÿÿÿÿ
+A	java:S106Š"+Replace this use of System.out by a logger.(¿‹•ª
+A	java:S106±"+Replace this use of System.out by a logger.(ÑäŞ˜
+e
+java:S4042±"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ÑäŞ˜
+A	java:S106´"+Replace this use of System.out by a logger.(ÔúËñ

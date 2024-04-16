@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Boletin1_teacher_solutions">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Ejercicios2_3_Obj.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Ejercicio4_Obj.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

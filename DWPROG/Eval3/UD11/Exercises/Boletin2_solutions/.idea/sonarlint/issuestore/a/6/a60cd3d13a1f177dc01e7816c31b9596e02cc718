@@ -1,0 +1,10 @@
+
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ş…®—8££Ñ¾î1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(Ş…®—8¨£Ñ¾î1
+W	java:S899%";Do something with the "boolean" value returned by "delete".(È×ö8£ÒÓ¾î1
+k
+java:S4042%"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(È×ö8£ÒÓ¾î1
+^	java:S899("=Do something with the "boolean" value returned by "renameTo".(á½Ìıÿÿÿÿ8«£Ñ¾î1
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8­£Ñ¾î1

@@ -1,0 +1,56 @@
+
+`
+java:S1192y"JDefine a constant instead of duplicating this literal "No existe" 4 times.(š¡¾¾
+j
+java:S1192H"UDefine a constant instead of duplicating this literal "Introduzca la ruta: " 8 times.(Ùä™(
+Ã
+java:S1598"§This file "AFicheros.java" should be located in "ficheros" directory, not in "C:\Users\a23braisbm\Desktop\DUAL\DWPROG\Eval3\UD11\Exercises\Boletin1_teacher_solutions".(¢îŠ£ùÿÿÿÿ
+7	java:S131""Add a default case to this switch.(°€àâ
+E	java:S1067"+Replace this use of System.out by a logger.(÷Ççëÿÿÿÿÿ
+@	java:S1068"+Replace this use of System.out by a logger.(ªÌä³
+@	java:S1069"+Replace this use of System.out by a logger.(ã‚ß¨
+?	java:S106:"+Replace this use of System.out by a logger.(´ÕX
+@	java:S106;"+Replace this use of System.out by a logger.(¡÷á«
+E	java:S106<"+Replace this use of System.out by a logger.(•ÂÚšşÿÿÿÿ
+E	java:S106="+Replace this use of System.out by a logger.(¾ãçªşÿÿÿÿ
+E	java:S106>"+Replace this use of System.out by a logger.(„Éù²úÿÿÿÿ
+@	java:S106?"+Replace this use of System.out by a logger.(¦Ìı©
+?	java:S106H"+Replace this use of System.out by a logger.(Ùä™(
+@	java:S106P"+Replace this use of System.out by a logger.(Ñà¸ª
+@	java:S106T"+Replace this use of System.err by a logger.(“ÊĞó
+?	java:S106]"+Replace this use of System.out by a logger.(Ùä™(
+@	java:S106_"+Replace this use of System.out by a logger.(²Î˜Õ
+E	java:S106g"+Replace this use of System.out by a logger.(Ä´»êûÿÿÿÿ
+@	java:S106k"+Replace this use of System.err by a logger.(“ÊĞó
+?	java:S106t"+Replace this use of System.out by a logger.(Ùä™(
+E	java:S106w"+Replace this use of System.out by a logger.(Õö£‘ùÿÿÿÿ
+@	java:S106y"+Replace this use of System.out by a logger.(š¡¾¾
+@	java:S106‚"+Replace this use of System.out by a logger.(Ùä™(
+A	java:S106‡"+Replace this use of System.out by a logger.(±†ô¡
+A	java:S106‰"+Replace this use of System.out by a logger.(„Ñ½¢
+F	java:S106‹"+Replace this use of System.out by a logger.(™¯¶©ÿÿÿÿÿ
+F	java:S106"+Replace this use of System.err by a logger.(¶ë¶ìøÿÿÿÿ
+@	java:S106–"+Replace this use of System.out by a logger.(Ùä™(
+A	java:S106›"+Replace this use of System.out by a logger.(‡¢üù
+F	java:S106"+Replace this use of System.out by a logger.(õÑñÊùÿÿÿÿ
+A	java:S106¡"+Replace this use of System.out by a logger.(š¡¾¾
+@	java:S106©"+Replace this use of System.out by a logger.(Ùä™(
+@	java:S106­"+Replace this use of System.out by a logger.(×úÛ.
+A	java:S106¯"+Replace this use of System.out by a logger.(š¡¾¾
+@	java:S106·"+Replace this use of System.out by a logger.(Ùä™(
+A	java:S106»"+Replace this use of System.out by a logger.(Š’°¹
+F	java:S106¼"+Replace this use of System.out by a logger.(Í­Ò‘ûÿÿÿÿ
+F	java:S106¾"+Replace this use of System.out by a logger.(ş…şÿÿÿÿ
+@	java:S106È"+Replace this use of System.out by a logger.(Ùä™(
+F	java:S106Ì"+Replace this use of System.out by a logger.(¶É¶éùÿÿÿÿ
+A	java:S106Í"+Replace this use of System.out by a logger.(ıõ—
+F	java:S106Ñ"+Replace this use of System.out by a logger.(«¿Âøÿÿÿÿ
+A	java:S106Ò"+Replace this use of System.out by a logger.(‡ïÅè
+F	java:S106Ô"+Replace this use of System.out by a logger.(êÓæøùÿÿÿÿ
+A	java:S106Ö"+Replace this use of System.out by a logger.(°£¤
+F	java:S106Ù"+Replace this use of System.out by a logger.(Ä´»êûÿÿÿÿ
+F	java:S106Û"+Replace this use of System.out by a logger.(Û¹²Ûşÿÿÿÿ
+j
+java:S4042Ü"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(›€Ğ²üÿÿÿÿ
+A	java:S106İ"+Replace this use of System.out by a logger.(Ñ•˜ğ
+F	java:S106à"+Replace this use of System.err by a logger.(úÑËŠÿÿÿÿÿ

@@ -1,0 +1,9 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+Ð
+java:S1598"ºThis file "Ejercicio6.java" should be located in "ActividadesStreams\Boletin" directory, not in "C:\Users\a23braisbm\Desktop\DUAL\DWPROG\Eval3\UD11\Exercises\Boletin1_teacher_solutions".(÷¦Ò^
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(÷¦Ò^
+Z
+java:S2147"DCombine this catch with the one at line 19, which has the same body.(ï­£Ä
+E	java:S106"+Replace this use of System.out by a logger.(‰¿šÎþÿÿÿÿ

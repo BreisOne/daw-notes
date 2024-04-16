@@ -1,0 +1,13 @@
+
+i	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ºÅ£8Ùéö¼î1
+\
+java:S35185":Make sure "cont" can't be zero before doing this division.(÷ªÅÛøÿÿÿÿ8àø¼î1
+W
+java:S1118	":Add a private constructor to hide the implicit public one.(ºÅ£8Şéö¼î1
+:
+java:S2119"Save and re-use this "Random".(¼İÅf8àéö¼î1
+X	java:S125"<This block of commented-out lines of code should be removed.(Æ­Éí8áéö¼î1
+L	java:S106/"+Replace this use of System.out by a logger.(­ŒÌÔıÿÿÿÿ8ãéö¼î1
+L	java:S1065"+Replace this use of System.out by a logger.(÷ªÅÛøÿÿÿÿ8à®÷¼î1
+U
+java:S1128"9Remove this unused import 'javax.swing.text.html.Option'.(¼Òì:8ãéö¼î1
