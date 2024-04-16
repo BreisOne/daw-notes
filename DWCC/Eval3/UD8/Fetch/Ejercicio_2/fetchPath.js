@@ -13,5 +13,9 @@ let namefichero = ficheroArray[long - 1]
 let idURL = obtenerUrlActual.toString().split(namefichero);
 console.log(idURL[0]);
 
-let ruta = idURL[0].toString().concat('users.json');
-console.log("Acceder al fichero json " + ruta);
+let rutaUsers = idURL[0].toString().concat('users.json');
+
+let rutaCiclos = idURL[0].toString().concat('ciclos.json')
+
+console.log("Acceder al fichero json " + rutaUsers);
+console.log("Acceder al fichero json " + rutaCiclos);
