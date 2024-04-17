@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crear tarea
+{% endblock %}
+
+{% block body %}
+
+	<h2>Crear tarea</h2>
+
+	{% include "common/_messages.html.twig" %}
+	{% include "nota/_formulario.html.twig" with {'action': path('app_nota_new')} %}
+
+
+	
+
+
+{% endblock %}
