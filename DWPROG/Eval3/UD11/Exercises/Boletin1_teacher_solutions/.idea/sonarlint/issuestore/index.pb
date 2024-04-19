@@ -7,3 +7,5 @@
 Ejercicio6.java,8\6\8644b05ffe0c170bc6419a5ac6c2b164b85fa293
 ?
 Ejercicio4.java,7\7\77fc49aad3a8284399142cef8663e479a57f00d8
+N
+Boletin1_teacher_solutions.iml,4\6\4634f1c30069f51d431fd2daa1343cf747f664a5

@@ -95,7 +95,7 @@ CREATE TABLE Salario (
 #---------------------------------------------------------------------------------------
 #	Tabla de Oficinas - 8
 #---------------------------------------------------------------------------------------
-INSERT	Oficina	( nombreOficina, numeroOficina, dimension, ubicacion, numeroMesas )	VALUES  	# MESAS 42
+/* INSERT	Oficina	( nombreOficina, numeroOficina, dimension, ubicacion, numeroMesas )	VALUES  	# MESAS 42
 				( 			"Direccion",      1000,        50, "Planta 1", 2 ),
                 ( 				 "RRHH",      8000,        50, "Planta 1", 6 ),
                 ( 	  		  "Nóminas",      3600,        50, "Planta 1", 4 ),
@@ -104,10 +104,11 @@ INSERT	Oficina	( nombreOficina, numeroOficina, dimension, ubicacion, numeroMesas
                 ( 			  "Compras",      1002,        50, "Planta 1", 5 ),
                 ( "Desarrollo Producto",      3505,        50, "Planta 1", 7 ),
                 ( 			"Reuniones",      4040,        50, "Planta 1", 6 );
+*/
 #---------------------------------------------------------------------------------------
 #	Tabla de Empleados - 42
 #---------------------------------------------------------------------------------------
-INSERT	Empleado	( NIFEmpleado, nombreEmpleado, apellidosEmpleado, fechaIncorporacion )	VALUES
+/* INSERT	Empleado	( NIFEmpleado, nombreEmpleado, apellidosEmpleado, fechaIncorporacion )	VALUES
 					( "42345678A", "Fulgencio", "Malatraba Uñíquez", 		"2024-02-01" ),
                     ( "62345678A", "Fulgencia", "Bienhallada Perfecta",		"2024-02-01" ),
                     ( "81111111A", "María", "López García", 				"2024-02-01" ),
@@ -150,10 +151,11 @@ INSERT	Empleado	( NIFEmpleado, nombreEmpleado, apellidosEmpleado, fechaIncorpora
                     ( "20101010L", "Adrián Manuel", "Sánchez Ruiz", 		"2024-03-03" ),
                     ( "41212121M", "Eva María", "Martínez López", 			"2024-03-05" ),
                     ( "31313131N", "Marcos Antonio", "González Pérez", 		"2024-03-05" );
+*/
 #---------------------------------------------------------------------------------------
 #	Tabla de Contrataciones
 #---------------------------------------------------------------------------------------
-INSERT Contratacion( tipoContrato, inicioContratacion, finContratacion, Empleado, Oficina, puestoTrabajo, Jefe )	VALUES
+/*  INSERT Contratacion( tipoContrato, inicioContratacion, finContratacion, Empleado, Oficina, puestoTrabajo, Jefe )	VALUES
 					( 'Indefinido', "2024-02-01", NULL,  1, 1, 'Director', NULL ),
                     ( 'Indefinido', "2024-02-01", NULL,  2, 2, 'Jefe de Recursos Humanos', 1 ),
                     ( 'Indefinido', "2024-02-01", NULL,  3, 3, 'Jefe de Nóminas', 1 ),
@@ -196,10 +198,11 @@ INSERT Contratacion( tipoContrato, inicioContratacion, finContratacion, Empleado
                     ( 'Indefinido', "2024-03-03", NULL, 40, 4, 'Trabajador de Atención al Cliente', 4 ),
                     ( 'Indefinido', "2024-03-05", NULL, 41, 4, 'Trabajador de Atención al Cliente', 4 ),
                     ( 'Indefinido', "2024-03-05", NULL, 42, 4, 'Trabajador de Atención al Cliente', 4 );
+*/
 #---------------------------------------------------------------------------------------
 #	Tabla de Salarios
 #---------------------------------------------------------------------------------------
-INSERT INTO Salario ( puestoTrabajo, sueldoBase, incrementoAnual, productividad )	VALUES
+/* INSERT INTO Salario ( puestoTrabajo, sueldoBase, incrementoAnual, productividad )	VALUES
 			( 'Director', 							   10000, 1200, 0 ),
             ( 'Jefe de Recursos Humanos', 	 	 		8200,  800, 4000),
             ( 'Jefe de Nóminas', 			 	 		7800,  820, 4200),
@@ -215,7 +218,7 @@ INSERT INTO Salario ( puestoTrabajo, sueldoBase, incrementoAnual, productividad 
             ( 'Trabajador de Ventas', 					3900,  530, 2600),
             ( 'Trabajador de Compras', 					4100,  580, 2900),
             ( 'Trabajador de Desarrollo de Productos',	4400,  620, 3100);
-
+*/
 
 #---------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------
@@ -451,10 +454,10 @@ DROP PROCEDURE IF EXISTS  despedirTrabajador //
 CREATE PROCEDURE despedirTrabajador( EmpleadoDNI VARCHAR(9), Despido DATE)
 	BEGIN
     UPDATE contratacion
-		SET finContratacion = CASE
+		SET finContratacion = (CASE
                                 WHEN finContratacion IS NULL THEN Despido
                                 ELSE finContratacion
-                              END
+                              END)
 		WHERE Empleado = (SELECT idEmpleado FROM empleado WHERE NIFEmpleado = EmpleadoDNI);
     END //
 DELIMITER ;

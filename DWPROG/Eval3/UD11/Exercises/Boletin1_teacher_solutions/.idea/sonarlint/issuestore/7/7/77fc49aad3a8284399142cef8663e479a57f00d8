@@ -8,20 +8,20 @@ java:S1192F"UDefine a constant instead of duplicating this literal "Error con e
 Ğ
 java:S1598"ºThis file "Ejercicio4.java" should be located in "ActividadesStreams\Boletin" directory, not in "C:\Users\a23braisbm\Desktop\DUAL\DWPROG\Eval3\UD11\Exercises\Boletin1_teacher_solutions".(÷¦Ò^
 n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(÷¦Ò^
-i
-java:S2095"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(ó¼£´úÿÿÿÿ
-j
-java:S2095"NUse try-with-resources or close this "DataOutputStream" in a "finally" clause.(…Éïüÿÿÿÿ
-d
-java:S2095?"NUse try-with-resources or close this "DataOutputStream" in a "finally" clause.(¼ö«·
-i
-java:S2095§"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(—¯×¼üÿÿÿÿ
 c
 java:S2095P"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(Ğ¶Şà
 c
 java:S2095h"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(Ğ¶Şà
+j
+java:S2095"NUse try-with-resources or close this "DataOutputStream" in a "finally" clause.(…Éïüÿÿÿÿ
 e
 java:S2095¨"NUse try-with-resources or close this "DataOutputStream" in a "finally" clause.(ˆƒ†å
+i
+java:S2095"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(ó¼£´úÿÿÿÿ
+i
+java:S2095§"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(—¯×¼üÿÿÿÿ
+d
+java:S2095?"NUse try-with-resources or close this "DataOutputStream" in a "finally" clause.(¼ö«·
 7	java:S131""Add a default case to this switch.(°€àâ
 E	java:S106,"+Replace this use of System.out by a logger.(ÿµÓìşÿÿÿÿ
 E	java:S106-"+Replace this use of System.out by a logger.(­Ó±Úüÿÿÿÿ

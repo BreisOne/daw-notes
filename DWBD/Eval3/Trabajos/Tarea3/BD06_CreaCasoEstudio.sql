@@ -1,4 +1,4 @@
-#	ORACLE
+#	MySQL
 #---------------------------------------------------------------------------------------
 #	CREACIÓN DE LA BASE DE DATOS Empresa
 #---------------------------------------------------------------------------------------
@@ -96,7 +96,6 @@ CREATE PROCEDURE agregarFamilia (
      Ofi    int	)
 BEGIN
 	INSERT INTO familias VALUES ( id, Nom, Fam, Ofi );
-	# COMMIT;  -- Confirmar la transacción
 END; //
 DELIMITER ;
 #------------------------------------------------------------------------------------------------------
@@ -116,7 +115,7 @@ CREATE PROCEDURE agregarFamilias()
         call agregarFamilia( 213, 'Granada-1.3', 21, NULL );
         call agregarFamilia( 31, 'Jaén-1', NULL, 3 );
     END; //
-    DELIMITER ;
+DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 DELIMITER //
 DROP PROCEDURE IF EXISTS agregarAgente //
@@ -131,12 +130,11 @@ CREATE PROCEDURE agregarAgente (
      Ofi    int	)
 BEGIN
 	INSERT INTO agentes	VALUES ( id, Nom, Usu, Cla, Hab, Cat, Fam, Ofi );
-	# COMMIT;  -- Confirmar la transacción
 END; //
 DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 DELIMITER //
-DROP PROCEDURE IF EXISTS agregarAgente //
+DROP PROCEDURE IF EXISTS agregarAgentes //
 CREATE PROCEDURE agregarAgentes()
     BEGIN
        call agregarAgente( 31, 'José Ramón Jiménez Reyes', 'jrjr', 'sup31', 9, 2, NULL, 3);
@@ -179,7 +177,7 @@ CREATE PROCEDURE agregarAgentes()
        call agregarAgente( 11232, 'José Antonio Sieres Vega', 'jasv', 'ag11232', 5, 0, 1123, NULL);
        call agregarAgente( 11233, 'Juan Manuel Guzmán García', 'jmgg', 'ag11233', 5, 0, 1123, NULL);
     END; //
-    DELIMITER ;
+DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 DELIMITER //
 DROP PROCEDURE IF EXISTS agregarDatos //
@@ -215,9 +213,7 @@ BEGIN
     DECLARE nombreFamilia varchar(40);
     
     SELECT nombre INTO nombreFamilia FROM familias WHERE identificador = idFamilia;
-    
-    RETURN nombreFamilia;
-	
+    	
 	IF nombreFamilia IS NULL THEN
         RETURN 'Identificador no válido'; -- Mensaje de identificador no válido
     ELSE
@@ -300,81 +296,117 @@ DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 DELIMITER //
 DROP PROCEDURE IF EXISTS mostrarOficinas //
-CREATE PROCEDURE mostrarOficinas
-    CURSOR cursor_oficinas IS	SELECT * FROM oficinas;
-        
-    var_id oficinas.identificador%TYPE;
-    var_nom oficinas.nombre%TYPE;
-    var_dom oficinas.domicilio%TYPE;
-    var_loc oficinas.localidad%TYPE;
-    var_cp oficinas.codigo_postal%TYPE;
+CREATE PROCEDURE mostrarOficinas()
 BEGIN
+    DECLARE done INT DEFAULT FALSE;
+	DECLARE var_id INT;
+    DECLARE var_nom VARCHAR(255);
+    DECLARE var_dom VARCHAR(255);
+    DECLARE var_loc VARCHAR(255);
+    DECLARE var_cp VARCHAR(10);
+    
+     -- Cursor para seleccionar los datos de oficinas
+    DECLARE cursor_oficinas CURSOR FOR
+        SELECT * FROM oficinas;
+     
+     -- Manejador para no encontrar más filas
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    
     OPEN cursor_oficinas;
-    LOOP
-        FETCH cursor_oficinas INTO var_id, var_nom, var_dom, var_loc, var_cp;
-        EXIT WHEN cursor_oficinas%NOTFOUND;
+    read_loop: LOOP
+			   FETCH cursor_oficinas INTO var_id, var_nom, var_dom, var_loc, var_cp;
+               IF done THEN
+					LEAVE read_loop;
+			   END IF;
         
         -- Mostrar los datos de la fila actual
-        DBMS_OUTPUT.PUT_LINE('Identificador: ' || var_id || ', Nombre: ' || var_nom || ', Domicilio: ' || var_dom || ', Localidad: ' || var_loc || ', Código Postal: ' || var_cp );
-    END LOOP;
+        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Domicilio: ', var_dom, ', Localidad: ', var_loc, ', Código Postal: ', var_cp) as "Datos oficina actual";
+		END LOOP;
     CLOSE cursor_oficinas;
 END; //
 DELIMITER ;
 #------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE mostrarFamilias IS
-    CURSOR cursor_familias IS	SELECT * FROM familias;
-        
-    var_id familias.identificador%TYPE;
-    var_nom familias.nombre%TYPE;
-    var_fam familias.familia%TYPE;
-    var_ofi familias.oficina%TYPE;
+DELIMITER //
+DROP PROCEDURE IF EXISTS mostrarFamilias //
+CREATE PROCEDURE mostrarFamilias()
 BEGIN
+	DECLARE done INT DEFAULT FALSE;
+    DECLARE var_id INT;
+    DECLARE var_nom VARCHAR(255);
+    DECLARE var_fam VARCHAR(255);
+    DECLARE var_ofi VARCHAR(255);
+    
+	 -- Cursor para seleccionar los datos de oficinas
+    DECLARE cursor_familias CURSOR FOR
+        SELECT * FROM familias;
+        
+	 -- Manejador para no encontrar más filas
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+	
     OPEN cursor_familias;
-    LOOP
-        FETCH cursor_familias INTO var_id, var_nom, var_fam, var_ofi;
-        EXIT WHEN cursor_familias%NOTFOUND;
-        
+    
+    read_loop: LOOP
+			   FETCH cursor_familias INTO var_id, var_nom, var_fam, var_ofi;
+			   IF done THEN
+					LEAVE read_loop;
+			   END IF;
         -- Mostrar los datos de la fila actual
-        DBMS_OUTPUT.PUT_LINE('Identificador: ' || var_id || ', Nombre: ' || var_nom || ', Familia: ' || var_fam || ', Oficina: ' || var_ofi );
-    END LOOP;
+        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Familia: ', var_fam, ', Oficina: ', var_ofi) as "Datos familia actual";
+		END LOOP;
     CLOSE cursor_familias;
-END;
-/
+END; //
+DELIMITER ;
 #------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE mostrarAgentes IS
-    CURSOR cursor_agentes IS	SELECT * FROM agentes;
-        
-    var_id agentes.identificador%TYPE;
-    var_nom agentes.nombre%TYPE;
-    var_usu agentes.usuario%TYPE;
-    var_cla agentes.clave%TYPE;
-    var_hab agentes.habilidad%TYPE;
-    var_cat agentes.categoria%TYPE;
-    var_fam agentes.familia%TYPE;
-    var_ofi agentes.oficina%TYPE;
+DELIMITER //
+DROP PROCEDURE IF EXISTS mostrarAgentes //
+CREATE PROCEDURE mostrarAgentes()        
 BEGIN
+	DECLARE done INT DEFAULT FALSE;
+    DECLARE var_id INT;
+    DECLARE var_nom VARCHAR(255);
+    DECLARE var_usu VARCHAR(255);
+    DECLARE var_cla VARCHAR(255);
+    DECLARE var_hab VARCHAR(255);
+    DECLARE var_cat VARCHAR(255);
+    DECLARE var_fam VARCHAR(255);
+    DECLARE var_ofi VARCHAR(255);
+    
+ 	 -- Cursor para seleccionar los datos de los agentes
+	DECLARE cursor_agentes CURSOR FOR SELECT * FROM agentes;
+    
+	-- Manejador para no encontrar más filas
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
     OPEN cursor_agentes;
-    LOOP
+    read_loop: LOOP
         FETCH cursor_agentes INTO var_id, var_nom, var_usu, var_cla, var_hab, var_cat, var_fam, var_ofi;
-        EXIT WHEN cursor_agentes%NOTFOUND;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
         
         -- Mostrar los datos de la fila actual
-        DBMS_OUTPUT.PUT_LINE('Identificador: ' || var_id || ', Nombre: ' || var_nom || ', Usuario: ' || var_usu || ', Clave: ' || var_cla || ', Habilidad: ' || var_hab || ', Categoría: ' || var_cat || ', Familia: ' || var_fam || ', Oficina: ' || var_ofi );
-    END LOOP;
+        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Usuario: ', var_usu, ', Clave: ', var_cla, ', Habilidad: ', var_hab, ', Categoría: ', var_cat, ', Familia: ', var_fam, ', Oficina: ', var_ofi) as "Datos agente actual";
+        
+        END LOOP;
     CLOSE cursor_agentes;
-END;
-/
+END; //
+DELIMITER ;
 #------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE mostrarDatos IS
+DELIMITER //
+DROP PROCEDURE IF EXISTS mostrarDatos //
+CREATE PROCEDURE mostrarDatos()
     BEGIN
-        mostrarOficinas();
-        mostrarFamilias();
-        mostrarAgentes();
-    END;
+        call mostrarOficinas();
+        call mostrarFamilias();
+        call mostrarAgentes();
+    END; //
+DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------
 
 CALL agregarDatos();
 CALL mostrarDatos();
-select obtenerNombreFamilia( 10 ) FROM dual;
+select obtenerNombreFamilia( 11 );
 CALL mostrarOficinas();
+call mostrarFamilias();
+CALL mostrarAgentes();
