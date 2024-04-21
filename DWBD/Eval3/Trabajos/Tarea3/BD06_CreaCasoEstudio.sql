@@ -66,7 +66,7 @@ CREATE TABLE agentesCopia  AS SELECT * FROM agentes;
 DELIMITER //
 	DROP PROCEDURE IF EXISTS agregarOficina //
 	CREATE PROCEDURE agregarOficina ( 
-     id      int,
+     id      INT,
      Nom     varchar(40),
      Dom     varchar(40),
      Loc     varchar(20),
@@ -90,17 +90,17 @@ DELIMITER //
 DELIMITER //
 DROP PROCEDURE IF EXISTS agregarFamilia //
 CREATE PROCEDURE agregarFamilia (
-     id     int,
+     id     INT,
      Nom    varchar(40),
-     Fam    int,
-     Ofi    int	)
+     Fam    INT,
+     Ofi    INT )
 BEGIN
 	INSERT INTO familias VALUES ( id, Nom, Fam, Ofi );
 END; //
 DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 DELIMITER //
-DROP PROCEDURE IF EXISTS agregarFamiliar //
+DROP PROCEDURE IF EXISTS agregarFamilias //
 CREATE PROCEDURE agregarFamilias()
     BEGIN
         call agregarFamilia( 11, 'Madrid-1', NULL, 1 );
@@ -121,13 +121,13 @@ DELIMITER //
 DROP PROCEDURE IF EXISTS agregarAgente //
 CREATE PROCEDURE agregarAgente (
      id     int,
-     Nom    varchar(40),
-     Usu    varchar(40),
-     Cla    varchar(40),
-     Hab    int,
-     Cat    int,
-     Fam    int,
-     Ofi    int	)
+     Nom    varchar(60),
+     Usu    varchar(20),
+     Cla    varchar(20),
+     Hab    INT,
+     Cat    INT,
+     Fam    INT,
+     Ofi    INT	)
 BEGIN
 	INSERT INTO agentes	VALUES ( id, Nom, Usu, Cla, Hab, Cat, Fam, Ofi );
 END; //
@@ -300,10 +300,10 @@ CREATE PROCEDURE mostrarOficinas()
 BEGIN
     DECLARE done INT DEFAULT FALSE;
 	DECLARE var_id INT;
-    DECLARE var_nom VARCHAR(255);
-    DECLARE var_dom VARCHAR(255);
-    DECLARE var_loc VARCHAR(255);
-    DECLARE var_cp VARCHAR(10);
+    DECLARE var_nom VARCHAR(40);
+    DECLARE var_dom VARCHAR(40);
+    DECLARE var_loc VARCHAR(20);
+    DECLARE var_cp VARCHAR(5);
     
      -- Cursor para seleccionar los datos de oficinas
     DECLARE cursor_oficinas CURSOR FOR
@@ -332,9 +332,9 @@ CREATE PROCEDURE mostrarFamilias()
 BEGIN
 	DECLARE done INT DEFAULT FALSE;
     DECLARE var_id INT;
-    DECLARE var_nom VARCHAR(255);
-    DECLARE var_fam VARCHAR(255);
-    DECLARE var_ofi VARCHAR(255);
+    DECLARE var_nom VARCHAR(40);
+    DECLARE var_fam INT;
+    DECLARE var_ofi INT;
     
 	 -- Cursor para seleccionar los datos de oficinas
     DECLARE cursor_familias CURSOR FOR
@@ -351,7 +351,7 @@ BEGIN
 					LEAVE read_loop;
 			   END IF;
         -- Mostrar los datos de la fila actual
-        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Familia: ', var_fam, ', Oficina: ', var_ofi) as "Datos familia actual";
+        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Familia: ', IFNULL(var_fam, 'null'), ', Oficina: ', IFNULL(var_ofi, 'null')) as "Datos familia actual";
 		END LOOP;
     CLOSE cursor_familias;
 END; //
@@ -363,14 +363,14 @@ CREATE PROCEDURE mostrarAgentes()
 BEGIN
 	DECLARE done INT DEFAULT FALSE;
     DECLARE var_id INT;
-    DECLARE var_nom VARCHAR(255);
-    DECLARE var_usu VARCHAR(255);
-    DECLARE var_cla VARCHAR(255);
-    DECLARE var_hab VARCHAR(255);
-    DECLARE var_cat VARCHAR(255);
-    DECLARE var_fam VARCHAR(255);
-    DECLARE var_ofi VARCHAR(255);
-    
+    DECLARE var_nom VARCHAR(60);
+    DECLARE var_usu VARCHAR(20);
+    DECLARE var_cla VARCHAR(20);
+    DECLARE var_hab INT;
+    DECLARE var_cat INT;
+    DECLARE var_fam INT;
+    DECLARE var_ofi INT;
+  
  	 -- Cursor para seleccionar los datos de los agentes
 	DECLARE cursor_agentes CURSOR FOR SELECT * FROM agentes;
     
@@ -385,7 +385,7 @@ BEGIN
         END IF;
         
         -- Mostrar los datos de la fila actual
-        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Usuario: ', var_usu, ', Clave: ', var_cla, ', Habilidad: ', var_hab, ', Categoría: ', var_cat, ', Familia: ', var_fam, ', Oficina: ', var_ofi) as "Datos agente actual";
+        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Usuario: ', var_usu, ', Clave: ', var_cla, ', Habilidad: ', var_hab, ', Categoría: ', var_cat, ', Familia: ', IFNULL(var_fam, 'null'), ', Oficina: ', IFNULL(var_ofi,'null')) as "Datos agente actual";
         
         END LOOP;
     CLOSE cursor_agentes;
