@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Autor;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-
+use DateTime;
 /**
  * @extends ServiceEntityRepository<Autor>
  *
@@ -21,6 +21,18 @@ class AutorRepository extends ServiceEntityRepository
         parent::__construct($registry, Autor::class);
     }
 
+    public function findByFechaNac(DateTime $fechaNac):array
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery("SELECT a FROM App\Entity\Autor a WHERE a.fechaNacimiento >= :fechaNac order by a.fechaNacimiento");
+        return $query->setParameter("fechaNac", $fechaNac)->getResult();
+    }
+    public function authorsBySells(int $unidades):array
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery("SELECT a FROM App\Entity\Autor a JOIN a.libros li WHERE li.unidadesVendidas > ?1");
+        return $query->setParameter(1, $unidades)->getResult();
+    }
     //    /**
     //     * @return Autor[] Returns an array of Autor objects
     //     */
