@@ -103,7 +103,8 @@ DELIMITER //
 	CREATE PROCEDURE 			agregarOficinas()
 		BEGIN
 			CALL agregarOficina( 1, 'Madrid', 'Gran vía, 37', 'Madrid', '28000' );
-
+			CALL agregarOficina( 2, 'Granada', 'Camino Ronda, 50', 'Granada', '36000' );
+			CALL agregarOficina( 3, 'Jaén', 'Gran Eje, 80', 'Jaén', '27000' );
 			# faltan aquí dos oficinas más
 		END;
 // DELIMITER ;
@@ -114,9 +115,14 @@ DELIMITER //
 	DROP PROCEDURE IF EXISTS 	agregarFamilia //
     CREATE PROCEDURE 			agregarFamilia (
 		#	Añade aquí los parámetros necesarios
+		id INT,
+		Nom VARCHAR(40),
+		Fam INT,
+		Ofi INT
         ) 
 	BEGIN
         #	Añade aquí la forma de agregar los datos de la nueva familia
+         INSERT INTO familias VALUES (id, Nom, Fam, Ofi);
 	END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
@@ -126,8 +132,17 @@ DELIMITER //
 	DROP PROCEDURE IF EXISTS agregarFamilias //
 	CREATE PROCEDURE agregarFamilias()
 		BEGIN
-			CALL agregarFamilia( 11, 'Madrid-1', NULL, 1 );
-            
+			c agregarFamilia( 11, 'Madrid-1', NULL, 1 );
+			call agregarFamilia( 111, 'Madrid-1.1', 11, NULL );
+			call agregarFamilia( 112, 'Madrid-1.2', 11, NULL );
+			call agregarFamilia( 1121, 'Madrid-1.2.1', 112, NULL );
+			call agregarFamilia( 1122, 'Madrid-1.2.2', 112, NULL );
+			call agregarFamilia( 1123, 'Madrid-1.2.3', 112, NULL );
+			call agregarFamilia( 21, 'Granada-1', NULL, 2 );
+			call agregarFamilia( 211, 'Granada-1.1', 21, NULL );
+			call agregarFamilia( 212, 'Granada-1.2', 21, NULL );
+			call agregarFamilia( 213, 'Granada-1.3', 21, NULL );
+			call agregarFamilia( 31, 'Jaén-1', NULL, 3 );
             # añade aquí los datos de las demás familias
 		END;
 // DELIMITER ;
@@ -138,10 +153,19 @@ DELIMITER //
 	DROP PROCEDURE IF EXISTS agregarAgente //
     CREATE PROCEDURE agregarAgente (
 		#	Añade aquí los parámetros necesarios
+		id INT,
+		Nom VARCHAR(60),
+		Usu VARCHAR(20),
+		Cla VARCHAR(20),
+		Hab INT,
+		Cat INT,
+		Fam INT,
+		Ofi INT
         ) 
 	BEGIN
         #	Añade aquí la forma de agregar los datos del nuevo agente
-	END;
+		INSERT INTO agentes VALUES (id, Nom, Usu, Cla, Hab, Cat, Fam, Ofi);
+    END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Procedimiento para añadir los datos todos los agentes en función del procedimiento creado previamente
@@ -150,8 +174,45 @@ DELIMITER //
 	DROP PROCEDURE IF EXISTS agregarAgentes //
     CREATE PROCEDURE agregarAgentes()
     BEGIN
-        CALL agregarAgente( 31, 'José Ramón Jiménez Reyes', 'jrjr', 'sup31', 9, 2, NULL, 3);
-        
+        call agregarAgente( 31, 'José Ramón Jiménez Reyes', 'jrjr', 'sup31', 9, 2, NULL, 3);
+        call agregarAgente( 311, 'Pedro Fernández Arias', 'pfa', 'ag311', 5, 0, 31, NULL);
+		call agregarAgente( 312, 'Vanesa Sánchez Rojo', 'vsr', 'ag312', 5, 0, 31, NULL);
+		call agregarAgente( 313, 'Francisco Javier García Escobedo', 'fjge', 'ag313', 5, 0, 31, NULL);
+		call agregarAgente( 314, 'Pilar Ramirez Pérez', 'prp', 'ag314', 5, 0, 31, NULL);
+		call agregarAgente( 315, 'José Luis García Martínez', 'jlgm', 'ag315', 5, 0, 31, NULL);
+		call agregarAgente( 21, 'Sebastián López Ojeda', 'slo', 'sup21', 9, 2, NULL, 2);
+		call agregarAgente( 211, 'Diosdado Sánchez Hernández', 'dsh', 'ag211', 8, 1, 21, NULL);
+		call agregarAgente( 2111, 'José Juan Cano Pardo', 'jjcp', 'ag2111', 5, 0, 211, NULL);
+		call agregarAgente( 2112, 'Flor Moncada Añón', 'ag2112', 'fma', 5, 0, 211, NULL);
+		call agregarAgente( 2113, 'Juan Manuel Alcazar Donaire', 'jmad', 'ag2113', 5, 0, 211, NULL);
+		call agregarAgente( 2121, 'Manuel Jesús Rubia Mateos', 'mjrm', 'ag2121', 5, 0, 212, NULL);
+		call agregarAgente( 2122, 'Esther López Delgado', 'eld', 'ag2122', 5, 0, 212, NULL);
+		call agregarAgente( 2123, 'Francisco Javier Cabrerizo Membrilla', 'fjcm', 'ag2123', 5, 0, 212, NULL);
+		call agregarAgente( 2124, 'Verónica Cabrerizo Menbrilla', 'vcm', 'ag2124', 5, 0, 212, NULL);
+		call agregarAgente( 2125, 'María José Navascués Morales', 'mjnm', 'ag2125', 5, 0, 212, NULL);
+		call agregarAgente( 2131, 'Isabel Cruz Granados', 'icg', 'ag2131', 5, 0, 213, NULL);
+		call agregarAgente( 2132, 'Antonio Casado Fernández', 'acf', 'ag2132', 5, 0, 213, NULL);
+		call agregarAgente( 2133, 'Gabriel Callejón García', 'gcg', 'ag2133', 5, 0, 213, NULL);
+		call agregarAgente( 2134, 'Enrique Cano Balsera', 'ecb', 'ag2134', 5, 0, 213, NULL);
+		call agregarAgente( 11, 'Narciso Jáimez Toro', 'njt', 'sup11', 9, 2, NULL, 1);
+		call agregarAgente( 111, 'Jesús Baños Sancho', 'jbs', 'ag111', 8, 1, 11, NULL);
+		call agregarAgente( 1111, 'Salvador Romero Villegas', 'srv', 'ag1111', 7, 1, 111, NULL);
+		call agregarAgente( 1112, 'José Javier Bermúdez Hernández', 'jjbh', 'ag1112', 7, 1, 111, NULL);
+		call agregarAgente( 1113, 'Alfonso Bonillo Sierra', 'abs', 'ag1113', 7, 1, 111, NULL);
+		call agregarAgente( 1121, 'Silvia Thomas Barrós', 'stb', 'ag1121', 7, 1, 112, NULL);
+		call agregarAgente( 11211, 'Ernesto Osoro Gorrotxategi', 'eog', 'ag11211', 5, 0, 1121, NULL);
+		call agregarAgente( 11212, 'Guillermo Campos Guillén', 'gcag', 'ag11212', 5, 0, 1121, NULL);
+		call agregarAgente( 11213, 'Antonio Fernández Ruíz', 'afr', 'ag11213', 5, 0, 1121, NULL);
+		call agregarAgente( 11214, 'María Luisa López Caballero', 'mllc', 'ag11214', 5, 0, 1121, NULL);
+		call agregarAgente( 11221, 'Virginia Morenas Rubio', 'vmr', 'ag11221', 5, 0, 1121, NULL);
+		call agregarAgente( 11222, 'Rosario Castro García', 'rcg', 'ag11222', 5, 0, 1122, NULL);
+		call agregarAgente( 11223, 'Antonio Álvarez Palomeque', 'aap', 'ag11223', 5, 0, 1122, NULL);
+		call agregarAgente( 11224, 'David Martínez Martínez', 'dmm', 'ag11224', 5, 0, 1122, NULL);
+		call agregarAgente( 11225, 'Juan Corral González', 'jcg', 'ag11225', 5, 0, 1122, NULL);
+		call agregarAgente( 11226, 'Eduardo Alfada Pereira', 'eap', 'ag11226', 5, 0, 1122, NULL);
+		call agregarAgente( 11231, 'Cayetano García Herrera', 'cgh', 'ag11231', 5, 0, 1123, NULL);
+		call agregarAgente( 11232, 'José Antonio Sieres Vega', 'jasv', 'ag11232', 5, 0, 1123, NULL);
+		call agregarAgente( 11233, 'Juan Manuel Guzmán García', 'jmgg', 'ag11233', 5, 0, 1123, NULL);
         #	Añade aquí los datos de los demás agentes
     END;
 // DELIMITER ;
@@ -164,9 +225,11 @@ DELIMITER //
     CREATE PROCEDURE agregarDatos()
 		BEGIN
 			# Añadimos aquí tres llamadas a procedimientos
+            CALL agregarOficinas();
+			CALL agregarFamilias();
+			CALL agregarAgentes();
 		END;
 // DELIMITER ;
-
 
 #------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------
@@ -178,6 +241,14 @@ DELIMITER //
 DELIMITER //
 	DROP FUNCTION IF EXISTS contarMiembrosFamilia //
 		# escribimos aquí la función
+	CREATE FUNCTION contarMiembrosFamilia( familiaContar varchar(40) ) RETURNS INT
+    BEGIN
+		DECLARE numMiembros int;
+    	
+        SELECT COUNT(*) INTO numMiembros FROM agentes WHERE familia = familiaContar;
+
+    	RETURN numMiembros;
+    END; //
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Función que va a devolver el nombre de la familia cuyo identificamdor se pasa como parámetro
@@ -203,7 +274,52 @@ DELIMITER //
 DELIMITER //
 	DROP PROCEDURE IF EXISTS mostrarOficinas //
     #	escribimos aquí el procedimiento
-    
+    CREATE PROCEDURE mostrarOficinas()
+    BEGIN
+		DECLARE done INT DEFAULT FALSE;
+		DECLARE var_id INT;
+		DECLARE var_nom VARCHAR(40);
+		DECLARE var_dom VARCHAR(40);
+		DECLARE var_loc VARCHAR(20);
+		DECLARE var_cp VARCHAR(5);
+		
+		 -- Cursor para seleccionar los datos de oficinas
+		DECLARE cursor_oficinas CURSOR FOR
+			SELECT * FROM oficinas;
+		 
+		 -- Manejador para no encontrar más filas
+		DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+	   
+	   -- Creamos una tabla temporal para almacenar los datos
+		DROP TEMPORARY TABLE IF EXISTS temp_oficinas;
+		CREATE TEMPORARY TABLE temp_oficinas (
+			datosOficinas VARCHAR(255)
+		);
+		
+		OPEN cursor_oficinas;
+		read_loop: LOOP
+				   FETCH cursor_oficinas INTO var_id, var_nom, var_dom, var_loc, var_cp;
+				   IF done THEN
+						LEAVE read_loop;
+				   END IF;
+			
+			-- Mostrar los datos de la fila actual
+			INSERT INTO temp_oficinas VALUES (CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Domicilio: ', var_dom, ', Localidad: ', var_loc, ', Código Postal: ', var_cp));
+			END LOOP read_loop;
+		CLOSE cursor_oficinas;
+	   SELECT datosOficinas AS "Datos de las oficinas" FROM temp_oficinas;
+    END; //
+// DELIMITER ;
+#------------------------------------------------------------------------------------------------------
+#	- Opción 2 del procedimiento para mostrar todos los datos de las oficinas
+#------------------------------------------------------------------------------------------------------
+DELIMITER //
+	DROP PROCEDURE IF EXISTS mostrarOficinasFacil //
+    #	escribimos aquí el procedimiento
+    CREATE PROCEDURE mostrarOficinasFacil()
+    BEGIN
+		SELECT * FROM oficinas;
+    END; //
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Procedimiento sencillo cuya finalidad es mostrar todos los datos de las familias
@@ -211,7 +327,52 @@ DELIMITER //
 DELIMITER //
 	DROP PROCEDURE IF EXISTS mostrarFamilias //
     #	escribimos aquí el procedimiento
-
+	CREATE PROCEDURE mostrarFamilias()
+    BEGIN
+		DECLARE done INT DEFAULT FALSE;
+		DECLARE var_id INT;
+		DECLARE var_nom VARCHAR(40);
+		DECLARE var_fam INT;
+		DECLARE var_ofi INT;
+		
+		 -- Cursor para seleccionar los datos de oficinas
+		DECLARE cursor_familias CURSOR FOR
+			SELECT * FROM familias;
+			
+		 -- Manejador para no encontrar más filas
+		DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+		
+		-- Creamos una tabla temporal para almacenar los datos
+		DROP TEMPORARY TABLE IF EXISTS temp_familias;
+		CREATE TEMPORARY TABLE temp_familias (
+			datosFamilias VARCHAR(255)
+		);
+		
+		OPEN cursor_familias;
+		
+		read_loop: LOOP
+				   FETCH cursor_familias INTO var_id, var_nom, var_fam, var_ofi;
+				   IF done THEN
+						LEAVE read_loop;
+				   END IF;
+			-- Mostrar los datos de la fila actual
+			INSERT INTO temp_familias VALUES(CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Familia: ', IFNULL(var_fam, 'null'), ', Oficina: ', IFNULL(var_ofi, 'null')));
+			END LOOP read_loop;
+					
+		CLOSE cursor_familias;
+		SELECT datosFamilias AS "Datos de las familias"  FROM temp_familias;
+    END; //
+// DELIMITER ;
+#------------------------------------------------------------------------------------------------------
+#	- Opción 2 del procedimiento para mostrar todos los datos de las familias
+#------------------------------------------------------------------------------------------------------
+DELIMITER //
+	DROP PROCEDURE IF EXISTS mostrarFamiliasFacil //
+    #	escribimos aquí el procedimiento
+	CREATE PROCEDURE mostrarFamiliasFacil()
+    BEGIN
+    SELECT * FROM familias;
+    END; //
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Procedimiento sencillo cuya finalidad es mostrar todos los datos de los agentes
@@ -219,18 +380,70 @@ DELIMITER //
 DELIMITER //
 	DROP PROCEDURE IF EXISTS mostrarAgentes //
     #	escribimos aquí el procedimiento
+	CREATE PROCEDURE mostrarAgentes()
+    BEGIN
+		DECLARE done INT DEFAULT FALSE;
+		DECLARE var_id INT;
+		DECLARE var_nom VARCHAR(60);
+		DECLARE var_usu VARCHAR(20);
+		DECLARE var_cla VARCHAR(20);
+		DECLARE var_hab INT;
+		DECLARE var_cat INT;
+		DECLARE var_fam INT;
+		DECLARE var_ofi INT;
+	  
+		 -- Cursor para seleccionar los datos de los agentes
+		DECLARE cursor_agentes CURSOR FOR SELECT * FROM agentes;
+		
+		-- Manejador para no encontrar más filas
+		DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+		
+		-- Creamos una tabla temporal para almacenar los datos
+		DROP TEMPORARY TABLE IF EXISTS temp_agentes;
+		CREATE TEMPORARY TABLE temp_agentes (
+			datosAgentes VARCHAR(255)
+		);
+		
+		OPEN cursor_agentes;
+		read_loop: LOOP
+			FETCH cursor_agentes INTO var_id, var_nom, var_usu, var_cla, var_hab, var_cat, var_fam, var_ofi;
+			IF done THEN
+				LEAVE read_loop;
+			END IF;
+			
+			-- Mostrar los datos de la fila actual
+			INSERT INTO temp_agentes VALUES( CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Usuario: ', var_usu, ', Clave: ', var_cla, ', Habilidad: ', var_hab, ', Categoría: ', var_cat, ', Familia: ', IFNULL(var_fam, 'null'), ', Oficina: ', IFNULL(var_ofi,'null')));
+			END LOOP read_loop;
+		CLOSE cursor_agentes;
+		SELECT datosAgentes AS "Datos de los agentes" FROM temp_agentes;
+    END; //
+// DELIMITER ;
 
+#------------------------------------------------------------------------------------------------------
+#	- Opción 2 del procedimiento para mostrar todos los datos de los agentes
+#------------------------------------------------------------------------------------------------------
+DELIMITER //
+	DROP PROCEDURE IF EXISTS mostrarAgentesFacil //
+    #	escribimos aquí el procedimiento
+	CREATE PROCEDURE mostrarAgentesFacil()
+    BEGIN
+		SELECT * FROM agentes;
+    END; //
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Procedimiento sencillo cuya finalidad es invocar a los tres procedimientos anteriores para
-#		mostrar los datos de las Oficinas, Familias y Agentes. Pero de forma independiente
+#	  mostrar los datos de las Oficinas, Familias y Agentes. Pero de forma independiente
 #------------------------------------------------------------------------------------------------------
 DELIMITER //
-	DROP TRIGGER IF EXISTS mostrarDatos //
+	DROP PROCEDURE IF EXISTS mostrarDatos //
     #	escribimos aquí el procedimiento
-
-// DELIMITER ;    
-
+	CREATE PROCEDURE mostrarDatos()
+	BEGIN
+		call mostrarOficinas();
+		call mostrarFamilias();
+		call mostrarAgentes();
+	END; //
+DELIMITER ;
 
 #------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------
@@ -256,6 +469,7 @@ DELIMITER //
 DELIMITER //
 	DROP TRIGGER IF EXISTS TRAS_AGREGAR_FAMILIA //
 	#	escribimos aquí el trigger
+    
 
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
