@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Hello ConsultasController!
+    
+{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+
+        {% if autores is defined %}
+            <h1>
+                Autores filtrados por fecha
+            </h1>
+
+            <table class="table">
+                <thead>
+                    <th>
+                        Nombre
+                        					
+                    </th>
+                    <th>
+                        Fecha nacimiento
+                        					
+                    </th>
+                </thead>
+                <tbody>
+                    {% for autor in autores %}
+                        <tr>
+                            <td>
+                                {{ autor.nombre }}
+                            </td>
+                            <td>
+                                {{ autor.fechaNacimiento |date('Y-m-d') }}
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% endif %}
+
+        {% if maxUnidades is defined %}
+            <h1>
+                Max unidades
+            </h1>
+            <p>
+                El número máx. de unidades es
+                				
+                {{ maxUnidades }}
+            </p>
+        {% endif %}
+
+        {% if autoresSuperventas is defined %}
+            <table class="table">
+                <thead>
+                    <th>
+                        Nombre
+                        					
+                    </th>
+                    <th>
+                        Fecha nacimiento
+                        					
+                    </th>
+                </thead>
+                <tbody>
+                    {% for autor in autoresSuperventas %}
+                        <tr>
+                            <td>
+                                {{ autor.nombre }}
+                            </td>
+                            <td>
+                                {{ autor.fechaNacimiento |date('Y-m-d') }}
+                            </td>
+
+                            <td>
+                                {% for libro in autor.libros %}
+                                    {{ libro.titulo }}
+                                    - 
+                                    {{ libro.unidadesVendidas }}
+                                    <br/>
+                                {% endfor %}
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% endif %}
+
+        {% if autoresSumaUnidades is defined %}
+            <table class="table">
+                <thead>
+                    <th>
+                        Nombre autor
+                        					
+                    </th>
+                    <th>
+                        Suma unidades vendidas
+                        					
+                    </th>
+                </thead>
+                <tbody>
+                    {% for item in autoresSumaUnidades %}
+                        <tr>
+                            <td>
+                                {{ item[0].nombre }}
+                            </td>
+                            <td>
+                                {{ item[1] }}
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% endif %}
+
+        {% if libroSuperVentas is defined %}
+            <table class="table">
+                <thead>
+					<th>
+                        Título libro
+                        				
+                    </th>
+                    <th>
+                        Autores                        				
+                    </th>
+                   
+                    <th>
+                        Unidades                        				
+                    </th>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>
+                            {{ libroSuperVentas.titulo }}
+                        </td>
+                        <td>
+                            {% set nombresAutores = "" %}
+                            {% for autor in libroSuperVentas.autores %}
+                                {% set nombresAutores = nombresAutores ~ autor.nombre~"\n" %}
+							
+                            {% endfor %}
+							{{ nombresAutores|nl2br}}
+                        </td>
+                        <td>
+                            {{ libroSuperVentas.unidadesVendidas }}
+                        </td>
+
+                    </tr>
+            </tbody>
+        </table>
+
+    {% endif %}
+</div>{% endblock %}

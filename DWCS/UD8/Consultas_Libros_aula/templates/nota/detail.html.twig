@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NotaController!
+{% endblock %}
+
+{% block body %}
+
+	<h2>Información de Nota</h2>
+
+	{% if nota is defined and nota is not null %}
+		<table class='table'>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Título</th>
+					<th>Descripción</th>
+					<th>Fecha de modificación</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr>
+					<td>
+						{{nota.id}}
+					</td>
+
+					<td>
+						{{nota.titulo}}
+					</td>
+
+					<td>
+						{{nota.descripcion}}
+					</td>
+
+					<td>
+						{{nota.FechaModificion|date('Y-m-d')}}
+					</td>
+
+				</tr>
+
+			</tbody>
+
+		</table>
+	{% else %}
+		<p>No se ha encontrado información sobre la nota</p>
+	{% endif %}
+
+
+{% endblock %}
