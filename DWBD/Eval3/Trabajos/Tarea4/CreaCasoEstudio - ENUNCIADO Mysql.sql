@@ -132,7 +132,7 @@ DELIMITER //
 	DROP PROCEDURE IF EXISTS agregarFamilias //
 	CREATE PROCEDURE agregarFamilias()
 		BEGIN
-			c agregarFamilia( 11, 'Madrid-1', NULL, 1 );
+			call agregarFamilia( 11, 'Madrid-1', NULL, 1 );
 			call agregarFamilia( 111, 'Madrid-1.1', 11, NULL );
 			call agregarFamilia( 112, 'Madrid-1.2', 11, NULL );
 			call agregarFamilia( 1121, 'Madrid-1.2.1', 112, NULL );
@@ -249,7 +249,7 @@ DELIMITER //
 
     	RETURN numMiembros;
     END; //
-// DELIMITER ;
+DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Función que va a devolver el nombre de la familia cuyo identificamdor se pasa como parámetro
 #------------------------------------------------------------------------------------------------------
@@ -308,7 +308,7 @@ DELIMITER //
 			END LOOP read_loop;
 		CLOSE cursor_oficinas;
 	   SELECT datosOficinas AS "Datos de las oficinas" FROM temp_oficinas;
-    END; //
+    END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Opción 2 del procedimiento para mostrar todos los datos de las oficinas
@@ -319,7 +319,7 @@ DELIMITER //
     CREATE PROCEDURE mostrarOficinasFacil()
     BEGIN
 		SELECT * FROM oficinas;
-    END; //
+    END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Procedimiento sencillo cuya finalidad es mostrar todos los datos de las familias
@@ -361,7 +361,7 @@ DELIMITER //
 					
 		CLOSE cursor_familias;
 		SELECT datosFamilias AS "Datos de las familias"  FROM temp_familias;
-    END; //
+    END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Opción 2 del procedimiento para mostrar todos los datos de las familias
@@ -372,7 +372,7 @@ DELIMITER //
 	CREATE PROCEDURE mostrarFamiliasFacil()
     BEGIN
     SELECT * FROM familias;
-    END; //
+    END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Procedimiento sencillo cuya finalidad es mostrar todos los datos de los agentes
@@ -416,7 +416,7 @@ DELIMITER //
 			END LOOP read_loop;
 		CLOSE cursor_agentes;
 		SELECT datosAgentes AS "Datos de los agentes" FROM temp_agentes;
-    END; //
+    END;
 // DELIMITER ;
 
 #------------------------------------------------------------------------------------------------------
@@ -428,7 +428,7 @@ DELIMITER //
 	CREATE PROCEDURE mostrarAgentesFacil()
     BEGIN
 		SELECT * FROM agentes;
-    END; //
+    END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Procedimiento sencillo cuya finalidad es invocar a los tres procedimientos anteriores para
@@ -459,7 +459,7 @@ DELIMITER //
 		AFTER INSERT ON oficinas	FOR EACH ROW
 		BEGIN
 			#	escribimos aquí la sentencia necesaria
-
+			INSERT INTO oficinasCopia VALUES (NEW.identificador, NEW.nombre, NEW.domicilio, NEW.localidad, NEW.codigo_postal);
 		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
@@ -469,8 +469,11 @@ DELIMITER //
 DELIMITER //
 	DROP TRIGGER IF EXISTS TRAS_AGREGAR_FAMILIA //
 	#	escribimos aquí el trigger
-    
-
+    CREATE TRIGGER TRAS_AGREGAR_FAMILIA
+		AFTER INSERT ON familias	FOR EACH ROW
+		BEGIN
+			INSERT INTO familiasCopia VALUES (NEW.identificador, NEW.nombre, NEW.familia, NEW.oficina);
+		END; 
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Código que se ejecuta al agregar una tupla en la tabla Agentes, cuya finalidad es volcar esos datos
@@ -479,7 +482,11 @@ DELIMITER //
 DELIMITER //
 	DROP TRIGGER IF EXISTS TRAS_AGREGAR_AGENTE //
 	#	escribimos aquí el trigger
-
+	CREATE TRIGGER TRAS_AGREGAR_AGENTE
+		AFTER INSERT ON agentes		FOR EACH ROW
+		BEGIN
+			INSERT INTO agentesCopia VALUES (NEW.identificador, NEW.nombre, NEW.usuario, NEW.clave, NEW.habilidad, NEW.categoria, NEW.familia, NEW.oficina);
+		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Código que se ejecuta al modificar datos de la tabla Agentes, cuya finalidad es volcar esos datos
@@ -491,9 +498,11 @@ DELIMITER //
 		AFTER UPDATE ON oficinas	FOR EACH ROW
 		BEGIN
 			#	actualizamos la tabla oficinasCopia
-
+			UPDATE oficinasCopia
+				SET nombre = NEW.nombre, domicilio = NEW.domicilio, localidad = NEW.localidad, codigo_postal = NEW.codigo_postal
+					WHERE identificador = OLD.identificador;
 			#	agragamos los datos que van a ser modificados en la tabla oficinasOLD
-
+			INSERT INTO oficinasOLD VALUES (OLD.identificador, OLD.nombre, OLD.domicilio, OLD.localidad, OLD.codigo_postal);
 		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
@@ -503,7 +512,16 @@ DELIMITER //
 DELIMITER //
 	DROP TRIGGER IF EXISTS TRAS_MODIFICAR_FAMILIA //
 	#	escribimos aquí el trigger
-    
+    CREATE TRIGGER TRAS_MODIFICAR_FAMILIA
+		AFTER UPDATE ON familias	FOR EACH ROW
+		BEGIN
+			-- actualizamos la tabla familiasCopia
+			UPDATE familiasCopia
+			SET nombre = NEW.nombre, familia = NEW.familia, oficina = NEW.oficina
+				WHERE identificador = OLD.identificador;
+			-- agregamos los datos que van a ser modificados en la tabla familiasOLD
+			INSERT INTO familiasOLD VALUES (OLD.identificador, OLD.nombre, OLD.familia, OLD.oficina);
+		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Código que se ejecuta al modificar datos de la tabla Agentes, cuya finalidad es volcar esos datos
@@ -512,7 +530,16 @@ DELIMITER //
 DELIMITER //
 	DROP TRIGGER IF EXISTS TRAS_MODIFICAR_AGENTE //
 	#	escribimos aquí el trigger
-    
+    CREATE TRIGGER TRAS_MODIFICAR_AGENTE
+		AFTER UPDATE ON Agentes FOR EACH ROW
+		BEGIN
+			-- actualizamos la tabla agentesCopia
+			UPDATE agentesCopia
+			SET nombre = NEW.nombre, usuario = NEW.usuario, clave = NEW.clave, habilidad = NEW.habilidad, categoria = NEW.categoria, familia = NEW.familia, oficina = NEW.oficina
+				WHERE identificador = OLD.identificador;
+			-- agregamos los datos que van a ser modificados en la tabla agentesOLD
+			INSERT INTO agentesOLD 	VALUES (OLD.identificador, OLD.nombre, OLD.usuario, OLD.clave, OLD.habilidad, OLD.categoria, OLD.familia, OLD.oficina);
+		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Código que se ejecuta al borrar datos de la tabla Oficinas, cuya finalidad es volcar esos datos
@@ -524,9 +551,9 @@ DELIMITER //
 		AFTER DELETE ON oficinas	FOR EACH ROW
 		BEGIN
 			#	borramos en la tabla oficinasCopia
-
+			DELETE FROM oficinasCopia WHERE identificador = OLD.identificador;
 			#	agragamos los datos que van a ser borrados en la tabla oficinasOLD
-            
+            INSERT INTO oficinasOLD VALUES (OLD.identificador, OLD.nombre, OLD.domicilio, OLD.localidad, OLD.codigo_postal);
 		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
@@ -536,7 +563,14 @@ DELIMITER //
 DELIMITER //
 	DROP TRIGGER IF EXISTS TRAS_BORRAR_FAMILIA //
 	#	escribimos aquí el trigger
-
+	CREATE TRIGGER TRAS_BORRAR_FAMILIA
+		AFTER DELETE ON Familias FOR EACH ROW
+		BEGIN
+			-- borramos en la tabla familiasCopia
+			DELETE FROM familiasCopia WHERE identificador = OLD.identificador;
+			-- agregamos los datos que van a ser borrados en la tabla familiasOLD
+			INSERT INTO familiasOLD VALUES (OLD.identificador, OLD.nombre, OLD.familia, OLD.oficina);
+		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Código que se ejecuta al borrar datos de la tabla Agentes, cuya finalidad es volcar esos datos
@@ -545,7 +579,14 @@ DELIMITER //
 DELIMITER //
 	DROP TRIGGER IF EXISTS TRAS_BORRAR_AGENTE //
 	#	escribimos aquí el trigger
-    
+    CREATE TRIGGER TRAS_BORRAR_AGENTE
+		AFTER DELETE ON Agentes FOR EACH ROW
+		BEGIN
+			-- borramos en la tabla agentesCopia
+			DELETE FROM agentesCopia WHERE identificador = OLD.identificador;
+			-- agregamos los datos que van a ser borrados en la tabla agentesOLD
+			INSERT INTO agentesOLD VALUES (OLD.identificador, OLD.nombre, OLD.usuario, OLD.clave, OLD.habilidad, OLD.categoria, OLD.familia, OLD.oficina);
+		END;
 // DELIMITER ;
 
 #------------------------------------------------------------------------------------------------------
@@ -569,8 +610,8 @@ DELIMITER //
 
             DECLARE	cursorOficinas	CURSOR FOR SELECT * FROM oficinasOLD;	-- variable cursor que leerá cada tupla de la tabla oficinasOLD
             DECLARE	CONTINUE	HANDLER FOR NOT	FOUND	SET FIN = TRUE;		-- la variabla asociada al bucle cambiará de valor cuando ya no haya ninguna tupla que leer
-            
-			OPEN cursorOficinas;	-- se inicia el valor del cursor sobre las tuplas de la tabla oficinasOLD
+			
+            OPEN cursorOficinas;	-- se inicia el valor del cursor sobre las tuplas de la tabla oficinasOLD
 			leerOficinas:	LOOP
 				FETCH cursorOficinas INTO var_id, var_nom, var_dom, var_loc, var_cp;	-- se lee los valores de los atributos asociados a cada tupla, uno a uno
 				IF	FIN	THEN
@@ -581,7 +622,7 @@ DELIMITER //
 					UPDATE oficinas SET nombre = var_nom, domicilio = var_dom, localidad = var_loc, codigo_postal = var_cp
 						WHERE identificador = var_id;
 				ELSE																			-- si NO existe el atributo en la tabla hay que añadir (ej. tras borrar)
-					INSERT oficinas VALUES ( var_id, var_nom, var_dom, var_loc, var_cp );
+					INSERT IGNORE oficinas VALUES ( var_id, var_nom, var_dom, var_loc, var_cp );
 				END IF;
 			END LOOP;
 			CLOSE cursorOficinas;		-- se cierra el cursor
@@ -594,8 +635,42 @@ DELIMITER //
 DELIMITER //
 	DROP PROCEDURE IF EXISTS restaurarFamilias //
 	#	escribimos aquí el procedimiento que trabajará con cursores según el ejemplo anterior
-
-// DELIMITER ;
+	CREATE PROCEDURE restaurarFamilias()
+		BEGIN
+			DECLARE done INT DEFAULT FALSE;
+			DECLARE familia_id INT;
+			DECLARE familia_nombre VARCHAR(255);
+			DECLARE familia_familia VARCHAR(255);
+			DECLARE familia_oficina VARCHAR(255);
+			
+			-- declaramos un cursor para recorrer las filas de la tabla familiasOLD
+			DECLARE familia_cursor CURSOR FOR
+				SELECT identificador, nombre, familia, oficina FROM familiasOLD;
+				
+			-- definimos un handler para manejar los resultados del cursor
+			DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+            
+			-- abrimos el cursor
+			OPEN familia_cursor;
+			
+			-- comenzamos a recorrer las filas del cursor
+			read_loop: LOOP
+				-- leemos los valores de las columnas en la fila actual
+				FETCH familia_cursor INTO familia_id, familia_nombre, familia_familia, familia_oficina;
+				
+				-- si no hay más filas, salimos del bucle
+				IF done THEN
+					LEAVE read_loop;
+				END IF;
+				
+				-- insertamos los datos en la tabla familias
+				INSERT IGNORE INTO familias VALUES (familia_id, familia_nombre, familia_familia, familia_oficina);
+			END LOOP;
+			
+			-- cerramos el cursor
+			CLOSE familia_cursor;
+		END; // 
+DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Creamos un cursor cuya finalidad será restaurar la tabla agentes tras un borrado a partir de las
 #		tuplas que hay en la tabla agentesOLD
@@ -603,7 +678,44 @@ DELIMITER //
 DELIMITER //
 	DROP PROCEDURE IF EXISTS restaurarAgentes //
 	#	escribimos aquí el procedimiento que trabajará con cursores según el ejemplo anterior
-
+	CREATE PROCEDURE restaurarAgentes()
+		BEGIN
+        ## Corregir declaracion de variables
+			DECLARE done INT DEFAULT FALSE;
+			DECLARE agente_id INT;
+			DECLARE agente_nombre VARCHAR(255);
+			DECLARE agente_apellido VARCHAR(255);
+			DECLARE agente_telefono VARCHAR(255);
+			DECLARE agente_email VARCHAR(255);
+			
+			-- declaramos un cursor para recorrer las filas de la tabla agentesOLD
+			DECLARE agente_cursor CURSOR FOR
+				SELECT identificador, nombre, usuario, clave, habilidad, categoria, familia, oficina;
+				
+			-- definimos un handler para manejar los resultados del cursor
+			DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+            
+			-- abrimos el cursor
+			OPEN agente_cursor;
+			
+			-- comenzamos a recorrer las filas del cursor
+			read_loop: LOOP
+				-- leemos los valores de las columnas en la fila actual
+				FETCH agente_cursor INTO agente_id, agente_nombre, agente_usuario, agente_clave, agente_habilidad, agente_categoria, agente_familia, agente_oficina;
+				
+				-- si no hay más filas, salimos del bucle
+				IF done THEN
+					LEAVE read_loop;
+				END IF;
+				
+				-- insertamos los datos en la tabla agentes
+				INSERT IGNORE INTO agentes VALUES (agente_id, agente_nombre, agente_usuario, agente_clave, agente_habilidad, agente_categoria, agente_familia, agente_oficina);
+			END LOOP;
+			
+			-- cerramos el cursor
+			CLOSE agente_cursor;
+			
+		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Creamos un procedimiento cuya finalidad es borrar todas las tuplas de las tablas agentes, familias 
@@ -612,7 +724,18 @@ DELIMITER //
 DELIMITER //
 	DROP PROCEDURE IF EXISTS borrarDatos //
 	#	escribimos aquí el procedimiento de borrado de las tres tablas señaladas
-    
+    CREATE PROCEDURE borrarDatos()
+		BEGIN
+			-- Borramos todas las tuplas de la tabla agentes
+			DELETE FROM agentes;
+			
+			-- Borramos todas las tuplas de la tabla familias
+			DELETE FROM familias;
+			
+			-- Borramos todas las tuplas de la tabla oficinas
+			DELETE FROM oficinas;
+			
+		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Creamos un procedimiento cuya finalidad es restaurar las tuplas de las tablas agentes, familias 
@@ -621,7 +744,12 @@ DELIMITER //
 DELIMITER //
 	DROP PROCEDURE IF EXISTS restaurarDatos //
 	#	escribimos aquí las llamadas a los procedimientos de restauración de las tres tablas señaladas
-    
+    CREATE PROCEDURE restaurarDatos()
+		BEGIN
+			call restaurarOficinas();
+            call restaurarFamilias();
+            call restaurarAgentes();
+		END;
 // DELIMITER ;
 #------------------------------------------------------------------------------------------------------
 #	- Creamos un procedimiento cuya finalidad es incrementar la categoría de los agentes en una unidad.
@@ -655,8 +783,27 @@ DELIMITER //
 DELIMITER //
 	DROP PROCEDURE IF EXISTS disminuirCategoriaAgentes //
 	#	escribimos aquí el procedimiento que trabajará con cursores según el ejemplo anterior
+	CREATE PROCEDURE disminuirCategoriaAgentes()
+		BEGIN
+				DECLARE FIN INT DEFAULT FALSE;		-- variable asociada al bucle
+				
+				DECLARE var_id	INT;		-- variable que se leerá de cada tupla: identificador
+				DECLARE var_cat INT;		-- variable que se leerá de cada tupla: categoría
 
-//
+				DECLARE cursorAgentes CURSOR FOR SELECT identificador, categoria FROM agentes;	-- variable cursor que leerá cada tupla (dos atributos únicamente) de la tabla oficinasOLD
+				DECLARE CONTINUE HANDLER FOR NOT FOUND SET FIN = TRUE;							-- la variabla asociada al bucle cambiará de valor cuando ya no haya ninguna tupla que leer
+
+				OPEN cursorAgentes;		-- se inicia el valor del cursor sobre las tuplas de la tabla oficinasOLD
+				leerAgentes: LOOP
+					FETCH cursorAgentes INTO var_id, var_cat;		-- se lee los valores de los dos atributos asociados a cada tupla
+					IF FIN THEN
+						LEAVE leerAgentes;		-- si no hay más tuplas que leer salimos de este bucle
+					END IF;
+			
+					UPDATE agentes SET categoria = categoria - 1 WHERE identificador = var_id;		-- se incrementa la categoría de cada agente, uno a uno
+				END LOOP;
+				CLOSE cursorAgentes;		-- se cierra el cursor
+			END; //
 DELIMITER ;
 
 
