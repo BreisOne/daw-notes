@@ -31,11 +31,38 @@ class AutorRepository extends ServiceEntityRepository
 
     }
 
+    public function findByFechaNacQB(DateTime $fechaNac):int{
+
+
+        return $this->createQueryBuilder('a')
+                    ->andWhere('a.fechaNaciemiento >= :val')
+                    ->setParameter('val', $fechaNac)
+                    ->orderBy('a.fechaNacimiento', 'ASC')
+                    ->getQuery()
+                    ->getSingleScalarResult();
+
+    }
+
     public function findByVentas(int $unidades):array{
         
         $em = $this->getEntityManager();
         $query = $em->createQuery("SELECT a FROM App\Entity\Autor a join a.libros li where li.unidadesVendidas > ?1");
         return $query->setParameter(1, $unidades)->getResult();
+
+    }
+
+    public function findByVentasQB(int $unidades):array{
+        
+        return $this->createQueryBuilder('a')
+                    # Esto addSelect() trae libros y autores en una única consulta de no añadir esta función 
+                    # se realizaría una consulta para traer autores y posteriormente otra consulta 
+                    # por cada autor de un libro (problema de las n+1 consultas)            
+                    ->addSelect('li')
+                    ->innerJoin('a.libros', 'li')
+                    ->andWhere('li.unidadesVendidas > ?1')
+                    ->setParameter(1, $unidades)
+                    ->getQuery()
+                    ->getResult();
 
     }
 
@@ -47,16 +74,20 @@ class AutorRepository extends ServiceEntityRepository
         return $query->setParameter(1, $unidades)->getResult();
 
     }
-
-    public function findAutoresSuperVentas():Libro{
-        //Leer https://www.doctrine-project.org/projects/doctrine-orm/en/3.1/reference/dql-doctrine-query-language.html#joins
-        //Devuelve un objeto Libro con los autores anidados en la propiedad autores
-        $em = $this->getEntityManager();
-        $query = $em->createQuery("SELECT a, li FROM App\Entity\Libro li join li.autores a where li.unidadesVendidas= (select max(li2.unidadesVendidas) FROM App\Entity\Libro li2)");
-        return $query->getOneOrNullResult();
+    public function findByVentas2QB(int $unidades):array{
+        
+        return $this->createQueryBuilder('a')
+                ->addSelect("SUM(li.unidadesVendidas)")
+                ->innerJoin('a.libros', 'li')
+                ->andWhere("liu.unidadesVendidas > ?1")
+                ->setParameter(1, $unidades)
+                ->groupBy('a.id')
+                ->orderBy("SUM(li.unidadesVendidas)")
+                ->getQuery()
+                ->getResult();
 
     }
-
+    
     
 
     //    /**

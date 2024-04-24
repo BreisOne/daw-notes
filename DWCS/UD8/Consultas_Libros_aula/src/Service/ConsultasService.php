@@ -14,23 +14,23 @@ class ConsultasService
     }
 
     public function getAutoresByFechaNac(DateTime $fecha){
-        return $this->autorRepository->findByFechaNac($fecha);
+        return $this->autorRepository->findByFechaNacQB($fecha);
     }
 
     public function getMaxUnidades():int{
-        return $this->libroRepository->findMaxUnidades();
+        return $this->libroRepository->findMaxUnidadesQB();
     }
 
     public function getAutoresByUnidades($unidades):array{
-        return $this->autorRepository->findByVentas($unidades);
+        return $this->autorRepository->findByVentasQB($unidades);
     }
 
     public function getAutoresByUnidades2($unidades):array{
-        return $this->autorRepository->findByVentas2($unidades);
+        return $this->autorRepository->findByVentas2QB($unidades);
     }
 
     public function getAutoresSuperVentas():Libro{
-        return $this->autorRepository->findAutoresSuperVentas();
+        return $this->libroRepository->findAutoresSuperVentas();
     }
     
 }
