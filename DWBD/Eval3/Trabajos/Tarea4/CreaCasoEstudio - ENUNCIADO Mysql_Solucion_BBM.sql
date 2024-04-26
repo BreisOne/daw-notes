@@ -663,8 +663,14 @@ DELIMITER //
 					LEAVE read_loop;
 				END IF;
 				
+                IF EXISTS (	SELECT * FROM familias WHERE identificador = familia_id )	THEN		-- si ya existe el atributo en la tabla sólo es modificar (ej. tras modificar)
+					UPDATE familias SET nombre = familia_nombre, familia = familia_familia, oficina = familia_oficina
+						WHERE identificador = familia_id;
+				ELSE	
 				-- insertamos los datos en la tabla familias
 				INSERT IGNORE INTO familias VALUES (familia_id, familia_nombre, familia_familia, familia_oficina);
+                END IF;
+                
 			END LOOP;
 			
 			-- cerramos el cursor
@@ -693,7 +699,7 @@ DELIMITER //
 			
 			-- declaramos un cursor para recorrer las filas de la tabla agentesOLD
 			DECLARE agente_cursor CURSOR FOR
-				SELECT identificador, nombre, usuario, clave, habilidad, categoria, familia, oficina FROM agentesOld;
+				SELECT identificador, nombre, usuario, clave, habilidad, categoria, familia, oficina FROM agentesOLD;
 				
 			-- definimos un handler para manejar los resultados del cursor
 			DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
@@ -711,9 +717,15 @@ DELIMITER //
 					LEAVE read_loop;
 				END IF;
 				
-				-- insertamos los datos en la tabla agentes
-				INSERT IGNORE INTO agentes VALUES (agente_id, agente_nombre, agente_usuario, agente_clave, agente_habilidad, agente_categoria, agente_familia, agente_oficina);
-			END LOOP;
+                
+                IF EXISTS (	SELECT * FROM agentes WHERE identificador = agente_id )	THEN		-- si ya existe el atributo en la tabla sólo es modificar (ej. tras modificar)
+					UPDATE agentes SET nombre = agente_nombre, usuario = agente_usuario, clave = agente_clave, habilidad = agente_habilidad, categoria = agente_categoria, familia = agente_familia, oficina = agente_oficina
+						WHERE identificador = agente_id;
+				ELSE	
+					-- insertamos los datos en la tabla agentes
+					INSERT IGNORE INTO agentes VALUES (agente_id, agente_nombre, agente_usuario, agente_clave, agente_habilidad, agente_categoria, agente_familia, agente_oficina);
+				END IF;
+            END LOOP;
 			
 			-- cerramos el cursor
 			CLOSE agente_cursor;
