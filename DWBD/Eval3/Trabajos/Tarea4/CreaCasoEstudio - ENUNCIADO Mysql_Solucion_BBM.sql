@@ -622,7 +622,7 @@ DELIMITER //
 					UPDATE oficinas SET nombre = var_nom, domicilio = var_dom, localidad = var_loc, codigo_postal = var_cp
 						WHERE identificador = var_id;
 				ELSE																			-- si NO existe el atributo en la tabla hay que añadir (ej. tras borrar)
-					INSERT IGNORE oficinas VALUES ( var_id, var_nom, var_dom, var_loc, var_cp );
+					INSERT oficinas VALUES ( var_id, var_nom, var_dom, var_loc, var_cp );
 				END IF;
 			END LOOP;
 			CLOSE cursorOficinas;		-- se cierra el cursor
@@ -666,11 +666,10 @@ DELIMITER //
                 IF EXISTS (	SELECT * FROM familias WHERE identificador = familia_id )	THEN		-- si ya existe el atributo en la tabla sólo es modificar (ej. tras modificar)
 					UPDATE familias SET nombre = familia_nombre, familia = familia_familia, oficina = familia_oficina
 						WHERE identificador = familia_id;
-				ELSE	
-				-- insertamos los datos en la tabla familias
-				INSERT IGNORE INTO familias VALUES (familia_id, familia_nombre, familia_familia, familia_oficina);
+				ELSE
+					-- insertamos los datos en la tabla familias
+					INSERT INTO familias VALUES (familia_id, familia_nombre, familia_familia, familia_oficina);
                 END IF;
-                
 			END LOOP;
 			
 			-- cerramos el cursor
@@ -717,15 +716,15 @@ DELIMITER //
 					LEAVE read_loop;
 				END IF;
 				
-                
-                IF EXISTS (	SELECT * FROM agentes WHERE identificador = agente_id )	THEN		-- si ya existe el atributo en la tabla sólo es modificar (ej. tras modificar)
+                IF EXISTS (	SELECT * FROM agentes WHERE identificador = agente_id)	THEN		-- si ya existe el atributo en la tabla sólo es modificar (ej. tras modificar)
 					UPDATE agentes SET nombre = agente_nombre, usuario = agente_usuario, clave = agente_clave, habilidad = agente_habilidad, categoria = agente_categoria, familia = agente_familia, oficina = agente_oficina
 						WHERE identificador = agente_id;
-				ELSE	
+				ELSE
 					-- insertamos los datos en la tabla agentes
-					INSERT IGNORE INTO agentes VALUES (agente_id, agente_nombre, agente_usuario, agente_clave, agente_habilidad, agente_categoria, agente_familia, agente_oficina);
-				END IF;
-            END LOOP;
+					INSERT INTO agentes VALUES (agente_id, agente_nombre, agente_usuario, agente_clave, agente_habilidad, agente_categoria, agente_familia, agente_oficina);
+				
+                END IF;
+				END LOOP;
 			
 			-- cerramos el cursor
 			CLOSE agente_cursor;
