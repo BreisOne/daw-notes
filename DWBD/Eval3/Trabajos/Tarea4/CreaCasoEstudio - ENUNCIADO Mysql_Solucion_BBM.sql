@@ -682,15 +682,18 @@ DELIMITER //
 		BEGIN
         ## Corregir declaracion de variables
 			DECLARE done INT DEFAULT FALSE;
-			DECLARE agente_id INT;
-			DECLARE agente_nombre VARCHAR(255);
-			DECLARE agente_apellido VARCHAR(255);
-			DECLARE agente_telefono VARCHAR(255);
-			DECLARE agente_email VARCHAR(255);
+			DECLARE agente_id   		int;
+			DECLARE agente_nombre		varchar( 60 );
+			DECLARE agente_usuario 		varchar( 20 );
+			DECLARE agente_clave  		varchar( 20 );
+			DECLARE agente_habilidad	int;
+			DECLARE agente_categoria	int;
+			DECLARE agente_familia      int;
+			DECLARE agente_oficina      int;
 			
 			-- declaramos un cursor para recorrer las filas de la tabla agentesOLD
 			DECLARE agente_cursor CURSOR FOR
-				SELECT identificador, nombre, usuario, clave, habilidad, categoria, familia, oficina;
+				SELECT identificador, nombre, usuario, clave, habilidad, categoria, familia, oficina FROM agentesOld;
 				
 			-- definimos un handler para manejar los resultados del cursor
 			DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
