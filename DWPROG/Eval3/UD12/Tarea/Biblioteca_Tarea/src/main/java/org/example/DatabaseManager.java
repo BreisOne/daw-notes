@@ -1,5 +1,6 @@
 package org.example;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
@@ -53,7 +54,7 @@ public class DatabaseManager {
             String dniAutor= scanner.nextLine();
 
             try {
-                statement.executeUpdate("INSERT INTO Libros (Titulo, Precio, Autor) VALUES('" + tituloLibro + "','" + precioLibro + "','"+ dniAutor+"')");
+                statement.executeUpdate("INSERT INTO Libros (Titulo, Precio, Autor) VALUES('" + tituloLibro + "'," + precioLibro + ",'"+ dniAutor+"')");
             } catch (SQLException e) {
                 System.err.println("Se ha producido un error al insertar");
             }
@@ -61,11 +62,66 @@ public class DatabaseManager {
     }
     public static void delete(Statement statement){
 
+        System.out.println("Que quieres eliminar?: \n"+
+                "1) Un Autor\n"+
+                "2) Un libro\n");
+        int insertOption = scanner.nextInt();
+        scanner.nextLine();
+
+        if(insertOption == 1){
+
+            System.out.println("Dime el nombre del libro a eliminar");
+            String libro = scanner.nextLine();
+            eliminarLibro(statement, libro);
+
+        } else if (insertOption == 2) {
+
+            System.out.println("Dime el nombre del autor a eliminar");
+            String autor = scanner.nextLine();
+            eliminarAutor(statement, autor);
+
+        } else{
+            System.out.println("No has elegiro una opción valida");
+        }
+
     }
     public static void query(Statement statement){
 
     }
     public static void update(Statement statement){
 
+    }
+
+    ///Helper functions
+    private static ResultSet buscarAutor(Statement statement, String Autor) throws SQLException {
+        return  statement.executeQuery("SELECT * FROM Autores WHERE Nombre = " + Autor +";");
+    }
+    private static  ResultSet buscarLibro (Statement statement, String Libro) throws SQLException {
+        return  statement.executeQuery("SELECT * FROM libros WHERE titulo = " + Libro +";");
+    }
+
+    private static void eliminarAutor(Statement statement, String Autor) {
+        try{
+            ResultSet queryResult = buscarAutor(statement, Autor);
+            if(queryResult.next()){
+                statement.execute("DELETE FROM Autores WHERE DNI = " +queryResult.getString("DNI")+";");
+            }else{
+                System.out.println("El autor no se encuentra en la base de datos");
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    private static void eliminarLibro(Statement statement, String Libro) {
+        try{
+            ResultSet queryResult = buscarLibro(statement, Libro);
+            if(queryResult.next()){
+                statement.execute("DELETE FROM Libros WHERE IdLibro = " + queryResult.getString("IdLibro")+";");
+            }else{
+                System.out.println("El libro no se encuentra en la base de datos");
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }
