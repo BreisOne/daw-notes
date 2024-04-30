@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ConsultasController!
+{% endblock %}
+
+{% block body %}	
+
+	<div class="example-wrapper">
+		<h1>Hello
+			{{ controller_name }}! ✅</h1>
+
+		<table class="table">
+			<thead>
+				<th>
+					Nombre
+				</th>
+				<th>
+					Fecha nacimiento
+				</th>
+			</thead>
+			<tbody>
+				{% for autor in autores %}
+					<tr>
+						<td>
+							{{autor.nombre}}
+						</td>
+						<td>
+							{{autor.fechaNacimiento |date('Y-m-d')}}
+						</td>
+
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+{% endblock %}

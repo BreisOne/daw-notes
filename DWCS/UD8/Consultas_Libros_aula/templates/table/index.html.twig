@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TableController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<div class="example-wrapper">
+			<h1>Hello
+				{{ controller_name }}! ✅</h1>
+			<p>Filas:
+				{{filas}}</p>
+			<p>Cols:
+				{{cols}}</p>
+
+			<table class="table">
+				<thead>
+					{% for i in 1..cols %}
+						<th>
+							Col.{{i}}
+						</th>
+					{% endfor %}
+				</thead>
+				<tbody>
+
+
+					{% for fila in tabla %}
+						<tr>
+							{% for col in fila %}
+								<td>
+									<a href="{{path('app_lucky_number', {'max':col})}}">{{col}}</a>
+								</td>
+
+							{% endfor %}
+						</tr>
+					{% endfor %}
+					{# {% for i in 0..filas-1 %}
+																										<tr>
+																											{% for j in 0..cols-1 %}
+																												<td>
+																				                               {{tabla[i][j]}} 
+																				                                </td>
+																											{% endfor %}
+																										
+																									{% endfor %} #}
+				</tbody>
+			</table>
+
+
+			This friendly message is coming from:
+			<ul>
+				<li>Your controller at
+					<code>C:/Users/mfernandez/Documents/ud8/my_first_symf_project/src/Controller/TableController.php</code>
+				</li>
+				<li>Your template at
+					<code>C:/Users/mfernandez/Documents/ud8/my_first_symf_project/templates/table/index.html.twig</code>
+				</li>
+			</ul>
+		</div>
+
+		{# <script src='{{ asset('js/inicio.js')}}'></script> #}
+
+
+	{% endblock %}

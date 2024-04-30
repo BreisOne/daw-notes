@@ -1,0 +1,16 @@
+<form action="{{action}}" method="POST">
+  <div class="mb-3">
+    <label for="titulo" class="form-label">Título</label>
+    <input type="text" class="form-control"
+     id="titulo" name="titulo" value="{{nota.titulo}}">
+  
+  </div>
+
+  <div class="mb-3">
+    <label for="desc" class="form-label">Descripción</label>
+    <input type="text" class="form-control"
+     id="desc" name="desc" value="{{nota.descripcion}}">
+  
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

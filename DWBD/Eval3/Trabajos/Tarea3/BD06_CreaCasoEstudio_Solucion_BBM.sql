@@ -311,6 +311,12 @@ BEGIN
      
      -- Manejador para no encontrar más filas
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+   
+   -- Creamos una tabla temporal para almacenar los datos
+	DROP TEMPORARY TABLE IF EXISTS temp_oficinas;
+    CREATE TEMPORARY TABLE temp_oficinas (
+        datosOficinas VARCHAR(255)
+    );
     
     OPEN cursor_oficinas;
     read_loop: LOOP
@@ -320,9 +326,11 @@ BEGIN
 			   END IF;
         
         -- Mostrar los datos de la fila actual
-        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Domicilio: ', var_dom, ', Localidad: ', var_loc, ', Código Postal: ', var_cp) as "Datos oficina actual";
-		END LOOP;
+        INSERT INTO temp_oficinas VALUES (CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Domicilio: ', var_dom, ', Localidad: ', var_loc, ', Código Postal: ', var_cp));
+		END LOOP read_loop;
     CLOSE cursor_oficinas;
+   SELECT datosOficinas AS "Datos de las oficinas" FROM temp_oficinas;
+
 END; //
 DELIMITER ;
 #------------------------------------------------------------------------------------------------------
@@ -342,7 +350,13 @@ BEGIN
         
 	 -- Manejador para no encontrar más filas
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-	
+    
+	-- Creamos una tabla temporal para almacenar los datos
+    DROP TEMPORARY TABLE IF EXISTS temp_familias;
+    CREATE TEMPORARY TABLE temp_familias (
+        datosFamilias VARCHAR(255)
+    );
+    
     OPEN cursor_familias;
     
     read_loop: LOOP
@@ -351,9 +365,12 @@ BEGIN
 					LEAVE read_loop;
 			   END IF;
         -- Mostrar los datos de la fila actual
-        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Familia: ', IFNULL(var_fam, 'null'), ', Oficina: ', IFNULL(var_ofi, 'null')) as "Datos familia actual";
-		END LOOP;
+        INSERT INTO temp_familias VALUES(CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Familia: ', IFNULL(var_fam, 'null'), ', Oficina: ', IFNULL(var_ofi, 'null')));
+		END LOOP read_loop;
+				
     CLOSE cursor_familias;
+    SELECT datosFamilias AS "Datos de las familias"  FROM temp_familias;
+
 END; //
 DELIMITER ;
 #------------------------------------------------------------------------------------------------------
@@ -376,7 +393,13 @@ BEGIN
     
 	-- Manejador para no encontrar más filas
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-
+    
+    -- Creamos una tabla temporal para almacenar los datos
+	DROP TEMPORARY TABLE IF EXISTS temp_agentes;
+    CREATE TEMPORARY TABLE temp_agentes (
+        datosAgentes VARCHAR(255)
+    );
+	
     OPEN cursor_agentes;
     read_loop: LOOP
         FETCH cursor_agentes INTO var_id, var_nom, var_usu, var_cla, var_hab, var_cat, var_fam, var_ofi;
@@ -385,10 +408,11 @@ BEGIN
         END IF;
         
         -- Mostrar los datos de la fila actual
-        SELECT CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Usuario: ', var_usu, ', Clave: ', var_cla, ', Habilidad: ', var_hab, ', Categoría: ', var_cat, ', Familia: ', IFNULL(var_fam, 'null'), ', Oficina: ', IFNULL(var_ofi,'null')) as "Datos agente actual";
-        
-        END LOOP;
+        INSERT INTO temp_agentes VALUES( CONCAT('Identificador: ', var_id, ', Nombre: ', var_nom, ', Usuario: ', var_usu, ', Clave: ', var_cla, ', Habilidad: ', var_hab, ', Categoría: ', var_cat, ', Familia: ', IFNULL(var_fam, 'null'), ', Oficina: ', IFNULL(var_ofi,'null')));
+        END LOOP read_loop;
     CLOSE cursor_agentes;
+    SELECT datosAgentes AS "Datos de los agentes" FROM temp_agentes;
+    
 END; //
 DELIMITER ;
 #------------------------------------------------------------------------------------------------------
@@ -408,5 +432,3 @@ CALL agregarDatos();
 CALL mostrarDatos();
 select obtenerNombreFamilia( 11 );
 CALL mostrarOficinas();
-call mostrarFamilias();
-CALL mostrarAgentes();
