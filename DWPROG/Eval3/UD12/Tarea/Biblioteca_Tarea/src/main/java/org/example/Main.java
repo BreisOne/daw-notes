@@ -5,14 +5,18 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Main {
+
+    //static final String JDBC_DRIVER = "org.mariadb.jdbc.Driver";
     private static final String URL = "jdbc:mariadb://localhost:3306";
     private static final String USER = "root";
-    private static final String PASSWORD = "123";
+    private static final String PASSWORD = "";
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
         try {
-            
+            //Class.forName(JDBC_DRIVER);
+
             // Establecer conexión con la base de datos
             Connection connection = ConectionManager.getConnection(URL, USER, PASSWORD);
             Statement statement = ConectionManager.createStatement(connection);
@@ -67,6 +71,7 @@ public class Main {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
 }

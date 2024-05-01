@@ -9,8 +9,8 @@ public class DatabaseManager {
 
     static Scanner scanner = new Scanner(System.in);
     public static void createDB(String DB, Statement statement) throws SQLException {
-        statement.execute(" CREATE TABLE IF NOT EXISTS " + DB +";");
-        statement.execute("use"+DB+";");
+        statement.execute(" CREATE DATABASE IF NOT EXISTS " + DB +";");
+        statement.execute("use "+DB+";");
     }
     public static  void createTables(Statement statement) throws SQLException {
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS Autores (" +
@@ -50,6 +50,7 @@ public class DatabaseManager {
             String tituloLibro= scanner.nextLine();
             System.out.println("Dame el precio del libro:");
             float precioLibro= scanner.nextFloat();
+            scanner.nextLine();
             System.out.println("Dame el dni del autor:");
             String dniAutor= scanner.nextLine();
 
@@ -72,18 +73,18 @@ public class DatabaseManager {
 
         if(userOption == 1){
 
-            System.out.println("Dime el titulo del libro a eliminar");
-            String libro = scanner.nextLine();
-            eliminarLibro(statement, libro);
-
-        } else if (userOption == 2) {
-
             System.out.println("Dime el DNI del autor a eliminar");
             String autor = scanner.nextLine();
             eliminarAutor(statement, autor);
 
+        } else if (userOption == 2) {
+
+            System.out.println("Dime el titulo del libro a eliminar");
+            String libro = scanner.nextLine();
+            eliminarLibro(statement, libro);
+
         } else{
-            System.out.println("No has elegiro una opción valida");
+            System.out.println("No has elegido una opción valida");
         }
 
     }
@@ -95,6 +96,8 @@ public class DatabaseManager {
                 "4) Todos los autores de la base de datos");
 
         int userOption = scanner.nextInt();
+        scanner.nextLine();
+
         try{
         switch (userOption){
             case 1:
@@ -128,6 +131,8 @@ public class DatabaseManager {
                            "1) Libro \n"+
                            "2) Autor \n");
             int userOption = scanner.nextInt();
+            scanner.nextLine();
+
             if(userOption == 1){
 
                 System.out.println("Dime el titulo del libro a actualizar");
@@ -145,10 +150,10 @@ public class DatabaseManager {
 
     ///Helper functions
     private static ResultSet buscarAutor(Statement statement, String dniAutor) throws SQLException {
-        return  statement.executeQuery("SELECT * FROM Autores WHERE DNI = " + dniAutor +";");
+        return  statement.executeQuery("SELECT * FROM Autores WHERE DNI = '" + dniAutor +"';");
     }
     private static ResultSet buscarLibro (Statement statement, String Libro) throws SQLException {
-        return  statement.executeQuery("SELECT * FROM libros WHERE titulo = " + Libro +";");
+        return  statement.executeQuery("SELECT * FROM Libros WHERE Titulo = '" + Libro +"';");
     }
 
     private static ResultSet librosAutor(Statement statement, String dniAutor) throws SQLException {
@@ -184,8 +189,8 @@ public class DatabaseManager {
             ResultSet queryResult = buscarAutor(statement, dniAutor);
             if(queryResult.next()){
 
-                statement.execute("DELETE FROM Autores WHERE DNI = '" + queryResult.getString("DNI")+"';");
                 statement.execute("DELETE FROM Libros WHERE Autor = '"+ queryResult.getString("DNI")+"';");
+                statement.execute("DELETE FROM Autores WHERE DNI = '" + queryResult.getString("DNI")+"';");
                 System.out.println("El autor y sus libros se han eliminado correctamente");
 
             }else{
@@ -199,7 +204,7 @@ public class DatabaseManager {
         try{
             ResultSet queryResult = buscarLibro(statement, Libro);
             if(queryResult.next()){
-                statement.execute("DELETE FROM Libros WHERE IdLibro = '" + queryResult.getString("IdLibro")+"';");
+                statement.execute("DELETE FROM Libros WHERE IdLibro = " + queryResult.getInt("IdLibro")+";");
                 System.out.println("El libro se ha eliminado correctamente");
             }else{
                 System.out.println("El libro no se encuentra en la base de datos");
@@ -224,7 +229,8 @@ public class DatabaseManager {
             if(queryAutor.next()){
 
                 ResultSet queryResult = buscarLibro(statement, Libro);
-                statement.executeUpdate("UPDATE Libros SET Titulo = '" + titulo + "' , Precio = "+precio+", Autor = '" + dniAutor + "' WHERE IdLibro = '" + queryResult.getString("IdLibro") +"';");
+                queryResult.next();
+                statement.executeUpdate("UPDATE Libros SET Titulo = '" + titulo + "' , Precio = "+precio+", Autor = '" + dniAutor + "' WHERE IdLibro = " + queryResult.getString("IdLibro") +";");
                 System.out.println("El libro se ha actualizado correctamente");
 
             }else{
@@ -248,8 +254,9 @@ public class DatabaseManager {
 
         try{
             ResultSet queryAutor = buscarAutor(statement, dniAutor);
+            queryAutor.next();
 
-            statement.executeUpdate("UPDATE Autores SET DNI = '" + dniAutor + "' , Nombre = "+nombre+", Nacionalidad = '" + nacionalidad + "' WHERE DNI = '" + queryAutor.getString("DNI") +"';");
+            statement.executeUpdate("UPDATE Autores SET DNI = '" + dniAutor + "' , Nombre = '"+nombre+"' , Nacionalidad = '" + nacionalidad + "' WHERE DNI = '" + queryAutor.getString("DNI") +"';");
 
             System.out.println("El autor se ha actualizado correctamente");
 
