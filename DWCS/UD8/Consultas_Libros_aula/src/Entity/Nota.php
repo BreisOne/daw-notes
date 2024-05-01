@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: NotaRepository::class)]
-#[AppValidator\NotaTituloUnico]
+//#[AppValidator\NftTituloUnico]
 class Nota
 {
     #[ORM\Id]

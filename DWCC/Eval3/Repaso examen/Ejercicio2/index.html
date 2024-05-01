@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Práctia de repaso</title>
+    <style>
+        table,
+        td {
+            border: black solid 1pt;
+        }
+    </style>
+    <script src="repaso.js"></script>
+</head>
+<body>
+    
+    <h1>Insertar Clientes</h1>
+    <form id = "formGuardarCliente">
+        <fieldset>
+            <legend>Clientes</legend>
+            <p>
+                <input type="text" name="nombre" id="nombre">
+                <label for="nombre">Nombre</label>
+
+            </p>
+            <p>
+                <input type="text" name="DNI" id="DNI">
+                <label for="DNI">DNI</label>
+
+            </p>
+            
+            <p>
+                <input type="text" name="direccion" id="direccion">
+                <label for="direccion">Dirección</label>
+            </p>          
+            <input type="submit" value="Guardar", id="btn-guardar">
+        </fieldset>
+    </form>
+    <br>
+    <br>
+        <div>
+            <input type="submit" name="mostrar" id="mostrar" value="Mostrar clientes">
+        </div>
+        <div id="containerMostrar">
+
+        </div>
+</body>
+</html>
