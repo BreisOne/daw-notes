@@ -4,11 +4,11 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class EmpresaGestion {
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/Empresa";
+    static final String JDBC_DRIVER = "org.mariadb.jdbc.Driver";
+    static final String DB_URL = "jdbc:mariadb://localhost/";
 
     static final String USER = "root";
-    static final String PASS = "123";
+    static final String PASS = "";
 
     static Connection conn = null;
     static Statement stmt = null;
@@ -84,10 +84,19 @@ public class EmpresaGestion {
         resultSet.close();
 
         if (!baseDatosExiste) {
-            String crearBaseDatosSQL = "CREATE DATABASE Empresa";
+            String crearBaseDatosSQL = "CREATE DATABASE Empresa;";
+            String usarBaseDatosSQL = "use Empresa;";
             stmt.executeUpdate(crearBaseDatosSQL);
+            stmt.execute(usarBaseDatosSQL);
 
-            String crearTablaEmpleadosSQL = "CREATE TABLE Empleados (" +
+            String crearTablaDepartamentosSQL = "CREATE TABLE IF NOT EXISTS Departamentos (" +
+                    "Nu_dept INT PRIMARY KEY AUTO_INCREMENT," +
+                    "Dnombre VARCHAR(10) UNIQUE," +
+                    "Localidad VARCHAR(10)" +
+                    ");";
+            stmt.executeUpdate(crearTablaDepartamentosSQL);
+
+            String crearTablaEmpleadosSQL = "CREATE TABLE IF NOT EXISTS Empleados (" +
                     "Dni VARCHAR(9) PRIMARY KEY," +
                     "Nombre VARCHAR(10)," +
                     "Estudios VARCHAR(10)," +
@@ -95,17 +104,10 @@ public class EmpresaGestion {
                     "Fecha_alt DATE," +
                     "Salario INT," +
                     "Comision INT," +
-                    "Nu_dept VARCHAR(2)," +
+                    "Nu_dept INT," +
                     "FOREIGN KEY (Nu_dept) REFERENCES Departamentos(Nu_dept)" +
-                    ")";
+                    ");";
             stmt.executeUpdate(crearTablaEmpleadosSQL);
-
-            String crearTablaDepartamentosSQL = "CREATE TABLE Departamentos (" +
-                    "Nu_dept INT PRIMARY KEY AUTO_INCREMENT," +
-                    "Dnombre VARCHAR(10) UNIQUE," +
-                    "Localidad VARCHAR(10)" +
-                    ")";
-            stmt.executeUpdate(crearTablaDepartamentosSQL);
 
             System.out.println("Base de datos Empresa creada correctamente.");
         } else {
