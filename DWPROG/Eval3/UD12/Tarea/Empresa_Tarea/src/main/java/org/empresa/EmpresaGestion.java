@@ -76,7 +76,7 @@ public class EmpresaGestion {
         boolean baseDatosExiste = false;
         while (resultSet.next()) {
             String databaseName = resultSet.getString(1);
-            if (databaseName.equalsIgnoreCase("Empresa")) {
+            if (databaseName.equalsIgnoreCase("Empresa_prog")) {
                 baseDatosExiste = true;
                 break;
             }
@@ -84,8 +84,8 @@ public class EmpresaGestion {
         resultSet.close();
 
         if (!baseDatosExiste) {
-            String crearBaseDatosSQL = "CREATE DATABASE Empresa;";
-            String usarBaseDatosSQL = "use Empresa;";
+            String crearBaseDatosSQL = "CREATE DATABASE Empresa_prog;";
+            String usarBaseDatosSQL = "use Empresa_prog;";
             stmt.executeUpdate(crearBaseDatosSQL);
             stmt.execute(usarBaseDatosSQL);
 

@@ -1,0 +1,44 @@
+
+`	java:S112s"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+b
+java:S1192\"GDefine a constant instead of duplicating this literal "idProd" 4 times.(ø¡£ôÿÿÿÿÿ
+\
+java:S22597"F"NullPointerException" will be thrown when invoking method "listar()".(ôêŠº
+\
+java:S2259 "FA "NullPointerException" could be thrown; "conexion" is nullable here.(«ìô£
+^
+java:S22593"H"NullPointerException" will be thrown when invoking method "insertar()".(¡Î­“
+^
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(Ğ¿·æ
+Q	java:S125"<This block of commented-out lines of code should be removed.(¬ôµ¥
+E	java:S106"+Replace this use of System.out by a logger.(ÇµÃÅúÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(›Øø
+E	java:S106""+Replace this use of System.out by a logger.(êÓæøùÿÿÿÿ
+@	java:S106("+Replace this use of System.out by a logger.(²Ä•È
+H
+java:S6126("2Replace this String concatenation with Text block.(²Ä•È
+<	java:S1311""Add a default case to this switch.(õÙÆ‚úÿÿÿÿ
+@	java:S106E"+Replace this use of System.out by a logger.(õ„ŸÆ
+@	java:S106G"+Replace this use of System.out by a logger.(¯Âû¢
+?	java:S106N"+Replace this use of System.err by a logger.(ÿ0
+@	java:S106Z"+Replace this use of System.out by a logger.(ôõ³ç
+E	java:S106\"+Replace this use of System.out by a logger.(ø¡£ôÿÿÿÿÿ
+E	java:S106]"+Replace this use of System.out by a logger.(‘…Çšûÿÿÿÿ
+E	java:S106^"+Replace this use of System.out by a logger.(ƒƒ¾÷ûÿÿÿÿ
+?	java:S106_"+Replace this use of System.out by a logger.(ßó·G
+E	java:S106b"+Replace this use of System.out by a logger.(¨¶ÑÍşÿÿÿÿ
+E	java:S106h"+Replace this use of System.out by a logger.(«ş¸¨ÿÿÿÿÿ
+@	java:S106k"+Replace this use of System.out by a logger.(âÊº¬
+?	java:S106m"+Replace this use of System.out by a logger.(š¯’
+@	java:S106v"+Replace this use of System.out by a logger.(¬ä°
+E	java:S106{"+Replace this use of System.out by a logger.(ÇÕÃÃÿÿÿÿÿ
+A	java:S106„"+Replace this use of System.out by a logger.(¬ä°
+F	java:S106’"+Replace this use of System.out by a logger.(µÑÖéÿÿÿÿÿ
+A	java:S106”"+Replace this use of System.out by a logger.(€’ú
+F	java:S106•"+Replace this use of System.out by a logger.(‘…Çšûÿÿÿÿ
+F	java:S106–"+Replace this use of System.out by a logger.(ƒƒ¾÷ûÿÿÿÿ
+A	java:S106—"+Replace this use of System.out by a logger.(‰âíİ
+F	java:S106œ"+Replace this use of System.out by a logger.(¨¶ÑÍşÿÿÿÿ
+fsecrets:S6703"HMake sure this database password gets changed and removed from the code.(Ú˜“¶ùÿÿÿÿ
+asecrets:S6703"HMake sure this database password gets changed and removed from the code.(¬ôµ¥
