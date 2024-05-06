@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 2</title>
+  </head>
+  <body>
+    <form name="formulario">
+      <textarea name="texto" cols="40" rows="10"></textarea><br />
+      <input type="button" name="h1" value="h1" />
+      <input type="button" name="h2" value="h2" />
+      <input type="button" name="h3" value="h3" />
+      <input type="button" name="h4" value="h4" />
+      <input type="button" name="h5" value="h5" />
+      <input type="button" name="h6" value="h6" />
+      <input type="button" name="p" value="p" />
+    </form>
+    <div id="resultado"></div>
+  </body>
+  <script type="text/javascript">
+
+	//Función para cambiar el color del texto
+    let cambiarColor = () => {
+		
+		//Variables que me permiten crear colores hexadecimales
+      let simbolos, color;
+      simbolos = "0123456789ABCDEF";
+      color = "#";
+
+      console.log(event.target);
+      //Modificar la propiedad de color de texto sobre el elemento que se hace clic
+      const elemento = event.target;
+      //Generar colores de forma aleatoria
+      for (var i = 0; i < 6; i++) {
+        color = color + simbolos[Math.floor(Math.random() * 16)];
+      }
+      elemento.style.color = color;
+    };
+    function creaElementoConTexto(elemento, texto, padre) {
+      const nodoTexto = document.createTextNode(texto);
+      const nodoEtiqueta = document.createElement(elemento);
+      nodoEtiqueta.appendChild(nodoTexto);
+      padre.appendChild(nodoEtiqueta);
+      return nodoEtiqueta;
+    }
+
+    function creaBoton(valor, manejador, padre) {
+      const boton = document.createElement("input");
+      boton.type = "button";
+      boton.value = valor;
+      boton.addEventListener("click", manejador);
+      padre.appendChild(boton);
+    }
+
+    function anhadir() {
+      console.log(this);
+      let etiqueta = this.value;
+      let texto = document.formulario.texto.value;
+      let resultado = document.getElementById("resultado");
+
+      let elemento = creaElementoConTexto(etiqueta, texto, resultado);
+
+      creaBoton("Eliminar", elimina, elemento);
+      //Limpia el cuadro de texto donde escribe
+      document.formulario.texto.value = "";
+    }
+
+    function elimina() {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+    }
+
+    window.onload = function () {
+      const botones = document.getElementsByTagName("input");
+      for (let i = 0; i < botones.length; i++) {
+        botones[i].addEventListener("click", anhadir);
+      }
+
+      //Asignar manejador de eventos por delegacion
+      document
+        .getElementById("resultado")
+        .addEventListener("click", cambiarColor);
+    };
+  </script>
+</html>
