@@ -7,16 +7,16 @@ public class Calculadora {
 
      ArrayList <Double> soluciones = new ArrayList<>();
 
-     double discriminante = (Math.pow(b, 2) - (4 * a * c));
+     double discriminante = Math.pow(b, 2) - (4 * a * c);
 
      if(a != 0) {
          if (discriminante >= 0) {
              if (discriminante == 0) {
-                 double solucion = ((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+                 double solucion = (double) (-b) / (2 * a);
                  soluciones.add(solucion);
              } else {
-                 double solucion1 = ((-b) + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
-                 double solucion2 = ((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+                 double solucion1 = ((-b) + Math.sqrt(discriminante)) / (2 * a);
+                 double solucion2 = ((-b) - Math.sqrt(discriminante)) / (2 * a);
 
                  soluciones.add(solucion1);
                  soluciones.add(solucion2);
@@ -30,5 +30,4 @@ public class Calculadora {
 
      return soluciones;
  }
-
 }
