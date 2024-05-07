@@ -1,0 +1,13 @@
+
+`
+java:S1854">Remove this useless assignment to local variable "soluciones".(»„¿™øÿÿÿÿ8ƒ´÷ûó1
+F	java:S106"+Replace this use of System.out by a logger.(ú‚„S8…´÷ûó1
+G	java:S106"+Replace this use of System.out by a logger.(‚·û”8…´÷ûó1
+L	java:S106"+Replace this use of System.out by a logger.(Ó·¾ùüÿÿÿÿ8…´÷ûó1
+L	java:S106"+Replace this use of System.out by a logger.(ñ‹Öçüÿÿÿÿ8…´÷ûó1
+G	java:S106"+Replace this use of System.out by a logger.(®Ø‘ë8†´÷ûó1
+L	java:S106#"+Replace this use of System.out by a logger.(”í®ôùÿÿÿÿ8†´÷ûó1
+L	java:S106&"+Replace this use of System.out by a logger.(™–´ñüÿÿÿÿ8†´÷ûó1
+F	java:S106("+Replace this use of System.out by a logger.(Ëí˜o8†´÷ûó1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ8å˜ÿûó1

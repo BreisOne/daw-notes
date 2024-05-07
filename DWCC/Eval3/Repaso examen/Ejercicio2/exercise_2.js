@@ -24,7 +24,7 @@ class Cliente{
 //     }
 // )
 
-const guardarCliente = function(event){
+const guardarCliente = (event)=>{
     event.preventDefault();
 
     let nombre = document.getElementById("nombre");
@@ -51,12 +51,12 @@ const mostrarClientes = () => {
     clienteKeys.map(key => {
         let cliente = JSON.parse(localStorage.getItem(key));
         clientes.push(cliente);
-    })
+    });
     clientes.map(cliente => {
         let parrafoCliente = document.createElement("p");
         parrafoCliente.innerHTML = `Nombre cliente: ${cliente.nombre}, DNI cliente: ${cliente.DNI}, direccion cliente:${cliente.Direccion}`;
         containerClientes.appendChild(parrafoCliente);
-    })
+    });
 }
 document.addEventListener("DOMContentLoaded", () => {
     const formCliente = document.getElementById("formGuardarCliente");
