@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tarea 5.1</title>
+</head>
+
+<body>
+	<form name="formulario"><input name="texto" id="texto"/><input type="button" name="boton" value="Crear" id ="crear" />
+	</form>
+	<ul id="lista">
+
+	</ul>
+</body>
+<script>
+	const cambiarEstilo = (event)=>{
+		event.preventDefault();
+		let liItem = event.target;
+		
+		let r = Math.floor(Math.random()*256);
+		let g = Math.floor(Math.random()*256);
+		let b = Math.floor(Math.random()*256);
+
+
+		liItem.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+		liItem.style.textDecoration="line-through";
+		liItem.style.color = "white";
+	};
+	const eliminarElemento = (event)=>{
+		event.target.remove();
+	}
+
+	const createItemList = (input)=>{
+		let lista = document.getElementById("lista");
+		let liItem = document.createElement("li");
+		 
+		liItem.innerText = input;
+		liItem.addEventListener('contextmenu', cambiarEstilo);
+		liItem.addEventListener('click', eliminarElemento);
+		lista.appendChild(liItem);
+
+
+
+	}
+	const cheaquearTipos = (event)=>{
+		let formulario = event.target.parentNode;
+		let input = formulario.firstChild;
+		
+		if(input.value !== ""){
+			
+			if(!isNaN(input.value)){
+				alert("No se permite utilizar numeros")
+			}else{
+				createItemList(input.value);
+				input.value = "";
+				input.focus();
+			}
+		}
+	
+	};
+
+	const iniciarPrograma = ()=>{
+		let boton = document.getElementById("crear");
+		boton.addEventListener('click', cheaquearTipos);	
+	};
+
+	document.addEventListener("DOMContentLoaded", iniciarPrograma);
+</script>
+
+</html>
