@@ -1,2 +1,14 @@
 
-E	java:S106"+Replace this use of System.out by a logger.(‚ÞÏ¥ýÿÿÿÿ
+]	java:S125	"<This block of commented-out lines of code should be removed.(±ÊÄ´ÿÿÿÿÿ8Ëä’Äõ1
+X	java:S125"<This block of commented-out lines of code should be removed.(ãùéÄ8Üä’Äõ1
+G	java:S106!"+Replace this use of System.out by a logger.(´ãÀâ8àä’Äõ1
+G	java:S106""+Replace this use of System.out by a logger.(©Þí…8âä’Äõ1
+G	java:S106#"+Replace this use of System.out by a logger.(£°‰Ï8ãä’Äõ1
+L	java:S106$"+Replace this use of System.out by a logger.(µ™ÐŠþÿÿÿÿ8åä’Äõ1
+L	java:S106%"+Replace this use of System.out by a logger.(ü³ØÜüÿÿÿÿ8èä’Äõ1
+F	java:S106&"+Replace this use of System.out by a logger.(•™­K8éä’Äõ1
+L	java:S106'"+Replace this use of System.out by a logger.(Ï­×Ñûÿÿÿÿ8ëä’Äõ1
+L	java:S106<"+Replace this use of System.out by a logger.(Š¨Óèûÿÿÿÿ8ùä’Äõ1
+G	java:S106?"+Replace this use of System.out by a logger.(ùð8üä’Äõ1
+T
+java:S1128"2Remove this unused import 'javax.xml.crypto.Data'.(¦¿çˆýÿÿÿÿ8ÿä’Äõ1

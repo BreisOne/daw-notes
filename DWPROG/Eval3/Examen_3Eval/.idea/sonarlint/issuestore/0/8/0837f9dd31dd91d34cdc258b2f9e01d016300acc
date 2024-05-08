@@ -1,0 +1,10 @@
+
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ÷À–ùÿÿÿÿ8¦â¸Æõ1
+ƒ
+java:S4165"aRemove this useless assignment; "dni" already holds the assigned value along all execution paths.(¾ïþßÿÿÿÿÿ8Úö¸Æõ1
+L
+java:S1172"*Remove this unused method parameter "DNI".(ñ÷À–ùÿÿÿÿ8ªâ¸Æõ1
+Q
+java:S1656"/Remove or correct this useless self-assignment.(¾ïþßÿÿÿÿÿ8¬â¸Æõ1
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8½³õÈõ1

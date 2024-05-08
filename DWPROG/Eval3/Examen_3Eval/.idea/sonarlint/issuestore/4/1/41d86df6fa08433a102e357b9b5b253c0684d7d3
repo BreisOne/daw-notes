@@ -1,0 +1,16 @@
+
+s	java:S117‚"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÐÙŒýÿÿÿÿ8ºŸßÌõ1
+e
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(Ù¤õ„8ÔŸßÌõ1
+p
+java:S3008"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Ïðªùÿÿÿÿ8ÕŸßÌõ1
+F
+java:S2115")Add password protection to this database.(Ù¤õ„8ØŸßÌõ1
+G	java:S106\"+Replace this use of System.out by a logger.(Ûø¥»8ÛŸßÌõ1
+F	java:S106_"+Replace this use of System.out by a logger.(°•Þ8ÛŸßÌõ1
+L	java:S106b"+Replace this use of System.out by a logger.(‡·›àûÿÿÿÿ8ÛŸßÌõ1
+F	java:S106d"+Replace this use of System.out by a logger.(°•Þ8ÛŸßÌõ1
+]	java:S125k"<This block of commented-out lines of code should be removed.(ÆÇþ’ûÿÿÿÿ8ÜŸßÌõ1
+H	java:S106„"+Replace this use of System.out by a logger.(¸‚‡œ8ÝŸßÌõ1
+H	java:S106…"+Replace this use of System.out by a logger.(¦áÏù8ÝŸßÌõ1
+H	java:S106Æ"+Replace this use of System.out by a logger.(Û±ÜÞ8àŸßÌõ1

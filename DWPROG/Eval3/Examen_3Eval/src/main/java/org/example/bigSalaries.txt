@@ -1,0 +1,7 @@
+DNI: 12345678R, Nombre: jacinto, edad: 45, Direccion: venexuela 56
+Mascotas [
+jacinto, gato, gato
+]
+DNI: 12456789E, Nombre: Rogrido, edad: 56, Direccion: vexuela 56
+Mascotas [
+]

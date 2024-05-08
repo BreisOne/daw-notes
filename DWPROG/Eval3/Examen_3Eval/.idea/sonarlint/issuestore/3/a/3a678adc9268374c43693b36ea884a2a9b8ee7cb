@@ -1,0 +1,21 @@
+
+g
+java:S1192"JDefine a constant instead of duplicating this literal "[3] Exit
+" 3 times.(êö‡…8¸µ¸Äõ1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(“å•³şÿÿÿÿ8¼µ¸Äõ1
+G	java:S106"+Replace this use of System.out by a logger.(²Ä•È8½µ¸Äõ1
+O
+java:S6126"2Replace this String concatenation with Text block.(²Ä•È8½µ¸Äõ1
+L	java:S106"+Replace this use of System.out by a logger.(Õ²×£ùÿÿÿÿ8¿µ¸Äõ1
+T
+java:S6126"2Replace this String concatenation with Text block.(Õ²×£ùÿÿÿÿ8¿µ¸Äõ1
+L	java:S106"+Replace this use of System.out by a logger.(¬ƒ™Æùÿÿÿÿ8¿µ¸Äõ1
+T
+java:S6126"2Replace this String concatenation with Text block.(¬ƒ™Æùÿÿÿÿ8¿µ¸Äõ1
+L	java:S106"+Replace this use of System.out by a logger.(Ì«òûÿÿÿÿ8Àµ¸Äõ1
+T
+java:S6126"2Replace this String concatenation with Text block.(Ì«òûÿÿÿÿ8Àµ¸Äõ1
+G	java:S106!"+Replace this use of System.out by a logger.(áï¥8Àµ¸Äõ1
+O
+java:S6126!"2Replace this String concatenation with Text block.(áï¥8Àµ¸Äõ1

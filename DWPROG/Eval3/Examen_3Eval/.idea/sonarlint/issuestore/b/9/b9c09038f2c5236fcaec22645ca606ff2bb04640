@@ -1,0 +1,44 @@
+
+
+java:S1192\"bDefine a constant instead of duplicating this literal "No has elegido una opciÃ³n valida" 4 times.(¹¼Äœ8É‚ÑÉõ1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(Çµí‘8£ƒÑÉõ1
+Z
+java:S1854"=Remove this useless assignment to local variable "formatter".(ıø•8£ƒÑÉõ1
+K
+java:S1481".Remove this unused "formatter" local variable.(ıø•8¥ƒÑÉõ1
+n	java:S128°"LEnd this switch case with an unconditional break, return or throw statement.(ÌÊëÎüÿÿÿÿ8§ƒÑÉõ1
+G	java:S106!"+Replace this use of System.out by a logger.(½¢ø¿8¨ƒÑÉõ1
+G	java:S106$"+Replace this use of System.out by a logger.(åŠÀÛ8¨ƒÑÉõ1
+L	java:S106'"+Replace this use of System.out by a logger.(¸ÙÄ÷øÿÿÿÿ8¨ƒÑÉõ1
+L	java:S106*"+Replace this use of System.out by a logger.(ôáŞşÿÿÿÿ8¨ƒÑÉõ1
+L	java:S106-"+Replace this use of System.out by a logger.(¢ğûÿÿÿÿ8¨ƒÑÉõ1
+L	java:S1060"+Replace this use of System.out by a logger.(¯¯‡ÿÿÿÿÿ8¨ƒÑÉõ1
+]	java:S1253"<This block of commented-out lines of code should be removed.(×‰ú‚ûÿÿÿÿ8©ƒÑÉõ1
+X	java:S1257"<This block of commented-out lines of code should be removed.(ºº¨¢8©ƒÑÉõ1
+L	java:S106<"+Replace this use of System.out by a logger.(²•¡õøÿÿÿÿ8©ƒÑÉõ1
+G	java:S106?"+Replace this use of System.out by a logger.(Îô¢Ó8©ƒÑÉõ1
+G	java:S106B"+Replace this use of System.out by a logger.(ø¿é8©ƒÑÉõ1
+G	java:S106F"+Replace this use of System.out by a logger.(Ù¸šå8©ƒÑÉõ1
+G	java:S106I"+Replace this use of System.out by a logger.(†¬½8©ƒÑÉõ1
+G	java:S106M"+Replace this use of System.out by a logger.(òı Ì8©ƒÑÉõ1
+G	java:S106P"+Replace this use of System.out by a logger.(Ûà„Ê8©ƒÑÉõ1
+]	java:S125U"<This block of commented-out lines of code should be removed.(İ”Óºıÿÿÿÿ8©ƒÑÉõ1
+G	java:S106\"+Replace this use of System.out by a logger.(¹¼Äœ8©ƒÑÉõ1
+G	java:S106f"+Replace this use of System.out by a logger.(˜Àê¾8ªƒÑÉõ1
+L	java:S106m"+Replace this use of System.out by a logger.(”„×™ÿÿÿÿÿ8ªƒÑÉõ1
+G	java:S106t"+Replace this use of System.out by a logger.(¹¼Äœ8ªƒÑÉõ1
+L	java:S106~"+Replace this use of System.out by a logger.(­¸š«ûÿÿÿÿ8ªƒÑÉõ1
+M	java:S106ƒ"+Replace this use of System.out by a logger.(×ÃÅ…üÿÿÿÿ8ªƒÑÉõ1
+H	java:S106…"+Replace this use of System.out by a logger.(Ü è£8«ƒÑÉõ1
+H	java:S106"+Replace this use of System.out by a logger.(¹¼Äœ8«ƒÑÉõ1
+H	java:S106—"+Replace this use of System.out by a logger.(˜÷Î8«ƒÑÉõ1
+G	java:S106š"+Replace this use of System.out by a logger.(¼ó—~8«ƒÑÉõ1
+H	java:S106Ÿ"+Replace this use of System.out by a logger.(½¢ø¿8«ƒÑÉõ1
+H	java:S106¢"+Replace this use of System.out by a logger.(åŠÀÛ8«ƒÑÉõ1
+M	java:S106¥"+Replace this use of System.out by a logger.(š·˜ıÿÿÿÿ8«ƒÑÉõ1
+H	java:S106­"+Replace this use of System.out by a logger.(¹¼Äœ8«ƒÑÉõ1
+H	java:S106±"+Replace this use of System.out by a logger.(É¾Ö8ÀóÊõ1
+H	java:S106³"+Replace this use of System.out by a logger.(Ê—êĞ8´óÊõ1
+ä
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 125 to 64, Complexity from 20 to 14, Nesting Level from 3 to 2, Number of Variables from 33 to 6.(Çµí‘8¬ƒÑÉõ1
