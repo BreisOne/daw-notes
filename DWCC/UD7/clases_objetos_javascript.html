@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos en Javascript </title>
+</head>
+
+<body>
+	<script>
+		// Los objetos son variables que pueden contener muchos valores.
+		// Un ojeto es similar a un array.
+
+		// Los objetos pueden contener propiedades (variables), y metodos (funciones)
+
+		var nombre = 'Carlos';
+		var edad = 20;
+		var pais = 'Mexico';
+
+		var nombreHermano = 'Christian';
+		var edadHermano = 17;
+		var paisHermano = 'Mexico';
+
+		var nombrePapa = 'Arturo';
+		var edadPapa = 37;
+		var paisPapa = 'Mexico';
+
+		// Convirtiendo el ejemplo anterior a objetos
+		var carlos = {
+			nombre: 'Carlos Arturo',
+			edad: 20,
+			pais: 'Mexico',
+			// Los metodos son funciones dentro de un objeto
+			bio: function () {
+				return this.nombre + ' tiene ' + this.edad + ' años';
+			}
+		}
+
+		var christian = {
+			nombre: 'Christian',
+			edad: 22,
+			pais: 'España',
+			bio: function () {
+				return this.nombre + ' tiene ' + this.edad + ' años';
+			}
+		}
+
+		document.write("<p> Mostrar los datos de " + carlos.bio() + "<\p>");
+		document.write("<p>El pais de Cristian es " + christian.pais + "<\p>");
+
+		
+		
+		
+		// ----- ----- ----- ----- ----- ----- ----- ----- 
+		// Usando un constructor de Objetos
+		// El constructor de objetos nos permite crear objetos conforme los necesitemos.
+		// En vez de escribirlos al inicio.
+
+		function Persona(nombre, edad, pais) {
+			this.nombre = nombre;
+			this.edad = edad;
+			this.pais = pais;
+		}
+
+		var papa = new Persona('Carlos', 20, 'Mexico');
+		var amigo = new Persona('Alex', 32, 'España');
+		var hermano = new Persona('Christopher', 32, 'Colombia');
+
+		document.write(papa.nombre);
+		document.write('<br>');
+		document.write(hermano.edad);
+
+		// Clase Usuario
+		class Usuario {
+			constructor(nombre, contraseña, perfil) {
+				this.nombre = nombre;
+				this.contraseña = contraseña;
+				this.perfil = perfil;
+			}
+
+			//Métodos
+		}
+		// ----- ----- ----- ----- ----- ----- ----- ----- 
+		// Herencia en javascript. Javascript trata la programación orientada a objetos como 
+		// programación basada en prototipos
+
+		// Declaración de objetos
+		//Comprueba la diferencia al crear el coche como un objeto literal o a traves del objeto Object.
+		//Para ello visualizamos la estructura a través de la consola
+		
+		let coche = { color: "rojo", potencia: 400 };
+		console.log("Este es el objeto creado como literal");
+		console.log(coche);
+		let coche1 = Object.create(coche);
+		console.log("Este es el objeto creado con create");
+		console.log(coche1);
+
+		
+		console.log(coche.isPrototypeOf(coche1)); // true
+		
+
+		// Modificar valores
+		coche.color = "azul";
+		coche1["color"] = "azul";
+
+		//JavaScript permite crear nuevas propiedades
+
+		coche["pasajeros"] = 5
+		coche1.pasajeros = 4;
+
+
+		document.write("<h2>El coche con más propiedades </h2>");
+
+		for (let i = 0; i < 5; i++) {
+			coche[`cilindrada ${i}`] = 2000 + (i * 100);
+		}
+
+		//Recorrer las propiedades que puede tener un objeto
+		for (let p in coche) {
+			document.write("<p>" + p);
+		}
+
+		//Crear propiedades que son a su vez objetos
+		let p1 = { nombre: "Juan", edad: 18 };
+		let coche2 = { color: "rojo", potencia: 400, propietario: p1 };
+
+		document.write("Recorrer todas las propiedades de un coche2 ");
+
+		//Recorrer las propiedades que puede tener un objeto
+		for (let p in coche2) {
+			document.write("<p>" + p);
+		}
+		console.log(coche2);
+		//Borrar propiedades
+		delete coche2.propietario;
+		console.log(coche2);
+
+		//Método que comprueba si un objeto tiene o no una propiedad
+		console.log(coche.hasOwnProperty("propietario"));
+
+		
+		//Copiado de propiedades de un objeto a otro
+
+		let furgoneta = { carga: 4500 };
+		for (let clave of Object.keys(coche)) {
+			furgoneta[clave] = coche[clave];
+		}
+
+		console.log(furgoneta);
+
+		console.log("Este es el valor de la furgoneta, copiando sus propiedades del coche");
+
+		//Método ECS Object.assign()
+		let furgoneta1 = { carga: 4500 };
+		Object.assign(furgoneta1, coche);
+
+		console.log(furgoneta1);
+		// Métodos del prototipo Object
+		// toLocaleString()
+		// valueOf():
+
+		let curso=new String("Curso de JavaSCript");
+		console.log(curso);
+
+		console.log(curso.valueOf());
+		// toJSON():
+
+		let Empleado = {
+			salario: 20000,
+			comision: 500,
+			toLocaleString: function () {
+				return `(${this.salario.toLocaleString()})`
+			}
+		}
+
+		console.log("El salario es " + Empleado.toLocaleString());
+
+		//Sintaxis ECS6
+
+		const EJEMPLONOMBRE="color";
+
+		function nombrePropiedad(){
+			return "radio"+"_circulo";
+		}
+		
+		//Construir un objeto en versiones anteriores 
+		//let circulo={};
+		//circulo[EJEMPLONOMBRE]="verde";
+		//circulo[nombrePropiedad()]=20;
+
+		//console.log(circulo);
+
+		//Nuevas especificaciones ECS
+
+		let circulo={
+			[EJEMPLONOMBRE]:"verde",
+			[nombrePropiedad()]:20
+		}
+
+		console.log(circulo);
+
+		//spread operator ES2018
+		/*El operador spread (o de propagación) te permite expandir un objeto iterable 
+		en una serie de objetos individuales. 
+		Por ejemplo: Supongamos que tienes dos arrays
+		const array1=[1,2,3];
+		const array2=[4,5,6];
+
+		Con el operador spread podmeos extraer los elementos de ambos arrays y concatenarlos en una 
+		sola línea de código.
+		const concatenar=[...array1, ...array2];
+
+		Este operador también se puede utilizar para concatenar objetos, tal y como aparece en el 
+		código que aparece a continuación
+
+		*/
+
+
+		let cocheN={color: "rojo", potencia: 400};
+		let furgonetaN={capacidad:"grande",autonomia:"extendida"};
+
+		//Crear un objeto que tenga las características de los otros dos
+		let suv={...cocheN,...furgonetaN};
+		console.log(`Objeto creado con las caracteristicas de coche y furgoneta 
+		con autonomia ${suv.autonomia}, capacidad  ${suv.capacidad} y su color  ${suv.color} y
+		su potencia es  ${suv.potencia}`);
+
+
+		//Instrucciones y métodos ES6
+
+
+		//let triangulo={
+		//	base:12,
+		//  altura:10,
+		//	area:function(){ return (this.base*this.altura)/2;}
+		//}
+		//document.write("<p> El area del triangulo es: "+triangulo.area());
+
+		let triangulo={
+			base:12,
+			altura:10,
+			get area(){ return (this.base*this.altura)/2;},
+			set area(nuevabase){
+				this.base=nuevabase;
+			}
+		}
+		
+		document.write("<p> El area del triangulo es: "+triangulo.area);
+
+		/* Clases abstractas con javaScript-Herencia
+		Una clase abstracta en javascript es aquella que al menos
+		tiene en su interior un método abstracto. Un método en javaScript
+		es abstracto si no tiene implementación y además el método
+		abstracto debe lanzar una excepción*/
+
+		class PersonaA{
+
+			constructor(){
+				if (this.constructor===PersonaA)
+					throw new Error ("La clase personaA es abstracto");
+			}
+				habla(){
+					throw new Error ("Este es un método abstracto y se debe sobreescribir en las subclases");
+				}
+			
+		}
+
+		class Estudiante extends PersonaA{
+			habla(){
+				return "El empleado habla español";
+			}
+		}
+
+		let estudiante=new Estudiante();
+		console.log(estudiante.habla());
+		//let personaA=new PersonaA();
+	</script>
+</body>
+
+</html>

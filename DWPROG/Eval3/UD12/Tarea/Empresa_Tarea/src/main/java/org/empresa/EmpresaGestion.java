@@ -18,7 +18,8 @@ public class EmpresaGestion {
 
     public static void main(String[] args) {
         try {
-            Class.forName(JDBC_DRIVER);
+
+            //Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
 
