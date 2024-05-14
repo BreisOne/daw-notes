@@ -1,7 +1,0 @@
-
-
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ãƒö„8˜ã·ûó1
-d
-java:S2184"BCast one of the operands of this division operation to a "double".(ë—ôşøÿÿÿÿ8™ã·ûó1
-\
-java:S1118":Add a private constructor to hide the implicit public one.(™­Âëşÿÿÿÿ8Ÿã·ûó1
