@@ -1,0 +1,20 @@
+Rama MAIN creada.
+
+1. Se crea una rama development
+2. Se crea ya una nueva Feature para esa rama development
+3. Se hace un commit en la rama development
+4. Se ha detectado un bug en PROD. Se necesita hacer un HOTFIX. Crea la rama hotfix y haz un commit. Además en paralelo se está comiteando la rama development.
+5. El HotFix se mergea contra PROD.
+6. OJO! Necesitamos ese HOTFIX en Development también.
+7. La rama Feature se hacen un par de commits.
+8. Se crea una nueva Feature2 a partir del último commit de la rama development y se hacen 2 commits
+9. Se hace otro commit en la rama de feature pero acaba muriendo (no se aplica esa feature a development)
+10. Se hace un commit de la rama develop.
+11. La rama featuare2 acaba siendo mergeada contra la rama development.
+12. Se crea una rama Release a raíz del último merge de la rama development y se hace 2 commits.
+13. Está rama Release se acaba mergeando contra Main creando así la versión v1.0 y contra development.
+
+
+Dibuja el GIT FLOW de este pipeline.
+
+https://learngitbranching.js.org/?locale=es_ES

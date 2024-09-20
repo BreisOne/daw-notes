@@ -1,0 +1,15 @@
+
+La rama main ya está creada.
+
+1. Crea la rama develop
+2. Desarrolla un par de commit en develop
+3. Crea la rama release a partir de la develop
+4. Añade un par de commits
+5. Crea un commit más en develop
+6. Añade los cambios de release a main y a develop
+7. Crea una rama feature desde develop y crea un par de commits
+8. Crea un par de commits en develop
+9. Añade la nueva feature a la rama develop
+
+
+
