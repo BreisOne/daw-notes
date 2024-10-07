@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+  <libro >
+    <titulo> 100 años de soledad</titulo>
+    <autores>
+      <autor>
+        <nombre>Felipe</nombre>
+        <apellido>De la Vega</apellido>
+      </autor>
+    </autores>
+    <editorial>Planeta</editorial>
+    <fechaPublicacion> 1935</fechaPublicacion>
+    <edicion> 5 </edicion>
+    <ISBN></ISBN>
+</libro>
+
+<libro >
+    <titulo> La celestina</titulo>
+    <autores>
+      <autor>
+        <nombre>Fernando</nombre>
+        <apellido>Católico</apellido>
+      </autor>
+    </autores>
+    <editorial>Ediciones Gigamesh</editorial>
+    <fechaPublicacion> 1975</fechaPublicacion>
+    <edicion> 3</edicion>
+    <ISBN></ISBN>
+</libro>
+
+<libro >
+    <titulo>  años de soledad</titulo>
+    <autores>
+      <autor>
+        <nombre>Felipe</nombre>
+        <apellido>De la Vega</apellido>
+      </autor>
+      <autor>
+        <nombre>Fernando</nombre>
+        <apellido>De Borbón</apellido>
+      </autor>
+    </autores>
+    <editorial>Planeta</editorial>
+    <fechaPublicacion> 1985</fechaPublicacion>
+    <edicion> 4 </edicion>
+    <ISBN></ISBN>
+
+</libro>
+</biblioteca>
