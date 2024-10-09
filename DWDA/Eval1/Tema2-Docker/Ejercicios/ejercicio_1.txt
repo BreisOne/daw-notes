@@ -1,0 +1,4 @@
+Ejercicio Docker:
+
+1. Crea un archivo index.php. Realiza un echo "Hola Mundo"
+2. Buildea el contenedor necesario y realiza los comandos necesarios para mostrar esta aplicación mediante un servicio web dentro de un contenedor. 

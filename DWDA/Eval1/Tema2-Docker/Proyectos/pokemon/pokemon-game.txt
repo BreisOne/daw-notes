@@ -1,0 +1,11 @@
+Realizar un juego preferiblemente en php que consulte la PokeAPI y tenga como resultado un juego como el del video que se muestra.
+
+TIPS:
+	- Comprobación de resultado hecha con AJAX sin volver a recargar la página.
+	- Para ello habrá un index.php y un checkPokemon.php -> Javascript hará la llamada asíncrona desde index a checkPokemon para comprobar el resultado.
+	- Se utiliza BootStrap
+
+Crea un repo en GitHub
+Dockeriza la app
+Súbela a DockerHub
+	

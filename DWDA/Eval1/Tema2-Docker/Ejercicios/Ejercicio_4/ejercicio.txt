@@ -1,0 +1,6 @@
+Ejercicio:
+
+
+1. Tienes una app php que ofrece una API REST mediante una framework ligero llamado Leaf.
+2. En este caso tienes todo el proyecto en /src
+3. Crea un DockerFile para sirven esta API en un contenedor.

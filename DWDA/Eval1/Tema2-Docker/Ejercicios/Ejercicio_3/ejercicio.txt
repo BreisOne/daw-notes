@@ -1,0 +1,5 @@
+Ejercicio:
+
+1. Acabas de realizar una app en Python que sirve una API REST mediante el framework Flask.
+2. Buildea el contenedor necesario para levantar la aplicación con Docker. OJO! Fíjate que tienes unas dependencias en el requirements.txt. Busca información sobre ello y encuentra como instalar esas dependencias  dentro del contenedor. Busca también si necesitas un servidor web en el container o si flask incorpora uno.
+

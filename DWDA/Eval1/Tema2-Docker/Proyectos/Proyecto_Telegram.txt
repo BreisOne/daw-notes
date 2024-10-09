@@ -1,0 +1,46 @@
+Trabajas en una empresa gallega que se dedica a desarrollar software para otras compañías. La semana pasada, un cliente ha llamado a tu empresa para preguntar acerca de una nueva funcionalidad y hoy se ha reunido todo el equipo para planificar la implementación y despliegue.
+
+El cliente quiere que cada vez que un usuario escriba una reclamación en su página web, les llegue una notificación a la aplicación Telegram para tratarla o antes posible.
+
+Tenemos algunas restricciones:
+
+	FRONT:	
+		El front debe ser sencillo (html, BootStrap y javascript puro)
+		Se debe enviar en un formulario un data-form con un parámetro llamado "message"
+		Debe de llamar a la API del backend mediante el protocolo HTTP y método POST
+		Crea un repo en GitHub que se llame front-telegram-app
+
+	
+	BACKEND:
+		El backend debe de ser desarrollado exclusivamente en Python utilizando el Framework FastAPI
+		Se utilizará la librería de Python llamada Telegram.
+		Se servirán el endpoint raiz GET("/") que devolverá "Welcome to my API REST" 
+			y el Endpoint POST("/message") que tratará el parámetro "message"
+		Busca información acerca de la librería de telegram
+			pip install python-telegram-bot
+		Crea un repo en GitHub que se llame back-telegram-app
+		Puede utilizar PyCharm con IDE (Opción recomendada)
+
+	DESPLIEGUE:
+		Ambas apps deben de estar Dockerizadas y en containers distintos.
+		El proyecto estará en GitHub en 2 repositorios distintos
+		Ambas imágenes de docker se subirán a DockerHub
+
+	CONSEJOS:
+		Poneos de acuerdos en que puerto está levantado el Backend (por defecto 8000)
+		Los proyectos FastAPI traen un Swagger en localhost:8000/docs.  Este Swagger no solo
+			contiene información de los endPoints si no que también se pueden testear.
+		
+	PREGUNTAS:
+		Front y Backend están distintos contenedores ¿Puede verse?
+		¿Crees que se puede redirigir los puertos a localhost?
+		¿Pueden tus compañeros escribirte reclamaciones accediendo a tu IP desde sus pcs?-> Pruébalo
+		
+
+	CREAR UN BOT DE TELEGRAM:
+		1 -> Abre la app Telegrama y busca BotFather en Chats (debe de tener un check azul para verificar 				que sea el oficial). BotFather es un bot de Telegram.
+		2-> En su chat escribe /newbot y sigue los pasos que te indica
+		3-> Cuando el bot tenga nombre te dará una URL del chat y un Token para interactuar en su 					nombre.
+		4-> Entra en su chat y escribe @getidsbot. Te llevará a otro chat que te devolverá el id del chat, el 				cual es un chat tu a tu entre el bot y tu usuario de telegram.
+
+

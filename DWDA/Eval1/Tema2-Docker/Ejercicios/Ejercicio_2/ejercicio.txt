@@ -1,0 +1,4 @@
+Ejercicio:
+
+1. Acabas de realizar una app en java con el Framework SpringBoot. Sirves un API Rest en "localhost/alumnos"
+2. Buildea una imagen de Docker. Ojo! Necesitas un servidor web? Busca información acerca de SpringBoot y saca tus conclusiones.
