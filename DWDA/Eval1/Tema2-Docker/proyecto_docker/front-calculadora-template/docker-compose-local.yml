@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./back-calculadora-template
+      dockerfile: Dockerfile
+    container_name: backend-calculadora
+    ports:
+      - "8000:8000"
+    networks:
+      - calculadora-network
+
+  frontend:
+    build:
+      context: ./front-calculadora-template
+      dockerfile: Dockerfile
+    container_name: frontend-calculadora
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - calculadora-network
+
+networks:
+  calculadora-network:
+    driver: bridge

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    image: bmascat/back-calculadora
+    container_name: backend
+    networks:
+      - calculadora-network
+
+  frontend:
+    image: bmascat/front-calculadora
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - calculadora-network
+
+networks:
+  calculadora-network:
+    name: calculadora-network
+    driver: bridge
