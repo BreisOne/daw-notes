@@ -4,6 +4,8 @@ services:
   backend:
     image: bmascat/back-calculadora
     container_name: backend
+    ports:
+      - "8000:8000"
     networks:
       - calculadora-network
 
