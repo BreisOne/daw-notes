@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ciclo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="tarefa2a.xsd"
+    familia="IFC" tipo="CS">
+    <Nome>Administración de Sistemas Informáticos</Nome>
+    <Modulo>Redes de Area Local</Modulo>
+    <Modulo>Sistemas Informáticos Monousuario e Multiusuario</Modulo>
+    <Modulo>Sistemas Xestores de Bases de Datos</Modulo>
+</Ciclo>
