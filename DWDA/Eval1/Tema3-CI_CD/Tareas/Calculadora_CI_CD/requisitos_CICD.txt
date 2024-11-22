@@ -1,0 +1,23 @@
+
+Tarea evaluable:
+
+Necesitamos añadir CICD a nuestra aplicación desarrollada en la unidad anterior.
+Para ello necesitados definir ciertos aspectos en GitHub Actions.
+Solo se pide que se implemente CICD en la parte backend.
+En esta tarea se pide lo siguiente:
+	- Crea un workflow en tu proyecto donde se declararán jobs.
+	- 1 job:
+		Pasa test con Pytest.
+		Pásale un Lint como Ruff
+
+	- 2 job:
+		Buildea una imagen docker
+		Pushea tu imagen a DockerHub.
+	- 3 job:
+		Buildea la imagen docker
+		Pushea tu imagen a GitHub Actions.
+
+Recuerda que para buildear y pushear te hará falta estar autenticado en GitHub o DockerHub, y necesitarás añadir variables y secrets al proyecto en GitHub.
+		
+
+Para la entrega, déjame tu repo y el id de tu último commit.
