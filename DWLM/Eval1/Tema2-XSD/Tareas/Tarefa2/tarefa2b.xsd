@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    <xs:element name="modulo">
+    
+    <!-- Definición del tipo para duración -->
+    <xs:element name="duracion">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element name="duracion">
-                    <xs:complexType>
-                        <xs:attribute name="horas" type="xs:string" />
-                        <xs:attribute name="sesions" type="xs:string" />
-                        <xs:attribute name="sesionsSemanais" type="xs:string" />
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="nome" type="xs:string" />
-                <xs:element ref="ciclo" maxOccurs="unbounded" />
-                <xs:element ref="contidos" />
-            </xs:sequence>
-            <xs:attribute name="codigo" type="xs:string" use="required" />
+            <xs:attribute name="horas" type="xs:integer" />
+            <xs:attribute name="sesions" type="xs:integer" />
+            <xs:attribute name="sesionsSemanais" type="xs:integer" />
         </xs:complexType>
     </xs:element>
 
+    <!-- Definición del elemento ciclo -->
     <xs:element name="ciclo">
         <xs:complexType>
             <xs:simpleContent>
@@ -29,25 +22,38 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- Definición del elemento UD -->
+    <xs:element name="UD">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titulo" type="xs:string" />
+                <xs:element name="descrición" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="num" type="xs:integer" use="required" />
+            <xs:attribute name="sesións" type="xs:integer" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Definición del elemento contidos -->
     <xs:element name="contidos">
         <xs:complexType>
             <xs:sequence>
-                <!-- Elementos UD -->
-                <xs:element name="UD" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <!-- Elemento titulo -->
-                            <xs:element name="titulo" type="xs:string" />
-                            <!-- Elemento descripción opcional -->
-                            <xs:element name="descrición" type="xs:string" minOccurs="0" />
-                        </xs:sequence>
-                        <!-- Atributos de UD -->
-                        <xs:attribute name="num" type="xs:integer" use="required" />
-                        <xs:attribute name="sesións" type="xs:integer" use="required" />
-                    </xs:complexType>
-                </xs:element>
+                <xs:element ref="UD" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Elemento principal modulo -->
+    <xs:element name="modulo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="duracion"/>
+                <xs:element name="nome" type="xs:string" />
+                <xs:element ref="ciclo" maxOccurs="unbounded"/>
+                <xs:element ref="contidos"/>
             </xs:sequence>
             <xs:attribute name="codigo" type="xs:string" use="required" />
         </xs:complexType>
     </xs:element>
+
 </xs:schema>
