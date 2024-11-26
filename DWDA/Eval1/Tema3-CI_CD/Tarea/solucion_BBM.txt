@@ -1,0 +1,6 @@
+Repo:
+https://github.com/bmascat/back-calculadora-template
+
+Last commit:
+fix(workflows): remove owner from github package url
+5c56d0ac0f1e05c16666355c18146505d6c9a7c2
