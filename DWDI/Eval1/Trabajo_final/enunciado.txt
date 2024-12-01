@@ -1,0 +1,18 @@
+Se pretende elaborar una interfaz gráfica para el sitio Web de un negocio familiar de panaderos situado en la frontera con Portugal. El nombre del cartel que figura encima de la puerta del local es: “Migas amigas”
+
+Después de hablar con los clientes se ha llegado a la conclusión de que su único objetivo es dar a conocer su negocio a través de Internet.
+
+Para ello debemos desarrollar una interfaz que sea sobre todo visual. Por ello nos han pedido que en la página principal pongamos una animación donde con dibujos se vea el proceso de elaboración del pan.
+
+El sitio Web deberá:
+
+Permitir la lectura del sitio en dos idiomas: Castellano y Portugués.
+Tener tres secciones: panadería, pastelería-bollería y empanadas.
+Mostrar los productos que se elaboran en la panadería: una breve descripción de los ingredientes y el sistema de elaboración acompañados de una fotografía del producto. El cliente nos ha dicho que actualmente tienen un máximo de 10 productos de Panadería, 8 de bollería-pastelería y 4 de empanadas, pero que tienen pensado aumentar hasta 12 los productos de panadería.
+Mostrar la información de contacto con la dirección, el teléfono y un croquis de su ubicación.
+
+
+1. Indica cuál es el tipo de estructura de navegación más adecuado y explica el motivo. (0,5 puntos)
+2. Crea un sitemap para definir las secciones y la jerarquía de la web. (0,5 puntos)
+3. Elabora una guía de estilo. (5 puntos)
+4. Genera un prototipo utilizando Figma. (4 puntos)
