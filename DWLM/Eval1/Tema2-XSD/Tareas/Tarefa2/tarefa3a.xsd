@@ -15,7 +15,7 @@
             <xs:element name="altura" type="xs:unsignedByte" />
             <xs:element ref="sexo"/>
             <xs:element name="vacunas" type="xs:boolean" />
-            <xs:element ref="contacto" maxOccurs="unbounded"/>
+            <xs:element ref="contacto" minOccurs="0" maxOccurs="4"/>
         </xs:sequence>
         <xs:attribute name="numeroExpedente" type="xs:unsignedShort" />
         <xs:attribute name="codigo">
@@ -54,10 +54,5 @@
                 <xs:pattern value="[0-9]{9}"/>
             </xs:restriction>
         </xs:simpleType>
-        <xs:attribute name="relacion" type="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:string"></xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
     </xs:element>
 </xs:schema>
