@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Navideña</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.10/css/pico.min.css">
+    <style>
+        body {
+            background-image: url(snow.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+
+        .operation-buttons button {
+            padding: 0.4em 0.8em;
+            font-size: 0.9em;
+        }
+
+        #result {
+            display: inline-block;
+            padding: 0.6em 1.2em;
+            margin-top: 1em;
+            border: none;
+            border-radius: 0.3em;
+            font-weight: bold;
+
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script src="snow.js"></script>
+<main style="z-index: 2; position: absolute;">
+    <h1 style="color: #383434">Calculadora</h1>
+    <form id="caculadora">
+
+        <label for="num1" style="color: #383434">Número 1</label>
+        <input  type="number" id="num1" name="num1" required>
+
+        <label for="num2" style="color: #383434">Número 2</label>
+        <input type="number" id="num2" name="num2" required>
+
+        <label for="operation" style="color: #383434">Operación</label>
+        <select id="operation" name="operation" required>
+            <option value="sumar">Sumar</option>
+            <option value="restar">Restar</option>
+            <option value="multiplicar">Multiplicar</option>
+            <option value="dividir">Dividir</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit">Calcular</button>
+    </form>
+    <p id="result"></p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
+
+
