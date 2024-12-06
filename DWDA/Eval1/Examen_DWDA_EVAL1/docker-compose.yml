@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    image: bmascat/examen-back
+    container_name: backend
+    ports:
+      - "8001:8001"
+    networks:
+      - examen-network
+
+  frontend:
+    image: bmascat/examen-front
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - examen-network
+
+networks:
+  examen-network:
+    name: examen-network
+    driver: bridge

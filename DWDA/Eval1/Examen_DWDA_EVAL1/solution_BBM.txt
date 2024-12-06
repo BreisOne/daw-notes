@@ -1,0 +1,4 @@
+front-repo: https://github.com/bmascat/examen-front
+last-commit-front-id: c0df1321f2f23f843cbdf183b1fab831623b3900
+backend-repo: https://github.com/bmascat/examen-back
+last-commit-backend-id: 0896ac392f2880a03ebcfb8a3a2864fc1724cbac
